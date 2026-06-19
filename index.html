@@ -5930,7 +5930,9 @@ function _kbAssetForKey(key) {
 }
 
 function _kbPhotoStyle(key) {
-  return ' style="--kb-photo:url(&quot;' + escHtml(_kbAssetForKey(key)) + '&quot;)"';
+  var primary = _kbAssetForKey(key);
+  var fallback = primary.split('/').pop();
+  return ' style="--kb-photo:url(&quot;' + escHtml(primary) + '&quot;),url(&quot;' + escHtml(fallback) + '&quot;)"';
 }
 
 function _kbAssetForPage(page, fallback) {
