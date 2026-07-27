@@ -397,17 +397,23 @@ body[dir="rtl"] .nav-sidebar-item:hover,body[dir="rtl"] .nav-sidebar-sub:hover{t
 @media(max-width:1100px){.agent-visual.agent-wow{min-height:390px}.wow-step.s2{right:22px}.wow-step.s3{right:28px}}
 @media(max-width:680px){.agent-visual.agent-wow{min-height:auto}.wow-stage{min-height:auto;padding:14px;display:flex;flex-direction:column;gap:10px}.flow-svg,.flow-packet{display:none}.operator-card,.wow-step{position:relative;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;width:auto;min-width:0}.operator-card{display:flex;gap:12px;align-items:center}.operator-avatar{margin:0;flex:0 0 62px;width:62px;height:62px}.operator-bars{display:none}.wow-fact-strip{grid-template-columns:1fr}}
 /* ===== Photo-backed KB sections ===== */
-.agent-hero.kb-photo-hero{min-height:430px;background-image:linear-gradient(90deg,rgba(255,255,255,.96) 0%,rgba(255,255,255,.88) 43%,rgba(255,255,255,.56) 64%,rgba(255,255,255,.2) 100%),var(--kb-photo);background-size:cover;background-position:center;border-color:rgba(46,125,50,.2)}
-.agent-hero.kb-photo-hero:after{display:none}
+@keyframes kbHeroDrift{0%{background-position:center,48% 50%,48% 50%}100%{background-position:center,54% 50%,54% 50%}}
+@keyframes kbImageBreathe{0%,100%{transform:scale(1.02) translate3d(0,0,0)}50%{transform:scale(1.075) translate3d(-1.2%,.8%,0)}}
+@keyframes kbLightSweep{0%{transform:translateX(-145%) skewX(-16deg);opacity:0}18%{opacity:.34}42%,100%{transform:translateX(235%) skewX(-16deg);opacity:0}}
+.agent-hero.kb-photo-hero{min-height:430px;background-image:linear-gradient(90deg,rgba(255,255,255,.96) 0%,rgba(255,255,255,.88) 43%,rgba(255,255,255,.56) 64%,rgba(255,255,255,.2) 100%),var(--kb-photo);background-size:cover;background-position:center;border-color:rgba(46,125,50,.2);animation:kbHeroDrift 18s ease-in-out infinite alternate}
+.agent-hero.kb-photo-hero:after{display:block;content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 28%,rgba(255,255,255,.2) 46%,transparent 64%);transform:translateX(-145%) skewX(-16deg);animation:kbLightSweep 9s ease-in-out infinite;pointer-events:none;z-index:0}
 .agent-photo-panel{align-self:stretch;display:flex;flex-direction:column;justify-content:flex-end;gap:12px;padding:18px;border-radius:22px;background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.88));border:1px solid rgba(255,255,255,.72);box-shadow:inset 0 1px 0 rgba(255,255,255,.7)}
 .agent-photo-panel .agent-kpis{margin-top:0}
 .kb-hero-links{display:flex;flex-wrap:wrap;gap:8px}
 .kb-mini-link{border:1px solid rgba(16,24,40,.1);background:rgba(255,255,255,.86);color:#1f2937;border-radius:999px;padding:7px 11px;font-size:12px;font-weight:800;cursor:pointer;box-shadow:0 8px 20px rgba(16,24,40,.08)}
 .kb-mini-link:hover{background:#fff;border-color:rgba(46,125,50,.3);transform:translateY(-1px)}
 .kb-visual-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;position:relative;z-index:0}
-.kb-photo-card{position:relative;min-height:190px;border:0;border-radius:18px;overflow:hidden;background-image:linear-gradient(180deg,rgba(16,24,40,.1) 0%,rgba(16,24,40,.18) 38%,rgba(16,24,40,.78) 100%),var(--kb-photo);background-size:cover;background-position:center;box-shadow:var(--card-shadow);cursor:pointer;color:#fff;text-align:left;padding:18px;display:flex;flex-direction:column;justify-content:flex-end;isolation:isolate}
+.kb-photo-card{position:relative;min-height:190px;border:0;border-radius:18px;overflow:hidden;background-image:linear-gradient(180deg,rgba(16,24,40,.1) 0%,rgba(16,24,40,.18) 38%,rgba(16,24,40,.78) 100%),var(--kb-photo);background-size:cover;background-position:center;box-shadow:var(--card-shadow);cursor:pointer;color:#fff;text-align:left;padding:18px;display:flex;flex-direction:column;justify-content:flex-end;isolation:isolate;transition:transform .3s cubic-bezier(.2,.75,.2,1),box-shadow .3s ease,filter .3s ease,background-position 1.1s ease;filter:saturate(1.02) contrast(1.01)}
 .kb-photo-card:before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(46,125,50,.22),rgba(25,118,210,.16),transparent 56%);z-index:-1}
-.kb-photo-card:hover{transform:translateY(-2px);box-shadow:0 18px 36px rgba(16,24,40,.16)}
+.kb-photo-card:after{content:"";position:absolute;inset:-20% auto -20% -42%;width:38%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.26),transparent);transform:skewX(-16deg);transition:left .65s ease;pointer-events:none;z-index:0}
+.kb-photo-card:hover{transform:translateY(-5px) scale(1.012);box-shadow:0 22px 42px rgba(16,24,40,.2);filter:saturate(1.11) contrast(1.035);background-position:center 46%}
+.kb-photo-card:hover:after{left:118%}
+.kb-photo-card>*{position:relative;z-index:1}
 .kb-photo-card b{font-size:17px;line-height:1.2;text-shadow:0 1px 12px rgba(0,0,0,.45)}
 .kb-photo-card span{display:block;margin-top:6px;font-size:12px;line-height:1.45;color:rgba(255,255,255,.88)}
 .kb-photo-card small{align-self:flex-start;margin-bottom:8px;padding:4px 8px;border-radius:999px;background:rgba(255,255,255,.9);color:#1f2937;font-size:10px;font-weight:900;text-transform:uppercase}
@@ -438,12 +444,33 @@ body.search-open .kb-page-gallery{display:none}
 .article-gallery img{display:block;width:100%;height:220px;object-fit:cover}
 .article-gallery img.poster{height:auto;max-height:760px;object-fit:contain;background:#fff}
 .article-gallery figcaption{padding:8px 10px;color:var(--muted);font-size:11px}
+.kb-latest-ops{position:relative;z-index:0;border:1px solid rgba(16,24,40,.08);border-radius:22px;padding:18px;background:rgba(255,255,255,.78);box-shadow:var(--card-shadow);overflow:hidden}
+.kb-latest-ops:before{content:"";position:absolute;left:18px;right:18px;top:0;height:4px;border-radius:999px;background:linear-gradient(90deg,#2e7d32,#1976d2,#7b1fa2,#ef6c00);animation:laneSweep 5.5s ease-in-out infinite}
+.kb-section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin:5px 0 14px}
+.kb-section-head h2{margin:0;color:#101828;font-size:19px}.kb-section-head p{margin:4px 0 0;color:#667085;font-size:12px}
+.kb-section-date{white-space:nowrap;border:1px solid #bbf7d0;background:#ecfdf3;color:#1f7a35;border-radius:999px;padding:5px 9px;font-size:10px;font-weight:900;text-transform:uppercase}
+.kb-update-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.kb-update-card{position:relative;isolation:isolate;overflow:hidden;min-height:205px;border:0;border-radius:18px;padding:15px;display:flex;flex-direction:column;justify-content:flex-end;text-align:left;color:#fff;cursor:pointer;background:#1f2937;box-shadow:0 8px 22px rgba(16,24,40,.12);transition:transform .28s cubic-bezier(.2,.75,.2,1),box-shadow .28s ease}
+.kb-update-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;animation:kbImageBreathe 14s ease-in-out infinite;filter:saturate(1.05) contrast(1.03)}
+.kb-update-card:nth-child(2) img{animation-delay:-3.5s}.kb-update-card:nth-child(3) img{animation-delay:-7s}.kb-update-card:nth-child(4) img{animation-delay:-10.5s}
+.kb-update-card:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(15,23,42,.04),rgba(15,23,42,.24) 38%,rgba(15,23,42,.9) 100%)}
+.kb-update-card:hover{transform:translateY(-5px);box-shadow:0 20px 38px rgba(16,24,40,.2)}
+.kb-update-card:hover img{animation-play-state:paused;transform:scale(1.1)}
+.kb-update-card small{align-self:flex-start;margin-bottom:auto;border-radius:999px;padding:4px 8px;background:rgba(255,255,255,.92);color:#1f2937;font-size:9px;font-weight:900;text-transform:uppercase}
+.kb-update-card b{font-size:16px;line-height:1.25;text-shadow:0 2px 14px rgba(0,0,0,.48)}
+.kb-update-card span{display:block;margin-top:5px;color:rgba(255,255,255,.88);font-size:11.5px;line-height:1.42}
+.kb-update-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:13px}
+.kb-update-link{border:1px solid rgba(25,118,210,.16);border-radius:999px;background:#fff;color:#344054;padding:7px 10px;font-size:11px;font-weight:750;cursor:pointer;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+.kb-update-link:hover{transform:translateY(-2px);border-color:rgba(46,125,50,.36);box-shadow:0 7px 16px rgba(16,24,40,.08)}
+.kb-live-reveal{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s cubic-bezier(.2,.75,.2,1);transition-delay:var(--kb-reveal-delay,0ms)}
+.kb-live-reveal.kb-in-view{opacity:1;transform:none}
 .kb-feature-band{display:grid;grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);gap:16px;margin-bottom:18px}
 .kb-feature-photo{min-height:260px;border-radius:22px;background-image:linear-gradient(180deg,rgba(16,24,40,.04),rgba(16,24,40,.18)),var(--kb-photo);background-size:cover;background-position:center;box-shadow:var(--card-shadow);border:1px solid rgba(16,24,40,.08)}
 .kb-feature-copy{background:rgba(255,255,255,.9);border:1px solid rgba(16,24,40,.08);border-radius:22px;padding:18px;box-shadow:var(--card-shadow)}
 .kb-feature-copy h3{margin:0 0 8px;color:#101828}.kb-feature-copy p{margin:0 0 10px;color:#475467;font-size:13.5px;line-height:1.6}
-@media(max-width:1100px){.kb-visual-strip{grid-template-columns:repeat(2,minmax(0,1fr))}.kb-feature-band,.kb-page-hero{grid-template-columns:1fr}.agent-photo-panel{min-height:220px}}
-@media(max-width:680px){.agent-hero.kb-photo-hero{min-height:auto;background-position:center}.kb-visual-strip{grid-template-columns:1fr}.kb-page-hero{border-radius:18px;padding:18px;min-height:260px}.kb-page-hero h1{font-size:25px}.kb-feature-photo{min-height:210px}.submenu-card.visual-topic-card{min-height:160px}.article-gallery{grid-template-columns:1fr}.article-gallery img{height:auto;max-height:520px;object-fit:contain;background:#fff}}
+@media(max-width:1100px){.kb-visual-strip,.kb-update-strip{grid-template-columns:repeat(2,minmax(0,1fr))}.kb-feature-band,.kb-page-hero{grid-template-columns:1fr}.agent-photo-panel{min-height:220px}}
+@media(max-width:680px){.agent-hero.kb-photo-hero{min-height:auto;background-position:center;animation:none}.kb-visual-strip,.kb-update-strip{grid-template-columns:1fr}.kb-page-hero{border-radius:18px;padding:18px;min-height:260px}.kb-page-hero h1{font-size:25px}.kb-feature-photo{min-height:210px}.submenu-card.visual-topic-card{min-height:160px}.article-gallery{grid-template-columns:1fr}.article-gallery img{height:auto;max-height:520px;object-fit:contain;background:#fff}.kb-section-head{align-items:flex-start;flex-direction:column}.kb-update-card{min-height:190px}}
+body.search-open .kb-latest-ops{display:none}
 </style>
 <!-- ===== SUPABASE ===== -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -2958,6 +2985,7 @@ function render(page) {
   else if (page && page.indexOf('faq-') === 0) renderFaqPage(el, page);
   else el.innerHTML = '<div class="card"><p>Page not found: ' + escHtml(page) + '</p></div>';
   el.classList.remove('page-enter'); void el.offsetWidth; el.classList.add('page-enter');
+  requestAnimationFrame(function(){ enhanceKbVisuals(el); });
 }
 
 // ===== FIX 1: DASHBOARD with correct counts by page prefix =====
@@ -6437,6 +6465,40 @@ function _kbPhotoCard(assetKey, eyebrow, title, detail, query) {
     + '<span>' + escHtml(detail || '') + '</span></button>';
 }
 
+function _kbUpdateCard(id, mediaKey, eyebrow, title, detail) {
+  var src = (typeof KB_EMBEDDED_MEDIA === 'object' && KB_EMBEDDED_MEDIA[mediaKey]) || _kbAssetForKey('hero');
+  return '<button type="button" class="kb-update-card" onclick="openFaqById(\'' + _kbJsArg(id) + '\')">'
+    + '<img src="' + escHtml(src) + '" alt="' + escHtml(title || 'Operational update') + '">'
+    + '<small>' + escHtml(eyebrow || 'Update') + '</small>'
+    + '<b>' + escHtml(title || '') + '</b>'
+    + '<span>' + escHtml(detail || '') + '</span></button>';
+}
+
+var _kbVisualObserver = null;
+function enhanceKbVisuals(root) {
+  if (!root) return;
+  if (_kbVisualObserver) _kbVisualObserver.disconnect();
+  var nodes = Array.prototype.slice.call(root.querySelectorAll('.kb-visual-strip,.kb-latest-ops,.agent-grid-two,.agent-panel,.kb-page-hero,.submenu-grid,.faq-card'));
+  if (!nodes.length) return;
+  nodes.forEach(function(node, index){
+    node.classList.add('kb-live-reveal');
+    node.style.setProperty('--kb-reveal-delay', Math.min(index % 6, 5) * 55 + 'ms');
+  });
+  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    nodes.forEach(function(node){ node.classList.add('kb-in-view'); });
+    return;
+  }
+  _kbVisualObserver = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) {
+        entry.target.classList.add('kb-in-view');
+        _kbVisualObserver.unobserve(entry.target);
+      }
+    });
+  }, {rootMargin:'0px 0px -32px', threshold:.06});
+  nodes.forEach(function(node){ _kbVisualObserver.observe(node); });
+}
+
 function _kbPageGallery(page, title) {
   var p = (page || '').toLowerCase();
   var cards;
@@ -6604,6 +6666,22 @@ function renderDashboard(el) {
   h += _kbPhotoCard('private', 'Free Flow', 'Mushrif Mall & Private Parking', 'FreeFlow AI launch, auto-deduction, non-DARB payment, and complaint routing.', 'Mushrif Mall FreeFlow AI paid parking');
   h += '</section>';
 
+  h += '<section class="kb-latest-ops">';
+  h += '<div class="kb-section-head"><div><h2>Latest operational updates</h2><p>Source-backed guidance added without changing the existing agent tools.</p></div><span class="kb-section-date">Reviewed 27 Jul 2026</span></div>';
+  h += '<div class="kb-update-strip">';
+  h += _kbUpdateCard('OPS-2026-0727-ETIHAD-RAIL', 'etihadRail', 'Etihad Rail', 'Free-Flow Paid Parking', '24/7 tariff, 15-minute grace period, payment, and station terms.');
+  h += _kbUpdateCard('OPS-2026-0727-MZY-MSCP2', 'madinatZayed', 'Madinat Zayed', 'MSCP2 Free Parking', 'Free-parking system active at the market parking from 27 July.');
+  h += _kbUpdateCard('OPS-2026-0722-MBZ-ME09-816', 'me09After', 'MBZ ME09', '816 New Parking Bays', 'Completed parking-infrastructure expansion and operational reference.');
+  h += _kbUpdateCard('OPS-2026-0721-NOVIOL-ZONES', 'noViolationSite', 'Operations', 'Temporary No-Violation Zones', 'Approved locations, maps, and agent handling instructions.');
+  h += '</div>';
+  h += '<div class="kb-update-links">';
+  h += '<button type="button" class="kb-update-link" onclick="openFaqById(&#39;OPS-2026-0723-DHAFRA-E12&#39;)">E12 permit cancellation</button>';
+  h += '<button type="button" class="kb-update-link" onclick="openFaqById(&#39;OPS-2026-0723-REQUEST-ASSIGN&#39;)">Immediate request assignment</button>';
+  h += '<button type="button" class="kb-update-link" onclick="openFaqById(&#39;OPS-2026-0727-COMPLAINT-VALIDATION&#39;)">Complaint validation</button>';
+  h += '<button type="button" class="kb-update-link" onclick="openFaqById(&#39;OPS-2026-0727-DARBX-TRANSITION&#39;)">DARB X transition</button>';
+  h += '<button type="button" class="kb-update-link" onclick="openFaqById(&#39;OPS-2026-0721-COURT-TOW&#39;)">Court and towing fees</button>';
+  h += '</div></section>';
+
   h += '<section class="agent-grid-two">';
   h += '<div class="agent-panel"><h2>Fast Lanes</h2><div class="agent-actions">';
   h += _kbAct('Fine / grievance', 'Appeal, pay, discount, rejected grievance, image view.', 'parking fine grievance appeal pay discount');
@@ -6617,15 +6695,15 @@ function renderDashboard(el) {
   h += '</div></div>';
 
   h += '<div class="agent-panel"><h2>Current Facts</h2><div class="agent-alerts">';
-  h += _kbAlert('priv', 'Mushrif starts 23 June', 'Mushrif Mall FreeFlow AI paid parking launch date is 23 June 2026.', 'mushrif mall launch 23 june 2026 freeflow ai');
-  h += _kbAlert('warn', 'MSCP is not storage', 'Max stay is 15 days without permit, 30 days with active MSCP permit.', 'mscp leave car 15 days 30 days permit storage');
-  h += _kbAlert('maw', 'Musaffah Phase 3', 'Active 18 May 2026: M5, M6, M21, M22, M23. AED 2/hour.', 'musaffah phase 3 M5 M6 M21 M22 M23');
-  h += _kbAlert('maw', 'MBZ Phase 3', 'ME9, ME10, ME11, and ME12 are commercial + permit sectors. Villa zones can issue villa permits.', 'mbz phase 3 ME9 ME10 ME11 ME12 permit villa zones');
-  h += _kbAlert('priv', 'Free Flow parking', 'DARB wallet auto-deduction. Non-DARB users pay through freeflow.qmobility.ae.', 'free flow parking auto deduction wallet');
-  h += _kbAlert('darb', 'DARB X card setup', 'Wallet, Top-Up, amount, payment method, Add Credit/Debit Card.', 'DARB X add credit debit card top up');
-  h += _kbAlert('darb', 'DARB X vehicle registration', 'Send the app.qmobility.ae/BI7O SMS and advise AED 100 balance.', 'DARB X vehicle registration SMS BI7O 100 AED');
-  h += _kbAlert('warn', 'Rechargeable card closed', 'Old card is no longer supported. Remaining balance is accessed through the DARB app.', 'rechargeable card closed balance darb app');
-  h += _kbAlert('maw', 'Payment machine note', 'Mawaqif machines accept coins only; SMS payment is for private vehicles.', 'mawaqif machine coins sms private vehicles');
+  h += _kbAlert('priv', 'Etihad Rail is location-specific', 'Use the station tariff only: 15 minutes free, then AED 5 hourly steps and AED 30 daily cap.', 'Etihad Rail parking tariff 15 minutes AED 5 AED 30');
+  h += _kbAlert('maw', 'Madinat Zayed MSCP2', 'Free-parking system active from 27 July 2026 at 10:00 AM; access is on foot only.', 'Madinat Zayed Market MSCP2 free parking');
+  h += _kbAlert('warn', 'E12 reservation cancelled', 'Do not create a complaint or case for the cancelled Al Dhafra E12 reserved permit.', 'Al Dhafra E12 cancelled permit no complaint');
+  h += _kbAlert('maw', 'ME09 added 816 bays', 'The MBZ ME09 parking-infrastructure project is complete with 816 new bays.', 'ME09 816 new parking bays');
+  h += _kbAlert('warn', 'Court and towing are separate', 'Court settlement or time-barred fines do not cancel towing and impound fees.', 'court settlement time barred towing fees separate');
+  h += _kbAlert('darb', 'DARB X transition', 'Guide customers through Switch to the New Experience when moving to DARB X.', 'DARB X switch to new experience transition');
+  h += _kbAlert('priv', 'Mushrif gym overnight', 'Gym visitors between 2:00 AM and 6:00 AM need gym vehicle validation for three free hours.', 'Mushrif gym overnight vehicle validation three hours free');
+  h += _kbAlert('maw', 'Assign requests immediately', 'New requests must be assigned without delay and kept under the correct owner.', 'assign new request immediately correct owner');
+  h += _kbAlert('darb', 'Validate complaints first', 'Confirm complaint type, subtype, evidence, and required documents before creation.', 'complaint validation type subtype evidence documents');
   h += '</div></div>';
   h += '</section>';
 
@@ -6633,7 +6711,7 @@ function renderDashboard(el) {
   h += _kbSource('PDF call-center guide', '62-page PDF text represented in search, scripts, quick facts, and support flows.', 'PDF');
   h += _kbSource('Mawaqif regulation PDF', '35-page official reference checked for regulatory alignment.', 'REG');
   h += _kbSource('Official FAQ workbook', 'Validated FAQ article IDs are present in the index.', 'FAQ');
-  h += _kbSource('2026 operational files', 'MBZ, Musaffah, Free Flow, DARB X, and SMS template updates are included.', 'OPS');
+  h += _kbSource('27 July operational files', 'Etihad Rail, Madinat Zayed MSCP2, E12, ME09, complaints, DARB X, towing, and no-violation updates are included.', 'OPS');
   h += '</div></section>';
 
   h += '</div>';
