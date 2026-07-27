@@ -475,6 +475,71 @@ body.search-open .kb-page-gallery{display:none}
 @media(max-width:1100px){.kb-visual-strip,.kb-update-strip{grid-template-columns:repeat(2,minmax(0,1fr))}.kb-feature-band,.kb-page-hero{grid-template-columns:1fr}.agent-photo-panel{min-height:220px}}
 @media(max-width:680px){.agent-hero.kb-photo-hero{min-height:auto;background-position:center;animation:none}.kb-visual-strip,.kb-update-strip{grid-template-columns:1fr}.kb-page-hero{border-radius:18px;padding:18px;min-height:260px}.kb-page-hero h1{font-size:25px}.kb-feature-photo{min-height:210px}.submenu-card.visual-topic-card{min-height:160px}.article-gallery{grid-template-columns:1fr}.article-gallery img{height:auto;max-height:520px;object-fit:contain;background:#fff}.kb-section-head{align-items:flex-start;flex-direction:column}.kb-update-card{min-height:190px}}
 body.search-open .kb-latest-ops{display:none}
+/* ===== WhatsApp response desk and site motion ===== */
+@keyframes siteStatusPulse{0%,100%{box-shadow:0 0 0 0 rgba(46,125,50,.25)}50%{box-shadow:0 0 0 8px rgba(46,125,50,0)}}
+@keyframes topbarSignal{0%{transform:translateX(-120%);opacity:0}18%{opacity:.55}52%,100%{transform:translateX(220%);opacity:0}}
+@keyframes waHeroPan{0%{background-position:center 46%}100%{background-position:center 54%}}
+@keyframes waBubbleFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@keyframes waTyping{0%,60%,100%{transform:translateY(0);opacity:.35}30%{transform:translateY(-4px);opacity:1}}
+.sidebar-header .logo-dot{animation:siteStatusPulse 2.6s ease-in-out infinite}
+.topbar{overflow:hidden}
+.topbar:after{content:"";position:absolute;left:0;bottom:0;width:34%;height:2px;background:linear-gradient(90deg,transparent,#2e7d32,#1976d2,transparent);animation:topbarSignal 8s ease-in-out infinite;pointer-events:none}
+.faq-card,.email-card,.sms-card,.script-card,.service-link,.update-item{transition:transform .22s cubic-bezier(.2,.75,.2,1),box-shadow .22s ease,border-color .22s ease}
+.faq-card:hover,.email-card:hover,.sms-card:hover,.script-card:hover,.service-link:hover,.update-item:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(16,24,40,.08)}
+.wa-page{display:flex;flex-direction:column;gap:16px}
+.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.wa-hero{position:relative;isolation:isolate;overflow:hidden;min-height:340px;border-radius:18px;padding:28px;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);align-items:center;gap:22px;background-image:linear-gradient(90deg,rgba(5,45,39,.94) 0%,rgba(7,94,84,.84) 50%,rgba(7,94,84,.32) 100%),url('assets/support-desk.webp');background-size:cover;background-position:center;color:#fff;box-shadow:0 18px 44px rgba(16,24,40,.16);animation:waHeroPan 16s ease-in-out infinite alternate}
+.wa-hero:before{content:"";position:absolute;inset:0;z-index:-1;background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);background-size:38px 38px;mask-image:linear-gradient(90deg,#000,transparent 72%)}
+.wa-hero-copy{max-width:690px}
+.wa-kicker{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:800;text-transform:uppercase;padding:6px 9px;border:1px solid rgba(255,255,255,.28);border-radius:999px;background:rgba(255,255,255,.12);margin-bottom:12px}
+.wa-kicker:before{content:"";width:8px;height:8px;border-radius:50%;background:#5df2a5;animation:siteStatusPulse 2.2s ease-in-out infinite}
+.wa-hero h1{font-size:34px;line-height:1.12;margin:0 0 10px;color:#fff}
+.wa-hero p{font-size:14px;line-height:1.7;color:rgba(255,255,255,.9);margin:0;max-width:620px}
+.wa-hero-facts{display:flex;gap:8px;flex-wrap:wrap;margin-top:17px}
+.wa-hero-facts span{font-size:11px;font-weight:700;border:1px solid rgba(255,255,255,.22);background:rgba(0,0,0,.16);border-radius:999px;padding:6px 9px}
+.wa-live-scene{display:flex;flex-direction:column;align-items:stretch;justify-content:center;gap:12px;min-height:230px}
+.wa-live-bubble{max-width:88%;padding:12px 14px;border-radius:8px;font-size:12px;line-height:1.5;box-shadow:0 14px 30px rgba(0,0,0,.16);animation:waBubbleFloat 5s ease-in-out infinite}
+.wa-live-bubble.incoming{align-self:flex-start;background:#fff;color:#25313d}
+.wa-live-bubble.outgoing{align-self:flex-end;background:#dcf8c6;color:#16372b;animation-delay:-2.4s}
+.wa-live-bubble small{display:block;margin-top:5px;text-align:right;color:#6b7280;font-size:9px}
+.wa-typing{align-self:flex-start;display:flex;gap:4px;background:#fff;padding:10px 13px;border-radius:8px;box-shadow:0 10px 24px rgba(0,0,0,.13)}
+.wa-typing i{width:6px;height:6px;border-radius:50%;background:#667085;animation:waTyping 1.25s ease-in-out infinite}.wa-typing i:nth-child(2){animation-delay:.14s}.wa-typing i:nth-child(3){animation-delay:.28s}
+.wa-toolbar{position:sticky;top:-24px;z-index:20;background:rgba(240,242,245,.96);backdrop-filter:blur(12px);border-top:1px solid rgba(16,24,40,.08);border-bottom:1px solid rgba(16,24,40,.08);padding:12px 0;display:flex;flex-direction:column;gap:10px}
+.wa-toolbar-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.wa-search{position:relative;flex:1 1 320px;min-width:220px}
+.wa-search input{width:100%;height:44px;border:1px solid #cfd8d3;border-radius:8px;background:#fff;padding:0 14px 0 42px;font-size:13px;outline:none;box-shadow:0 5px 14px rgba(16,24,40,.04)}
+.wa-search input:focus{border-color:#128c7e;box-shadow:0 0 0 3px rgba(18,140,126,.13)}
+.wa-search:before{content:"⌕";position:absolute;left:14px;top:8px;color:#075e54;font-size:23px;z-index:1}
+.wa-mode{display:flex;border:1px solid #cfd8d3;border-radius:8px;padding:3px;background:#fff;min-height:44px}
+.wa-mode button{border:0;background:transparent;color:#475467;border-radius:6px;padding:7px 11px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap}
+.wa-mode button.active{background:#075e54;color:#fff;box-shadow:0 4px 10px rgba(7,94,84,.18)}
+.wa-greeting-toggle{display:inline-flex;align-items:center;gap:7px;height:44px;border:1px solid #cfd8d3;border-radius:8px;padding:0 11px;background:#fff;font-size:12px;color:#344054;white-space:nowrap}
+.wa-greeting-toggle input{accent-color:#128c7e}
+.wa-category-row{display:flex;gap:7px;overflow-x:auto;padding-bottom:2px;scrollbar-width:thin}
+.wa-category-chip{flex:0 0 auto;border:1px solid #cfd8d3;border-radius:999px;background:#fff;color:#344054;padding:7px 11px;font-size:11px;font-weight:750;cursor:pointer;transition:transform .18s ease,border-color .18s ease,background .18s ease}
+.wa-category-chip:hover{transform:translateY(-1px);border-color:#128c7e}.wa-category-chip.active{background:#e6f5ef;border-color:#128c7e;color:#075e54}
+.wa-results-head{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.wa-results-head h2{font-size:19px;margin:0;color:#101828}.wa-results-head p{font-size:12px;color:#667085;margin:4px 0 0}
+.wa-response-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.wa-response-card{display:flex;flex-direction:column;min-width:0;border:1px solid #dfe6e2;border-radius:8px;background:#fff;box-shadow:0 7px 20px rgba(16,24,40,.06);overflow:hidden;transition:transform .24s cubic-bezier(.2,.75,.2,1),box-shadow .24s ease,border-color .24s ease}
+.wa-response-card:hover{transform:translateY(-3px);border-color:#9dd7c5;box-shadow:0 16px 32px rgba(16,24,40,.1)}
+.wa-response-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;padding:14px 15px 10px}
+.wa-response-head small{display:inline-block;color:#075e54;background:#e6f5ef;border-radius:999px;padding:3px 7px;font-size:9px;font-weight:850;text-transform:uppercase}
+.wa-response-head h3{font-size:14px;line-height:1.35;margin:7px 0 0;color:#101828}
+.wa-response-id{font-size:9px;color:#98a2b3;font-family:monospace}
+.wa-message-pane{position:relative;margin:0 14px 12px;padding:13px 14px 23px;border-radius:8px;background:#edf7f2;border:1px solid #d2ebdf;color:#23372f;font-size:12.5px;line-height:1.58;white-space:pre-wrap;overflow-wrap:anywhere;min-height:128px;max-height:230px;overflow-y:auto}
+.wa-message-pane.ar{direction:rtl;text-align:right;font-family:'Segoe UI',Tahoma,sans-serif}
+.wa-message-pane.bilingual{background:linear-gradient(145deg,#edf7f2,#eef5ff);border-color:#d5e5df}
+.wa-message-pane:after{content:"✓✓";position:absolute;right:10px;bottom:6px;color:#1687d9;font-size:9px;font-weight:800}
+.wa-message-pane.ar:after{left:10px;right:auto}
+.wa-response-actions{display:flex;align-items:center;gap:7px;flex-wrap:wrap;padding:0 14px 14px;margin-top:auto}
+.wa-copy-btn{border:0;border-radius:7px;background:#075e54;color:#fff;padding:8px 12px;font-size:11px;font-weight:800;cursor:pointer;transition:transform .14s ease,box-shadow .18s ease}.wa-copy-btn:hover{transform:translateY(-1px);box-shadow:0 7px 14px rgba(7,94,84,.2)}
+.wa-kb-btn,.wa-admin-btn{border:1px solid #d0d5dd;border-radius:7px;background:#fff;color:#344054;padding:7px 10px;font-size:10px;font-weight:750;cursor:pointer}.wa-kb-btn:hover,.wa-admin-btn:hover{border-color:#128c7e;color:#075e54}
+.wa-empty{grid-column:1/-1;padding:36px 18px;border:1px dashed #b9c9c1;border-radius:8px;background:#fff;text-align:center;color:#667085}
+body[dir="rtl"] .wa-search input{padding:0 42px 0 14px}body[dir="rtl"] .wa-search:before{right:14px;left:auto}
+@media(max-width:1000px){.wa-hero{grid-template-columns:1fr;min-height:auto}.wa-live-scene{min-height:190px;max-width:560px}.wa-response-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.wa-hero{padding:20px;border-radius:14px}.wa-hero h1{font-size:27px}.wa-toolbar{top:-16px}.wa-mode{width:100%}.wa-mode button{flex:1}.wa-greeting-toggle{width:100%;justify-content:center}.wa-message-pane{max-height:280px}}
+@media(prefers-reduced-motion:reduce){.sidebar-header .logo-dot,.topbar:after,.wa-hero,.wa-live-bubble,.wa-typing i{animation:none!important}}
 </style>
 <!-- ===== SUPABASE ===== -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -1124,6 +1189,51 @@ var CALL_SCRIPTS = {
     ]
   }
 };
+
+// ===== WHATSAPP RESPONSES =====
+var WHATSAPP_RESPONSES = [
+  {id:"WA-001",category:"Conversation",category_ar:"المحادثة",title_en:"Welcome and greeting",title_ar:"الترحيب بالمتعامل",en:"Hello [Customer Name],\n\nThank you for contacting Q Mobility. My name is [Agent Name]. How may I assist you today?",ar:"مرحباً [اسم المتعامل]،\n\nشكراً لتواصلكم مع كيو موبيليتي. معكم [اسم الموظف]. كيف يمكنني مساعدتكم اليوم؟",keywords:"hello greeting welcome opening agent name customer"},
+  {id:"WA-002",category:"Conversation",category_ar:"المحادثة",title_en:"Request the required details",title_ar:"طلب التفاصيل المطلوبة",en:"To assist you accurately, please share:\n• Service: Mawaqif, DARB, or Private Parking\n• Vehicle plate number and emirate\n• Location or parking sector\n• Fine, request, or transaction reference (if available)\n• A screenshot or photo related to the issue (if available)",ar:"لمساعدتكم بدقة، يرجى تزويدنا بما يلي:\n• نوع الخدمة: مواقف أو درب أو المواقف الخاصة\n• رقم لوحة المركبة والإمارة\n• الموقع أو قطاع المواقف\n• رقم المخالفة أو الطلب أو العملية (إن وجد)\n• لقطة شاشة أو صورة مرتبطة بالمشكلة (إن وجدت)",keywords:"details plate emirate location sector screenshot reference clarification"},
+  {id:"WA-003",category:"Conversation",category_ar:"المحادثة",title_en:"Place the conversation on hold",title_ar:"طلب الانتظار",en:"Thank you for the information. Please allow me 2–3 minutes to review the details for you. I will return to the conversation shortly.",ar:"شكراً لتزويدنا بالمعلومات. يرجى منحنا من دقيقتين إلى ثلاث دقائق لمراجعة التفاصيل، وسأعود إلى المحادثة بعد قليل.",keywords:"hold wait review checking"},
+  {id:"WA-004",category:"Conversation",category_ar:"المحادثة",title_en:"Transfer or escalation",title_ar:"التحويل أو التصعيد",en:"Your inquiry requires support from the concerned team. I will document the information provided and transfer or escalate the request through the correct channel. Please keep the reference number for follow-up.",ar:"يتطلب استفساركم دعماً من الفريق المختص. سأقوم بتوثيق المعلومات المقدمة وتحويل الطلب أو تصعيده عبر القناة الصحيحة. يرجى الاحتفاظ بالرقم المرجعي للمتابعة.",keywords:"transfer escalation concerned team reference"},
+  {id:"WA-005",category:"Conversation",category_ar:"المحادثة",title_en:"Close the conversation",title_ar:"إنهاء المحادثة",en:"Is there anything else I can assist you with today?\n\nThank you for contacting Q Mobility. We are pleased to support you. Have a good day.",ar:"هل يمكنني مساعدتكم في أي أمر آخر اليوم؟\n\nشكراً لتواصلكم مع كيو موبيليتي. يسعدنا خدمتكم ونتمنى لكم يوماً سعيداً.",keywords:"closing end thank you anything else"},
+
+  {id:"WA-101",category:"Mawaqif",category_ar:"مواقف",title_en:"Public parking hours and rates",title_ar:"أوقات ورسوم المواقف العامة",en:"Mawaqif public parking is generally chargeable from Monday to Saturday, 8:00 AM to 12:00 midnight.\n\n• Standard parking: AED 2 per hour, up to AED 15 per day\n• Premium parking: AED 3 per hour, with a maximum stay of 4 hours\n• Sundays and public holidays are free unless the signs at the location state otherwise\n\nPlease always follow the parking signs at the selected bay.",ar:"تطبق رسوم مواقف العامة عادةً من الاثنين إلى السبت، من الساعة 8:00 صباحاً حتى 12:00 منتصف الليل.\n\n• المواقف العادية: درهمان للساعة وبحد أقصى 15 درهماً لليوم\n• المواقف المميزة: 3 دراهم للساعة وبحد أقصى 4 ساعات للوقوف\n• أيام الأحد والعطلات الرسمية مجانية ما لم توضح اللوحات في الموقع خلاف ذلك\n\nيرجى دائماً اتباع اللوحات الإرشادية في موقف المركبة.",keywords:"mawaqif public parking hours rates standard premium sunday holiday 2 3 15"},
+  {id:"WA-102",category:"Mawaqif",category_ar:"مواقف",title_en:"Pay parking by SMS to 3009",title_ar:"دفع رسوم المواقف برسالة إلى 3009",en:"To pay for parking by SMS, send the message to 3009 using this format:\n\n[Emirate and plate category] [Plate number] [S or P] [Number of hours]\n\nExample: AUH10 12345 S 2\n\nS = Standard parking\nP = Premium parking\n\nPlease confirm the plate details and parking type before sending.",ar:"لدفع رسوم المواقف عبر الرسائل النصية، أرسل الرسالة إلى الرقم 3009 بالصيغة التالية:\n\n[رمز الإمارة وفئة اللوحة] [رقم اللوحة] [S أو P] [عدد الساعات]\n\nمثال: AUH10 12345 S 2\n\nS = موقف عادي\nP = موقف مميز\n\nيرجى التأكد من بيانات اللوحة ونوع الموقف قبل الإرسال.",keywords:"sms 3009 parking payment format standard premium plate"},
+  {id:"WA-103",category:"Mawaqif",category_ar:"مواقف",title_en:"Pay parking through digital channels",title_ar:"دفع المواقف عبر القنوات الرقمية",en:"Parking fees can be paid through the DARB application or wallet, TAMM, or SMS to 3009. Please verify the vehicle plate, parking sector, parking type, and required duration before confirming the payment.",ar:"يمكن دفع رسوم المواقف من خلال تطبيق أو محفظة درب، أو منصة تم، أو عبر رسالة نصية إلى الرقم 3009. يرجى التأكد من لوحة المركبة وقطاع المواقف ونوع الموقف والمدة المطلوبة قبل تأكيد الدفع.",keywords:"darb tamm wallet digital pay parking sector"},
+  {id:"WA-104",category:"Mawaqif",category_ar:"مواقف",title_en:"Residential parking permit documents",title_ar:"مستندات تصريح مواقف السكان",en:"For a residential parking permit request, the customer normally needs:\n• Emirates ID\n• Vehicle registration card\n• Valid Tawtheeq tenancy contract or property ownership document\n• Utility bill when required\n• Proof of kinship when applying for an eligible relative\n\nApplications are submitted through TAMM or the available DARB permit service.",ar:"لطلب تصريح مواقف السكان، يحتاج المتعامل عادةً إلى:\n• الهوية الإماراتية\n• بطاقة ملكية المركبة\n• عقد إيجار موثق ساري أو مستند ملكية العقار\n• فاتورة خدمات عند الطلب\n• إثبات صلة القرابة عند التقديم لقريب مؤهل\n\nيتم تقديم الطلب عبر منصة تم أو خدمة التصاريح المتاحة في تطبيق درب.",keywords:"resident residential permit documents tawtheeq eid vehicle registration kinship"},
+  {id:"WA-105",category:"Mawaqif",category_ar:"مواقف",title_en:"Mawaqif permit and reservation services",title_ar:"خدمات تصاريح وحجز مواقف",en:"Mawaqif permit services include residential permits, limited-term standard parking permits, multi-storey parking permits, parking reservations, infrastructure, maintenance, basement extension, advertising, and charity permits.\n\nPlease select the exact service from the official Q Mobility Mawaqif services page:\nhttps://www.qmobility.ae/en/services/mawaqif",ar:"تشمل خدمات تصاريح مواقف: تصاريح السكان، والتصاريح محددة المدة للمواقف العادية، وتصاريح المواقف الطابقية، وحجز المواقف، وتصاريح البنية التحتية والصيانة والتوسعة السفلية والحملات الإعلانية والخيرية.\n\nيرجى اختيار الخدمة المطلوبة من صفحة خدمات مواقف الرسمية:\nhttps://www.qmobility.ae/ar/services/mawaqif",keywords:"permit reservation limited term commercial infrastructure maintenance charity advertising official services"},
+  {id:"WA-106",category:"Mawaqif",category_ar:"مواقف",title_en:"Parking fine payment and discount",title_ar:"دفع مخالفة المواقف والخصم",en:"The customer can review and pay Mawaqif parking fines through the DARB application or TAMM. When applicable, paying the fine within 60 days from the issue date provides a 25% discount. Please verify the fine status before confirming eligibility.",ar:"يمكن للمتعامل مراجعة مخالفات مواقف ودفعها من خلال تطبيق درب أو منصة تم. عند انطباق الشروط، يمنح دفع المخالفة خلال 60 يوماً من تاريخ إصدارها خصماً بنسبة 25%. يرجى التحقق من حالة المخالفة قبل تأكيد الاستحقاق.",keywords:"fine payment discount 25 percent 60 days"},
+  {id:"WA-107",category:"Mawaqif",category_ar:"مواقف",title_en:"Parking grievance",title_ar:"التظلم على مخالفة مواقف",en:"A parking grievance can be submitted through the DARB application. Please attach the relevant evidence and ensure the fine details are correct. Review and decision may take up to 7 working days. If the grievance is rejected or exceeds the approved period, the customer may contact ITC on 800 850.",ar:"يمكن تقديم التظلم على مخالفة مواقف من خلال تطبيق درب. يرجى إرفاق الأدلة ذات الصلة والتأكد من صحة بيانات المخالفة. قد تستغرق المراجعة وإصدار القرار حتى 7 أيام عمل. إذا تم رفض التظلم أو تجاوز المدة المعتمدة، يمكن للمتعامل التواصل مع مركز النقل المتكامل على الرقم 800 850.",keywords:"parking grievance appeal evidence 7 working days ITC 800850"},
+  {id:"WA-108",category:"Mawaqif",category_ar:"مواقف",title_en:"Vehicle blockage report",title_ar:"بلاغ إعاقة مركبة",en:"To register a vehicle blockage report, please share:\n• Plate number of the blocked vehicle\n• Plate number of the blocking vehicle, if visible\n• Exact location or parking sector\n• Customer contact number\n• A clear photo, when safe to provide\n\nThe request will be documented and handled through the approved blockage process.",ar:"لتسجيل بلاغ إعاقة مركبة، يرجى تزويدنا بما يلي:\n• رقم لوحة المركبة المتضررة\n• رقم لوحة المركبة المعيقة إن كان ظاهراً\n• الموقع الدقيق أو قطاع المواقف\n• رقم تواصل المتعامل\n• صورة واضحة إذا كان التقاطها آمناً\n\nسيتم توثيق الطلب والتعامل معه وفق الإجراء المعتمد لبلاغات إعاقة المركبات.",keywords:"blocked vehicle blockage whatsapp report plate location photo"},
+  {id:"WA-109",category:"Mawaqif",category_ar:"مواقف",title_en:"Free parking periods around schools",title_ar:"فترات الوقوف المجاني حول المدارس",en:"The school free-parking periods apply to parents and school buses only:\n• Abu Dhabi and Mohamed Bin Zayed City: 7:00–9:00 AM and 12:00–4:00 PM\n• Al Ain is not included in these school free periods\n\nNormal parking rules apply outside the approved times.",ar:"تطبق فترات الوقوف المجاني حول المدارس على أولياء الأمور وحافلات المدارس فقط:\n• أبوظبي ومدينة محمد بن زايد: من 7:00 إلى 9:00 صباحاً ومن 12:00 ظهراً إلى 4:00 مساءً\n• مدينة العين غير مشمولة بهذه الفترات المجانية\n\nتطبق قواعد ورسوم المواقف المعتادة خارج الأوقات المعتمدة.",keywords:"school free parking parents buses abu dhabi mbz al ain 7 9 12 4"},
+  {id:"WA-110",category:"Mawaqif",category_ar:"مواقف",title_en:"Fine or inspection evidence request",title_ar:"طلب أدلة المخالفة أو التفتيش",en:"To review a fine or inspection concern, please provide the fine number, vehicle plate, location or sector, date and approximate time, and any available photo or screenshot. Providing complete information helps the concerned team validate the case correctly.",ar:"لمراجعة استفسار متعلق بمخالفة أو بالتفتيش، يرجى تزويدنا برقم المخالفة ولوحة المركبة والموقع أو القطاع والتاريخ والوقت التقريبي وأي صورة أو لقطة شاشة متاحة. تساعد المعلومات الكاملة الفريق المختص على التحقق من الحالة بشكل صحيح.",keywords:"inspection fine evidence image screenshot sector date time"},
+  {id:"WA-111",category:"Mawaqif",category_ar:"مواقف",title_en:"Musaffah and MBZ paid parking",title_ar:"المواقف المدفوعة في مصفح ومدينة محمد بن زايد",en:"Paid parking is active in designated Musaffah industrial and Mohamed Bin Zayed City commercial sectors. Standard fees and operating hours apply unless the location signs show a different rule. Please confirm the exact sector using the Smart Sector Map before advising the customer.",ar:"تطبق المواقف المدفوعة في القطاعات المحددة في منطقة مصفح الصناعية والمناطق التجارية في مدينة محمد بن زايد. تسري الرسوم والأوقات القياسية ما لم توضح لوحات الموقع خلاف ذلك. يرجى التأكد من القطاع عبر خريطة القطاعات الذكية قبل إفادة المتعامل.",keywords:"musaffah mussafah mbz mohamed bin zayed paid sectors smart map"},
+  {id:"WA-112",category:"Mawaqif",category_ar:"مواقف",title_en:"Fines belonging to the previous vehicle owner",title_ar:"مخالفات تعود للمالك السابق",en:"If the parking fines belong to the previous vehicle owner, the current owner must obtain a Vehicle Data Certificate from Traffic showing that the vehicle was not registered under their name at the time of the violation, then submit it at a Q Mobility branch for review.",ar:"إذا كانت مخالفات المواقف تعود إلى المالك السابق للمركبة، يجب على المالك الحالي استخراج شهادة بيانات مركبة من المرور تثبت أن المركبة لم تكن مسجلة باسمه وقت المخالفة، ثم تقديمها في أحد فروع كيو موبيليتي للمراجعة.",keywords:"previous old owner fines vehicle data certificate traffic branch"},
+
+  {id:"WA-201",category:"DARB",category_ar:"درب",title_en:"DARB account login and registration",title_ar:"تسجيل الدخول وإنشاء حساب درب",en:"Customers can access the DARB application using UAE Pass. Existing profile and wallet information linked to the customer will be retrieved automatically. For establishment services, customers can also use the DARB website:\nhttps://darb.qmobility.ae",ar:"يمكن للمتعامل الدخول إلى تطبيق درب باستخدام الهوية الرقمية UAE Pass، وسيتم استرجاع بيانات الملف والمحفظة المرتبطة به تلقائياً. كما يمكن للمنشآت استخدام موقع درب:\nhttps://darb.qmobility.ae",keywords:"darb login registration uae pass account establishment website"},
+  {id:"WA-202",category:"DARB",category_ar:"درب",title_en:"Register a vehicle in DARB",title_ar:"تسجيل مركبة في درب",en:"The DARB vehicle registration amount is AED 100 per vehicle: AED 50 registration fee and AED 50 added as wallet credit. The customer should confirm that the vehicle appears under the correct traffic file before completing registration.",ar:"تبلغ قيمة تسجيل المركبة في نظام درب 100 درهم لكل مركبة: 50 درهماً رسوم تسجيل و50 درهماً تضاف رصيداً إلى المحفظة. يجب على المتعامل التأكد من ظهور المركبة ضمن الملف المروري الصحيح قبل إكمال التسجيل.",keywords:"darb vehicle registration 100 50 wallet traffic file"},
+  {id:"WA-203",category:"DARB",category_ar:"درب",title_en:"Top up the DARB wallet",title_ar:"إعادة شحن محفظة درب",en:"The DARB wallet can be topped up from the application dashboard, the Vehicles page, or the customer profile. Please ensure the amount is added to the wallet linked to the correct vehicle. The wallet can be used for toll crossings and supported parking payments.",ar:"يمكن إعادة شحن محفظة درب من الصفحة الرئيسية للتطبيق أو صفحة المركبات أو ملف المتعامل. يرجى التأكد من إضافة المبلغ إلى المحفظة المرتبطة بالمركبة الصحيحة. يمكن استخدام المحفظة لعبور بوابات التعرفة ودفع خدمات المواقف المدعومة.",keywords:"darb wallet top up recharge dashboard vehicles profile"},
+  {id:"WA-204",category:"DARB",category_ar:"درب",title_en:"DARB toll fees and peak hours",title_ar:"رسوم درب وساعات الذروة",en:"The DARB toll fee is AED 4 per crossing during chargeable peak periods. The standard peak periods are 7:00–9:00 AM and 3:00–7:00 PM, except Sundays and official public holidays. Customers should check current DARB notices for any operational change.",ar:"تبلغ رسوم عبور بوابات درب 4 دراهم لكل عبور خلال فترات الذروة الخاضعة للرسوم. الفترات القياسية هي من 7:00 إلى 9:00 صباحاً ومن 3:00 إلى 7:00 مساءً، باستثناء أيام الأحد والعطلات الرسمية. يرجى متابعة إشعارات درب لأي تحديث تشغيلي.",keywords:"darb toll fee 4 peak hours 7 9 3 7 sunday holiday gates"},
+  {id:"WA-205",category:"DARB",category_ar:"درب",title_en:"Insufficient DARB wallet balance",title_ar:"عدم كفاية رصيد محفظة درب",en:"For vehicles registered outside Abu Dhabi, the customer must maintain sufficient DARB wallet balance. If a toll crossing remains unpaid, the wallet should be topped up within 5 working days to allow automatic deduction and avoid a violation. Processing after top-up may take 1–2 hours.",ar:"بالنسبة للمركبات المسجلة خارج إمارة أبوظبي، يجب توفر رصيد كافٍ في محفظة درب. إذا بقيت رسوم عبور غير مدفوعة، يجب إعادة شحن المحفظة خلال 5 أيام عمل ليتم الخصم تلقائياً وتجنب المخالفة. قد تستغرق المعالجة بعد الشحن من ساعة إلى ساعتين.",keywords:"darb insufficient balance outside abu dhabi 5 working days 1 2 hours"},
+  {id:"WA-206",category:"DARB",category_ar:"درب",title_en:"DARB violation or grievance",title_ar:"مخالفة أو تظلم درب",en:"The customer can review DARB violations and submit a grievance from the DARB application under Requests, then Grievances and Exemptions. Select the relevant violation, add the explanation and supporting evidence, and submit the request for review.",ar:"يمكن للمتعامل مراجعة مخالفات درب وتقديم تظلم من تطبيق درب عبر قسم الطلبات ثم التظلمات والإعفاءات. يتم اختيار المخالفة المطلوبة وإضافة شرح الحالة والأدلة الداعمة ثم إرسال الطلب للمراجعة.",keywords:"darb violation grievance requests evidence exemptions"},
+  {id:"WA-207",category:"DARB",category_ar:"درب",title_en:"DARB exemption application",title_ar:"طلب إعفاء درب",en:"DARB exemptions are available for eligible categories such as People of Determination, senior citizens, retired citizens, and eligible low-income customers. The application normally requires Emirates ID, vehicle registration, category evidence, and proof of kinship when the vehicle belongs to an eligible relative.",ar:"تتوفر إعفاءات درب للفئات المؤهلة مثل أصحاب الهمم وكبار المواطنين والمتقاعدين ومستحقي الدعم من ذوي الدخل المحدود. يتطلب الطلب عادةً الهوية الإماراتية وملكية المركبة والمستند المثبت للفئة وإثبات صلة القرابة إذا كانت المركبة تخص قريباً مؤهلاً.",keywords:"darb exemption pod senior retired low income documents kinship"},
+  {id:"WA-208",category:"DARB",category_ar:"درب",title_en:"Switch to the DARB X experience",title_ar:"الانتقال إلى تجربة درب X",en:"The “Switch to the New Experience” option has been added to the current DARB application as part of the transition to DARB X. The customer may select this option to access the updated application experience. It is not an error or an unrelated advertisement.",ar:"تمت إضافة خيار «الانتقال إلى التجربة الجديدة» في تطبيق درب الحالي ضمن عملية الانتقال إلى تجربة درب X. يمكن للمتعامل اختيار هذا الخيار للوصول إلى تجربة التطبيق المحدثة. هذا الخيار ليس خطأً أو إعلاناً لتطبيق غير مرتبط.",keywords:"darb x switch new experience transition app"},
+
+  {id:"WA-301",category:"Free Flow",category_ar:"التدفق الحر",title_en:"How Free Flow parking works",title_ar:"آلية عمل مواقف التدفق الحر",en:"Free Flow parking uses automatic plate recognition without tickets or barriers. For DARB-registered vehicles, eligible fees are deducted automatically from the DARB wallet. Non-registered vehicles must pay within 24 hours after exit using the QR code provided or:\nhttps://freeflow.qmobility.ae",ar:"تعمل مواقف التدفق الحر بالتعرف الآلي على لوحات المركبات من دون تذاكر أو حواجز. للمركبات المسجلة في درب، يتم خصم الرسوم المستحقة تلقائياً من المحفظة. أما المركبات غير المسجلة فيجب دفع الرسوم خلال 24 ساعة من الخروج عبر رمز QR أو من خلال:\nhttps://freeflow.qmobility.ae",keywords:"free flow anpr barrierless 24 hours payment qr darb wallet"},
+  {id:"WA-302",category:"Free Flow",category_ar:"التدفق الحر",title_en:"Mushrif Mall parking tariff",title_ar:"تعرفة مواقف مشرف مول",en:"Mushrif Mall visitor parking operates from 6:00 AM to 2:00 AM.\n• First 3 hours free once per day\n• From 3 to 7 hours: AED 10 per hour or part thereof\n• More than 7 hours: capped at AED 80 per day per visit\n• Overnight from 2:00–6:00 AM: AED 250\n• Saturdays, Sundays, and public holidays are free, excluding overnight parking\n\nDARB-registered vehicles are charged automatically. Other vehicles must pay within 24 hours after exit.",ar:"تعمل مواقف زوار مشرف مول من الساعة 6:00 صباحاً حتى 2:00 صباحاً.\n• أول 3 ساعات مجانية مرة واحدة يومياً\n• من 3 إلى 7 ساعات: 10 دراهم لكل ساعة أو جزء منها\n• أكثر من 7 ساعات: حد أقصى 80 درهماً لليوم لكل زيارة\n• الوقوف الليلي من 2:00 إلى 6:00 صباحاً: 250 درهماً\n• السبت والأحد والعطلات الرسمية مجانية باستثناء الوقوف الليلي\n\nيتم الخصم تلقائياً للمركبات المسجلة في درب، وعلى المركبات الأخرى الدفع خلال 24 ساعة من الخروج.",keywords:"mushrif mall fees 3 hours 10 80 overnight 250 weekends"},
+  {id:"WA-303",category:"Free Flow",category_ar:"التدفق الحر",title_en:"Mushrif Mall gym visitors overnight",title_ar:"زوار النادي الرياضي في مشرف مول ليلاً",en:"Gym visitors parking at Mushrif Mall between 2:00 AM and 6:00 AM must have the vehicle number validated directly by the gym. A correctly validated vehicle receives the first 3 hours free during the overnight window. Without gym validation, the AED 250 overnight charge applies. Validation disputes must be directed to gym management unless there is a separate parking-system issue.",ar:"يجب على زوار النادي الرياضي الذين يوقفون مركباتهم في مشرف مول بين الساعة 2:00 و6:00 صباحاً التحقق من رقم المركبة مباشرةً لدى النادي. تحصل المركبة التي تم اعتمادها بشكل صحيح على أول 3 ساعات مجاناً خلال فترة الوقوف الليلي. عند عدم الاعتماد، تطبق رسوم الوقوف الليلي بقيمة 250 درهماً. يتم توجيه أي اعتراض على الاعتماد إلى إدارة النادي ما لم توجد مشكلة منفصلة في نظام المواقف.",keywords:"mushrif gym overnight validation 3 hours free 250 management"},
+  {id:"WA-304",category:"Free Flow",category_ar:"التدفق الحر",title_en:"Abu Dhabi Mall parking tariff",title_ar:"تعرفة مواقف أبوظبي مول",en:"Abu Dhabi Mall visitor parking operates from 6:00 AM to 2:00 AM.\n• First 3 hours free once per day\n• Every additional hour or part thereof: AED 10\n• Overnight parking from 2:00–6:00 AM is prohibited except for permitted vehicles\n• Saturdays, Sundays, and public holidays are free, excluding overnight parking\n\nDARB-registered vehicles are charged automatically. Other vehicles must pay within 24 hours after exit.",ar:"تعمل مواقف زوار أبوظبي مول من الساعة 6:00 صباحاً حتى 2:00 صباحاً.\n• أول 3 ساعات مجانية مرة واحدة يومياً\n• كل ساعة إضافية أو جزء منها: 10 دراهم\n• الوقوف الليلي من 2:00 إلى 6:00 صباحاً ممنوع باستثناء المركبات المصرح لها\n• السبت والأحد والعطلات الرسمية مجانية باستثناء الوقوف الليلي\n\nيتم الخصم تلقائياً للمركبات المسجلة في درب، وعلى المركبات الأخرى الدفع خلال 24 ساعة من الخروج.",keywords:"abu dhabi mall fees 3 hours 10 overnight prohibited weekends"},
+  {id:"WA-305",category:"Free Flow",category_ar:"التدفق الحر",title_en:"Etihad Rail station parking",title_ar:"مواقف محطة قطار الاتحاد",en:"Etihad Rail passenger-station parking operates 24/7, including public holidays.\n• First 15 minutes from entry: free\n• Up to 5 hours: AED 5 per hour\n• More than 5 hours and up to 24 hours: AED 30\n• Entry between 2:00–6:00 AM: AED 30 flat tariff for up to 24 hours\n\nFree Flow payment rules apply to the detected vehicle.",ar:"تعمل مواقف محطة قطار الاتحاد للركاب على مدار الساعة طوال أيام الأسبوع بما فيها العطلات الرسمية.\n• أول 15 دقيقة من الدخول مجانية\n• حتى 5 ساعات: 5 دراهم لكل ساعة\n• أكثر من 5 ساعات وحتى 24 ساعة: 30 درهماً\n• الدخول بين 2:00 و6:00 صباحاً: رسم ثابت 30 درهماً لمدة تصل إلى 24 ساعة\n\nتطبق قواعد دفع مواقف التدفق الحر على المركبة التي تم رصدها.",keywords:"etihad rail station parking 24 7 15 minutes 5 hour 30 overnight"},
+  {id:"WA-306",category:"Free Flow",category_ar:"التدفق الحر",title_en:"Multi-storey parking rates and permits",title_ar:"رسوم وتصاريح المواقف الطابقية",en:"Public multi-storey parking is available at AED 2 per hour, up to AED 15 per day. Permit options are also available for 3, 6, or 12 months. A valid public MSCP permit may be used at eligible Mawaqif-managed multi-storey facilities.",ar:"تتوفر المواقف الطابقية العامة برسوم قدرها درهمان للساعة وبحد أقصى 15 درهماً لليوم. كما تتوفر تصاريح لمدة 3 أو 6 أو 12 شهراً. يمكن استخدام تصريح المواقف الطابقية العام الساري في المرافق المؤهلة التي تديرها مواقف.",keywords:"mscp multi storey 2 hour 15 day permit 3 6 12 months"},
+  {id:"WA-307",category:"Free Flow",category_ar:"التدفق الحر",title_en:"Private parking facility rules",title_ar:"قواعد مرافق المواقف الخاصة",en:"Private parking rules may differ by facility. Customers must follow the signs, marked bays, operating hours, and tariff displayed at the location. Vehicles must not block EV charging bays, People of Determination spaces, access routes, or other restricted areas. Unauthorized parking may result in a fine or towing.",ar:"قد تختلف قواعد المواقف الخاصة من منشأة إلى أخرى. يجب على المتعامل اتباع اللوحات الإرشادية والمواقف المحددة وساعات التشغيل والتعرفة المعروضة في الموقع. يمنع إعاقة مواقف شحن المركبات الكهربائية أو مواقف أصحاب الهمم أو مسارات الدخول والمناطق المقيدة. قد يؤدي الوقوف غير المصرح به إلى مخالفة أو سحب المركبة.",keywords:"private parking rules ev charging pod restricted unauthorized towing"},
+
+  {id:"WA-401",category:"Support",category_ar:"الدعم",title_en:"Submit a complaint through DARB",title_ar:"تقديم شكوى عبر تطبيق درب",en:"Customer complaints must be submitted through the DARB or DARB X application using the appropriate complaint type and subtype. Please attach all required evidence and documents. The old customers@qmobility.ae mailbox is no longer an active complaint channel.",ar:"يجب تقديم شكاوى المتعاملين من خلال تطبيق درب أو درب X مع اختيار نوع الشكوى والتصنيف الفرعي الصحيح وإرفاق جميع الأدلة والمستندات المطلوبة. لم يعد البريد customers@qmobility.ae قناة فعالة لاستقبال الشكاوى.",keywords:"complaint darb x app old email discontinued evidence subtype"},
+  {id:"WA-402",category:"Support",category_ar:"الدعم",title_en:"Towing-yard operating hours",title_ar:"ساعات عمل ساحات الحجز",en:"Towing-yard operating hours:\n• Al Karama Car Pound: 24 hours, 7 days a week\n• Al Ain Car Pound: 8:00 AM to 12:00 midnight, daily\n• Musaffah Car Pound: 8:00 AM to 12:00 midnight, daily\n\nPlease confirm the vehicle location before directing the customer.",ar:"ساعات عمل ساحات الحجز:\n• ساحة الكرامة: على مدار الساعة طوال أيام الأسبوع\n• ساحة العين: من 8:00 صباحاً حتى 12:00 منتصف الليل يومياً\n• ساحة مصفح: من 8:00 صباحاً حتى 12:00 منتصف الليل يومياً\n\nيرجى التأكد من موقع المركبة قبل توجيه المتعامل.",keywords:"towing yard pound hours karama al ain musaffah 24 7"},
+  {id:"WA-403",category:"Support",category_ar:"الدعم",title_en:"Vehicle towing and release fees",title_ar:"رسوم سحب وإفراج المركبة",en:"The standard vehicle towing fee is AED 500 and must be paid before release. Additional storage or impound fees may apply depending on the case and collection time. Court settlement or a time-barred fine does not automatically cancel towing and impound fees.",ar:"تبلغ رسوم سحب المركبة القياسية 500 درهم ويجب دفعها قبل الإفراج عن المركبة. قد تطبق رسوم إضافية للتخزين أو الحجز بحسب الحالة ومدة التأخير في الاستلام. لا يؤدي سداد المخالفة عن طريق المحكمة أو سقوطها بالتقادم إلى إلغاء رسوم السحب والحجز تلقائياً.",keywords:"towing release fee 500 storage impound court settlement"},
+  {id:"WA-404",category:"Support",category_ar:"الدعم",title_en:"Q Mobility branch working hours",title_ar:"ساعات عمل فروع كيو موبيليتي",en:"Q Mobility branch working hours:\n• Monday to Thursday: 7:30 AM to 3:30 PM\n• Friday: 7:30 AM to 11:00 AM\n\nBranches are available in Abu Dhabi and Al Ain. Please use the KB location links to send the correct map to the customer.",ar:"ساعات عمل فروع كيو موبيليتي:\n• من الاثنين إلى الخميس: 7:30 صباحاً حتى 3:30 مساءً\n• الجمعة: 7:30 صباحاً حتى 11:00 صباحاً\n\nتتوفر الفروع في أبوظبي والعين. يرجى استخدام روابط المواقع في قاعدة المعرفة لإرسال الخريطة الصحيحة للمتعامل.",keywords:"q mobility branch hours abu dhabi al ain maps"},
+  {id:"WA-405",category:"Support",category_ar:"الدعم",title_en:"Information not available",title_ar:"المعلومة غير متوفرة",en:"Thank you for your inquiry. The requested information is not currently available in the approved knowledge base. I will document the question and refer it through the correct internal channel for verification. We will avoid providing an unconfirmed answer.",ar:"شكراً لاستفساركم. المعلومة المطلوبة غير متوفرة حالياً في قاعدة المعرفة المعتمدة. سأقوم بتوثيق السؤال وإحالته عبر القناة الداخلية الصحيحة للتحقق، ولن نقدم معلومة غير مؤكدة.",keywords:"not found unavailable verify request article unconfirmed"}
+];
 
 // ===== SERVICES — MAWAQIF =====
 var SERVICES_MAWAQIF = {
@@ -2105,6 +2215,7 @@ var NAV_LABELS = {
   'general':'General Info / Yards',
   'service-centers':'Service Centers',
   'call-scripts':'Call Scripts',
+  'whatsapp':'WhatsApp Responses',
   'services':'Qmobility Services'
 };
 
@@ -2172,6 +2283,9 @@ function _emptyAdminCache() {
     custom_topics: {},
     topic_overrides: {},
     topic_deletions: [],
+    custom_whatsapp: {},
+    whatsapp_overrides: {},
+    deleted_whatsapp: [],
     draft_faqs: {},
     sources: {},
     change_log: [],
@@ -2193,6 +2307,7 @@ function _normalizeAdminCache(data) {
   });
   if (!Array.isArray(base.deleted_faqs)) base.deleted_faqs = [];
   if (!Array.isArray(base.topic_deletions)) base.topic_deletions = [];
+  if (!Array.isArray(base.deleted_whatsapp)) base.deleted_whatsapp = [];
   if (!Array.isArray(base.change_log)) base.change_log = [];
   if (!Array.isArray(base.snapshots)) base.snapshots = [];
   return base;
@@ -2340,6 +2455,28 @@ function _applyAdminPayload(data) {
       }
     }
   }
+
+  // 8. Apply shared WhatsApp response additions, edits, and deletions.
+  if (data.custom_whatsapp) {
+    Object.keys(data.custom_whatsapp).forEach(function(wid){
+      var custom = data.custom_whatsapp[wid];
+      var customIndex = WHATSAPP_RESPONSES.findIndex(function(x){ return x.id === wid; });
+      if (customIndex >= 0) WHATSAPP_RESPONSES[customIndex] = custom;
+      else WHATSAPP_RESPONSES.push(custom);
+    });
+  }
+  if (data.whatsapp_overrides) {
+    Object.keys(data.whatsapp_overrides).forEach(function(wid){
+      var responseIndex = WHATSAPP_RESPONSES.findIndex(function(x){ return x.id === wid; });
+      if (responseIndex >= 0) WHATSAPP_RESPONSES[responseIndex] = data.whatsapp_overrides[wid];
+    });
+  }
+  if (Array.isArray(data.deleted_whatsapp)) {
+    data.deleted_whatsapp.forEach(function(wid){
+      var responseIndex = WHATSAPP_RESPONSES.findIndex(function(x){ return x.id === wid; });
+      if (responseIndex >= 0) WHATSAPP_RESPONSES.splice(responseIndex, 1);
+    });
+  }
 }
 
 // Persist the full _adminCache to the configured shared store or local fallback.
@@ -2367,6 +2504,9 @@ async function loadAdminData() {
       _adminCache.custom_topics   = stored.custom_topics;
       _adminCache.topic_overrides = stored.topic_overrides;
       _adminCache.topic_deletions = stored.topic_deletions;
+      _adminCache.custom_whatsapp = stored.custom_whatsapp;
+      _adminCache.whatsapp_overrides = stored.whatsapp_overrides;
+      _adminCache.deleted_whatsapp = stored.deleted_whatsapp;
       _adminCache.draft_faqs      = stored.draft_faqs;
       _adminCache.sources         = stored.sources;
       _adminCache.change_log      = stored.change_log;
@@ -2631,11 +2771,7 @@ function adminQualityScan() {
 async function resetAllAdminEdits() {
   if (!confirm('Reset ALL admin edits? This will restore the original KB content for everyone.')) return;
   try {
-    _adminCache = {
-      custom_faqs: {}, edited_faqs: {}, deleted_faqs: [],
-      faq_overrides: {}, custom_topics: {}, topic_overrides: {}, topic_deletions: [],
-      draft_faqs: {}, sources: {}, change_log: [], snapshots: []
-    };
+    _adminCache = _emptyAdminCache();
     await kbStoreDelete('kb_admin_data', {auth:true});
     showToast('All admin edits cleared - ' + kbSaveLabel() + '. Reloading...');
     setTimeout(function(){ location.reload(); }, 1500);
@@ -2844,6 +2980,7 @@ function buildNav() {
   h += '<div class="nav-sidebar-item' + (S.page==='sms'?' active':'') + '" onclick="go(&#39;sms&#39;,&#39;SMS Templates&#39;)">&#128172; SMS Templates</div>';
   h += '<div class="nav-sidebar-item' + (S.page==='email'?' active':'') + '" onclick="go(&#39;email&#39;,&#39;Email Templates&#39;)">&#9993; Email Templates</div>';
   h += '<div class="nav-sidebar-item' + (S.page==='call-scripts'?' active':'') + '" onclick="go(&#39;call-scripts&#39;,&#39;Call Scripts&#39;)">&#128483; Call Scripts</div>';
+  h += '<div class="nav-sidebar-item' + (S.page==='whatsapp'?' active':'') + '" onclick="go(&#39;whatsapp&#39;,&#39;WhatsApp Responses&#39;)">&#128172; WhatsApp Responses</div>';
   h += '<div class="nav-sidebar-item' + (S.page==='general'?' active':'') + '" onclick="go(&#39;general&#39;,&#39;General Info / Yards&#39;)">&#9432; General Info / Yards</div>';
   h += '<div class="nav-sidebar-item' + (S.page==='services'?' active':'') + '" onclick="go(&#39;services&#39;,&#39;Qmobility Services&#39;)">&#127760; ' + t('services') + '</div>';
 
@@ -2999,6 +3136,7 @@ function render(page) {
   else if (page === 'general') renderGeneral(el);
   else if (page === 'services') renderServices(el);
   else if (page === 'call-scripts') renderCallScripts(el);
+  else if (page === 'whatsapp') renderWhatsAppResponses(el);
   else if (page === 'admin-panel') renderAdminPanel(el);
   else if (page === 'admin-analytics') renderAnalytics(el);
   else if (page === 'search') renderSearch(el, _lastSearchQuery || (document.getElementById('searchInput')||{}).value || '');
@@ -4676,6 +4814,217 @@ function renderCallScripts(el) {
   el.innerHTML = h;
 }
 
+// ===== WHATSAPP RESPONSE DESK =====
+var WA_UI = {query:'', category:'All', mode:'bi', includeGreeting:false};
+
+function _waCategories() {
+  var seen = {};
+  return WHATSAPP_RESPONSES.filter(function(item){
+    if (seen[item.category]) return false;
+    seen[item.category] = true;
+    return true;
+  }).map(function(item){ return {name:item.category, name_ar:item.category_ar || item.category}; });
+}
+
+function _waResponseById(id) {
+  return WHATSAPP_RESPONSES.find(function(item){ return item.id === id; });
+}
+
+function _waMessage(item) {
+  if (!item) return '';
+  var greeting = _waResponseById('WA-001');
+  var en = item.en || '';
+  var ar = item.ar || '';
+  if (WA_UI.includeGreeting && greeting && item.id !== greeting.id) {
+    en = greeting.en + '\n\n' + en;
+    ar = greeting.ar + '\n\n' + ar;
+  }
+  if (WA_UI.mode === 'en') return en;
+  if (WA_UI.mode === 'ar') return ar;
+  return en + '\n\n------------------------------\n\n' + ar;
+}
+
+function _waVisibleResponses() {
+  var q = (WA_UI.query || '').trim().toLowerCase();
+  return WHATSAPP_RESPONSES.filter(function(item){
+    if (WA_UI.category !== 'All' && item.category !== WA_UI.category) return false;
+    if (!q) return true;
+    var haystack = [item.id,item.category,item.category_ar,item.title_en,item.title_ar,item.en,item.ar,item.keywords].join(' ').toLowerCase();
+    return haystack.indexOf(q) >= 0;
+  });
+}
+
+function renderWhatsAppResponses(el) {
+  var categories = _waCategories();
+  var h = '<div class="wa-page">';
+  h += '<section class="wa-hero">';
+  h += '<div class="wa-hero-copy"><span class="wa-kicker">New agent channel</span>';
+  h += '<h1>WhatsApp response desk</h1>';
+  h += '<p>Customer-ready English and Arabic replies built from the approved scripts and operational articles in this knowledge base. Search a customer issue, choose the language, then copy the complete response.</p>';
+  h += '<div class="wa-hero-facts"><span>' + WHATSAPP_RESPONSES.length + ' approved responses</span><span>' + categories.length + ' operational groups</span><span>Linked to KB guidance</span></div></div>';
+  h += '<div class="wa-live-scene" aria-hidden="true">';
+  h += '<div class="wa-live-bubble incoming">I need help with Mushrif Mall overnight parking.<small>10:42</small></div>';
+  h += '<div class="wa-live-bubble outgoing">' + escHtml((_waResponseById('WA-001') || {}).ar || 'Q Mobility WhatsApp') + '<small>10:42 &#10003;&#10003;</small></div>';
+  h += '<div class="wa-typing"><i></i><i></i><i></i></div></div>';
+  h += '</section>';
+
+  h += '<section class="wa-toolbar" aria-label="WhatsApp response filters">';
+  h += '<div class="wa-toolbar-row">';
+  h += '<label class="wa-search"><span class="sr-only">Search WhatsApp responses</span><input id="waSearch" type="search" autocomplete="off" value="' + escHtml(WA_UI.query) + '" placeholder="Search parking, fine, DARB, Mushrif..." oninput="filterWhatsAppResponses(this.value)" aria-label="Search WhatsApp responses"></label>';
+  h += '<div class="wa-mode" role="group" aria-label="Response language">';
+  h += '<button type="button" data-wa-mode="en" class="' + (WA_UI.mode==='en'?'active':'') + '" onclick="setWhatsAppMode(&#39;en&#39;)">English</button>';
+  h += '<button type="button" data-wa-mode="ar" class="' + (WA_UI.mode==='ar'?'active':'') + '" onclick="setWhatsAppMode(&#39;ar&#39;)">Arabic</button>';
+  h += '<button type="button" data-wa-mode="bi" class="' + (WA_UI.mode==='bi'?'active':'') + '" onclick="setWhatsAppMode(&#39;bi&#39;)">Both</button></div>';
+  h += '<label class="wa-greeting-toggle"><input type="checkbox" ' + (WA_UI.includeGreeting?'checked':'') + ' onchange="toggleWhatsAppGreeting(this.checked)"> Add greeting</label>';
+  if (S.admin) h += '<button type="button" class="wa-copy-btn" onclick="openWhatsAppEditor()">+ Add response</button>';
+  h += '</div>';
+  h += '<div class="wa-category-row" role="group" aria-label="Response categories">';
+  h += '<button type="button" class="wa-category-chip' + (WA_UI.category==='All'?' active':'') + '" onclick="setWhatsAppCategory(&#39;All&#39;)">All</button>';
+  categories.forEach(function(cat){
+    var label = S.lang === 'ar' ? cat.name_ar : cat.name;
+    h += '<button type="button" class="wa-category-chip' + (WA_UI.category===cat.name?' active':'') + '" onclick="setWhatsAppCategory(&#39;' + _kbJsArg(cat.name) + '&#39;)">' + escHtml(label) + '</button>';
+  });
+  h += '</div></section>';
+
+  h += '<div class="wa-results-head"><div><h2>Ready-to-send responses</h2><p id="waResultCount" aria-live="polite"></p></div>';
+  h += '<button type="button" class="wa-kb-btn" onclick="go(&#39;call-scripts&#39;,&#39;Call Scripts&#39;)">Open call scripts</button></div>';
+  h += '<div id="waResponseGrid" class="wa-response-grid"></div>';
+  h += '</div>';
+  el.innerHTML = h;
+  renderWhatsAppList();
+}
+
+function renderWhatsAppList() {
+  var grid = document.getElementById('waResponseGrid');
+  var count = document.getElementById('waResultCount');
+  if (!grid) return;
+  var rows = _waVisibleResponses();
+  if (count) count.textContent = rows.length + ' of ' + WHATSAPP_RESPONSES.length + ' responses';
+  if (!rows.length) {
+    grid.innerHTML = '<div class="wa-empty"><strong>No matching response</strong><br>Try a service name, location, fine, permit, payment, or complaint keyword.</div>';
+    return;
+  }
+  var h = '';
+  rows.forEach(function(item){
+    var message = _waMessage(item);
+    var title = WA_UI.mode === 'ar' ? (item.title_ar || item.title_en) : item.title_en;
+    var category = S.lang === 'ar' ? (item.category_ar || item.category) : item.category;
+    var paneClass = WA_UI.mode === 'ar' ? ' ar' : (WA_UI.mode === 'bi' ? ' bilingual' : '');
+    h += '<article class="wa-response-card kb-live-reveal kb-in-view">';
+    h += '<div class="wa-response-head"><div><small>' + escHtml(category) + '</small><h3' + (WA_UI.mode==='ar'?' dir="rtl"':'') + '>' + escHtml(title) + '</h3></div><span class="wa-response-id">' + escHtml(item.id) + '</span></div>';
+    h += '<div class="wa-message-pane' + paneClass + '">' + escHtml(message) + '</div>';
+    h += '<div class="wa-response-actions">';
+    h += '<button type="button" class="wa-copy-btn" onclick="copyWhatsAppResponse(&#39;' + _kbJsArg(item.id) + '&#39;)">Copy response</button>';
+    h += '<button type="button" class="wa-kb-btn" onclick="openWhatsAppInKb(&#39;' + _kbJsArg(item.id) + '&#39;)">Find in KB</button>';
+    if (S.admin) {
+      h += '<button type="button" class="wa-admin-btn" onclick="openWhatsAppEditor(&#39;' + _kbJsArg(item.id) + '&#39;)">Edit</button>';
+      h += '<button type="button" class="wa-admin-btn" onclick="deleteWhatsAppResponse(&#39;' + _kbJsArg(item.id) + '&#39;)">Delete</button>';
+    }
+    h += '</div></article>';
+  });
+  grid.innerHTML = h;
+}
+
+function filterWhatsAppResponses(value) {
+  WA_UI.query = value || '';
+  renderWhatsAppList();
+}
+
+function setWhatsAppCategory(category) {
+  WA_UI.category = category || 'All';
+  renderWhatsAppResponses(document.getElementById('content'));
+}
+
+function setWhatsAppMode(mode) {
+  WA_UI.mode = mode || 'bi';
+  document.querySelectorAll('[data-wa-mode]').forEach(function(btn){
+    btn.classList.toggle('active', btn.getAttribute('data-wa-mode') === WA_UI.mode);
+  });
+  renderWhatsAppList();
+}
+
+function toggleWhatsAppGreeting(enabled) {
+  WA_UI.includeGreeting = !!enabled;
+  renderWhatsAppList();
+}
+
+function copyWhatsAppResponse(id) {
+  var item = _waResponseById(id);
+  if (item) copyText(_waMessage(item));
+}
+
+function openWhatsAppInKb(id) {
+  var item = _waResponseById(id);
+  if (!item) return;
+  quickFind(item.keywords || item.title_en || item.category);
+}
+
+function openWhatsAppEditor(id) {
+  if (!S.admin) { showToast('Admin login required'); return; }
+  var item = id ? _waResponseById(id) : null;
+  var h = '<div style="display:grid;gap:11px;">';
+  h += '<input type="hidden" id="waEditId" value="' + escHtml(item ? item.id : '') + '">';
+  h += '<label>Category<input id="waEditCategory" value="' + escHtml(item ? item.category : 'Support') + '" placeholder="Mawaqif"></label>';
+  h += '<label>Arabic category<input id="waEditCategoryAr" dir="rtl" value="' + escHtml(item ? (item.category_ar || '') : '') + '"></label>';
+  h += '<label>English title<input id="waEditTitleEn" value="' + escHtml(item ? item.title_en : '') + '"></label>';
+  h += '<label>Arabic title<input id="waEditTitleAr" dir="rtl" value="' + escHtml(item ? (item.title_ar || '') : '') + '"></label>';
+  h += '<label>English response<textarea id="waEditEn" rows="8">' + escHtml(item ? item.en : '') + '</textarea></label>';
+  h += '<label>Arabic response<textarea id="waEditAr" dir="rtl" rows="8">' + escHtml(item ? item.ar : '') + '</textarea></label>';
+  h += '<label>KB search keywords<input id="waEditKeywords" value="' + escHtml(item ? (item.keywords || '') : '') + '" placeholder="parking permit payment"></label>';
+  h += '<div style="display:flex;gap:8px;justify-content:flex-end;"><button type="button" class="wa-kb-btn" onclick="hideTopicModal()">Cancel</button><button type="button" class="wa-copy-btn" onclick="saveWhatsAppResponse()">Publish response</button></div>';
+  h += '</div>';
+  showTopicModal(item ? 'Edit WhatsApp response' : 'Add WhatsApp response', h);
+}
+
+async function saveWhatsAppResponse() {
+  if (!S.admin) { showToast('Admin login required'); return; }
+  var oldId = document.getElementById('waEditId').value;
+  var titleEn = document.getElementById('waEditTitleEn').value.trim();
+  var titleAr = document.getElementById('waEditTitleAr').value.trim();
+  var en = document.getElementById('waEditEn').value.trim();
+  var ar = document.getElementById('waEditAr').value.trim();
+  if (!titleEn || !en || !ar) { showToast('English title and both responses are required'); return; }
+  var id = oldId || ('WA-ADMIN-' + Date.now());
+  var item = {
+    id:id,
+    category:document.getElementById('waEditCategory').value.trim() || 'Support',
+    category_ar:document.getElementById('waEditCategoryAr').value.trim(),
+    title_en:titleEn,
+    title_ar:titleAr,
+    en:en,
+    ar:ar,
+    keywords:document.getElementById('waEditKeywords').value.trim()
+  };
+  _pushAdminSnapshot(oldId ? 'Edit WhatsApp response' : 'Add WhatsApp response', id);
+  var idx = WHATSAPP_RESPONSES.findIndex(function(x){ return x.id === id; });
+  if (idx >= 0) WHATSAPP_RESPONSES[idx] = item; else WHATSAPP_RESPONSES.push(item);
+  if (id.indexOf('WA-ADMIN-') === 0) _adminCache.custom_whatsapp[id] = item;
+  else _adminCache.whatsapp_overrides[id] = item;
+  _adminCache.deleted_whatsapp = (_adminCache.deleted_whatsapp || []).filter(function(x){ return x !== id; });
+  _addAdminLog(oldId ? 'Edit WhatsApp response' : 'Add WhatsApp response', id, titleEn);
+  if (!(await _persistCache())) return;
+  hideTopicModal();
+  renderWhatsAppResponses(document.getElementById('content'));
+  buildNav();
+  showToast('WhatsApp response published - ' + kbSaveLabel());
+}
+
+async function deleteWhatsAppResponse(id) {
+  if (!S.admin) { showToast('Admin login required'); return; }
+  var item = _waResponseById(id);
+  if (!item || !confirm('Delete WhatsApp response "' + item.title_en + '" for all users?')) return;
+  _pushAdminSnapshot('Delete WhatsApp response', id);
+  delete _adminCache.custom_whatsapp[id];
+  delete _adminCache.whatsapp_overrides[id];
+  if (_adminCache.deleted_whatsapp.indexOf(id) < 0) _adminCache.deleted_whatsapp.push(id);
+  var idx = WHATSAPP_RESPONSES.findIndex(function(x){ return x.id === id; });
+  if (idx >= 0) WHATSAPP_RESPONSES.splice(idx, 1);
+  _addAdminLog('Delete WhatsApp response', id, item.title_en);
+  if (!(await _persistCache())) return;
+  renderWhatsAppResponses(document.getElementById('content'));
+  showToast('WhatsApp response deleted - ' + kbSaveLabel());
+}
+
 
 // ===== FIX 9: ADMIN CRUD =====
 async function renderAnalytics(el) {
@@ -4896,6 +5245,12 @@ function renderAdminPanel(el) {
   h += '<button class="btn" onclick="undoLastAdminPublish()" style="background:#6A1B9A">Undo Last Publish</button>';
   h += '<button class="btn" onclick="exportAdminAudit()" style="background:#455A64">Copy Audit JSON</button>';
   h += '</div></div>';
+
+  h += '<div class="card" style="border-left:4px solid #128c7e;"><h3>WhatsApp Response Desk</h3>';
+  h += '<p style="font-size:13px;color:#666;margin-top:0;">Manage the shared bilingual responses used by the WhatsApp team. Published changes sync to every user through the configured shared store.</p>';
+  h += '<div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;"><strong style="font-size:24px;color:#075e54;">' + WHATSAPP_RESPONSES.length + '</strong><span style="font-size:12px;color:#667085;">live responses</span>';
+  h += '<button class="btn" style="background:#075e54" onclick="go(&#39;whatsapp&#39;,&#39;WhatsApp Responses&#39;)">Manage responses</button>';
+  h += '<button class="btn" style="background:#128c7e" onclick="openWhatsAppEditor()">+ Add response</button></div></div>';
 
   // Topics section
   h += '<div class="card"><h3>Tabs / Topics</h3>';
@@ -6534,7 +6889,7 @@ var _kbVisualObserver = null;
 function enhanceKbVisuals(root) {
   if (!root) return;
   if (_kbVisualObserver) _kbVisualObserver.disconnect();
-  var nodes = Array.prototype.slice.call(root.querySelectorAll('.kb-visual-strip,.kb-latest-ops,.agent-grid-two,.agent-panel,.kb-page-hero,.submenu-grid,.faq-card'));
+  var nodes = Array.prototype.slice.call(root.querySelectorAll('.kb-visual-strip,.kb-latest-ops,.agent-grid-two,.agent-panel,.kb-page-hero,.submenu-grid,.faq-card,.wa-response-card,.wa-category-chip,.email-card,.sms-card,.script-card,.service-link,.update-item'));
   if (!nodes.length) return;
   nodes.forEach(function(node, index){
     node.classList.add('kb-live-reveal');
@@ -6718,6 +7073,7 @@ function renderDashboard(el) {
   h += '<button type="button" class="kb-mini-link" onclick="go(&#39;sector-darb&#39;,&#39;DARB&#39;)">DARB</button>';
   h += '<button type="button" class="kb-mini-link" onclick="quickFind(&#39;mscp maximum stay permit&#39;)">MSCP</button>';
   h += '<button type="button" class="kb-mini-link" onclick="quickFind(&#39;Mushrif Mall FreeFlow AI&#39;)">Mushrif</button>';
+  h += '<button type="button" class="kb-mini-link" onclick="go(&#39;whatsapp&#39;,&#39;WhatsApp Responses&#39;)">WhatsApp</button>';
   h += '</div>';
   h += '</div>';
   h += '</section>';
@@ -6755,6 +7111,7 @@ function renderDashboard(el) {
   h += _kbAct('Free Flow', 'Auto deduction, wallet balance, non-DARB payment link.', 'free flow auto deduction wallet non darb payment');
   h += _kbAct('Templates', 'SMS, email, scripts, and customer wording.', 'sms template email call script guidance');
   h += _kbAct('DARB X', 'Complaint, vehicle registration, and card setup.', 'DARB X complaint vehicle registration card setup');
+  h += '<button type="button" class="agent-action" onclick="go(&#39;whatsapp&#39;,&#39;WhatsApp Responses&#39;)"><b>WhatsApp desk</b><span>Bilingual replies, language modes, instant copy, and KB lookup.</span></button>';
   h += '</div></div>';
 
   h += '<div class="agent-panel"><h2>Current Facts</h2><div class="agent-alerts">';
