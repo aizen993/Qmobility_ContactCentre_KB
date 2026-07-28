@@ -3725,38 +3725,51 @@ function focusSearch() {
 
 // Synonym / acronym expansion. Each group: any member typed pulls in the rest.
 var SEARCH_SYNONYMS = [
-  ['mbz','mohamed bin zayed','mohammed bin zayed','mbz city'],
-  ['pod','people of determination','determination','disabled','special needs','handicap'],
-  ['mscp','multi storey car park','multi-storey','multistorey','parking building','car park building'],
+  ['mbz','mohamed bin zayed','mohammed bin zayed','mbz city','\u0645\u062d\u0645\u062f \u0628\u0646 \u0632\u0627\u064a\u062f'],
+  ['mushrif','mushrif mall','\u0645\u0634\u0631\u0641','\u0645\u0634\u0631\u0641 \u0645\u0648\u0644'],
+  ['etihad rail','rail station','\u0642\u0637\u0627\u0631 \u0627\u0644\u0627\u062a\u062d\u0627\u062f','\u0645\u062d\u0637\u0647 \u0627\u0644\u0642\u0637\u0627\u0631'],
+  ['pod','people of determination','determination','disabled','special needs','handicap','\u0627\u0635\u062d\u0627\u0628 \u0627\u0644\u0647\u0645\u0645'],
+  ['mscp','multi storey car park','multi-storey','multistorey','parking building','car park building','\u0645\u0648\u0627\u0642\u0641 \u0637\u0627\u0628\u0642\u064a\u0647'],
   ['eid','emirates id','national id'],
   ['tc','traffic code','traffic file','file number'],
   ['reg','registration','register','sign up','signup','enroll'],
-  ['darb','toll','toll gate','toll gates','rud','ruc'],
-  ['mawaqif','public parking','street parking'],
-  ['freeflow','free flow','auto deduction','auto-deduction','auto payment parking','barrier free'],
-  ['permit','tasreeh','tasreh'],
-  ['fine','fines','violation','violations','penalty','mukhalafa','black points'],
-  ['topup','top up','top-up','recharge','add balance','add credit','load wallet'],
-  ['wallet','balance','credit','e-wallet'],
-  ['exemption','exempt','excluded','exclude','discount','free'],
-  ['pound','impound','impounded','tow','towing','towed','car pound','seized'],
+  ['darb','toll','toll gate','toll gates','rud','ruc','\u062f\u0631\u0628','\u0628\u0648\u0627\u0628\u0647 \u0627\u0644\u062a\u0639\u0631\u0641\u0647'],
+  ['mawaqif','public parking','street parking','\u0645\u0648\u0627\u0642\u0641','\u0645\u0648\u0642\u0641'],
+  ['freeflow','free flow','auto deduction','auto-deduction','auto payment parking','barrier free','\u062a\u062f\u0641\u0642 \u062d\u0631'],
+  ['permit','permits','tasreeh','tasreh','\u062a\u0635\u0631\u064a\u062d','\u062a\u0635\u0627\u0631\u064a\u062d'],
+  ['fine','fines','violation','violations','penalty','mukhalafa','black points','\u0645\u062e\u0627\u0644\u0641\u0647','\u0645\u062e\u0627\u0644\u0641\u0627\u062a','\u063a\u0631\u0627\u0645\u0647'],
+  ['topup','top up','top-up','recharge','add balance','add credit','load wallet','\u0634\u062d\u0646','\u0627\u0639\u0627\u062f\u0647 \u0627\u0644\u0634\u062d\u0646'],
+  ['wallet','balance','credit','e-wallet','\u0645\u062d\u0641\u0638\u0647','\u0631\u0635\u064a\u062f'],
+  ['exemption','exempt','excluded','exclude','discount','free','\u0627\u0639\u0641\u0627\u0621','\u0645\u0639\u0641\u064a'],
+  ['pound','impound','impounded','tow','towing','towed','car pound','seized','\u062d\u062c\u0632','\u0633\u062d\u0628 \u0627\u0644\u0645\u0631\u0643\u0628\u0647'],
   ['senior','senior citizen','elderly','60 years','retired','retiree','retirement'],
-  ['resident','residential','tawtheeq','tenancy'],
+  ['resident','residential','tawtheeq','tenancy','\u0633\u0643\u0627\u0646','\u0633\u0643\u0646\u064a','\u062a\u0648\u062b\u064a\u0642'],
   ['plate','plates','number plate','licence plate','license plate','lawha'],
   ['gcc','ksa','saudi','kuwait','oman','bahrain','qatar','gulf'],
-  ['sms','text message','message','3009'],
-  ['price','priced','fee','fees','cost','charge','charges','rate','rates','how much','tariff'],
-  ['hours','timing','timings','time','open','opening','working hours','schedule'],
-  ['grievance','grievances','dispute','appeal','object','complaint','contest'],
+  ['sms','text message','message','3009','\u0631\u0633\u0627\u0644\u0647 \u0646\u0635\u064a\u0647'],
+  ['price','priced','fee','fees','cost','charge','charges','rate','rates','how much','tariff','\u0631\u0633\u0648\u0645','\u0633\u0639\u0631','\u062a\u0639\u0631\u0641\u0647','\u062a\u0643\u0644\u0641\u0647'],
+  ['hours','timing','timings','time','open','opening','working hours','schedule','\u0633\u0627\u0639\u0627\u062a','\u0627\u0648\u0642\u0627\u062a','\u0645\u0648\u0627\u0639\u064a\u062f'],
+  ['grievance','grievances','dispute','appeal','object','complaint','contest','\u062a\u0638\u0644\u0645','\u0634\u0643\u0648\u0649','\u0627\u0639\u062a\u0631\u0627\u0636'],
   ['close account','close','cancel account','refund','withdraw','deactivate'],
   ['password','reset','forgot','login','log in','sign in'],
   ['musaffah','mussafah','mussafa','musaffa'],
-  ['contact','call center','call centre','phone','number','hotline','whatsapp','reach'],
-  ['document','documents','papers','requirement','requirements','needed','required'],
+  ['contact','call center','call centre','phone','number','hotline','whatsapp','reach','\u062a\u0648\u0627\u0635\u0644','\u0631\u0642\u0645 \u0627\u0644\u0647\u0627\u062a\u0641'],
+  ['document','documents','papers','requirement','requirements','needed','required','\u0645\u0633\u062a\u0646\u062f\u0627\u062a','\u0645\u062a\u0637\u0644\u0628\u0627\u062a','\u0627\u0648\u0631\u0627\u0642'],
   ['vehicle','car','automobile','motor'],
-  ['establishment','company','business','corporate','organization','organisation'],
+  ['establishment','company','business','corporate','organization','organisation','commercial','\u0634\u0631\u0643\u0647','\u0645\u0646\u0634\u0627\u0647','\u062a\u062c\u0627\u0631\u064a'],
   ['auction','sold','sale'],
   ['app','application','darb x','darb app','mobile']
+];
+
+// Named locations are hard search anchors. They must match topic metadata,
+// never a passing reference inside another location's answer.
+var SEARCH_LOCATION_ANCHORS = [
+  {id:'mushrif', members:['mushrif','mushrif mall','\u0645\u0634\u0631\u0641','\u0645\u0634\u0631\u0641 \u0645\u0648\u0644']},
+  {id:'abu-dhabi-mall', members:['abu dhabi mall','ad mall','admall','abudhabi mall','\u0627\u0628\u0648\u0638\u0628\u064a \u0645\u0648\u0644','\u0623\u0628\u0648\u0638\u0628\u064a \u0645\u0648\u0644']},
+  {id:'etihad-rail', members:['etihad','etihad rail','rail station','\u0642\u0637\u0627\u0631 \u0627\u0644\u0627\u062a\u062d\u0627\u062f','\u0645\u062d\u0637\u0647 \u0627\u0644\u0642\u0637\u0627\u0631','\u0645\u062d\u0637\u0629 \u0627\u0644\u0642\u0637\u0627\u0631']},
+  {id:'mscp', members:['mscp','multi storey car park','multi-storey car park','\u0645\u0648\u0627\u0642\u0641 \u0637\u0627\u0628\u0642\u064a\u0647','\u0645\u0648\u0627\u0642\u0641 \u0637\u0627\u0628\u0642\u064a\u0629']},
+  {id:'mbz', members:['mbz','mbz city','mohamed bin zayed','mohammed bin zayed','\u0645\u062d\u0645\u062f \u0628\u0646 \u0632\u0627\u064a\u062f']},
+  {id:'musaffah', members:['musaffah','mussafah','mussafa','musaffa','\u0645\u0635\u0641\u062d']}
 ];
 
 // Arabic normalization (strip diacritics, unify alef/yaa/taa marbuta)
@@ -3768,6 +3781,34 @@ function _norm(s){
        .replace(/ى/g,'ي')                // alef maqsura -> yaa
        .replace(/ة/g,'ه');               // taa marbuta -> haa
   return s;
+}
+
+function _searchTokenList(value){
+  return _norm(value).split(/[^0-9a-z\u0600-\u06ff]+/).filter(function(word){ return word.length>1; });
+}
+
+function _searchTokenSet(value){
+  var set = {};
+  _searchTokenList(value).forEach(function(word){ set[word]=1; });
+  return set;
+}
+
+// 2 = exact token, 1 = useful prefix while the agent is still typing.
+function _searchTermMatch(set, term, allowPrefix){
+  if(!term) return 0;
+  if(set[term]) return 2;
+  if(!allowPrefix || term.length<3) return 0;
+  for(var word in set){
+    if(word.indexOf(term)===0) return 1;
+  }
+  return 0;
+}
+
+function _searchPhraseMatch(text, phrase){
+  if(!text || !phrase) return false;
+  var cleanText = ' ' + _searchTokenList(text).join(' ') + ' ';
+  var cleanPhrase = ' ' + _searchTokenList(phrase).join(' ') + ' ';
+  return cleanPhrase.trim().length>0 && cleanText.indexOf(cleanPhrase)>=0;
 }
 
 // Bounded Levenshtein (returns >max early)
@@ -3793,6 +3834,8 @@ function _lev(a,b,max){
 // Inject SMS & Email templates into the searchable corpus (once) so agents
 // can find the right template instantly from the global search.
 var _auxInjected = false;
+var _searchVocabulary = [];
+var _searchVocabularySet = {};
 function injectAuxIntoSearch(){
   if(_auxInjected) return;
   _auxInjected = true;
@@ -3824,83 +3867,174 @@ function injectAuxIntoSearch(){
 
 function initSearchIndex(){
   injectAuxIntoSearch();
+  var vocabulary = {};
   FAQS.forEach(function(f){
-    if(f._idx) return;
-    f._qN   = _norm(f.q || '');
-    f._kwN  = _norm((f.kw||'') + ' ' + (f.subcat||'') + ' ' + (f.cat||''));
-    f._catN = _norm((f.cat||'') + ' ' + (f.subcat||''));
-    f._aN   = _norm(stripHtml(f.a||''));
-    f._qArN = _norm((f.q_ar||'') + ' ' + (f.a_ar||''));
-    // word set from question + keywords for fuzzy matching
-    var words = (f._qN + ' ' + f._kwN).split(/[^0-9a-z؀-ۿ]+/).filter(function(w){return w.length>2;});
-    f._words = words;
-    f._idx = true;
+    if(!f._idx){
+      f._qN   = _norm(f.q || '');
+      f._kwN  = _norm((f.kw||'') + ' ' + (f.subcat||'') + ' ' + (f.cat||''));
+      f._catN = _norm((f.cat||'') + ' ' + (f.subcat||''));
+      f._aN   = _norm(stripHtml(f.a||''));
+      f._qArQuestionN = _norm(f.q_ar||'');
+      f._aArN = _norm(stripHtml(f.a_ar||''));
+      f._qArN = _norm(f._qArQuestionN + ' ' + f._aArN);
+      f._topicN = _norm((f.q||'') + ' ' + (f.kw||'') + ' ' + (f.cat||'') + ' ' + (f.subcat||'') + ' ' + (f.page||'') + ' ' + (f.q_ar||''));
+      f._qSet = _searchTokenSet(f._qN);
+      f._kwSet = _searchTokenSet(f._kwN);
+      f._catSet = _searchTokenSet(f._catN);
+      f._aSet = _searchTokenSet(f._aN);
+      f._qArSet = _searchTokenSet(f._qArQuestionN);
+      f._aArSet = _searchTokenSet(f._aArN);
+      f._arSet = _searchTokenSet(f._qArN);
+      var fuzzyWords = {};
+      Object.keys(f._qSet).concat(Object.keys(f._kwSet)).forEach(function(word){
+        if(word.length>2) fuzzyWords[word]=1;
+      });
+      f._words = Object.keys(fuzzyWords);
+      f._idx = true;
+    }
+    (f._words||[]).forEach(function(word){ vocabulary[word]=1; });
   });
+  _searchVocabularySet = vocabulary;
+  _searchVocabulary = Object.keys(vocabulary);
 }
 
 // Expand a raw query into normalized phrase + weighted term list (with synonyms).
 function expandQuery(raw){
   var phrase = _norm(raw.trim());
-  var baseTokens = phrase.split(/[^0-9a-z؀-ۿ]+/).filter(function(w){return w.length>1;});
-  var stop = {'the':1,'a':1,'an':1,'is':1,'are':1,'do':1,'i':1,'to':1,'of':1,'for':1,'how':1,'can':1,'what':1,'my':1,'on':1,'in':1,'and':1};
+  var baseTokens = _searchTokenList(phrase);
+  var stop = {
+    'the':1,'a':1,'an':1,'is':1,'are':1,'do':1,'i':1,'to':1,'of':1,'for':1,'how':1,'can':1,'what':1,'my':1,'on':1,'in':1,'and':1,
+    'much':1,'please':1,'need':1,'want':1,'tell':1,'me':1,'about':1,'with':1,'this':1,'that':1,
+    '\u0645\u0627':1,'\u0647\u0644':1,'\u0643\u064a\u0641':1,'\u0645\u0646':1,'\u0627\u0644\u0649':1,'\u0641\u064a':1,'\u0639\u0644\u0649':1,'\u0639\u0646':1,'\u0627\u0648':1,'\u0645\u0645\u0643\u0646':1
+  };
   var origSet = {};
   var tokens = baseTokens.filter(function(t){return !stop[t];});
   tokens.forEach(function(t){ origSet[t]=1; });
-  // synonym expansion: match groups against the full phrase; collect extras only
+  var baseSet = {};
+  baseTokens.forEach(function(t){ baseSet[t]=1; });
+  // Synonyms only expand from complete words or complete multi-word phrases.
   var synSet = {};
+  var synGroups = [];
   SEARCH_SYNONYMS.forEach(function(group){
-    var hit = group.some(function(m){ return phrase.indexOf(_norm(m))>=0; });
+    var hit = group.some(function(m){
+      var member = _norm(m);
+      return member.indexOf(' ')>=0 ? _searchPhraseMatch(phrase, member) : !!baseSet[member];
+    });
     if(hit){
+      var groupSet = {};
       group.forEach(function(m){
-        _norm(m).split(/\s+/).forEach(function(t){ if(t.length>1 && !stop[t] && !origSet[t]) synSet[t]=1; });
+        _searchTokenList(m).forEach(function(t){
+          if(t.length>1 && !stop[t]) groupSet[t]=1;
+          if(t.length>1 && !stop[t] && !origSet[t]) synSet[t]=1;
+        });
       });
+      synGroups.push(Object.keys(groupSet));
     }
   });
-  return { phrase: phrase, tokens: tokens, syn: Object.keys(synSet) };
+  var anchors = SEARCH_LOCATION_ANCHORS.filter(function(anchor){
+    return anchor.members.some(function(value){
+      var member = _norm(value);
+      return member.indexOf(' ')>=0 ? _searchPhraseMatch(phrase, member) : !!baseSet[member];
+    });
+  });
+  var fuzzy = {};
+  tokens.forEach(function(token){
+    if(token.length<4 || _searchVocabularySet[token] || /[\u0600-\u06ff]/.test(token)) return;
+    var max = token.length>=6 ? 2 : 1;
+    var best = max+1;
+    var matches = [];
+    for(var i=0;i<_searchVocabulary.length;i++){
+      var candidate = _searchVocabulary[i];
+      if(candidate.charAt(0)!==token.charAt(0)) continue;
+      if(Math.abs(token.length-candidate.length)>max) continue;
+      var distance = _lev(token,candidate,max);
+      if(distance<best){ best=distance; matches=[candidate]; }
+      else if(distance===best && matches.length<4){ matches.push(candidate); }
+    }
+    if(best<=max) fuzzy[token]=matches;
+  });
+  return { phrase: phrase, tokens: tokens, syn: Object.keys(synSet), synGroups:synGroups, anchors:anchors, fuzzy:fuzzy, hasArabic:/[\u0600-\u06ff]/.test(phrase) };
 }
 
 function _scoreFaq(f, ex){
   var score = 0;
   var phrase = ex.phrase;
+  var phraseHit = false;
+  var anchorHits = 0;
+  (ex.anchors||[]).forEach(function(anchor){
+    var hit = anchor.members.some(function(value){ return _searchPhraseMatch(f._topicN, _norm(value)); });
+    if(hit){ anchorHits++; score += 260; }
+  });
   // exact phrase bonuses
   if(phrase.length>2){
-    if(f._qN.indexOf(phrase)>=0) score += 120;
-    if(f._kwN.indexOf(phrase)>=0) score += 50;
-    if(f._aN.indexOf(phrase)>=0) score += 18;
-    if(f._qArN.indexOf(phrase)>=0) score += 60;
+    if(_searchPhraseMatch(f._qN,phrase)){ score += 220; phraseHit = true; }
+    if(_searchPhraseMatch(f._kwN,phrase)){ score += 110; phraseHit = true; }
+    if(_searchPhraseMatch(f._aN,phrase)){ score += 42; phraseHit = true; }
+    if(_searchPhraseMatch(f._qArQuestionN,phrase)){ score += 120; phraseHit = true; }
+    if(_searchPhraseMatch(f._aArN,phrase)){ score += 32; phraseHit = true; }
   }
-  // Original query words — full weight (these carry the user's real intent)
+  // Original query words carry the user's real intent.
   var hitsInQK = 0;
+  var hitsAnywhere = 0;
   ex.tokens.forEach(function(t){
-    var inQ = f._qN.indexOf(t)>=0;
-    var inK = f._kwN.indexOf(t)>=0;
-    var inA = f._aN.indexOf(t)>=0;
-    var inAr= f._qArN.indexOf(t)>=0;
-    if(inQ) score += 16;
-    if(inK) score += 9;
-    if(f._catN.indexOf(t)>=0) score += 6;
-    if(inA) score += 2;
-    if(inAr) score += 8;
-    if(inQ||inK) hitsInQK++;
-    // fuzzy typo tolerance against question/keyword words
-    if(!inQ && !inK && !inA && t.length>=4){
-      var max = t.length>=7?2:1;
-      for(var i=0;i<f._words.length;i++){
-        if(_lev(t, f._words[i], max) <= max){ score += 6; break; }
-      }
+    var qMatch = _searchTermMatch(f._qSet,t,true);
+    var kwMatch = _searchTermMatch(f._kwSet,t,true);
+    var catMatch = _searchTermMatch(f._catSet,t,true);
+    var aMatch = _searchTermMatch(f._aSet,t,false);
+    var arQuestionMatch = _searchTermMatch(f._qArSet,t,true);
+    var arAnswerMatch = _searchTermMatch(f._aArSet,t,false);
+    if(qMatch) score += qMatch===2 ? 30 : 14;
+    if(kwMatch) score += kwMatch===2 ? 18 : 8;
+    if(catMatch) score += catMatch===2 ? 12 : 5;
+    if(aMatch) score += 5;
+    if(arQuestionMatch) score += arQuestionMatch===2 ? 15 : 7;
+    if(arAnswerMatch) score += 4;
+    if(qMatch||kwMatch) hitsInQK++;
+    if(qMatch||kwMatch||catMatch||aMatch||arQuestionMatch||arAnswerMatch) hitsAnywhere++;
+    // Typo corrections are resolved once against the shared vocabulary.
+    if(!qMatch && !kwMatch && !catMatch && !aMatch && !arQuestionMatch && !arAnswerMatch && t.length>=4){
+      var corrected = (ex.fuzzy&&ex.fuzzy[t]) || [];
+      var fuzzyHit = corrected.some(function(word){ return !!f._qSet[word] || !!f._kwSet[word]; });
+      if(fuzzyHit){ score += 8; hitsAnywhere++; hitsInQK++; }
     }
   });
-  // Synonym-derived terms — reduced weight, capped so they can't dominate
+  // Synonym terms refine ranking but cannot create unrelated results alone.
   var synScore = 0;
   ex.syn.forEach(function(t){
-    if(f._qN.indexOf(t)>=0) synScore += 5;
-    else if(f._kwN.indexOf(t)>=0) synScore += 3;
-    else if(f._aN.indexOf(t)>=0) synScore += 1;
-    else if(f._qArN.indexOf(t)>=0) synScore += 3;
+    if(_searchTermMatch(f._qSet,t,false)) synScore += 5;
+    else if(_searchTermMatch(f._kwSet,t,false)) synScore += 3;
+    else if(_searchTermMatch(f._aSet,t,false)) synScore += 1;
+    else if(_searchTermMatch(f._qArSet,t,false)) synScore += 3;
+    else if(_searchTermMatch(f._aArSet,t,false)) synScore += 1;
   });
-  score += Math.min(synScore, 18);
-  // all original query words present in question/keywords => strong intent match
-  if(ex.tokens.length>1 && hitsInQK>=ex.tokens.length) score += 40;
+  var synonymGroupHits = 0;
+  var strongSynonymGroupHits = 0;
+  var synonymGroupQuality = 0;
+  (ex.synGroups||[]).forEach(function(group){
+    var quality = 0;
+    group.forEach(function(t){
+      if(_searchTermMatch(f._qSet,t,false)) quality = Math.max(quality,4);
+      else if(_searchTermMatch(f._kwSet,t,false) || _searchTermMatch(f._catSet,t,false)) quality = Math.max(quality,3);
+      else if(_searchTermMatch(f._qArSet,t,false)) quality = Math.max(quality,4);
+      else if(_searchTermMatch(f._aArSet,t,false)) quality = Math.max(quality,1);
+      else if(_searchTermMatch(f._aSet,t,false)) quality = Math.max(quality,1);
+    });
+    if(quality>0){
+      synonymGroupHits++;
+      synonymGroupQuality += quality;
+      if(quality>=3) strongSynonymGroupHits++;
+    }
+  });
+  if(hitsAnywhere>0 || ex.tokens.length===0) score += Math.min(synScore,16);
+  if(ex.hasArabic && synonymGroupHits>0) score += synonymGroupQuality*10;
+  if(ex.tokens.length>1 && hitsInQK>=ex.tokens.length) score += 80;
+  else if(ex.tokens.length>1 && hitsAnywhere>=ex.tokens.length) score += 45;
+  f._searchHits = hitsAnywhere;
+  f._searchQKHits = hitsInQK;
+  f._searchPhraseHit = phraseHit;
+  f._searchAnchorHits = anchorHits;
+  f._searchSynonymGroups = synonymGroupHits;
+  f._searchStrongSynonymGroups = strongSynonymGroupHits;
   return score;
 }
 
@@ -3912,10 +4046,18 @@ function runSearch(raw){
   var scored = [];
   FAQS.forEach(function(f){
     var s = _scoreFaq(f, ex);
-    if(s>0) scored.push({f:f,s:s});
+    var tokenCount = ex.tokens.length;
+    var requiredHits = tokenCount<=2 ? tokenCount : Math.max(2,Math.ceil(tokenCount*.5));
+    var translatedIntent = ex.hasArabic && f._searchStrongSynonymGroups>=Math.min(2,requiredHits);
+    var locationIntent = !ex.anchors.length || f._searchAnchorHits>0;
+    var qualifies = locationIntent && (f._searchPhraseHit || translatedIntent || (tokenCount===0 ? s>0 : f._searchHits>=requiredHits));
+    if(s>0 && qualifies) scored.push({f:f,s:s});
   });
   scored.sort(function(a,b){ return b.s - a.s; });
-  return scored.map(function(x){ return x.f; });
+  if(!scored.length) return [];
+  var best = scored[0].s;
+  var relevanceFloor = best<20 ? best : Math.max(12,best*.16);
+  return scored.filter(function(x){ return x.s>=relevanceFloor; }).slice(0,60).map(function(x){ return x.f; });
 }
 
 // ---- Instant dropdown ----
