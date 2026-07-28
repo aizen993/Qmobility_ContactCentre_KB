@@ -223,6 +223,11 @@ mark{background:#ffeb3b;padding:1px 2px;border-radius:2px}
 .agent-search-panel{display:flex;gap:8px;background:#fff;border:1px solid #cbd8d0;border-radius:8px;padding:8px;box-shadow:0 8px 20px rgba(46,125,50,.08)}
 .agent-search-panel input{flex:1;min-width:0;border:0;font-size:15px;padding:11px 12px;outline:none}
 .agent-search-panel button{white-space:nowrap}
+.agent-search-wrap{position:relative;z-index:40}
+.hero-search-dropdown{position:relative;top:auto;left:auto;right:auto;margin-top:8px;max-height:min(360px,50vh);text-align:left}
+.hero-search-dropdown .sd-item{padding:11px 13px}
+.hero-search-dropdown .sd-q{font-size:14px}
+body[dir="rtl"] .hero-search-dropdown{text-align:right}
 .agent-kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:14px}
 .agent-kpi{background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:12px;animation:softRise .35s ease both}
 .agent-kpi strong{display:block;font-size:22px;color:#111827;line-height:1}
@@ -6862,6 +6867,87 @@ function startHeroSearch(e) {
   return false;
 }
 
+var _heroDdResults = [];
+var _heroDdActive = -1;
+
+function instantHeroSearch() {
+  var input = document.getElementById('heroSearch');
+  var dd = document.getElementById('heroSearchDropdown');
+  if (!input || !dd) return;
+  var raw = input.value.trim();
+  if (raw.length < 2) {
+    hideHeroSearchDropdown();
+    _heroDdResults = [];
+    return;
+  }
+  var ex = expandQuery(raw);
+  var results = runSearch(raw).slice(0, 8);
+  _heroDdResults = results;
+  _heroDdActive = -1;
+  if (!results.length) {
+    dd.innerHTML = '<div class="sd-empty">No related topics yet for "' + escHtml(raw) + '".<br>Keep typing or press <kbd>Enter</kbd> for the full search.</div>';
+    dd.style.display = 'block';
+    return;
+  }
+  var h = '';
+  results.forEach(function(f, i) {
+    var title = (S.lang === 'ar' && f.q_ar) ? f.q_ar : f.q;
+    var snip = _snippet(f, ex);
+    h += '<div class="sd-item" data-i="' + i + '" onmousedown="event.preventDefault();openHeroSearchResult(\'' + _kbJsArg(f.id) + '\')" onmouseenter="_heroDdSetActive(' + i + ')">';
+    h += '<div class="sd-q">' + (f.icon || '&#128172;') + ' ' + _hl(title, ex) + '</div>';
+    if (snip) h += '<div class="sd-snip">' + _hl(snip, ex) + '</div>';
+    if (f.cat) h += '<span class="sd-cat">' + escHtml(f.cat) + '</span>';
+    h += '</div>';
+  });
+  h += '<div class="sd-foot"><span><kbd>&uarr;</kbd><kbd>&darr;</kbd> navigate &middot; <kbd>Enter</kbd> open</span><span onmousedown="event.preventDefault();openHeroFullSearch()" style="cursor:pointer;color:var(--qm);font-weight:600;">See all results &rarr;</span></div>';
+  dd.innerHTML = h;
+  dd.style.display = 'block';
+}
+
+function _heroDdSetActive(i) {
+  _heroDdActive = i;
+  var items = document.querySelectorAll('#heroSearchDropdown .sd-item');
+  items.forEach(function(el, idx) { el.classList.toggle('active', idx === i); });
+}
+
+function hideHeroSearchDropdown() {
+  var dd = document.getElementById('heroSearchDropdown');
+  if (dd) dd.style.display = 'none';
+  _heroDdActive = -1;
+}
+
+function heroSearchKeyNav(e) {
+  var dd = document.getElementById('heroSearchDropdown');
+  var open = dd && dd.style.display === 'block' && _heroDdResults.length > 0;
+  if (e.key === 'ArrowDown' && open) {
+    e.preventDefault();
+    _heroDdSetActive(Math.min(_heroDdActive + 1, _heroDdResults.length - 1));
+  } else if (e.key === 'ArrowUp' && open) {
+    e.preventDefault();
+    _heroDdSetActive(Math.max(_heroDdActive - 1, 0));
+  } else if (e.key === 'Enter') {
+    if (open && _heroDdActive >= 0) {
+      e.preventDefault();
+      openHeroSearchResult(_heroDdResults[_heroDdActive].id);
+    }
+  } else if (e.key === 'Escape') {
+    hideHeroSearchDropdown();
+  }
+}
+
+function openHeroSearchResult(id) {
+  var hero = document.getElementById('heroSearch');
+  var top = document.getElementById('searchInput');
+  if (hero && top) top.value = hero.value.trim();
+  hideHeroSearchDropdown();
+  openFaqById(id);
+}
+
+function openHeroFullSearch() {
+  hideHeroSearchDropdown();
+  startHeroSearch();
+}
+
 function _kbAct(title, detail, query) {
   return '<button type="button" class="agent-action" onclick="quickFind(\'' + query.replace(/'/g,"\\'") + '\')"><b>' + title + '</b><span>' + detail + '</span></button>';
 }
@@ -7122,10 +7208,13 @@ function renderDashboard(el) {
   h += '<div class="agent-eyebrow">QMobility KB 2026</div>';
   h += '<h1>Agent answer desk</h1>';
   h += '<p>Start with search for the caller question, then use the fast lanes below for the most common parking, toll, permit, payment, template, and escalation answers.</p>';
+  h += '<div class="agent-search-wrap">';
   h += '<form class="agent-search-panel" onsubmit="return startHeroSearch(event)">';
-  h += '<input id="heroSearch" type="search" autocomplete="off" placeholder="Search fine, permit, DARB, SMS...">';
+  h += '<input id="heroSearch" type="search" autocomplete="off" placeholder="Search fine, permit, DARB, SMS..." oninput="instantHeroSearch()" onfocus="instantHeroSearch()" onkeydown="heroSearchKeyNav(event)">';
   h += '<button class="btn" type="submit">Search</button>';
   h += '</form>';
+  h += '<div class="search-dropdown hero-search-dropdown" id="heroSearchDropdown"></div>';
+  h += '</div>';
   h += '<div class="agent-chip-row">';
   ['parking fine','resident permit documents','DARB exemption','SMS 3009','Free Flow payment','DARB X complaint','DARB X vehicle registration'].forEach(function(q){
     h += '<button type="button" class="agent-chip" onclick="quickFind(\'' + q + '\')">' + q + '</button>';
@@ -7191,10 +7280,13 @@ function renderDashboard(el) {
   h += '<div class="agent-eyebrow">QMobility KB 2026</div>';
   h += '<h1>Visual answer desk</h1>';
   h += '<p>Fine, permit, DARB, SMS, Free Flow, sector, payment, complaint, and template answers in one fast operational view.</p>';
+  h += '<div class="agent-search-wrap">';
   h += '<form class="agent-search-panel" onsubmit="return startHeroSearch(event)">';
-  h += '<input id="heroSearch" type="search" autocomplete="off" placeholder="Search fine, permit, DARB, SMS...">';
+  h += '<input id="heroSearch" type="search" autocomplete="off" placeholder="Search fine, permit, DARB, SMS..." oninput="instantHeroSearch()" onfocus="instantHeroSearch()" onkeydown="heroSearchKeyNav(event)">';
   h += '<button class="btn" type="submit">Search</button>';
   h += '</form>';
+  h += '<div class="search-dropdown hero-search-dropdown" id="heroSearchDropdown"></div>';
+  h += '</div>';
   h += '<div class="agent-chip-row">';
   ['parking fine','resident permit documents','DARB exemption','SMS 3009','Free Flow payment','DARB X complaint','Mushrif Mall','MBZ permit sectors'].forEach(function(q){
     h += '<button type="button" class="agent-chip" onclick="quickFind(\'' + _kbJsArg(q) + '\')">' + escHtml(q) + '</button>';
@@ -7359,6 +7451,8 @@ async function init() {
   document.addEventListener('click', function(e){
     var box = document.querySelector('.search-box');
     if (box && !box.contains(e.target)) hideSearchDropdown();
+    var heroBox = document.querySelector('.agent-search-wrap');
+    if (heroBox && !heroBox.contains(e.target)) hideHeroSearchDropdown();
   });
 }
 
