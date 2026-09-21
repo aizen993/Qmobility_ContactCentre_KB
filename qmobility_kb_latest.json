@@ -4944,12 +4944,13 @@
       "q_ar": "تم إيقاف أجهزة دفع رسوم المواقف (PDM) — ماذا أقول للمتعامل؟",
       "a_ar": "<p><strong>الرد المعتمد:</strong> تم إيقاف الجهاز، ونتجه حاليًا إلى القنوات الرقمية عشان نضمن دقة وجودة خدمة دفع رسوم المواقف. تقدرون تستخدمون تطبيق درب لدفع رسوم المواقف بكل سهولة وأمان وراحة. شاكرين لكم تفهمكم وتعاونكم.</p><p>مراحل الإيقاف: القطاعات E3-01 وE3-02 وE4-02 وE18-01 وE18-02 من 25 أغسطس 2026؛ الدفعة الثانية (37 قطاعًا / 487 جهازًا) من 2 سبتمبر 2026؛ الدفعة الثالثة (23 قطاعًا / 148 جهازًا) من 21 سبتمبر 2026.</p><p>يرجى توثيق أي شكاوى متكررة ورفعها إلى المشرف المباشر.</p>",
       "kw": "PDM parking display machine switched off switch-off deactivation removal batch 1 2 3 darb app digital channel corniche hazza bin zayed abu dhabi island E3-01 E3-02 E4-02 E18-01 E18-02 payment machine not working coin card جهاز الدفع ايقاف اجهزة الدفع مواقف درب",
-      "page": "faq-maw-hours",
+      "page": "kb-maw-parking-sms",
       "verified_at": "2026-09-22",
       "updated_at": "2026-09-22T00:32:00+04:00",
       "source": "ICC Operations circular, PDM deactivation - Abu Dhabi Island execution plan (Batch 3)",
       "published_at": "2026-09-17T17:56:00+04:00",
-      "effective_from": "2026-09-21"
+      "effective_from": "2026-09-21",
+      "subcat": "Paid Parking"
     },
     "article_MAW-2026-0918-PUBLIC-PLATE-PAYMENT": {
       "id": "MAW-2026-0918-PUBLIC-PLATE-PAYMENT",
@@ -4958,11 +4959,12 @@
       "q_ar": "كيف تدفع المركبات ذات اللوحات العمومية رسوم مواقف مواقف؟",
       "a_ar": "<p>يمكن دفع رسوم المواقف للمركبات العمومية عبر تطبيق درب أو عبر رسالة نصية إلى الرقم 3009، متضمنة رمز اللوحة العمومية ثم رقم المركبة ثم نوع الموقف ثم مدة الوقوف بالساعات. مثال: مركبة تحمل لوحة أبوظبي عمومي (الفئة الأولى) رقم 12345 &mdash; AUHPUB1 12345 S 1.</p><p>رموز الفئات المعتمدة: عمومي الفئة الأولى AUHPUB1، عمومي الفئة الثانية AUHPUB2، عمومي برتقالي AUHORA، عمومي أصفر AUHYEL، عمومي أخضر AUHGRE، دبي أسود DXBBLA، دبي أصفر DXBYEL، دبي أخضر DXBGRE.</p>",
       "kw": "public plate commercial taxi bus AUHPUB1 AUHPUB2 AUHORA AUHYEL AUHGRE DXBBLA DXBYEL DXBGRE public vehicle parking fee payment sms 3009 darb category code لوحة عمومية المركبات العمومية رمز الفئة دفع رسوم المواقف",
-      "page": "faq-maw-hours",
+      "page": "kb-maw-parking-sms",
       "verified_at": "2026-09-22",
       "updated_at": "2026-09-22T00:32:00+04:00",
       "source": "Q Mobility / Mawaqif official bilingual A5 flyer \"Public Vehicle Parking Fee Payment\", circulated by ICC Operations",
-      "published_at": "2026-09-18T15:34:00+04:00"
+      "published_at": "2026-09-18T15:34:00+04:00",
+      "subcat": "Paid Parking"
     },
     "article_MAW-2026-0921-MOTORCYCLE-YELLOW-PLATE": {
       "id": "MAW-2026-0921-MOTORCYCLE-YELLOW-PLATE",
@@ -4971,12 +4973,13 @@
       "q_ar": "هل يمكن للدراجة النارية ذات اللوحة الصفراء سداد رسوم المواقف؟",
       "a_ar": "<p>نعم. تم تحديث وإضافة فئات اللوحات المرورية الصفراء، بما في ذلك فئة الدراجات النارية (1 &ndash; Yellow)، في نظام التفتيش بتاريخ 21 سبتمبر 2026، وذلك لتمكين المتعاملين من سداد رسوم المواقف من خلال قنوات الدفع المعتمدة: تطبيق DARB، والمحفظة الإلكترونية في تطبيق DARB، وخدمة الدفع عبر الرسائل النصية، وتطبيق TAMM وفقًا للخدمات المتاحة.</p>",
       "kw": "motorcycle motorbike bike yellow plate first category 1 yellow 177 kind 20 pay parking sms darb tamm wallet plate category added دراجة نارية لوحة صفراء الفئة الاولى اصفر سداد رسوم المواقف",
-      "page": "faq-maw-hours",
+      "page": "kb-maw-parking-sms",
       "verified_at": "2026-09-22",
       "updated_at": "2026-09-22T00:32:00+04:00",
       "source": "ICC Operations circular, addition of yellow plate categories including motorcycles to the Mawaqif system",
       "published_at": "2026-09-21T17:12:00+04:00",
-      "effective_from": "2026-09-21"
+      "effective_from": "2026-09-21",
+      "subcat": "Paid Parking"
     },
     "article_MAW-2026-0917-POD-CARD-ZAYED-ONLY": {
       "id": "MAW-2026-0917-POD-CARD-ZAYED-ONLY",
@@ -4985,12 +4988,13 @@
       "q_ar": "أي بطاقة أصحاب همم تُقبل لطلب موقف أصحاب الهمم؟",
       "a_ar": "<p>يشترط لقبول طلب موقف أصحاب الهمم أن يكون مقدم الطلب حاصلاً على بطاقة أصحاب الهمم صادرة عن <strong>هيئة زايد لأصحاب الهمم</strong>، وعدم الاكتفاء بالبطاقة الصادرة عن وزارة تمكين المجتمع، بالإضافة إلى المستندات الأخرى الموضحة في الدليل المعتمد.</p><p>يُرجى التأكد من إرفاق نسخة سارية من البطاقة المذكورة عند استلام الطلب أو الشكوى، وعدم تحويل الطلب دون استيفاء هذا الشرط.</p>",
       "kw": "people of determination PoD disabled accessible parking card zayed higher organization ministry of community empowerment not accepted eligibility documents اصحاب الهمم بطاقة هيئة زايد لأصحاب الهمم وزارة تمكين المجتمع موقف اصحاب الهمم",
-      "page": "faq-maw-permits",
+      "page": "kb-maw-permits",
       "verified_at": "2026-09-22",
       "updated_at": "2026-09-22T00:32:00+04:00",
       "source": "Q Mobility Parking Operations circular on the complaints and requests mechanism",
       "published_at": "2026-09-17T11:54:00+04:00",
-      "effective_from": "2026-09-17"
+      "effective_from": "2026-09-17",
+      "subcat": "POD Permits"
     },
     "article_OPS-2026-0918-L1-DOCUMENT-CHECKLIST": {
       "id": "OPS-2026-0918-L1-DOCUMENT-CHECKLIST",
@@ -4999,12 +5003,13 @@
       "q_ar": "",
       "a_ar": "",
       "kw": "L1 checklist mandatory documents parking permit application freight light cargo 3 ton 5 ton truck loading unloading bay people of determination temporary entrance musaffah al ain trade licence GPS coordinates SLA 3 working days salesforce concerned department مستندات مطلوبة تحميل وتنزيل مدخل مؤقت",
-      "page": "faq-maw-permits",
+      "page": "kb-maw-permits",
       "verified_at": "2026-09-22",
       "updated_at": "2026-09-22T00:32:00+04:00",
       "source": "Contact Centre management circular, mandatory document checklist for L1 parking and permit applications",
       "published_at": "2026-09-18T08:12:00+04:00",
-      "effective_from": "2026-09-18"
+      "effective_from": "2026-09-18",
+      "subcat": "Commercial Permits"
     },
     "article_MAW-2026-0827-MSCP-LONG-STAY": {
       "id": "MAW-2026-0827-MSCP-LONG-STAY",
@@ -5013,12 +5018,13 @@
       "q_ar": "وصلت المتعامل رسالة بأن مركبته تجاوزت المدة القصوى في المواقف الطابقية — ماذا بعد؟",
       "a_ar": "<p>أمام المتعامل <strong>72 ساعة</strong> من تاريخ الإشعار لإزالة المركبة، وإلا فقد تتعرض للمخالفة والقطر. نص الرسالة المعتمد: &ldquo;عزيزي المتعامل، لقد تجاوزت مركبتك المدة القصوى المسموح بها للوقوف في المواقف الطابقية العامة. يرجى إزالة المركبة خلال 72 ساعة لتجنب المخالفات وقطر المركبة. شكراً&rdquo;</p><p>بدأت متابعة المركبات المتجاوزة للمدة في المواقف الطابقية اعتبارًا من 16 سبتمبر 2026.</p>",
       "kw": "MSCP multi storey car park long stay exceeded maximum parking duration 72 hours remove vehicle fine towing sms notification المركبات التي تجاوزت مدة الوقوف المقررة المواقف الطابقية 72 ساعة قطر المركبة",
-      "page": "faq-maw-hours",
+      "page": "kb-maw-mscp",
       "verified_at": "2026-09-22",
       "updated_at": "2026-09-22T00:32:00+04:00",
       "source": "Private Parking Management, long stay vehicles notification at MSCPs; execution confirmed by the Mawaqif inspection partner",
       "published_at": "2026-08-27T12:08:00+04:00",
-      "effective_from": "2026-09-16"
+      "effective_from": "2026-09-16",
+      "subcat": "MSCP"
     },
     "article_MAW-2026-0908-ZONING-SIGNS-SCRIPT": {
       "id": "MAW-2026-0908-ZONING-SIGNS-SCRIPT",
@@ -5027,12 +5033,13 @@
       "q_ar": "المتعامل يسأل عن اللوحات الجديدة التي تتضمن معلومات عن مناطق الترميز — ماذا أقول؟",
       "a_ar": "<p>الصيغة المعتمدة: &ldquo;بخصوص اللوحات الجديدة التي تتضمن معلومات عن مناطق الترميز، نود أن نطمئنكم بأنه لا يوجد أي إجراء مطلوب من جانبكم في الوقت الحالي. يمكنكم الاستمرار باستخدام طرق الدفع الحالية واتباع أنظمة ولوائح المواقف المعمول بها كالمعتاد.</p><p>المعلومات الموجودة على هذه اللوحات تتعلق بتحديث مستقبلي، ولم يترتب عليها حتى الآن أي تغيير في إجراءات أو خدمات المواقف الحالية.</p><p>وسيتم إبلاغ المتعاملين بجميع التفاصيل عند تطبيق أي تغييرات بشكل رسمي. كما يمكنكم متابعة القنوات الرسمية لكيو موبيليتي ووسائل التواصل الاجتماعي للاطلاع على آخر التحديثات.&rdquo;</p><p>يرجى عدم تقديم أي معلومات إضافية غير معتمدة.</p>",
       "kw": "new signs zoning information zone sign board what do the new signs mean no action required future update approved script اللوحات الجديدة مناطق الترميز لوحات الترميز",
-      "page": "faq-maw-others",
+      "page": "kb-maw-general",
       "verified_at": "2026-09-22",
       "updated_at": "2026-09-22T00:32:00+04:00",
       "source": "Contact Centre guidance on customer queries regarding new zoning signs, corroborated by the ICC Operations circular of the same day",
       "published_at": "2026-09-08T12:31:00+04:00",
-      "effective_from": "2026-09-08"
+      "effective_from": "2026-09-08",
+      "subcat": "General Info"
     },
     "article_MAW-2026-0827-FREEFLOW-ENTRY-SMS-DISABLED": {
       "id": "MAW-2026-0827-FREEFLOW-ENTRY-SMS-DISABLED",
@@ -5041,12 +5048,13 @@
       "q_ar": "",
       "a_ar": "",
       "kw": "free flow freeflow entry sms notification disabled no sms on entry did not receive message barrierless darb app real time charge sms عدم استلام رسالة الدخول التدفق الحر",
-      "page": "faq-maw-others",
+      "page": "kb-ff-faq",
       "verified_at": "2026-09-22",
       "updated_at": "2026-09-22T00:32:00+04:00",
       "source": "Private Parking Management, SMS notifications freeflow, cascaded by the Call Centre Manager",
       "published_at": "2026-08-27T10:45:00+04:00",
-      "effective_from": "2026-08-27"
+      "effective_from": "2026-08-27",
+      "subcat": "Free Flow"
     },
     "article_MAW-2026-0807-FREEFLOW-INSPECTION-MODEL": {
       "id": "MAW-2026-0807-FREEFLOW-INSPECTION-MODEL",
@@ -5055,12 +5063,13 @@
       "q_ar": "",
       "a_ar": "",
       "kw": "free flow freeflow inspection inspector automatic system non payment violation generated automatically barrierless locations blocked entrance exit complaint process التدفق الحر التفتيش مخالفة تلقائية",
-      "page": "faq-maw-others",
+      "page": "kb-ff-faq",
       "verified_at": "2026-09-22",
       "updated_at": "2026-09-22T00:32:00+04:00",
       "source": "Contact Centre process update, Free Flow parking locations",
       "published_at": "2026-08-07T12:07:00+04:00",
-      "effective_from": "2026-08-07"
+      "effective_from": "2026-08-07",
+      "subcat": "Free Flow"
     },
     "article_OPS-2026-0807-COMPLAINT-DIGITAL-FIRST": {
       "id": "OPS-2026-0807-COMPLAINT-DIGITAL-FIRST",
@@ -5069,12 +5078,13 @@
       "q_ar": "",
       "a_ar": "",
       "kw": "complaint handling escalation guidelines digital channel first darb app darb urban raise complaint on behalf customer insists type subtype valid supporting documents شكوى القنوات الرقمية تطبيق درب رفع شكوى",
-      "page": "faq-maw-others",
+      "page": "kb-maw-general",
       "verified_at": "2026-09-22",
       "updated_at": "2026-09-22T00:32:00+04:00",
       "source": "Contact Centre management circular, complaint handling and escalation guidelines",
       "published_at": "2026-08-07T17:14:00+04:00",
-      "effective_from": "2026-08-07"
+      "effective_from": "2026-08-07",
+      "subcat": "Customer Support"
     },
     "article_MAW-2026-0811-COMPANY-VEHICLE-GRIEVANCE-TAMM": {
       "id": "MAW-2026-0811-COMPANY-VEHICLE-GRIEVANCE-TAMM",
@@ -5083,11 +5093,12 @@
       "q_ar": "",
       "a_ar": "",
       "kw": "grievance company vehicle corporate fleet tamm transport violations public parking mawaqif violation number new application my profile appeal object fine steps تظلم مركبة شركة تام مخالفة مواقف",
-      "page": "faq-maw-grievances",
+      "page": "kb-maw-grievance",
       "verified_at": "2026-09-22",
       "updated_at": "2026-09-22T00:32:00+04:00",
       "source": "Contact Centre circular, how to submit a grievance for a Mawaqif fine (company vehicle) via TAMM",
-      "published_at": "2026-08-11T15:57:00+04:00"
+      "published_at": "2026-08-11T15:57:00+04:00",
+      "subcat": "Parking Grievance"
     },
     "article_MAW-2026-0911-COMMERCIAL-PLATE-PERMANENT-TRANSFER": {
       "id": "MAW-2026-0911-COMMERCIAL-PLATE-PERMANENT-TRANSFER",
@@ -5096,12 +5107,13 @@
       "q_ar": "",
       "a_ar": "",
       "kw": "commercial plate temporary plate permanent plate transfer mawaqif system not recognised cannot pay parking fines issued commercial vehicle لوحة تجارية لوحة مؤقتة لوحة دائمة نقل اللوحة",
-      "page": "faq-maw-hours",
+      "page": "kb-maw-parking-sms",
       "verified_at": "2026-09-22",
       "updated_at": "2026-09-22T00:32:00+04:00",
       "source": "Contact Centre supervisor circular, mandatory permanent plate transfer for commercial vehicles",
       "published_at": "2026-09-11T15:42:00+04:00",
-      "effective_from": "2026-09-11"
+      "effective_from": "2026-09-11",
+      "subcat": "Paid Parking"
     },
     "article_OPS-2026-0901-WHATSAPP-SESSION-RULE": {
       "id": "OPS-2026-0901-WHATSAPP-SESSION-RULE",
@@ -5110,11 +5122,12 @@
       "q_ar": "",
       "a_ar": "",
       "kw": "whatsapp cannot send message customer did not reply session window meta template approved 24 hour rule phone number format 00 prefix plus country code salesforce sms واتساب قالب معتمد",
-      "page": "faq-maw-others",
+      "page": "kb-maw-general",
       "verified_at": "2026-09-22",
       "updated_at": "2026-09-22T00:32:00+04:00",
       "source": "Application Support confirmation on WhatsApp integration constraints",
-      "published_at": "2026-09-01T09:54:00+04:00"
+      "published_at": "2026-09-01T09:54:00+04:00",
+      "subcat": "Customer Support"
     },
     "article_MAW-2026-0901-E18-02-RECLASSIFICATION": {
       "id": "MAW-2026-0901-E18-02-RECLASSIFICATION",
@@ -5123,12 +5136,13 @@
       "q_ar": "",
       "a_ar": "",
       "kw": "E18-02 E18 Al Danah Aldana Qasr Najd restaurant loading unloading bay premium main parking secondary standard reclassification tariff GIS 71 bays قطاع E18-02 الدانة تغيير المواقف الفرعية الى مواقف رئيسية قصر نجد",
-      "page": "faq-maw-hours",
+      "page": "kb-maw-general",
       "verified_at": "2026-09-22",
       "updated_at": "2026-09-22T00:32:00+04:00",
       "source": "Parking Infrastructure Management approval and Contact Centre completion notice for sector E18-02",
       "published_at": "2026-09-07T16:03:00+04:00",
-      "effective_from": "2026-09-01"
+      "effective_from": "2026-09-01",
+      "subcat": "General Info"
     },
     "article_MAW-2026-0918-W59-01-INSPECTION-RESUMED": {
       "id": "MAW-2026-0918-W59-01-INSPECTION-RESUMED",
@@ -5137,12 +5151,13 @@
       "q_ar": "استؤنفت أعمال التفتيش في القطاع W59-01 — ماذا أقول للمتعاملين؟",
       "a_ar": "<p>استؤنفت أعمال التفتيش والرقابة في القطاع W59-01 اعتبارًا من 18 سبتمبر 2026. في حال وجود أي استفسارات من المتعاملين بشأن المواقف الرئيسية، يرجى توجيههم إلى استخدام المواقف المخصصة للسكان فقط، أو المواقف المخصصة لهم داخل البنايات السكنية.</p>",
       "kw": "W59-01 W59 sector inspection resumed enforcement restarted main parking premium resident designated parking residential building قطاع W59-01 استئناف اعمال التفتيش",
-      "page": "faq-maw-others",
+      "page": "kb-maw-inspection",
       "verified_at": "2026-09-22",
       "updated_at": "2026-09-22T00:32:00+04:00",
       "source": "ICC Operations circular, resumption of inspection in sector W59-01",
       "published_at": "2026-09-18T15:15:00+04:00",
-      "effective_from": "2026-09-18"
+      "effective_from": "2026-09-18",
+      "subcat": "Parking Inspection"
     },
     "article_MAW-2026-0825-EAST48-INSPECTION-RESUMED": {
       "id": "MAW-2026-0825-EAST48-INSPECTION-RESUMED",
@@ -5151,12 +5166,13 @@
       "q_ar": "هل استؤنفت أعمال التفتيش في قطاع شرق 48؟",
       "a_ar": "<p>نعم. تم استئناف أعمال الرقابة والتفتيش في موقع جهاز أبوظبي للمحاسبة &ndash; قطاع شرق 48، وذلك اعتبارًا من 25 أغسطس 2026، وفقًا للأنظمة والإجراءات والضوابط التشغيلية المعتمدة.</p>",
       "kw": "east 48 SE48 SE-48 sector abu dhabi accountability authority inspection resumed monitoring enforcement restarted قطاع شرق 48 جهاز ابوظبي للمحاسبة استئناف اعمال الرقابة والتفتيش",
-      "page": "faq-maw-others",
+      "page": "kb-maw-inspection",
       "verified_at": "2026-09-22",
       "updated_at": "2026-09-22T00:32:00+04:00",
       "source": "ICC Operations circular, resumption of monitoring and inspection in East 48",
       "published_at": "2026-08-25T15:22:00+04:00",
-      "effective_from": "2026-08-25"
+      "effective_from": "2026-08-25",
+      "subcat": "Parking Inspection"
     },
     "article_MAW-2026-0915-CAR-SHOWROOM-PARKING": {
       "id": "MAW-2026-0915-CAR-SHOWROOM-PARKING",
@@ -5165,11 +5181,12 @@
       "q_ar": "ما هي ضوابط استخدام المواقف الخاصة بمعارض السيارات؟",
       "a_ar": "<p>وفقًا للدليل الإرشادي المعتمد من مواقف: <strong>مصرح</strong> الوقوف أمام المعرض والجهة المقابلة للمركبات التي تحمل لوحات، والوقوف خارج المعرض بشرط أن تحمل المركبة لوحات مرورية سارية مع الالتزام بأنظمة المواقف وسداد الرسوم، والوقوف في الساحات الرملية حول المعرض دون تجاوز مساحته وبشكل منظم لا يعيق الحركة المرورية.</p><p><strong>يجب تجنب:</strong> الوقوف عند التقاطعات والمخارج، الوقوف بدون لوحة رسمية خارج المعرض، إخفاء اللوحات المرورية، الملصقات غير الرسمية، استخدام المواقف العامة كمعرض دائم، الحواجز ومواقع الحجز، والمركبات المهملة والتالفة.</p><p>للاستفسار والتواصل: 8003009. الدليل الإرشادي الرسمي هو المرجع للصياغة الدقيقة.</p>",
       "kw": "car showroom car dealer dealership showroom parking al ain sandy lot plates official plate barriers reservation neglected damaged vehicles brochure guidance معارض السيارات مواقف معارض السيارات الساحات الرملية لوحة رسمية",
-      "page": "faq-maw-others",
+      "page": "kb-maw-general",
       "verified_at": "2026-09-22",
       "updated_at": "2026-09-22T00:32:00+04:00",
       "source": "Official Q Mobility / Mawaqif guidance brochure for car showrooms, circulated to Contact Centre staff",
-      "published_at": "2026-09-15T11:38:00+04:00"
+      "published_at": "2026-09-15T11:38:00+04:00",
+      "subcat": "General Info"
     },
     "article_MAW-2026-0723-UNAVAILABLE-PARKING-SCRIPT": {
       "id": "MAW-2026-0723-UNAVAILABLE-PARKING-SCRIPT",
@@ -5178,12 +5195,13 @@
       "q_ar": "",
       "a_ar": "",
       "kw": "no parking available unavailable parking space full occupied cannot find parking valid permit no permit authorized area salesforce enquiry template لا يوجد موقف متاح تصريح ساري",
-      "page": "faq-maw-others",
+      "page": "kb-maw-general",
       "verified_at": "2026-09-22",
       "updated_at": "2026-09-22T00:32:00+04:00",
       "source": "Contact Centre process updates, re-issued as a standing reminder",
       "published_at": "2026-07-23T15:48:00+04:00",
-      "effective_from": "2026-07-23"
+      "effective_from": "2026-07-23",
+      "subcat": "General Info"
     },
     "article_OPS-2026-0911-TOWED-STATUS-MANUAL": {
       "id": "OPS-2026-0911-TOWED-STATUS-MANUAL",
@@ -5192,12 +5210,13 @@
       "q_ar": "",
       "a_ar": "",
       "kw": "towed vehicle not showing towed crm untowed status discrepancy manual towing enforcement stage system issue abu dhabi musaffah al ain temporary workaround مركبة مسحوبة لا تظهر في النظام سحب يدوي",
-      "page": "faq-maw-pound",
+      "page": "kb-maw-impound",
       "verified_at": "2026-09-22",
       "updated_at": "2026-09-22T00:32:00+04:00",
       "source": "Parking Operations (Enforcement) confirmation of the Enforcement Stage system issue",
       "published_at": "2026-09-14T09:24:00+04:00",
-      "effective_from": "2026-09-11"
+      "effective_from": "2026-09-11",
+      "subcat": "Car Pound"
     },
     "article_FAQ-0169": {
       "id": "FAQ-0169",
@@ -5206,13 +5225,14 @@
       "q_ar": "ما هي ساعات عمل ساحات الحجز؟",
       "a_ar": "<p>حجز الكرامة: 24 ساعة، 7 أيام في الأسبوع. حجز مصفح: <strong>24 ساعة، 7 أيام في الأسبوع</strong> اعتبارًا من 1 سبتمبر 2026. حجز العين: من 8:00 صباحًا حتى 12:00 منتصف الليل، 7 أيام في الأسبوع.</p>",
       "kw": "towing yard car pound working hours operating hours musaffah mussafah al karama al ain 24 hours 24/7 seven days midnight impound release collect vehicle حجز مصفح حجز الكرامة حجز العين ساعات العمل",
-      "page": "faq-maw-pound",
+      "page": "kb-maw-impound",
       "verified_at": "2026-09-22",
       "updated_at": "2026-09-22T00:32:00+04:00",
       "source": "Q Mobility Parking Operations, Musaffah Car Pound customer service office 24/7 from 1 September 2026",
       "published_at": "2026-08-27T15:00:00+04:00",
       "effective_from": "2026-09-01",
-      "supersedes": "Musaffah Car Pound 8:00 AM to 12:00 midnight (in force 5 February 2026 to 31 August 2026)"
+      "supersedes": "Musaffah Car Pound 8:00 AM to 12:00 midnight (in force 5 February 2026 to 31 August 2026)",
+      "subcat": "Car Pound"
     },
     "article_FAQ-TOW-001": {
       "id": "FAQ-TOW-001",
@@ -5221,13 +5241,14 @@
       "q_ar": "ما هي ساعات عمل ساحات الحجز؟",
       "a_ar": "<p>حجز الكرامة: 24 ساعة، 7 أيام في الأسبوع. حجز مصفح: <strong>24 ساعة، 7 أيام في الأسبوع</strong> اعتبارًا من 1 سبتمبر 2026. حجز العين: من 8:00 صباحًا حتى 12:00 منتصف الليل، 7 أيام في الأسبوع.</p>",
       "kw": "towing yard car pound working hours operating hours musaffah mussafah al karama al ain 24 hours 24/7 seven days midnight impound release collect vehicle حجز مصفح حجز الكرامة حجز العين ساعات العمل",
-      "page": "faq-maw-pound",
+      "page": "kb-maw-impound",
       "verified_at": "2026-09-22",
       "updated_at": "2026-09-22T00:32:00+04:00",
       "source": "Q Mobility Parking Operations, Musaffah Car Pound customer service office 24/7 from 1 September 2026",
       "published_at": "2026-08-27T15:00:00+04:00",
       "effective_from": "2026-09-01",
-      "supersedes": "Musaffah Car Pound 8:00 AM to 12:00 midnight (in force 5 February 2026 to 31 August 2026)"
+      "supersedes": "Musaffah Car Pound 8:00 AM to 12:00 midnight (in force 5 February 2026 to 31 August 2026)",
+      "subcat": "Car Pound"
     }
   },
   "fines": [

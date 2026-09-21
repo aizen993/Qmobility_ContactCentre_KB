@@ -7398,7 +7398,21 @@ function _authorityPage(page) {
     'kb-maw-parking-sms':'faq-maw-hours',
     'kb-maw-permits':'faq-maw-permits',
     'kb-maw-fines':'faq-maw-grievances',
+    'kb-maw-grievance':'faq-maw-grievances',
     'kb-maw-mbz':'faq-maw-mbz',
+    // The authority JSON is shared with the Cloudflare "command hub" build,
+    // which uses these kb-* page ids natively. Without a mapping they fell
+    // through unchanged and landed on pages this app does not have, so the
+    // articles were searchable but missing from every category page.
+    'kb-maw-mscp':'faq-maw-hours',
+    'kb-maw-public':'faq-maw-hours',
+    'kb-maw-impound':'faq-maw-pound',
+    'kb-maw-inspection':'faq-maw-others',
+    'kb-maw-resident':'faq-maw-permits',
+    'kb-maw-limited':'faq-maw-permits',
+    'kb-maw-commercial':'faq-maw-permits',
+    'kb-maw-govpermit':'faq-maw-permits',
+    'kb-ff-faq':'faq-priv-general',
     'kb-darb-general':'faq-darb-general',
     'kb-darb-reg':'faq-darb-reg',
     'kb-darb-registration':'faq-darb-reg',
@@ -7469,7 +7483,10 @@ function applyAuthorityData(data) {
         kw:article.kw || '',
         page:_authorityPage(article.page),
         cat:(article.domain === 'darb' || String(article.page || '').indexOf('kb-darb') === 0) ? 'DARB - Verified' : 'MAWAQIF - Verified',
-        subcat:article.verified_on ? 'Official verification' : 'Legacy KB coverage',
+        // Pages such as Permits are subcategory hubs: an article only appears
+        // under a tile whose filter matches its subcat, so honour the value the
+        // authority record supplies instead of always stamping a generic one.
+        subcat:article.subcat || (article.verified_on ? 'Official verification' : 'Legacy KB coverage'),
         source:article.source || 'qmobility_kb_latest.json',
         source_url:article.source_url || '',
         reviewed_at:article.verified_at || article.verified_on || data.verified_on || data.exported || '',
@@ -7489,6 +7506,7 @@ function applyAuthorityData(data) {
       if (article.q_ar) target.q_ar = article.q_ar;
       if (article.a_ar) target.a_ar = _authorityHtml(article.a_ar);
       if (article.kw) target.kw = article.kw;
+      if (article.subcat) target.subcat = article.subcat;
       target.source = article.source || 'qmobility_kb_latest.json';
       if (article.source_url) target.source_url = article.source_url;
       target.reviewed_at = article.verified_at || article.verified_on || data.verified_on || data.exported || '';

@@ -144,6 +144,21 @@ window.kbAssertions = function (viewportName) {
     ok(found, 'normal search for "' + p.query + '" did not reach ' + p.id);
   });
 
+  // ---------- every new article lands on a real page and a real subcategory ----------
+  // The authority JSON is shared with the Cloudflare build, which uses kb-* page
+  // ids natively. If a record is authored with this app's faq-* ids instead, it
+  // stays searchable but disappears from every category page in the other build,
+  // and vice versa. Guard both ends.
+  var GENERIC_SUBCATS = { 'Legacy KB coverage': 1, 'Official verification': 1 };
+  NEW_PROCESSES.forEach(function (p) {
+    var f = window.FAQS.find(function (x) { return x.id === p.id; });
+    if (!f) return;
+    ok(/^faq-/.test(f.page || ''),
+       p.id + ' resolved to page "' + f.page + '", which this app cannot render');
+    ok(!GENERIC_SUBCATS[f.subcat],
+       p.id + ' has the placeholder subcat "' + f.subcat + '", so it is hidden on subcategory hub pages');
+  });
+
   // ---------- no duplicate result inflation ----------
   NEW_PROCESSES.slice(0, 6).forEach(function (p) {
     var hits = (typeof runSearch === 'function') ? runSearch(p.query) : [];
