@@ -545,6 +545,39 @@ body[dir="rtl"] .wa-search input{padding:0 42px 0 14px}body[dir="rtl"] .wa-searc
 @media(max-width:1000px){.wa-hero{grid-template-columns:1fr;min-height:auto}.wa-live-scene{min-height:190px;max-width:560px}.wa-response-grid{grid-template-columns:1fr}}
 @media(max-width:600px){.wa-hero{padding:20px;border-radius:14px}.wa-hero h1{font-size:27px}.wa-toolbar{top:-16px}.wa-mode{width:100%}.wa-mode button{flex:1}.wa-greeting-toggle{width:100%;justify-content:center}.wa-message-pane{max-height:280px}}
 @media(prefers-reduced-motion:reduce){.sidebar-header .logo-dot,.topbar:after,.wa-hero,.wa-live-bubble,.wa-typing i{animation:none!important}}
+
+/* ===== FIND FAST - Sector > Category > Subtype > Article ===== */
+.fft-filter{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
+.fft-filter input{flex:1 1 240px;min-width:0;padding:10px 12px;border:1px solid var(--border);border-radius:10px;font:inherit;font-size:14px;background:var(--surf);color:var(--text)}
+.fft-filter input:focus{outline:2px solid var(--qm);outline-offset:1px}
+.fft-count{font-size:12px;color:var(--text2);white-space:nowrap}
+.fft-chips{display:flex;gap:6px;flex-wrap:wrap;padding:10px 12px;background:var(--surf);border:1px solid var(--border);border-radius:12px;margin-bottom:12px;align-items:center}
+.fft-chips .lbl0{font-size:11px;font-weight:800;color:var(--text2);text-transform:uppercase;letter-spacing:.06em}
+.fft-chip{padding:6px 11px;background:var(--bg);border:1px solid var(--border);border-radius:99px;font-size:12px;font-weight:600;color:var(--text);cursor:pointer;font-family:inherit}
+.fft-chip:hover{border-color:var(--qm);color:var(--qm)}
+.fft-chip:focus-visible{outline:2px solid var(--qm);outline-offset:1px}
+/* Four independent scroll panes laid out with grid - not float or absolute -
+   so columns can never overlap each other or the content beneath them. */
+.fft-wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1.3fr);gap:10px;align-items:stretch}
+.fft-col{display:flex;flex-direction:column;min-width:0;background:var(--surf);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.fft-col-head{padding:9px 12px;background:var(--bg);border-bottom:1px solid var(--border);font-size:10px;font-weight:800;color:var(--text2);text-transform:uppercase;letter-spacing:.07em;display:flex;justify-content:space-between;gap:6px}
+.fft-col-body{flex:1;overflow-y:auto;overscroll-behavior:contain;padding:6px;max-height:min(58vh,520px)}
+.fft-tile{display:flex;width:100%;text-align:left;align-items:center;gap:8px;padding:9px 11px;margin-bottom:4px;border:1px solid transparent;border-radius:9px;background:none;font:inherit;font-size:13px;line-height:1.35;color:var(--text);cursor:pointer}
+.fft-tile:hover{background:var(--bg)}
+.fft-tile:focus-visible{outline:2px solid var(--qm);outline-offset:-2px}
+.fft-tile.active{background:var(--qm-l);border-color:var(--qm);font-weight:600}
+.fft-tile .lbl{flex:1;min-width:0;overflow-wrap:anywhere}
+.fft-tile .desc{display:block;font-size:11px;color:var(--text2);font-weight:400;margin-top:2px}
+.fft-tile .count{flex:none;min-width:22px;padding:1px 6px;border-radius:99px;background:var(--bg);border:1px solid var(--border);font-size:11px;font-weight:700;color:var(--text2);text-align:center}
+.fft-tile.active .count{background:#fff}
+.fft-empty{padding:18px 14px;text-align:center;color:var(--text2);font-size:12px;line-height:1.5}
+.fft-tile.s-darb.active{background:var(--darb-l);border-color:var(--darb)}
+.fft-tile.s-priv.active{background:var(--priv-l);border-color:var(--priv)}
+[dir="rtl"] .fft-tile{text-align:right}
+/* Tablet: 2x2 so tiles keep a readable width instead of being squeezed. */
+@media(max-width:1100px){.fft-wrap{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.fft-col-body{max-height:300px}}
+/* Phone: a single column stack. Nothing is positioned, so nothing can overlap. */
+@media(max-width:680px){.fft-wrap{grid-template-columns:minmax(0,1fr)}.fft-col-body{max-height:240px}.fft-filter input{flex:1 1 100%}}
 </style>
 <!-- ===== SUPABASE (optional admin-sync backend, loaded on demand) ===== -->
 <script>
@@ -1380,6 +1413,7 @@ var NAV_CONFIG = [
   {id:"item_2", type:"item", page:"quick", label_en:"⚡ Quick Reference", label_ar:"⚡ المرجع السريع", hidden:false},
   {id:"item_3", type:"item", page:"updates", label_en:"🔴 Latest Updates", label_ar:"🔴 آخر التحديثات", hidden:false},
   {id:"item_4", type:"item", page:"", label_en:"🔍 Search (Ctrl+K)", label_ar:"", hidden:false},
+  {id:"item_4b", type:"item", page:"find-fast", label_en:"🌳 Find Fast", label_ar:"🌳 البحث السريع", hidden:false},
   {id:"lbl_5", type:"label", page:"", label_en:"QUICK JUMP", label_ar:"وصول سريع", hidden:false},
   {id:"item_6", type:"item", page:"kb-maw-fines", label_en:"Fines & Grievances", label_ar:"المخالفات والتظلمات", hidden:false},
   {id:"item_7", type:"item", page:"kb-maw-permits", label_en:"Permits", label_ar:"التصاريح", hidden:false},
@@ -2243,6 +2277,7 @@ function toggleLang() {
 // ===== NAVIGATION =====
 var NAV_LABELS = {
   'dashboard':'Home',
+  'find-fast':'Find Fast',
   'court-fines':'Fines (Court / Old)',
   'vehicle-types':'Vehicle Types',
   'sms':'SMS Templates',
@@ -3163,6 +3198,7 @@ function render(page) {
   else if (page === 'vehicle-types') renderVehicleTypes(el);
   else if (page === 'faq-maw-mussafah') renderMussafah(el);
   else if (page === 'faq-maw-mbz') renderMBZCity(el);
+  else if (page === 'find-fast') renderFindFast(el);
   else if (page === 'smart-map') renderSmartMap(el);
   else if (page === 'sms') renderSmsTemplates(el);
   else if (page === 'email') renderEmailTemplates(el);
@@ -3186,9 +3222,13 @@ function render(page) {
 // ===== FIX 1: DASHBOARD with correct counts by page prefix =====
 function renderDashboard(el) {
   // FIX 1: Count by page prefix instead of category string
-  var mawCount = FAQS.filter(function(f){return f.page && f.page.indexOf('faq-maw')===0;}).length;
-  var darbCount = FAQS.filter(function(f){return f.page && f.page.indexOf('faq-darb')===0;}).length;
-  var privCount = FAQS.filter(function(f){return f.page && (f.page.indexOf('faq-priv')===0 || f.page.indexOf('faq-maw-mscp')===0);}).length;
+  // Sector counts come from one shared classifier so the dashboard, the
+  // agent hero and Find Fast can never disagree, and the three numbers
+  // always add up to FAQS.length. Previously three copies of this block
+  // existed with two different rules for private parking, and MSCP was
+  // counted under both Mawaqif and Private.
+  var _sc = _kbSectorCounts();
+  var mawCount = _sc.maw, darbCount = _sc.darb, privCount = _sc.priv;
 
   var h = '<div class="page-header"><div>';
   h += '<div class="page-title">' + (S.lang==='ar'?'قاعدة معارف كيوموبيليتي':'QMobility Knowledge Base') + '</div>';
@@ -4489,6 +4529,244 @@ function renderDarbX(el) {
   h += '</div>';
 
   el.innerHTML = h;
+}
+
+// ===== FIND FAST — Sector > Category > Subtype > Article =====
+// The second of the KB's two search routes. Keyword search answers "I know the
+// words"; Find Fast answers "I know the topic but not the wording" by drilling
+// Sector -> Category -> Subtype -> the article itself.
+//
+// It is built entirely from the `cat` and `subcat` fields that every FAQ record
+// already carries, so it stays in step with the content automatically and
+// invents no taxonomy of its own.
+
+var _FFT = {sector: null, cat: null, sub: null, q: ''};
+
+// One place that answers "which sector is this article in?".
+function _kbSectorCounts() {
+  var c = {maw: 0, darb: 0, priv: 0};
+  FAQS.forEach(function (f) { c[_fftSector(f)]++; });
+  return c;
+}
+
+// Classify by `page` first, the way the dashboard counts, so the two views
+// cannot disagree. `cat` is only a label and a few records label themselves
+// inconsistently. Every article lands in exactly one sector, so the three
+// column counts always add up to the total.
+function _fftSector(f) {
+  var p = f.page || '';
+  if (p.indexOf('faq-priv') === 0 || p.indexOf('mscp') >= 0) return 'priv';
+  if (p.indexOf('faq-darb') === 0) return 'darb';
+  if (p.indexOf('faq-maw') === 0) return 'maw';
+  var c = f.cat || '';
+  if (c.indexOf('DARB') === 0) return 'darb';
+  if (c.indexOf('MAWAQIF') === 0) return 'maw';
+  return 'priv';
+}
+
+var _FFT_SECTORS = {
+  maw:  {key: 'maw',  cls: '',       en: '🅿 Mawaqif',         ar: 'مواقف',        den: 'Public parking, permits, fines',  dar: 'المواقف العامة والتصاريح والمخالفات'},
+  darb: {key: 'darb', cls: 's-darb', en: '🛣 DARB / Toll',     ar: 'درب / الرسوم',  den: 'Toll gates, wallet, exemptions',  dar: 'بوابات الرسوم والمحفظة والإعفاءات'},
+  priv: {key: 'priv', cls: 's-priv', en: '🏢 Private Parking', ar: 'مواقف خاصة',    den: 'Malls, Free Flow, Etihad Rail',   dar: 'المراكز التجارية وفري فلو'}
+};
+
+// Articles matching the current free-text filter. Empty filter = everything.
+function _fftPool() {
+  var q = (_FFT.q || '').trim().toLowerCase();
+  if (!q) return FAQS;
+  return FAQS.filter(function (f) {
+    return ((f.q || '') + ' ' + (f.kw || '') + ' ' + (f.cat || '') + ' ' +
+            (f.subcat || '') + ' ' + (f.q_ar || '')).toLowerCase().indexOf(q) >= 0;
+  });
+}
+
+function _fftTile(attr, val, label, count, desc, active, cls) {
+  return '<button type="button" class="fft-tile' + (active ? ' active' : '') +
+    (cls ? ' ' + cls : '') + '" ' + attr + '="' + escHtml(val) + '">' +
+    '<span class="lbl">' + escHtml(label) +
+    (desc ? '<span class="desc">' + escHtml(desc) + '</span>' : '') + '</span>' +
+    (count === null ? '' : '<span class="count">' + count + '</span>') +
+    '</button>';
+}
+
+function _fftEmpty(msg) {
+  return '<div class="fft-empty">' + escHtml(msg) + '</div>';
+}
+
+// L1 already names the sector, so "MAWAQIF - Permits" reads better as "Permits".
+// This also hides an inconsistency in the source data, where a handful of cats
+// use a hyphen separator and the rest use an em dash. Display only - the
+// underlying `cat` value is never rewritten.
+function _fftCatLabel(c) {
+  return String(c || '').replace(/^(MAWAQIF|DARB)\s*[—–-]\s*/i, '') || c;
+}
+
+function renderFindFast(el) {
+  var ar = S.lang === 'ar';
+  var h = '<div class="breadcrumb"><a onclick="goHome()">' +
+    (ar ? 'الرئيسية' : 'Home') + '</a> / ' + (ar ? 'البحث السريع' : 'Find Fast') + '</div>';
+  h += '<div class="page-header"><div>' +
+    '<div class="page-title">🌳 ' + (ar ? 'البحث السريع' : 'Find Fast') + '</div>' +
+    '<div class="page-subtitle">' +
+    (ar ? 'القطاع ← الفئة ← النوع الفرعي ← المقالة'
+        : 'Sector → Category → Subtype → Article') +
+    '</div></div></div>';
+
+  h += '<div class="fft-chips"><span class="lbl0">' + (ar ? 'الأكثر استخداماً' : 'Most used') + '</span>' +
+    _fftChip('Resident Permits', ar ? 'تصاريح السكان' : 'Resident Permits') +
+    _fftChip('Parking Fines', ar ? 'مخالفات المواقف' : 'Parking Fines') +
+    _fftChip('Parking Grievance', ar ? 'التظلمات' : 'Grievances') +
+    _fftChip('Registration', ar ? 'تسجيل درب' : 'DARB Registration') +
+    _fftChip('Payments', ar ? 'المحفظة' : 'DARB Wallet') +
+    _fftChip('Car Pound', ar ? 'حجز المركبات' : 'Car Pound') +
+    '</div>';
+
+  h += '<div class="fft-filter">' +
+    '<input id="fftFilter" type="search" autocomplete="off" placeholder="' +
+    escHtml(ar ? 'تصفية الشجرة…' : 'Filter the tree…') + '" value="' + escHtml(_FFT.q) + '">' +
+    '<span class="fft-count" id="fftCount"></span></div>';
+
+  h += '<div class="fft-wrap" id="fftWrap">' +
+    _fftCol('L1 · ' + (ar ? 'القطاع' : 'Sector'), 'fftL1') +
+    _fftCol('L2 · ' + (ar ? 'الفئة' : 'Category'), 'fftL2') +
+    _fftCol('L3 · ' + (ar ? 'النوع الفرعي' : 'Subtype'), 'fftL3') +
+    _fftCol('L4 · ' + (ar ? 'المقالة' : 'Article'), 'fftL4') +
+    '</div>';
+
+  el.innerHTML = h;
+  _fftBind();
+  _fftPaint();
+}
+
+function _fftChip(sub, label) {
+  return '<button type="button" class="fft-chip" data-fft-jump="' + escHtml(sub) + '">' +
+    escHtml(label) + '</button>';
+}
+
+function _fftCol(head, id) {
+  return '<div class="fft-col"><div class="fft-col-head"><span>' + head +
+    '</span></div><div class="fft-col-body" id="' + id + '"></div></div>';
+}
+
+function _fftBind() {
+  var wrap = document.getElementById('fftWrap');
+  var filter = document.getElementById('fftFilter');
+
+  if (filter) {
+    filter.oninput = function () {
+      _FFT.q = filter.value;
+      // A filter can orphan the current selection; drop anything now empty.
+      _FFT.cat = _FFT.sub = null;
+      _fftPaint();
+    };
+  }
+
+  document.querySelectorAll('.fft-chip[data-fft-jump]').forEach(function (c) {
+    c.onclick = function () {
+      var sub = c.getAttribute('data-fft-jump');
+      var hit = FAQS.filter(function (f) { return f.subcat === sub; })[0];
+      if (!hit) { showToast('No articles under ' + sub); return; }
+      _FFT.q = '';
+      _FFT.sector = _fftSector(hit);
+      _FFT.cat = hit.cat;
+      _FFT.sub = sub;
+      var box = document.getElementById('fftFilter');
+      if (box) box.value = '';
+      _fftPaint();
+    };
+  });
+
+  if (!wrap) return;
+  wrap.addEventListener('click', function (ev) {
+    var tile = ev.target.closest('.fft-tile');
+    if (!tile) return;
+    if (tile.hasAttribute('data-fft-sector')) {
+      _FFT.sector = tile.getAttribute('data-fft-sector');
+      _FFT.cat = _FFT.sub = null;
+    } else if (tile.hasAttribute('data-fft-cat')) {
+      _FFT.cat = tile.getAttribute('data-fft-cat');
+      _FFT.sub = null;
+    } else if (tile.hasAttribute('data-fft-sub')) {
+      _FFT.sub = tile.getAttribute('data-fft-sub');
+    } else if (tile.hasAttribute('data-fft-article')) {
+      openFaqById(tile.getAttribute('data-fft-article'));
+      return;
+    }
+    _fftPaint();
+  });
+}
+
+function _fftPaint() {
+  var ar = S.lang === 'ar';
+  var pool = _fftPool();
+  var countEl = document.getElementById('fftCount');
+  if (countEl) {
+    countEl.textContent = ar
+      ? pool.length + ' مقالة'
+      : pool.length + ' article' + (pool.length === 1 ? '' : 's');
+  }
+
+  // L1 — sectors
+  var bySector = {maw: [], darb: [], priv: []};
+  pool.forEach(function (f) { bySector[_fftSector(f)].push(f); });
+  if (_FFT.sector && !bySector[_FFT.sector].length) _FFT.sector = null;
+
+  var h1 = '';
+  ['maw', 'darb', 'priv'].forEach(function (k) {
+    var s = _FFT_SECTORS[k];
+    h1 += _fftTile('data-fft-sector', k, ar ? s.ar : s.en, bySector[k].length,
+      ar ? s.dar : s.den, _FFT.sector === k, s.cls);
+  });
+  document.getElementById('fftL1').innerHTML = h1;
+
+  // L2 — categories inside the chosen sector
+  var l2 = document.getElementById('fftL2');
+  if (!_FFT.sector) {
+    l2.innerHTML = _fftEmpty(ar ? 'اختر قطاعاً' : 'Pick a sector');
+    document.getElementById('fftL3').innerHTML = _fftEmpty(ar ? 'اختر فئة' : 'Pick a category');
+    document.getElementById('fftL4').innerHTML = _fftEmpty(ar ? 'اختر نوعاً فرعياً' : 'Pick a subtype');
+    return;
+  }
+  var cats = {};
+  bySector[_FFT.sector].forEach(function (f) {
+    (cats[f.cat || '—'] = cats[f.cat || '—'] || []).push(f);
+  });
+  var catKeys = Object.keys(cats).sort();
+  if (_FFT.cat && catKeys.indexOf(_FFT.cat) < 0) _FFT.cat = null;
+  l2.innerHTML = catKeys.length
+    ? catKeys.map(function (c) {
+        return _fftTile('data-fft-cat', c, _fftCatLabel(c), cats[c].length, '',
+                        _FFT.cat === c, '');
+      }).join('')
+    : _fftEmpty(ar ? 'لا توجد فئات' : 'No categories');
+
+  // L3 — subtypes inside the chosen category
+  var l3 = document.getElementById('fftL3');
+  if (!_FFT.cat) {
+    l3.innerHTML = _fftEmpty(ar ? 'اختر فئة' : 'Pick a category');
+    document.getElementById('fftL4').innerHTML = _fftEmpty(ar ? 'اختر نوعاً فرعياً' : 'Pick a subtype');
+    return;
+  }
+  var subs = {};
+  cats[_FFT.cat].forEach(function (f) {
+    (subs[f.subcat || '—'] = subs[f.subcat || '—'] || []).push(f);
+  });
+  var subKeys = Object.keys(subs).sort();
+  if (_FFT.sub && subKeys.indexOf(_FFT.sub) < 0) _FFT.sub = null;
+  l3.innerHTML = subKeys.map(function (s) {
+    return _fftTile('data-fft-sub', s, s, subs[s].length, '', _FFT.sub === s, '');
+  }).join('');
+
+  // L4 — the articles themselves
+  var l4 = document.getElementById('fftL4');
+  if (!_FFT.sub) {
+    l4.innerHTML = _fftEmpty(ar ? 'اختر نوعاً فرعياً' : 'Pick a subtype');
+    return;
+  }
+  l4.innerHTML = subs[_FFT.sub].map(function (f) {
+    return _fftTile('data-fft-article', f.id || '',
+      (ar && f.q_ar ? f.q_ar : f.q) || f.id, null, f.id || '', false, '');
+  }).join('');
 }
 
 // ===== VEHICLE TYPES =====
@@ -7229,9 +7507,13 @@ function _kbPageGallery(page, title) {
 }
 
 function renderDashboard(el) {
-  var mawCount = FAQS.filter(function(f){return f.page && f.page.indexOf('faq-maw')===0;}).length;
-  var darbCount = FAQS.filter(function(f){return f.page && f.page.indexOf('faq-darb')===0;}).length;
-  var privCount = FAQS.filter(function(f){return f.page && (f.page.indexOf('faq-priv')===0 || f.page === 'faq-mushrif');}).length;
+  // Sector counts come from one shared classifier so the dashboard, the
+  // agent hero and Find Fast can never disagree, and the three numbers
+  // always add up to FAQS.length. Previously three copies of this block
+  // existed with two different rules for private parking, and MSCP was
+  // counted under both Mawaqif and Private.
+  var _sc = _kbSectorCounts();
+  var mawCount = _sc.maw, darbCount = _sc.darb, privCount = _sc.priv;
   var h = '<div class="agent-shell">';
 
   h += '<section class="agent-hero">';
@@ -7299,9 +7581,13 @@ function renderDashboard(el) {
 
 // Visual dashboard renderer for the agent home screen.
 function renderDashboard(el) {
-  var mawCount = FAQS.filter(function(f){return f.page && f.page.indexOf('faq-maw')===0;}).length;
-  var darbCount = FAQS.filter(function(f){return f.page && f.page.indexOf('faq-darb')===0;}).length;
-  var privCount = FAQS.filter(function(f){return f.page && (f.page.indexOf('faq-priv')===0 || f.page === 'faq-mushrif');}).length;
+  // Sector counts come from one shared classifier so the dashboard, the
+  // agent hero and Find Fast can never disagree, and the three numbers
+  // always add up to FAQS.length. Previously three copies of this block
+  // existed with two different rules for private parking, and MSCP was
+  // counted under both Mawaqif and Private.
+  var _sc = _kbSectorCounts();
+  var mawCount = _sc.maw, darbCount = _sc.darb, privCount = _sc.priv;
   var totalCount = FAQS.length;
   var syncLabel = KB_SYNC_ENDPOINT ? 'Cloud sync ready' : 'Local mode';
   var h = '<div class="agent-shell">';
