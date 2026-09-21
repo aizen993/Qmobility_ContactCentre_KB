@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>QMobility Knowledge Base v19</title>
+<title>QMobility Knowledge Base v20 - Verified</title>
+<meta name="description" content="Verified QMobility call-center knowledge base for DARB, Mawaqif, Free Flow, and customer communication templates.">
 <style>
 :root{--qm:#2e7d32;--qm-l:#e8f5e9;--darb:#1976d2;--darb-l:#e3f2fd;--priv:#7b1fa2;--priv-l:#f3e8ff;--tech:#ef6c00;--tech-l:#fff3e0;--feed:#c62828;--feed-l:#ffebee;--bg:#f0f2f5;--surf:#fff;--text:#1a1a2e;--text2:#6b7280;--border:#e5e7eb}
 *{box-sizing:border-box}
@@ -42,7 +43,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
 @keyframes ddIn{from{opacity:0;transform:translateY(-6px) scale(.99)}to{opacity:1;transform:none}}
 @keyframes pop{0%{transform:scale(.96);opacity:.5}100%{transform:scale(1);opacity:1}}
 @keyframes spin{to{transform:rotate(360deg)}}
-.page-enter{animation:fadeIn .28s ease}
+.page-enter{animation:none}
 .faq-list>.faq-card{animation:fadeIn .22s ease both}
 .sector-grid>*,.quick-grid>*,.submenu-grid>*{animation:fadeUp .34s ease both}
 .sector-grid>*:nth-child(2),.quick-grid>*:nth-child(2){animation-delay:.05s}
@@ -471,7 +472,7 @@ body.search-open .kb-page-gallery{display:none}
 .kb-update-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:13px}
 .kb-update-link{border:1px solid rgba(25,118,210,.16);border-radius:999px;background:#fff;color:#344054;padding:7px 10px;font-size:11px;font-weight:750;cursor:pointer;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
 .kb-update-link:hover{transform:translateY(-2px);border-color:rgba(46,125,50,.36);box-shadow:0 7px 16px rgba(16,24,40,.08)}
-.kb-live-reveal{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s cubic-bezier(.2,.75,.2,1);transition-delay:var(--kb-reveal-delay,0ms)}
+.kb-live-reveal{opacity:1;transform:none;transition:opacity .2s ease}
 .kb-live-reveal.kb-in-view{opacity:1;transform:none}
 .kb-feature-band{display:grid;grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);gap:16px;margin-bottom:18px}
 .kb-feature-photo{min-height:260px;border-radius:22px;background-image:linear-gradient(180deg,rgba(16,24,40,.04),rgba(16,24,40,.18)),var(--kb-photo);background-size:cover;background-position:center;box-shadow:var(--card-shadow);border:1px solid rgba(16,24,40,.08)}
@@ -3910,6 +3911,7 @@ function _lev(a,b,max){
 // Inject SMS & Email templates into the searchable corpus (once) so agents
 // can find the right template instantly from the global search.
 var _auxInjected = false;
+var _searchAux = [];
 var _searchVocabulary = [];
 var _searchVocabularySet = {};
 function injectAuxIntoSearch(){
@@ -3918,7 +3920,7 @@ function injectAuxIntoSearch(){
   if(typeof SMS_TEMPLATES !== 'undefined'){
     SMS_TEMPLATES.forEach(function(s,i){
       var msg = s.tmpl || '';
-      FAQS.push({
+      _searchAux.push({
         q: 'SMS: ' + (s.label_en || 'Template'),
         a: '<div class="info-box" style="font-family:monospace;white-space:pre-wrap;">' + escHtml(msg) + '</div><p style="font-size:12px;color:#6b7280;">SMS template' + (s.cat?(' &middot; ' + escHtml(s.cat)):'') + '. Open <a onclick="go(\'sms\',\'SMS Templates\')">SMS Templates</a> for the full list.</p>',
         q_ar: s.label_ar || '', a_ar: '',
@@ -3930,7 +3932,7 @@ function injectAuxIntoSearch(){
   if(typeof EMAIL_TEMPLATES !== 'undefined'){
     EMAIL_TEMPLATES.forEach(function(e,i){
       var body = e.en || '';
-      FAQS.push({
+      _searchAux.push({
         q: 'Email: ' + (e.label_en || 'Template'),
         a: '<div class="info-box" style="white-space:pre-wrap;">' + escHtml(body) + '</div><p style="font-size:12px;color:#6b7280;">Email template. Open <a onclick="go(\'email\',\'Email Templates\')">Email Templates</a> for the full list.</p>',
         q_ar: e.label_ar || '', a_ar: '',
@@ -3944,7 +3946,7 @@ function injectAuxIntoSearch(){
 function initSearchIndex(){
   injectAuxIntoSearch();
   var vocabulary = {};
-  FAQS.forEach(function(f){
+  FAQS.concat(_searchAux).forEach(function(f){
     if(!f._idx){
       f._qN   = _norm(f.q || '');
       f._kwN  = _norm((f.kw||'') + ' ' + (f.subcat||'') + ' ' + (f.cat||''));
@@ -4120,7 +4122,7 @@ function runSearch(raw){
   var ex = expandQuery(raw);
   if(!ex.phrase) return [];
   var scored = [];
-  FAQS.forEach(function(f){
+  FAQS.concat(_searchAux).forEach(function(f){
     var s = _scoreFaq(f, ex);
     var tokenCount = ex.tokens.length;
     var requiredHits = tokenCount<=2 ? tokenCount : Math.max(2,Math.ceil(tokenCount*.5));
@@ -6233,11 +6235,16 @@ async function loadTableData(tableName, defaultData) {
 }
 
 async function applySavedTableData() {
-  var savedPermits = await loadTableData('permits', null);
+  var saved = await Promise.all([
+    loadTableData('permits', null),
+    loadTableData('vtypeData', null),
+    loadTableData('quickRates', null)
+  ]);
+  var savedPermits = saved[0];
   if (Array.isArray(savedPermits)) PERMITS = savedPermits;
-  var savedVehicleTypes = await loadTableData('vtypeData', null);
+  var savedVehicleTypes = saved[1];
   if (Array.isArray(savedVehicleTypes)) VTYPE_DATA = savedVehicleTypes;
-  var savedRates = await loadTableData('quickRates', null);
+  var savedRates = saved[2];
   if (Array.isArray(savedRates)) QUICK_RATES = savedRates;
 }
 
@@ -6611,6 +6618,60 @@ var FAQ_CORRECTIONS = {
     reviewed_at: '2026-06-29'
   }
 };
+
+// Official September 2026 reconciliation. These entries replace older FAQ text
+// before the external authority JSON is loaded in the background.
+Object.assign(FAQ_CORRECTIONS, {
+  'FAQ-0219': {
+    a: '<p>Using the DARB website or app, the owner of an <strong>active villa permit</strong> can register up to <strong>4 visitor phone numbers</strong>.</p><ol><li>Open Mawaqif Permits.</li><li>Select the active villa permit.</li><li>Choose <strong>Manage Phone Numbers</strong>.</li><li>Select <strong>Add a new phone number</strong>, enter the number, and confirm.</li></ol>' + _kbFooter(),
+    kw: 'villa visitor active permit manage phone numbers maximum 4 four DARB',
+    source: 'https://www.qmobility.ae/en/policies/mawaqif-policy',
+    reviewed_at: '2026-09-21'
+  },
+  'FAQ-0220': {
+    a: '<p>A maximum of <strong>4 visitor phone numbers</strong> can be registered for an active villa permit. The permit owner can delete and replace registered numbers when needed.</p>' + _kbFooter(),
+    kw: 'maximum visitor phone numbers villa permit 4 four delete replace',
+    source: 'https://www.qmobility.ae/en/policies/mawaqif-policy',
+    reviewed_at: '2026-09-21'
+  },
+  'FAQ-0242': {
+    a: '<p>An active villa permit can have up to <strong>4 registered visitor phone numbers</strong>.</p><h4>Via SMS</h4><p>Send <code>ADD 05xxxxxxx E20</code> from the permit owner\'s registered number to <strong>3009</strong>.</p><h4>Via DARB</h4><ol><li>Open Mawaqif Permits.</li><li>Select the active villa permit.</li><li>Choose Manage Phone Numbers, then Add a new phone number.</li></ol>' + _kbFooter(),
+    kw: 'add visitor phone number villa permit maximum 4 sms ADD 3009 DARB',
+    source: 'https://www.qmobility.ae/en/policies/mawaqif-policy',
+    reviewed_at: '2026-09-21'
+  },
+  'FAQ-0093': {
+    a: '<p>DARB registration is required for every user who passes through a DARB toll gate.</p><p>A vehicle that crosses without prior registration receives a <strong>10-working-day grace period</strong> to register. If it is not registered within that period, the applicable toll-system violation may be issued.</p>' + _kbFooter(),
+    kw: 'DARB registration required compulsory mandatory toll gate 10 working day grace period',
+    source: 'https://www.qmobility.ae/en/faqs/darb-faqs',
+    reviewed_at: '2026-09-21'
+  },
+  'FAQ-0099': {
+    a: '<p>Ramadan toll peak periods are announced through Q Mobility\'s official channels. Do not confirm a historical Ramadan timetable unless a current announcement has been issued.</p><p><strong>Al Qurm and Ghantout</strong> toll gates remain operational <strong>24 hours a day, 7 days a week</strong>.</p>' + _kbFooter(),
+    kw: 'DARB Ramadan toll timing official announcement Al Qurm Ghantout 24 7',
+    source: 'https://www.qmobility.ae/en/faqs/darb-faqs',
+    reviewed_at: '2026-09-21'
+  },
+  'FAQ-0097': {
+    a: '<p>DARB toll auto-payment is always enabled and cannot be disabled or paused. Toll transactions are deducted automatically from the linked wallet.</p><p>Customers should maintain sufficient balance. For an unpaid transaction caused by insufficient balance, top up the wallet within the applicable grace period and allow the system time to process the deduction.</p>' + _kbFooter(),
+    kw: 'DARB auto payment always enabled cannot disable pause wallet insufficient balance',
+    source: 'https://www.qmobility.ae/en/faqs/darb-faqs',
+    reviewed_at: '2026-09-21'
+  },
+  'FAQ-0087': {
+    a: '<p>Toll fees for registered vehicles are deducted automatically from the linked DARB wallet. Auto-payment is always enabled and cannot be disabled or paused.</p><div class="info-box">Keep sufficient wallet balance to avoid unpaid toll transactions and related violations.</div>' + _kbFooter(),
+    kw: 'toll fee collected automatic wallet auto payment always enabled cannot disable pause',
+    source: 'https://www.qmobility.ae/en/faqs/darb-faqs',
+    reviewed_at: '2026-09-21'
+  },
+  'FAQ-0098': {
+    q: 'Can DARB toll auto-payment be disabled or paused for one or more vehicles?',
+    a: '<p>No. The current DARB toll auto-payment setting is always enabled and cannot be disabled or paused for an individual vehicle or a group of vehicles.</p>' + _kbFooter(),
+    kw: 'DARB bulk auto payment group vehicles always enabled cannot disable pause',
+    source: 'https://www.qmobility.ae/en/faqs/darb-faqs',
+    reviewed_at: '2026-09-21'
+  }
+});
 
 var FAQ_REMOVED_IDS = {
   'FAQ-PB-SCRIPT': true
@@ -7022,22 +7083,7 @@ function _kbNormalizeOperationalText() {
         .replace(/8AM-2AM/g, '6AM-2AM');
     });
   });
-  if (typeof SMS_TEMPLATES !== 'undefined') {
-    SMS_TEMPLATES = SMS_TEMPLATES.filter(function(t){ return t.tmpl !== 'Parking payment SMS text to 3009 is: AUHC 12345 S/P 2'; });
-    SMS_TEMPLATES.forEach(function(t){ if (t.tmpl) t.tmpl = _kbReplaceDeprecatedCustomerEmails(t.tmpl); });
-  }
   if (typeof EMAIL_TEMPLATES !== 'undefined') EMAIL_TEMPLATES.forEach(function(t){ if (t.en) t.en = _kbReplaceDeprecatedCustomerEmails(t.en); if (t.ar) t.ar = _kbReplaceDeprecatedCustomerEmails(t.ar); });
-  if (typeof SMS_TEMPLATES !== 'undefined') {
-    var hasMushrifTemplate = false;
-    SMS_TEMPLATES.forEach(function(t){
-      if (t.label_en === 'Abu Dhabi Mall Parking fees and timings') {
-        t.tmpl = 'Abu Dhabi Mall Free Flow: 6AM-2AM. First 3 hours free once per day, excluding overnight parking. Then AED 10 per hour or part thereof. Darb users auto-pay from Darb wallet; non-Darb users pay within 24h via QR code or freeflow.qmobility.ae. Overnight 2AM-6AM prohibited except permitted vehicles.';
-        t.status = 'Updated';
-      }
-      if (t.label_en === 'Mushrif Mall Parking fees and timings') hasMushrifTemplate = true;
-    });
-    if (!hasMushrifTemplate) SMS_TEMPLATES.push({cat:'Free Flow locations', label_en:'Mushrif Mall Parking fees and timings', label_ar:'', tmpl:'Mushrif Mall Free Flow: 6AM-2AM. First 3 hours free once per day, excluding overnight parking. From 3 to 7 hours AED 10 per hour or part thereof. More than 7 hours capped at AED 80 per day per visit. Overnight 2AM-6AM charged AED 250. Darb users auto-pay from Darb wallet; non-Darb users pay within 24h via QR code or freeflow.qmobility.ae.', status:'Updated'});
-  }
   if (typeof QUICK_RATES !== 'undefined') {
     var hasMushrifRate = false;
     QUICK_RATES.forEach(function(r){
@@ -7153,6 +7199,171 @@ function applyFaqDataQualityPass() {
   FAQS.length = 0;
   Array.prototype.push.apply(FAQS, cleaned);
   ALL_FAQ = FAQS;
+}
+
+// ===== VERIFIED JSON AUTHORITY LAYER =====
+var KB_AUTHORITY_DATA = null;
+var KB_AUTHORITY_STATUS = {loaded:false, version:'embedded-v20', verified_on:'2026-09-21'};
+
+function _authorityPage(page) {
+  var map = {
+    'kb-maw-general':'faq-maw-others',
+    'kb-maw-hours':'faq-maw-hours',
+    'kb-maw-parking-sms':'faq-maw-hours',
+    'kb-maw-permits':'faq-maw-permits',
+    'kb-maw-fines':'faq-maw-grievances',
+    'kb-maw-mbz':'faq-maw-mbz',
+    'kb-darb-general':'faq-darb-general',
+    'kb-darb-reg':'faq-darb-reg',
+    'kb-darb-registration':'faq-darb-reg',
+    'kb-darb-wallet':'faq-darb-wallet',
+    'kb-darb-toll':'faq-darb-general',
+    'kb-darb-fines':'faq-darb-fines',
+    'kb-darb-exempt':'faq-darb-exempt'
+  };
+  return map[page] || page || 'faq-maw-others';
+}
+
+function _authorityHtml(value) {
+  var text = String(value || '').trim();
+  if (!text || /<\/?[a-z][\s\S]*>/i.test(text)) return text;
+  return '<p>' + escHtml(text).replace(/\r?\n\r?\n/g, '</p><p>').replace(/\r?\n/g, '<br>') + '</p>';
+}
+
+function _authorityUpdateKey(update) {
+  var text = _norm(((update && update.title) || '') + ' ' + ((update && (update.desc || update.body)) || ''));
+  if (text.indexOf('musaffah') >= 0 && text.indexOf('phase 3') >= 0) return 'musaffah-phase-3';
+  if (text.indexOf('me9') >= 0 && text.indexOf('me12') >= 0) return 'mbz-me9-me12';
+  if (text.indexOf('mushrif') >= 0 && text.indexOf('free') >= 0) return 'mushrif-freeflow';
+  if (text.indexOf('parkin') >= 0 && text.indexOf('partnership') >= 0) return 'parkin-partnership';
+  return _kbSig((update && update.title) || '');
+}
+
+function _resetAuthoritySearchIndex() {
+  for (var i = FAQS.length - 1; i >= 0; i--) {
+    var id = String((FAQS[i] && FAQS[i].id) || '');
+    if (id.indexOf('SMSX-') === 0 || id.indexOf('EMAILX-') === 0) FAQS.splice(i, 1);
+  }
+  FAQS.forEach(function(f){ if (f) f._idx = false; });
+  if (typeof _auxInjected !== 'undefined') _auxInjected = false;
+  if (typeof _searchAux !== 'undefined') _searchAux = [];
+  if (typeof _searchVocabulary !== 'undefined') _searchVocabulary = [];
+  if (typeof _searchVocabularySet !== 'undefined') _searchVocabularySet = {};
+}
+
+function applyAuthorityData(data) {
+  if (!data || !data.admin_edits) return false;
+  var edits = data.admin_edits;
+  var byId = {};
+  var byQuestion = {};
+  FAQS.forEach(function(f){
+    if (!f) return;
+    if (f.id) byId[f.id] = f;
+    var sig = _kbSig(f.q || f.title || '');
+    if (sig && !byQuestion[sig]) byQuestion[sig] = f;
+  });
+
+  Object.keys(edits).forEach(function(key){
+    if (key.indexOf('article_') !== 0 || !edits[key] || edits[key]._deleted) return;
+    var article = edits[key];
+    var id = article.id || key.replace(/^article_/, '');
+    var question = article.q || article.title || '';
+    if (!question) return;
+    var sig = _kbSig(question);
+    var target = byId[id] || byQuestion[sig];
+    var officialSource = /^https?:\/\/(?:www\.)?(?:qmobility\.ae|darb\.qmobility\.ae)/i.test(article.source || '');
+    var authoritative = !!(article.verified_on || officialSource);
+    if (!target) {
+      target = {
+        id:id,
+        q:question,
+        a:_authorityHtml(article.a),
+        q_ar:article.q_ar || '',
+        a_ar:_authorityHtml(article.a_ar),
+        kw:article.kw || '',
+        page:_authorityPage(article.page),
+        cat:(article.domain === 'darb' || String(article.page || '').indexOf('kb-darb') === 0) ? 'DARB - Verified' : 'MAWAQIF - Verified',
+        subcat:article.verified_on ? 'Official verification' : 'Legacy KB coverage',
+        source:article.source || 'qmobility_kb_latest.json',
+        reviewed_at:article.verified_on || data.verified_on || data.exported || '',
+        accuracy:article.verified_on ? 'Verified' : 'Imported',
+        authority_version:data.version || ''
+      };
+      FAQS.push(target);
+      byId[id] = target;
+      if (sig) byQuestion[sig] = target;
+    } else if (authoritative) {
+      if (article.q) target.q = article.q;
+      if (article.a) target.a = _authorityHtml(article.a);
+      if (article.q_ar) target.q_ar = article.q_ar;
+      if (article.a_ar) target.a_ar = _authorityHtml(article.a_ar);
+      if (article.kw) target.kw = article.kw;
+      target.source = article.source || 'qmobility_kb_latest.json';
+      target.reviewed_at = article.verified_on || data.verified_on || data.exported || '';
+      target.accuracy = 'Verified';
+      target.authority_version = data.version || '';
+    }
+    target._idx = false;
+  });
+
+  var smsGroup = edits.sms_group_updated_templates;
+  if (smsGroup && Array.isArray(smsGroup.rows)) {
+    var arabicByLabel = {};
+    SMS_TEMPLATES.forEach(function(row){
+      arabicByLabel[_norm((row.cat || '') + '|' + (row.label_en || ''))] = row.label_ar || '';
+    });
+    SMS_TEMPLATES = smsGroup.rows.map(function(row){
+      var scenario = row.scenario || '';
+      var prefix = (row.group || '') + ' - ';
+      var label = scenario.indexOf(prefix) === 0 ? scenario.slice(prefix.length) : scenario;
+      return {
+        cat:row.group || '',
+        label_en:label,
+        label_ar:arabicByLabel[_norm((row.group || '') + '|' + label)] || '',
+        tmpl:row.template || '',
+        status:row.status || ''
+      };
+    });
+  }
+
+  if (Array.isArray(edits.latest_updates)) {
+    var incoming = edits.latest_updates.map(function(update){
+      var text = _norm((update.title || '') + ' ' + (update.body || ''));
+      return {
+        date:update.date || '',
+        title:update.title || 'Latest update',
+        desc:update.body || '',
+        tag:text.indexOf('darb') >= 0 ? 'darb' : text.indexOf('parking') >= 0 || text.indexOf('mawaqif') >= 0 ? 'maw' : 'new',
+        source:update.source || ''
+      };
+    });
+    var incomingKeys = {};
+    incoming.forEach(function(update){ incomingKeys[_authorityUpdateKey(update)] = true; });
+    LATEST_UPDATES = incoming.concat(LATEST_UPDATES.filter(function(update){ return !incomingKeys[_authorityUpdateKey(update)]; }));
+  }
+
+  var darbAuto = DARB_X_FEATURES.find(function(item){ return item.id === 'darb-x-2'; });
+  if (darbAuto) darbAuto.desc = 'Automatic toll deduction from the linked DARB wallet. Auto-payment is always enabled and cannot be disabled or paused.';
+
+  KB_AUTHORITY_STATUS = {
+    loaded:true,
+    version:data.version || 'verified-json',
+    verified_on:data.verified_on || data.exported || '',
+    sms_count:SMS_TEMPLATES.length
+  };
+  window.KB_SOURCE_PRIORITY = data.source_priority || [];
+  _resetAuthoritySearchIndex();
+  ALL_FAQ = FAQS;
+  return true;
+}
+
+async function loadAuthorityData() {
+  var response = await fetch('qmobility_kb_latest.json', {cache:'default'});
+  if (!response.ok) throw new Error('Authority JSON HTTP ' + response.status);
+  var data = await response.json();
+  if (!data || !data.admin_edits) throw new Error('Authority JSON is invalid');
+  KB_AUTHORITY_DATA = data;
+  return data;
 }
 
 function quickFind(query) {
@@ -7699,30 +7910,37 @@ async function init() {
     S.menu = false;
   }
 
-  // Show loading state while fetching saved KB data
-  document.getElementById('content').innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:60vh;flex-direction:column;gap:12px;"><div style="font-size:36px;">⏳</div><p style="color:var(--text2);font-size:14px;">Loading Knowledge Base…</p></div>';
-
-  var adminLoaded = false;
-  var adminLoad = loadAdminData().then(function(){ adminLoaded = true; return true; }).catch(function(){ return false; });
-  await Promise.race([adminLoad, _kbDelay(1800)]);
-  await applySavedTableData();
+  // Render immediately from the complete embedded data. Shared edits, table
+  // overrides, and the verified authority JSON reconcile in the background.
   applyFaqDataQualityPass();
   buildNav();
   render(S.page);
 
-  if (!adminLoaded) {
-    adminLoad.then(async function(){
-      await applySavedTableData();
+  // The verified JSON is independent from the slower shared admin service, so
+  // apply it as soon as it arrives.
+  loadAuthorityData().then(function(data){
+    applyAuthorityData(data);
+    buildNav();
+    render(S.page);
+  }).catch(function(){});
+
+  Promise.allSettled([
+    loadAdminData(),
+    applySavedTableData()
+  ]).then(function(){
+      // Admin edits are applied first; the authority JSON has the final say for
+      // verified facts, official updates, and Excel-controlled SMS templates.
       applyFaqDataQualityPass();
+      if (KB_AUTHORITY_DATA) applyAuthorityData(KB_AUTHORITY_DATA);
       buildNav();
       render(S.page);
-    });
-  }
+  });
 
-  // Real-time sync: poll the shared store every 10s for admin changes.
+  // Shared admin edits are checked quietly without holding up initial display.
   // Non-admin users get a silent reload; admin users get a toast prompt.
   var _lastUpdatedAt = null;
   async function _checkForUpdates() {
+    if (document.hidden) return;
     try {
       var row = await kbStoreGet('kb_admin_data');
       if (!row) {
@@ -7735,6 +7953,7 @@ async function init() {
         _lastUpdatedAt = ts;
         await loadAdminData();
         applyFaqDataQualityPass();
+        if (KB_AUTHORITY_DATA) applyAuthorityData(KB_AUTHORITY_DATA);
         render(S.page);
         buildNav();
         return;
@@ -7744,12 +7963,13 @@ async function init() {
         // Reload the shared admin data and re-render the current page.
         await loadAdminData();
         applyFaqDataQualityPass();
+        if (KB_AUTHORITY_DATA) applyAuthorityData(KB_AUTHORITY_DATA);
         render(S.page);
         buildNav();
       }
     } catch(e) {}
   }
-  setInterval(_checkForUpdates, 10000); // every 10 seconds
+  setInterval(_checkForUpdates, 60000);
 
   // Keyboard shortcuts
   document.addEventListener('keydown', function(e){
