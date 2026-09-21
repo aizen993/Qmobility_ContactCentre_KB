@@ -190,6 +190,14 @@ body[dir="rtl"] .update-item{border-left:none;border-right:3px solid var(--qm)}
 .update-date{font-size:12px;color:var(--text2)}
 .update-title{font-weight:600;margin:4px 0}
 .update-desc{font-size:13px;color:var(--text2)}
+.kb-timing{display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px;margin-top:6px;font-size:11px;line-height:1.5;color:var(--text2)}
+.kb-timing a{color:var(--text2);text-decoration:underline}
+.kb-timing-sep{opacity:.45}
+.update-expired{opacity:.72}
+.update-expired .update-title{text-decoration:line-through;text-decoration-thickness:1px}
+.kb-expired-badge{font-size:10px;font-weight:700;letter-spacing:.02em;padding:2px 7px;border-radius:10px;background:#fdecea;color:#9b2c21;border:1px solid #f5c6c0;text-transform:uppercase}
+.kb-expired-head{margin:18px 0 8px;font-size:13px;font-weight:600;color:var(--text2)}
+@media (max-width:420px){.kb-timing{font-size:10px}}
 /* Script cards */
 .script-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px}
 .script-section{margin-top:12px;padding-top:12px;border-top:1px solid #eee}
@@ -1344,6 +1352,195 @@ var SERVICES_DARB = [
   {label_en:"Close Account", label_ar:"إغلاق حساب درب", link:"https://darb.qmobility.ae/RucWeb/login"},
   {label_en:"Submit Grievance", label_ar:"تقديم تظلم على مخالفة", link:"https://darb.qmobility.ae/RucWeb/login"}
 ];
+
+// ===== UPDATE TIMING (Asia/Dubai) =====
+// Every operational time in the KB is shown in UAE local time through
+// Intl.DateTimeFormat with timeZone 'Asia/Dubai', never the browser's zone.
+// Records that only carry a date (the original `date` field, or an ISO
+// date-only value) keep their date and are never given an invented time.
+var KB_TZ = 'Asia/Dubai';
+var KB_TZ_LABEL = 'GST';
+var KB_MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+var KB_DUBAI_OFFSET_MS = 4 * 3600 * 1000;
+
+// Returns {ms, hasTime} and, for date-only values, the literal {y,m,d}.
+// `ms` for a date-only value is midnight Asia/Dubai so sorting stays stable.
+function kbParseStamp(value) {
+  if (value === null || value === undefined) return null;
+  var s = String(value).trim();
+  if (!s) return null;
+  var iso = s.match(/^(\d{4})-(\d{2})-(\d{2})(?:[T ](\d{2}):(\d{2})(?::(\d{2}))?\s*(Z|[+-]\d{2}:?\d{2})?)?$/);
+  if (iso) {
+    var y = +iso[1], mo = +iso[2], d = +iso[3];
+    var dateOnlyMs = Date.UTC(y, mo - 1, d) - KB_DUBAI_OFFSET_MS;
+    if (iso[4] === undefined) return {y:y, m:mo, d:d, hasTime:false, ms:dateOnlyMs};
+    var norm = s.replace(' ', 'T');
+    if (!iso[7]) norm += '+04:00'; // a UAE local time with no offset stated
+    var t = Date.parse(norm);
+    if (isNaN(t)) return {y:y, m:mo, d:d, hasTime:false, ms:dateOnlyMs};
+    return {hasTime:true, ms:t};
+  }
+  // Legacy display dates already in the KB, e.g. "23 Jun 2026".
+  var legacy = s.match(/^(\d{1,2})\s+([A-Za-z]{3,})\s+(\d{4})$/);
+  if (legacy) {
+    var key = legacy[2].slice(0,1).toUpperCase() + legacy[2].slice(1,3).toLowerCase();
+    var mi = KB_MONTHS.indexOf(key);
+    if (mi >= 0) {
+      var ly = +legacy[3], ld = +legacy[1];
+      return {y:ly, m:mi + 1, d:ld, hasTime:false, ms:Date.UTC(ly, mi, ld) - KB_DUBAI_OFFSET_MS};
+    }
+  }
+  return null;
+}
+
+function _kbDubaiParts(ms) {
+  try {
+    var dtf = new Intl.DateTimeFormat('en-US', {
+      timeZone:KB_TZ, year:'numeric', month:'2-digit', day:'2-digit',
+      hour:'2-digit', minute:'2-digit', hour12:false
+    });
+    var out = {};
+    dtf.formatToParts(new Date(ms)).forEach(function(p){ out[p.type] = p.value; });
+    if (!out.year) return null;
+    return out;
+  } catch (e) { return null; }
+}
+
+// "22 Sep 2026, 09:30 GST" when a time exists, "22 Sep 2026" when it does not.
+function kbFormatStamp(value) {
+  var p = kbParseStamp(value);
+  if (!p) return '';
+  if (!p.hasTime) {
+    if (p.y === undefined) return '';
+    return p.d + ' ' + KB_MONTHS[p.m - 1] + ' ' + p.y;
+  }
+  var o = _kbDubaiParts(p.ms);
+  if (!o) return '';
+  var hour = o.hour === '24' ? '00' : o.hour;
+  return (+o.day) + ' ' + KB_MONTHS[(+o.month) - 1] + ' ' + o.year +
+         ', ' + hour + ':' + o.minute + ' ' + KB_TZ_LABEL;
+}
+
+// A date-only end date covers the whole of that day in UAE time.
+function kbExpiryMs(value) {
+  var p = kbParseStamp(value);
+  if (!p) return null;
+  return p.hasTime ? p.ms : p.ms + 86400000;
+}
+
+function kbIsExpired(record, nowMs) {
+  if (!record) return false;
+  var end = kbExpiryMs(record.effective_until);
+  if (end === null) return false;
+  return (nowMs === undefined ? Date.now() : nowMs) > end;
+}
+
+// Newest first, by the most meaningful timestamp the record actually has.
+// Old records that only carry `date` still sort correctly through that field.
+function kbRecordSortMs(record) {
+  if (!record) return -Infinity;
+  var p = kbParseStamp(record.effective_from) ||
+          kbParseStamp(record.published_at) ||
+          kbParseStamp(record.updated_at) ||
+          kbParseStamp(record.date);
+  return p ? p.ms : -Infinity;
+}
+
+function kbSortUpdates(list) {
+  return (list || []).slice().sort(function(a, b){
+    return kbRecordSortMs(b) - kbRecordSortMs(a);
+  });
+}
+
+// The display date for an update card: an exact timestamp when one exists,
+// otherwise the record's own date string, unchanged.
+function kbUpdateDisplayDate(u) {
+  if (!u) return '';
+  return kbFormatStamp(u.updated_at) || kbFormatStamp(u.published_at) ||
+         kbFormatStamp(u.effective_from) || kbFormatStamp(u.date) || (u.date || '');
+}
+
+// One compact metadata line. Kept to a single wrapping row of small text so
+// the cards do not grow or shift when timestamps are present.
+function kbTimingMetaHtml(u, opts) {
+  if (!u) return '';
+  opts = opts || {};
+  var bits = [];
+  var stamp = kbFormatStamp(u.updated_at) || kbFormatStamp(u.published_at);
+  if (stamp) bits.push('Updated ' + escHtml(stamp));
+  var from = kbFormatStamp(u.effective_from);
+  if (from) bits.push('Effective from ' + escHtml(from));
+  var until = kbFormatStamp(u.effective_until);
+  if (until) bits.push('Effective until ' + escHtml(until));
+  var verified = kbFormatStamp(u.verified_at);
+  if (verified && !opts.hideVerified) bits.push('Verified ' + escHtml(verified));
+  var src = u.source || u.source_ref || '';
+  if (src) {
+    var url = u.source_url || '';
+    bits.push(url
+      ? '<a href="' + escHtml(url) + '" target="_blank" rel="noopener">Source: ' + escHtml(src) + '</a>'
+      : 'Source: ' + escHtml(src));
+  }
+  if (!bits.length) return '';
+  return '<div class="kb-timing">' + bits.join('<span class="kb-timing-sep">&middot;</span>') + '</div>';
+}
+
+var KB_UPDATE_TAG_COLORS = {maw:'#2e7d32', darb:'#1976d2', new:'#7b1fa2', feed:'#c62828', ops:'#00695c'};
+
+function kbUpdateCardHtml(u, expired) {
+  var title = S.lang === 'ar' && u.title_ar ? u.title_ar : (u.title_en || u.title || '');
+  var desc = S.lang === 'ar' && u.desc_ar ? u.desc_ar : (u.desc_en || u.desc || '');
+  var color = KB_UPDATE_TAG_COLORS[u.tag] || '#555';
+  var r = '<div class="update-item' + (expired ? ' update-expired' : '') + '" style="border-left-color:' + color + '">';
+  r += '<div style="display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:4px;">';
+  r += '<div class="update-date">' + escHtml(kbUpdateDisplayDate(u)) + '</div>';
+  if (u.tag) r += '<span style="font-size:10px;font-weight:700;padding:2px 7px;border-radius:10px;background:' + color + '1a;color:' + color + ';text-transform:uppercase;">' + escHtml(u.tag) + '</span>';
+  if (expired) r += '<span class="kb-expired-badge">Expired</span>';
+  r += '</div>';
+  r += '<div class="update-title">' + title + '</div>';
+  r += '<div class="update-desc">' + desc + '</div>';
+  r += kbTimingMetaHtml(u);
+  r += '</div>';
+  return r;
+}
+
+// Current updates first, newest by real timestamp. Anything past its
+// effective_until drops out of the current list and is shown separately,
+// clearly marked Expired, so it can never read as a live instruction.
+function kbUpdatesListHtml(list, limit) {
+  var sorted = kbSortUpdates(list);
+  var now = Date.now();
+  var current = [], expired = [];
+  sorted.forEach(function(u){ (kbIsExpired(u, now) ? expired : current).push(u); });
+  var shown = (limit && current.length > limit) ? current.slice(0, limit) : current;
+
+  var h = '<div class="updates-list">';
+  shown.forEach(function(u){ h += kbUpdateCardHtml(u, false); });
+  if (!shown.length) h += '<div class="update-item"><div class="update-desc">No current updates.</div></div>';
+  h += '</div>';
+
+  if (limit && current.length > limit) {
+    h += '<div style="margin:-12px 0 20px;"><a class="btn" style="text-decoration:none;font-size:13px;" onclick="go(&#39;updates&#39;,&#39;Latest Updates&#39;)">View all ' + current.length + ' updates</a></div>';
+  } else if (expired.length) {
+    h += '<div class="kb-expired-head">Expired &mdash; no longer current instructions (' + expired.length + ')</div>';
+    h += '<div class="updates-list">';
+    expired.forEach(function(u){ h += kbUpdateCardHtml(u, true); });
+    h += '</div>';
+  }
+  return h;
+}
+
+function renderUpdates(el) {
+  var h = '<div class="breadcrumb"><a onclick="goHome()">Home</a> / ' + (S.lang === 'ar' ? 'آخر التحديثات' : 'Latest Updates') + '</div>';
+  h += '<div class="page-header"><div><h1>&#128227; ' + (S.lang === 'ar' ? 'آخر التحديثات' : 'Latest Updates') + '</h1>';
+  h += '<p style="color:var(--text2);font-size:13px;margin:4px 0 0;">' +
+       (S.lang === 'ar'
+         ? 'مرتبة حسب تاريخ السريان. جميع الأوقات بتوقيت الإمارات (GST).'
+         : 'Sorted by effective date. All times are shown in UAE time (GST).') +
+       '</p></div></div>';
+  h += kbUpdatesListHtml(LATEST_UPDATES);
+  el.innerHTML = h;
+}
 
 // ===== LATEST UPDATES =====
 var LATEST_UPDATES = [
@@ -3191,6 +3388,7 @@ function render(page) {
   if (!el) return;
 
   if (page === 'dashboard') renderDashboard(el);
+  else if (page === 'updates') renderUpdates(el);
   else if (page === 'sector-maw') renderSector(el, 'sector-maw');
   else if (page === 'sector-darb') renderSector(el, 'sector-darb');
   else if (page === 'sector-priv') renderSector(el, 'sector-priv');
@@ -3262,22 +3460,7 @@ function renderDashboard(el) {
 
   // FIX 7: Latest Updates
   h += '<div style="margin-top:24px"><h2>&#128227; ' + (S.lang==='ar'?'آخر التحديثات':'Latest Updates') + '</h2></div>';
-  h += '<div class="updates-list">';
-  LATEST_UPDATES.forEach(function(u){
-    var uTitle = S.lang==='ar'&&u.title_ar?u.title_ar:(u.title_en||u.title||'');
-    var uDesc = S.lang==='ar'&&u.desc_ar?u.desc_ar:(u.desc_en||u.desc||'');
-    var tagColors = {maw:'#2e7d32',darb:'#1976d2',new:'#7b1fa2',feed:'#c62828'};
-    var tagColor = tagColors[u.tag]||'#555';
-    h += '<div class="update-item" style="border-left-color:' + tagColor + '">';
-    h += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">';
-    h += '<div class="update-date">' + u.date + '</div>';
-    if (u.tag) h += '<span style="font-size:10px;font-weight:700;padding:2px 7px;border-radius:10px;background:' + tagColor + '1a;color:' + tagColor + ';text-transform:uppercase;">' + u.tag + '</span>';
-    h += '</div>';
-    h += '<div class="update-title">' + uTitle + '</div>';
-    h += '<div class="update-desc">' + uDesc + '</div>';
-    h += '</div>';
-  });
-  h += '</div>';
+  h += kbUpdatesListHtml(LATEST_UPDATES, 6);
 
   // Quick Access
   h += '<div style="margin-top:24px"><h2>&#9889; ' + (S.lang==='ar'?'وصول سريع':'Quick Access') + '</h2></div>';
@@ -3514,7 +3697,8 @@ function renderFaqCard(f, highlightQuery) {
       if (sourceUrl) r += '<a href="' + escHtml(sourceUrl) + '" target="_blank" style="background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:3px 8px;color:var(--text);text-decoration:none;">' + escHtml(sourceText) + '</a>';
       else r += '<span style="background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:3px 8px;">' + escHtml(sourceText) + '</span>';
     }
-    if (reviewedAt) r += '<span style="background:#eef7ff;border:1px solid #bbdefb;border-radius:12px;padding:3px 8px;color:#1565C0;">Reviewed: ' + escHtml(reviewedAt) + '</span>';
+    if (reviewedAt) r += '<span style="background:#eef7ff;border:1px solid #bbdefb;border-radius:12px;padding:3px 8px;color:#1565C0;">Reviewed: ' + escHtml(kbFormatStamp(reviewedAt) || reviewedAt) + '</span>';
+    if (f.updated_at) r += '<span style="background:#eef7ff;border:1px solid #bbdefb;border-radius:12px;padding:3px 8px;color:#1565C0;">Updated: ' + escHtml(kbFormatStamp(f.updated_at) || f.updated_at) + '</span>';
     if (owner) r += '<span style="background:#fff8e1;border:1px solid #ffe082;border-radius:12px;padding:3px 8px;color:#7a4f00;">Owner: ' + escHtml(owner) + '</span>';
     if (accuracy) r += '<span style="background:#e8f5e9;border:1px solid #a5d6a7;border-radius:12px;padding:3px 8px;color:#1b5e20;">' + escHtml(accuracy) + '</span>';
     r += '</div>';
@@ -3589,11 +3773,13 @@ function renderFaqCard(f, highlightQuery) {
       if (sourceUrl) r += '<a class="faq-source-pill source" href="' + escHtml(sourceUrl) + '" target="_blank">&#128214; ' + escHtml(sourceText) + '</a>';
       else r += '<span class="faq-source-pill source">&#128214; ' + escHtml(sourceText) + '</span>';
     }
-    if (reviewedAt) r += '<span class="faq-source-pill reviewed">&#128197; Reviewed: ' + escHtml(reviewedAt) + '</span>';
+    if (reviewedAt) r += '<span class="faq-source-pill reviewed">&#128197; Reviewed: ' + escHtml(kbFormatStamp(reviewedAt) || reviewedAt) + '</span>';
+    if (f.updated_at) r += '<span class="faq-source-pill reviewed">&#128260; Updated: ' + escHtml(kbFormatStamp(f.updated_at) || f.updated_at) + '</span>';
     if (owner) r += '<span class="faq-source-pill owner">&#128188; Owner: ' + escHtml(owner) + '</span>';
     if (accuracy) r += '<span class="faq-source-pill accuracy">&#10003; ' + escHtml(accuracy) + '</span>';
     r += '</div>';
   }
+  if (f.effective_from || f.effective_until) r += kbTimingMetaHtml({effective_from:f.effective_from, effective_until:f.effective_until});
 
   r += '<div class="faq-meta">';
   r += '<div class="faq-tags">';
@@ -7272,7 +7458,7 @@ function applyAuthorityData(data) {
     var sig = _kbSig(question);
     var target = byId[id] || byQuestion[sig];
     var officialSource = /^https?:\/\/(?:www\.)?(?:qmobility\.ae|darb\.qmobility\.ae)/i.test(article.source || '');
-    var authoritative = !!(article.verified_on || officialSource);
+    var authoritative = !!(article.verified_on || article.verified_at || officialSource);
     if (!target) {
       target = {
         id:id,
@@ -7285,8 +7471,13 @@ function applyAuthorityData(data) {
         cat:(article.domain === 'darb' || String(article.page || '').indexOf('kb-darb') === 0) ? 'DARB - Verified' : 'MAWAQIF - Verified',
         subcat:article.verified_on ? 'Official verification' : 'Legacy KB coverage',
         source:article.source || 'qmobility_kb_latest.json',
-        reviewed_at:article.verified_on || data.verified_on || data.exported || '',
-        accuracy:article.verified_on ? 'Verified' : 'Imported',
+        source_url:article.source_url || '',
+        reviewed_at:article.verified_at || article.verified_on || data.verified_on || data.exported || '',
+        updated_at:article.updated_at || '',
+        published_at:article.published_at || '',
+        effective_from:article.effective_from || '',
+        effective_until:article.effective_until || '',
+        accuracy:article.verified_on || article.verified_at ? 'Verified' : 'Imported',
         authority_version:data.version || ''
       };
       FAQS.push(target);
@@ -7299,7 +7490,12 @@ function applyAuthorityData(data) {
       if (article.a_ar) target.a_ar = _authorityHtml(article.a_ar);
       if (article.kw) target.kw = article.kw;
       target.source = article.source || 'qmobility_kb_latest.json';
-      target.reviewed_at = article.verified_on || data.verified_on || data.exported || '';
+      if (article.source_url) target.source_url = article.source_url;
+      target.reviewed_at = article.verified_at || article.verified_on || data.verified_on || data.exported || '';
+      if (article.updated_at) target.updated_at = article.updated_at;
+      if (article.published_at) target.published_at = article.published_at;
+      if (article.effective_from) target.effective_from = article.effective_from;
+      if (article.effective_until) target.effective_until = article.effective_until;
       target.accuracy = 'Verified';
       target.authority_version = data.version || '';
     }
@@ -7330,11 +7526,20 @@ function applyAuthorityData(data) {
     var incoming = edits.latest_updates.map(function(update){
       var text = _norm((update.title || '') + ' ' + (update.body || ''));
       return {
+        id:update.id || '',
         date:update.date || '',
         title:update.title || 'Latest update',
+        title_ar:update.title_ar || '',
         desc:update.body || '',
-        tag:text.indexOf('darb') >= 0 ? 'darb' : text.indexOf('parking') >= 0 || text.indexOf('mawaqif') >= 0 ? 'maw' : 'new',
-        source:update.source || ''
+        desc_ar:update.body_ar || '',
+        tag:update.tag || (text.indexOf('darb') >= 0 ? 'darb' : text.indexOf('parking') >= 0 || text.indexOf('mawaqif') >= 0 ? 'maw' : 'new'),
+        source:update.source || '',
+        source_url:update.source_url || '',
+        published_at:update.published_at || '',
+        effective_from:update.effective_from || '',
+        effective_until:update.effective_until || '',
+        verified_at:update.verified_at || '',
+        updated_at:update.updated_at || ''
       };
     });
     var incomingKeys = {};
@@ -7848,7 +8053,12 @@ function renderDashboard(el) {
   h += '</section>';
 
   h += '<section class="kb-latest-ops">';
-  h += '<div class="kb-section-head"><div><h2>Latest operational updates</h2><p>Source-backed guidance added without changing the existing agent tools.</p></div><span class="kb-section-date">Reviewed 27 Jul 2026</span></div>';
+  // The section date is computed from the newest live update rather than
+  // hard-coded, so it can never drift from the records underneath it.
+  var _newest = kbSortUpdates(LATEST_UPDATES).filter(function(u){ return !kbIsExpired(u); })[0];
+  var _newestLabel = _newest ? kbUpdateDisplayDate(_newest) : '';
+  h += '<div class="kb-section-head"><div><h2>Latest operational updates</h2><p>Source-backed guidance added without changing the existing agent tools.</p></div>' +
+       '<span class="kb-section-date">' + (_newestLabel ? 'Latest ' + escHtml(_newestLabel) : 'Reviewed 27 Jul 2026') + '</span></div>';
   h += '<div class="kb-update-strip">';
   h += _kbUpdateCard('OPS-2026-0727-ETIHAD-RAIL', 'etihadRail', 'Etihad Rail', 'Free-Flow Paid Parking', '24/7 tariff, 15-minute grace period, payment, and station terms.');
   h += _kbUpdateCard('OPS-2026-0727-MZY-MSCP2', 'madinatZayed', 'Madinat Zayed', 'MSCP2 Free Parking', 'Free-parking system active at the market parking from 27 July.');
@@ -7861,7 +8071,11 @@ function renderDashboard(el) {
   h += '<button type="button" class="kb-update-link" onclick="openFaqById(&#39;OPS-2026-0727-COMPLAINT-VALIDATION&#39;)">Complaint validation</button>';
   h += '<button type="button" class="kb-update-link" onclick="openFaqById(&#39;OPS-2026-0727-DARBX-TRANSITION&#39;)">DARB X transition</button>';
   h += '<button type="button" class="kb-update-link" onclick="openFaqById(&#39;OPS-2026-0721-COURT-TOW&#39;)">Court and towing fees</button>';
-  h += '</div></section>';
+  h += '</div>';
+  // Dated update feed, newest first, with UAE timing metadata on each card.
+  h += '<div class="kb-section-head" style="margin-top:18px;"><div><h2 style="font-size:17px;">What changed recently</h2></div></div>';
+  h += kbUpdatesListHtml(LATEST_UPDATES, 5);
+  h += '</section>';
 
   h += '<section class="agent-grid-two">';
   h += '<div class="agent-panel"><h2>Fast Lanes</h2><div class="agent-actions">';

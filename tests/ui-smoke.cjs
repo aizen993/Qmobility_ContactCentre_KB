@@ -4,6 +4,7 @@ const { chromium } = require('playwright');
 
 const baseUrl = process.env.KB_URL || 'http://127.0.0.1:8090/';
 const outputDir = path.resolve(__dirname, '..', 'test-output');
+const assertionsPath = path.resolve(__dirname, 'kb-assertions.js');
 fs.mkdirSync(outputDir, { recursive: true });
 
 const viewports = [
@@ -24,7 +25,9 @@ function intersects(a, b) {
   const report = [];
 
   for (const viewport of viewports) {
-    const page = await browser.newPage({ viewport, ignoreHTTPSErrors: true });
+    // A non-UAE browser timezone proves every displayed time really is
+    // rendered through Intl with timeZone Asia/Dubai, not the local zone.
+    const page = await browser.newPage({ viewport, ignoreHTTPSErrors: true, timezoneId: 'America/New_York' });
     const errors = [];
     const badResponses = [];
     const authorityRequests = [];
@@ -46,35 +49,27 @@ function intersects(a, b) {
     await page.waitForFunction(() => window.KB_AUTHORITY_STATUS?.loaded === true);
     const authorityReadyMs = Date.now() - started;
 
-    const initial = await page.evaluate(() => {
-      const visible = element => {
-        const style = getComputedStyle(element);
-        const rect = element.getBoundingClientRect();
-        return style.display !== 'none' && style.visibility !== 'hidden' && rect.width > 0 && rect.height > 0;
-      };
-      const boxes = [...document.querySelectorAll('#topbar > button, #topbar > .search-box')]
-        .filter(visible)
-        .map((element, index) => {
+    // The shared assertion suite is the single source of truth.
+    await page.addScriptTag({ path: assertionsPath });
+    const result = await page.evaluate(name => window.kbAssertions(name), viewport.name);
+    failures.push(...result.failures);
+
+    const initial = await page.evaluate(() => ({
+      overflowX: document.documentElement.scrollWidth - window.innerWidth,
+      boxes: (() => {
+        const visible = element => {
+          const style = getComputedStyle(element);
           const rect = element.getBoundingClientRect();
-          return { id: element.id || `${element.className}-${index}`, left: rect.left, right: rect.right, top: rect.top, bottom: rect.bottom };
-        });
-      const kwi = window.SMS_TEMPLATES.find(row => row.cat === 'GCC plates SMS' && row.label_en === 'KWI');
-      const visitor = window.FAQS.find(row => row.id === 'FAQ-0220');
-      const autoPayment = window.FAQS.find(row => row.id === 'FAQ-0087');
-      return {
-        faqCount: window.FAQS.length,
-        smsCount: window.SMS_TEMPLATES.length,
-        updateCount: window.LATEST_UPDATES.length,
-        authority: window.KB_AUTHORITY_STATUS,
-        overflowX: document.documentElement.scrollWidth - window.innerWidth,
-        boxes,
-        kwiTemplate: kwi?.tmpl || '',
-        visitorAnswer: visitor?.a || '',
-        autoPaymentAnswer: autoPayment?.a || '',
-        hasParkinUpdate: window.LATEST_UPDATES.some(update => /Parkin/i.test(update.title)),
-        hasJulyOperations: window.FAQS.some(row => row.id === 'OPS-2026-0727-DARBX-TRANSITION'),
-      };
-    });
+          return style.display !== 'none' && style.visibility !== 'hidden' && rect.width > 0 && rect.height > 0;
+        };
+        return [...document.querySelectorAll('#topbar > button, #topbar > .search-box')]
+          .filter(visible)
+          .map((element, index) => {
+            const rect = element.getBoundingClientRect();
+            return { id: element.id || `${element.className}-${index}`, left: rect.left, right: rect.right, top: rect.top, bottom: rect.bottom };
+          });
+      })(),
+    }));
 
     const overlaps = [];
     for (let i = 0; i < initial.boxes.length; i += 1) {
@@ -82,25 +77,67 @@ function intersects(a, b) {
         if (intersects(initial.boxes[i], initial.boxes[j])) overlaps.push(`${initial.boxes[i].id}/${initial.boxes[j].id}`);
       }
     }
-
-    if (initial.faqCount < 439) failures.push(`${viewport.name}: expected at least 439 merged articles, found ${initial.faqCount}`);
-    if (initial.smsCount !== 89) failures.push(`${viewport.name}: expected 89 SMS templates, found ${initial.smsCount}`);
-    if (initial.updateCount < 21) failures.push(`${viewport.name}: expected merged official and operational updates`);
     if (initial.overflowX > 1) failures.push(`${viewport.name}: dashboard horizontal overflow ${initial.overflowX}px`);
     if (overlaps.length) failures.push(`${viewport.name}: topbar overlap ${overlaps.join(', ')}`);
     if (authorityRequests.length !== 1) failures.push(`${viewport.name}: expected one authority JSON request, found ${authorityRequests.length}`);
-    if (!initial.kwiTemplate.includes('KWT Plate SMS to 3009 Text: KWI 12345ABC S/P 3')) failures.push(`${viewport.name}: Kuwait SMS does not match final workbook`);
-    if (!/4 visitor phone numbers|maximum of <strong>4/i.test(initial.visitorAnswer)) failures.push(`${viewport.name}: villa visitor limit is not four`);
-    if (!/cannot be disabled or paused/i.test(initial.autoPaymentAnswer)) failures.push(`${viewport.name}: auto-payment correction missing`);
-    if (!initial.hasParkinUpdate) failures.push(`${viewport.name}: Parkin official update missing`);
-    if (!initial.hasJulyOperations) failures.push(`${viewport.name}: July operational articles were lost`);
 
+    // Dashboard update cards must carry readable UAE timing metadata.
+    const dashTiming = await page.evaluate(() => {
+      const rows = [...document.querySelectorAll('.updates-list .update-item')];
+      const timing = [...document.querySelectorAll('.updates-list .kb-timing')];
+      return {
+        cards: rows.length,
+        withTiming: timing.length,
+        sample: timing.length ? timing[0].textContent.replace(/\s+/g, ' ').trim() : '',
+        gstShown: timing.some(node => /GST/.test(node.textContent)),
+      };
+    });
+    if (!dashTiming.cards) failures.push(`${viewport.name}: dashboard rendered no update cards`);
+    if (!dashTiming.withTiming) failures.push(`${viewport.name}: update cards carry no timing metadata`);
+    if (!dashTiming.gstShown) failures.push(`${viewport.name}: no update card shows a GST timestamp`);
+
+    // Latest Updates page must exist, sort, and separate expired items.
+    await page.evaluate(() => go('updates', 'Latest Updates'));
+    await page.waitForSelector('.updates-list');
+    const updatesPage = await page.evaluate(() => ({
+      overflowX: document.documentElement.scrollWidth - window.innerWidth,
+      cards: document.querySelectorAll('.update-item').length,
+      expiredBadges: document.querySelectorAll('.kb-expired-badge').length,
+      expiredInCurrent: [...document.querySelectorAll('.updates-list')][0]
+        ? [...[...document.querySelectorAll('.updates-list')][0].querySelectorAll('.update-expired')].length
+        : 0,
+      notFound: /Page not found/i.test(document.getElementById('content').textContent),
+    }));
+    if (updatesPage.notFound) failures.push(`${viewport.name}: Latest Updates page is missing a renderer`);
+    if (!updatesPage.cards) failures.push(`${viewport.name}: Latest Updates page rendered no cards`);
+    if (updatesPage.expiredInCurrent > 0) failures.push(`${viewport.name}: ${updatesPage.expiredInCurrent} expired update(s) rendered in the current list`);
+    if (updatesPage.overflowX > 1) failures.push(`${viewport.name}: Latest Updates horizontal overflow ${updatesPage.overflowX}px`);
+
+    // Normal search must still reach the previously corrected answer.
+    await page.evaluate(() => go('dashboard', 'Home'));
     await page.locator('#searchInput').fill('auto payment disabled');
     await page.evaluate(() => doSearch());
     await page.waitForSelector('#search-results .faq-card');
     const searchText = await page.locator('#search-results').textContent();
     if (!/cannot be disabled or paused/i.test(searchText)) failures.push(`${viewport.name}: normal search missed corrected auto-payment answer`);
 
+    // A new canonical process must be reachable and expose its timing metadata.
+    await page.locator('#searchInput').fill('PDM machine switched off');
+    await page.evaluate(() => doSearch());
+    await page.waitForSelector('#search-results .faq-card');
+    const pdmResult = await page.evaluate(() => {
+      const text = document.getElementById('search-results').textContent;
+      return {
+        hasAnswer: /discontinued as we are moving to digital channels/i.test(text),
+        hasStamp: /Reviewed:|Updated:/.test(text),
+        overflowX: document.documentElement.scrollWidth - window.innerWidth,
+      };
+    });
+    if (!pdmResult.hasAnswer) failures.push(`${viewport.name}: search did not surface the approved PDM switch-off script`);
+    if (!pdmResult.hasStamp) failures.push(`${viewport.name}: search results do not expose a verified/updated date`);
+    if (pdmResult.overflowX > 1) failures.push(`${viewport.name}: search results horizontal overflow ${pdmResult.overflowX}px`);
+
+    // Find Fast must still reach the tree and the new subject areas.
     await page.evaluate(() => go('find-fast', 'Find Fast'));
     await page.waitForSelector('#fftWrap');
     const findFast = await page.evaluate(() => ({
@@ -111,6 +148,11 @@ function intersects(a, b) {
     if (findFast.overflowX > 1) failures.push(`${viewport.name}: Find Fast horizontal overflow ${findFast.overflowX}px`);
 
     if (viewport.name === 'desktop' || viewport.name === 'mobile') {
+      await page.evaluate(() => go('updates', 'Latest Updates'));
+      await page.waitForSelector('.updates-list');
+      await page.screenshot({ path: path.join(outputDir, `${viewport.name}-updates.png`), fullPage: true });
+      await page.evaluate(() => go('dashboard', 'Home'));
+      await page.waitForSelector('.agent-hero');
       await page.screenshot({ path: path.join(outputDir, `${viewport.name}.png`), fullPage: true });
     }
 
@@ -120,11 +162,14 @@ function intersects(a, b) {
       viewport: viewport.name,
       shellReadyMs,
       authorityReadyMs,
-      faqCount: initial.faqCount,
-      smsCount: initial.smsCount,
-      updates: initial.updateCount,
+      ...result.facts,
       overflowX: initial.overflowX,
       topbarOverlaps: overlaps,
+      updateCards: dashTiming.cards,
+      timingRows: dashTiming.withTiming,
+      timingSample: dashTiming.sample,
+      updatesPageCards: updatesPage.cards,
+      expiredBadges: updatesPage.expiredBadges,
       findFastColumns: findFast.columns,
       errors,
       badResponses,

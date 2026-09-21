@@ -1,7 +1,7 @@
 {
-  "version": "v7-verified-2026-09-21",
-  "exported": "2026-09-21T14:30:00Z",
-  "verified_on": "2026-09-21",
+  "version": "v8-verified-2026-09-22",
+  "exported": "2026-09-22T00:32:00+04:00",
+  "verified_on": "2026-09-22",
   "source_priority": [
     "This JSON bundle for approved operational updates",
     "SMS Updated templates 2.xlsx for exact SMS wording",
@@ -1187,13 +1187,240 @@
     },
     "latest_updates": [
       {
+        "id": "UPD-2026-0807-COMPLAINT-DIGITAL",
+        "date": "7 Aug 2026",
+        "title": "Complaints: guide the customer to the digital channel first",
+        "body": "The first and primary action is to guide the customer to submit their complaint through the DARB App or DARB Urban. The Contact Centre raises it directly only where the customer insists after being guided, or genuinely cannot use the digital channel.",
+        "tag": "ops",
+        "color": "var(--teal)",
+        "source": "Contact Centre management circular",
+        "published_at": "2026-08-07T17:14:00+04:00",
+        "effective_from": "2026-08-07",
+        "verified_at": "2026-09-22",
+        "updated_at": "2026-09-22T00:32:00+04:00"
+      },
+      {
+        "id": "UPD-2026-0825-EAST48",
+        "date": "25 Aug 2026",
+        "title": "Inspection resumed in sector East 48",
+        "title_ar": "استئناف أعمال الرقابة والتفتيش في قطاع شرق 48",
+        "body": "Monitoring and inspection resumed at the Abu Dhabi Accountability Authority location in sector East 48 from 25 August 2026.",
+        "tag": "maw",
+        "color": "var(--red)",
+        "source": "ICC Operations circular",
+        "published_at": "2026-08-25T15:22:00+04:00",
+        "effective_from": "2026-08-25",
+        "verified_at": "2026-09-22",
+        "updated_at": "2026-09-22T00:32:00+04:00"
+      },
+      {
+        "id": "UPD-2026-0827-FREEFLOW-SMS",
+        "date": "27 Aug 2026",
+        "title": "Free Flow entry SMS notifications disabled",
+        "title_ar": "إيقاف رسائل الدخول للتدفق الحر",
+        "body": "By management decision, entry SMS notifications for Free Flow locations are disabled. Customers receive an SMS only when a parking charge is incurred, and should use the Darb app for real-time visibility of their parking activity.",
+        "tag": "maw",
+        "color": "var(--red)",
+        "source": "Private Parking Management, cascaded by the Call Centre Manager",
+        "published_at": "2026-08-27T10:45:00+04:00",
+        "effective_from": "2026-08-27",
+        "verified_at": "2026-09-22",
+        "updated_at": "2026-09-22T00:32:00+04:00"
+      },
+      {
+        "id": "UPD-2026-0901-WHATSAPP",
+        "date": "1 Sep 2026",
+        "title": "WhatsApp: customers must reply before free-text messaging",
+        "body": "Per Meta policy, agents can message a customer freely only within the session opened once the customer initiates or replies. Otherwise only Meta-approved templates may be sent. This cannot be bypassed by Q Mobility.",
+        "tag": "ops",
+        "color": "var(--teal)",
+        "source": "Application Support",
+        "published_at": "2026-09-01T09:54:00+04:00",
+        "verified_at": "2026-09-22",
+        "updated_at": "2026-09-22T00:32:00+04:00"
+      },
+      {
+        "id": "UPD-2026-0901-MUSAFFAH-POUND-24-7",
+        "date": "1 Sep 2026",
+        "title": "Musaffah Car Pound customer service now 24/7",
+        "title_ar": "مكتب خدمة المتعاملين في حجز مصفح يعمل على مدار الساعة",
+        "body": "The Customer Service Office at Musaffah Car Pound operates 24 hours a day, 7 days a week from 1 September 2026, replacing the previous 8:00 AM to 12:00 midnight hours. Al Ain Car Pound hours are unchanged.",
+        "body_ar": "يعمل مكتب خدمة المتعاملين في حجز مصفح على مدار 24 ساعة طوال أيام الأسبوع اعتبارًا من 1 سبتمبر 2026، بدلاً من الدوام السابق من 8:00 صباحًا حتى منتصف الليل.",
+        "tag": "maw",
+        "color": "var(--red)",
+        "source": "Q Mobility Parking Operations",
+        "published_at": "2026-08-27T15:00:00+04:00",
+        "effective_from": "2026-09-01",
+        "verified_at": "2026-09-22",
+        "updated_at": "2026-09-22T00:32:00+04:00"
+      },
+      {
+        "id": "UPD-2026-0901-E18-02",
+        "date": "1 Sep 2026",
+        "title": "Sector E18-02 reclassified to premium parking, new loading bay",
+        "title_ar": "تغيير المواقف الفرعية إلى مواقف رئيسية في القطاع E18-02",
+        "body": "71 secondary bays parallel to the main street plus 3 side bays in E18-02 (Al Danah) were converted to premium (main) parking, and 1 new loading and unloading bay was created next to Qasr Najd Restaurant & Kitchen. The GIS tariff was updated on 1 September 2026 and on-street inspection commenced on 2 September 2026.",
+        "body_ar": "تم تغيير 71 موقفًا فرعيًا و3 مواقف جانبية في القطاع E18-02 إلى مواقف رئيسية، واستحداث موقف تحميل وتنزيل بجانب مطعم ومطبخ قصر نجد. تم تحديث التعرفة في نظام GIS بتاريخ 1 سبتمبر 2026.",
+        "tag": "maw",
+        "color": "var(--red)",
+        "source": "Parking Infrastructure Management approval and completion notice",
+        "published_at": "2026-09-07T16:03:00+04:00",
+        "effective_from": "2026-09-01",
+        "verified_at": "2026-09-22",
+        "updated_at": "2026-09-22T00:32:00+04:00"
+      },
+      {
+        "id": "UPD-2026-0908-ZONING-SIGNS",
+        "date": "8 Sep 2026",
+        "title": "Approved script for the new zoning signs",
+        "title_ar": "الصيغة المعتمدة للرد على استفسارات لوحات مناطق الترميز",
+        "body": "Customers asking about the new signs showing zoning information must be given the approved bilingual script: no action is required from them now, current payment methods and parking rules continue as usual, and the signs relate to a future update. Do not give any information beyond the script.",
+        "body_ar": "يجب الالتزام بالصيغة المعتمدة عند الرد على استفسارات المتعاملين بشأن اللوحات الجديدة الخاصة بمناطق الترميز، وعدم تقديم أي معلومات إضافية غير معتمدة.",
+        "tag": "maw",
+        "color": "var(--red)",
+        "source": "Contact Centre guidance, corroborated by ICC Operations",
+        "published_at": "2026-09-08T12:31:00+04:00",
+        "effective_from": "2026-09-08",
+        "verified_at": "2026-09-22",
+        "updated_at": "2026-09-22T00:32:00+04:00"
+      },
+      {
+        "id": "UPD-2026-0911-COMMERCIAL-PLATE",
+        "date": "11 Sep 2026",
+        "title": "Commercial vehicles must transfer to a permanent plate",
+        "body": "A commercial vehicle must have its temporary plate officially transferred to a permanent plate for the Mawaqif system to recognise it. Until then payments will not register properly and fines will be issued.",
+        "tag": "maw",
+        "color": "var(--red)",
+        "source": "Contact Centre supervisor circular",
+        "published_at": "2026-09-11T15:42:00+04:00",
+        "effective_from": "2026-09-11",
+        "verified_at": "2026-09-22",
+        "updated_at": "2026-09-22T00:32:00+04:00"
+      },
+      {
+        "id": "UPD-2026-0911-TOWED-MANUAL",
+        "date": "11 Sep 2026",
+        "title": "TEMPORARY: towed vehicles may show as untowed in CRM",
+        "body": "A system issue affecting the Enforcement Stage means vehicles in Abu Dhabi, Musaffah and Al Ain are being processed manually, so a towed vehicle can still show as untowed. Check the circulated manual list and escalate before telling a customer the vehicle was not towed. No fix date confirmed.",
+        "tag": "ops",
+        "color": "var(--teal)",
+        "source": "Parking Operations (Enforcement)",
+        "published_at": "2026-09-14T09:24:00+04:00",
+        "effective_from": "2026-09-11",
+        "verified_at": "2026-09-22",
+        "updated_at": "2026-09-22T00:32:00+04:00"
+      },
+      {
+        "id": "UPD-2026-0915-SHOWROOM",
+        "date": "15 Sep 2026",
+        "title": "Official parking guidance for car showrooms",
+        "title_ar": "الدليل الإرشادي لمواقف معارض السيارات",
+        "body": "An official Mawaqif brochure setting out what car showrooms may and must not do with parking was distributed to showrooms in Al Ain and circulated to the Contact Centre for handling related enquiries.",
+        "tag": "maw",
+        "color": "var(--red)",
+        "source": "Parking Control - Al Ain, via Customer Happiness",
+        "published_at": "2026-09-15T11:38:00+04:00",
+        "verified_at": "2026-09-22",
+        "updated_at": "2026-09-22T00:32:00+04:00"
+      },
+      {
+        "id": "UPD-2026-0916-MSCP-LONG-STAY",
+        "date": "16 Sep 2026",
+        "title": "Long-stay enforcement started at multi-storey car parks",
+        "title_ar": "بدء متابعة المركبات المتجاوزة للمدة في المواقف الطابقية",
+        "body": "Follow-up of vehicles exceeding the maximum allowed MSCP parking duration started on 16 September 2026. Customers receive an official SMS and have 72 hours to remove the vehicle before fines and towing.",
+        "body_ar": "بدأت متابعة المركبات المتجاوزة للمدة الزمنية المسموح بها للوقوف في المواقف الطابقية اعتبارًا من 16 سبتمبر 2026، مع منح المتعامل 72 ساعة لإزالة المركبة.",
+        "tag": "maw",
+        "color": "var(--red)",
+        "source": "Private Parking Management; execution confirmed by the inspection partner",
+        "published_at": "2026-08-27T12:08:00+04:00",
+        "effective_from": "2026-09-16",
+        "verified_at": "2026-09-22",
+        "updated_at": "2026-09-22T00:32:00+04:00"
+      },
+      {
+        "id": "UPD-2026-0917-POD-CARD",
+        "date": "17 Sep 2026",
+        "title": "People of Determination parking requires a Zayed Higher Organization card",
+        "title_ar": "طلب موقف أصحاب الهمم يتطلب بطاقة هيئة زايد",
+        "body": "A People of Determination parking request is only accepted with a PoD card issued by the Zayed Higher Organization. A Ministry of Community Empowerment card is not sufficient on its own, and the request must not be routed onward without a valid copy attached.",
+        "body_ar": "يشترط لقبول طلب موقف أصحاب الهمم أن يكون مقدم الطلب حاصلاً على بطاقة صادرة عن هيئة زايد لأصحاب الهمم، وعدم الاكتفاء بالبطاقة الصادرة عن وزارة تمكين المجتمع.",
+        "tag": "maw",
+        "color": "var(--red)",
+        "source": "Q Mobility Parking Operations circular",
+        "published_at": "2026-09-17T11:54:00+04:00",
+        "effective_from": "2026-09-17",
+        "verified_at": "2026-09-22",
+        "updated_at": "2026-09-22T00:32:00+04:00"
+      },
+      {
+        "id": "UPD-2026-0918-L1-DOCS",
+        "date": "18 Sep 2026",
+        "title": "Mandatory L1 document checklist for parking and permit applications",
+        "body": "Agents must confirm the full document set before submitting or escalating freight and light cargo parking, commercial loading/unloading bays, People of Determination parking, and temporary entrance requests. Incomplete requests must not be submitted - all cases carry a 3-working-day resolution SLA.",
+        "tag": "ops",
+        "color": "var(--teal)",
+        "source": "Contact Centre management circular",
+        "published_at": "2026-09-18T08:12:00+04:00",
+        "effective_from": "2026-09-18",
+        "verified_at": "2026-09-22",
+        "updated_at": "2026-09-22T00:32:00+04:00"
+      },
+      {
+        "id": "UPD-2026-0918-W59-01",
+        "date": "18 Sep 2026",
+        "title": "Inspection resumed in sector W59-01",
+        "title_ar": "استئناف أعمال التفتيش في القطاع W59-01",
+        "body": "Inspection and enforcement resumed in W59-01 from 18 September 2026. Customers asking about main (premium) parking there are directed to resident-designated parking only, or the parking allocated to them inside their residential building.",
+        "body_ar": "استؤنفت أعمال التفتيش والرقابة في القطاع W59-01 اعتبارًا من 18 سبتمبر 2026، مع توجيه المتعاملين إلى المواقف المخصصة للسكان أو المواقف داخل البنايات السكنية.",
+        "tag": "maw",
+        "color": "var(--red)",
+        "source": "ICC Operations circular",
+        "published_at": "2026-09-18T15:15:00+04:00",
+        "effective_from": "2026-09-18",
+        "verified_at": "2026-09-22",
+        "updated_at": "2026-09-22T00:32:00+04:00"
+      },
+      {
+        "id": "UPD-2026-0921-MOTORCYCLE-YELLOW",
+        "date": "21 Sep 2026",
+        "title": "Yellow plate categories, including motorcycles, added to Mawaqif",
+        "title_ar": "إضافة فئات اللوحات الصفراء بما فيها الدراجات النارية إلى نظام مواقف",
+        "body": "Yellow traffic-plate categories, including Motorcycle (Category 1 - Yellow), were added to the Mawaqif system so these customers can pay parking fees through the Darb app, the Darb e-wallet, SMS, and TAMM.",
+        "body_ar": "تم تحديث وإضافة فئات اللوحات المرورية الصفراء، بما في ذلك فئة الدراجات النارية (1 – Yellow)، في نظام التفتيش لتمكين المتعاملين من سداد رسوم المواقف عبر القنوات المعتمدة.",
+        "tag": "maw",
+        "color": "var(--red)",
+        "source": "ICC Operations circular",
+        "published_at": "2026-09-21T17:12:00+04:00",
+        "effective_from": "2026-09-21",
+        "verified_at": "2026-09-22",
+        "updated_at": "2026-09-22T00:32:00+04:00"
+      },
+      {
+        "id": "UPD-2026-0921-PDM-BATCH3",
+        "date": "21 Sep 2026",
+        "title": "PDM switch-off Batch 3 - Abu Dhabi Island",
+        "title_ar": "إيقاف أجهزة دفع رسوم المواقف — المرحلة الثالثة",
+        "body": "Parking payment machines in the remaining 23 Abu Dhabi Island sectors (148 PDMs) were switched off from 21 September 2026, completing the island rollout after Batch 1 and Batch 2 (2 September). Use the approved customer response and direct customers to the Darb app. Do not raise a technical ticket for a switched-off machine.",
+        "body_ar": "تم إيقاف أجهزة دفع رسوم المواقف في القطاعات المتبقية بجزيرة أبوظبي اعتبارًا من 21 سبتمبر 2026 ضمن المرحلة الثالثة. يرجى استخدام صيغة الرد المعتمدة وتوجيه المتعاملين إلى تطبيق درب.",
+        "tag": "maw",
+        "color": "var(--red)",
+        "source": "ICC Operations circular, PDM deactivation Abu Dhabi Island execution plan",
+        "published_at": "2026-09-17T17:56:00+04:00",
+        "effective_from": "2026-09-21",
+        "verified_at": "2026-09-22",
+        "updated_at": "2026-09-22T00:32:00+04:00"
+      },
+      {
         "body": "Q Mobility and Parkin signed a memorandum of understanding to develop a roadmap for smart parking integration, shared digital services, data-led parking management, and future pilot projects across Abu Dhabi and Dubai. This is an informational partnership update; no immediate customer process or tariff change was announced.",
         "date": "10 Aug 2026",
         "color": "var(--teal)",
         "title": "Q Mobility and Parkin smart-parking partnership",
         "body_ar": "",
         "title_ar": "",
-        "source": "https://www.qmobility.ae/en/media-library/news/2026/10-08-2026"
+        "source": "https://www.qmobility.ae/en/media-library/news/2026/10-08-2026",
+        "effective_from": "2026-08-10",
+        "verified_at": "2026-09-22"
       },
       {
         "body": "Free Flow paid parking at Mushrif Mall was activated from 23 June 2026. Vehicle entry and exit are detected automatically by license-plate recognition, parking duration is calculated automatically, and fees are deducted from the customer's DARB wallet. Customers should keep sufficient wallet balance to avoid unpaid-parking fines.",
@@ -1202,7 +1429,9 @@
         "title": "Free Flow activated at Mushrif Mall",
         "body_ar": "",
         "title_ar": "",
-        "source": "https://www.qmobility.ae/en/media-library/news/2026/19-06-2026"
+        "source": "https://www.qmobility.ae/en/media-library/news/2026/19-06-2026",
+        "effective_from": "2026-06-23",
+        "verified_at": "2026-09-22"
       },
       {
         "body": "Paid parking in Musaffah Phase 3 started on 18 May 2026 in sectors M5, M6, M21, M22, and M23. The phase covers 3,921 surface spaces, including People of Determination spaces. The standard fee is AED 2 per hour. Payment is available through DARB, TAMM, SMS, and on-site payment machines.",
@@ -1211,7 +1440,9 @@
         "title": "Paid parking activation - Musaffah Phase 3",
         "body_ar": "",
         "title_ar": "",
-        "source": "https://www.qmobility.ae/en/media-library/news/2026/11-05-2026"
+        "source": "https://www.qmobility.ae/en/media-library/news/2026/11-05-2026",
+        "effective_from": "2026-05-18",
+        "verified_at": "2026-09-22"
       },
       {
         "body": "Paid parking in Mohamed Bin Zayed City Phase 3 started on 6 May 2026 in commercial sectors ME9 and ME12. The phase covers 10,205 spaces, including People of Determination spaces. Standard parking is AED 2 per hour and can be paid through DARB, TAMM, SMS, or payment machines.",
@@ -1220,7 +1451,9 @@
         "title": "Paid parking activation - MBZ City ME9 and ME12",
         "body_ar": "",
         "title_ar": "",
-        "source": "https://www.qmobility.ae/en/media-library/news/2026/29-04-2026"
+        "source": "https://www.qmobility.ae/en/media-library/news/2026/29-04-2026",
+        "effective_from": "2026-05-06",
+        "verified_at": "2026-09-22"
       },
       {
         "body": "Advice The Customer Politely to use the new channel to report the car blockage\nthe Channel will ask you to send some information like:\nLocation\nPhoto of the car blocking the parking with plate number\nYour phone number",
@@ -1228,7 +1461,8 @@
         "color": "var(--red)",
         "title": "When Directing Customers to use our WhatsApp (8003009) for Car blockage below information should be clearly used:",
         "body_ar": "",
-        "title_ar": ""
+        "title_ar": "",
+        "verified_at": "2026-09-22"
       },
       {
         "body": "How were fees deducted from my bank account without my authorization?\nDear customer, the deducted fees are related to a permit that was previously issued by you. The system has automatically processed a refund.\n \nI have not received the refund in my bank account.\nYou may not receive an immediate notification of the refund; however, the transaction will appear in your bank statement at the end of the month.\n \nWill my permit be canceled?\nPlease ensure that there are sufficient funds in your bank account to guarantee the continuity of the service and avoid permit cancellation.\n \nwhat is the SMS message send from Qmobility with a payment for ? \nThe SMS sent is intended for paying your parking permit fees. Kindly complete the payment within the specified period to avoid service cancellation.",
@@ -1236,7 +1470,9 @@
         "color": "var(--red)",
         "title": "Permit Refund Scenarios",
         "body_ar": "كيف تم خصم رسوم من حسابي البنكي دون إذني؟\nعزيزي المتعامل، الرسوم التي تم خصمها تتعلق بالتصريح الذي قمت بإصداره مسبقًا. وقد قام النظام بإرجاع المبلغ تلقائيًا.\n \nلم يتم إرجاع المبلغ إلى حسابي البنكي؟\nقد لا يصلك إشعار فوري بعملية الإرجاع، ولكن ستظهر المعاملة في كشف حسابك البنكي بنهاية الشهر.\n \nهل سيتم إلغاء التصريح الخاص بي؟\nيرجى التأكد من توفر رصيد كافٍ في حسابك البنكي لضمان استمرار الخدمة وتجنب إلغاء التصريح.\n \nما الغرض من الرسالة النصية المرسلة من \"كيوموبيليتي\" والتي تحتوي على رابط دفع؟\nالرسالة النصية المرسلة مخصصة لسداد رسوم تصريح المواقف الخاص بك. يرجى إتمام عملية الدفع خلال الفترة المحددة لتجنب إلغاء الخدمة.",
-        "title_ar": ""
+        "title_ar": "",
+        "effective_from": "2026-04-17",
+        "verified_at": "2026-09-22"
       },
       {
         "body": "Effective Monday, 20 April 2026, paid parking will be activated in Musaffah sectors M7, M8, M9, M14, and M15. The standard parking fee is AED 2 per hour. Payment can be made through the Darb app, TAMM app, SMS, or the payment machines available in the area. Phase 2 includes 10,010 parking spaces, in addition to spaces designated for People of Determination. This phase does not cover all Musaffah sectors; Phase 1 previously covered M1, M2, M3, M4, and M24.",
@@ -1244,7 +1480,9 @@
         "color": "var(--red)",
         "title": "Paid parking activation – Musaffah Phase 2",
         "body_ar": "اعتباراً من يوم الإثنين 20 أبريل 2026، سيتم تفعيل نظام المواقف المدفوعة في قطاعات مصفّح M7 وM8 وM9 وM14 وM15. وتبلغ الرسوم 2 درهم للساعة الواحدة للمواقف الفرعية المشمولة بالتطبيق. ويمكن السداد عبر تطبيق درب، تطبيق تم، الرسائل النصية القصيرة، أو أجهزة الدفع المتوفرة في المنطقة. وتشمل المرحلة الثانية 10010 موقفاً، بالإضافة إلى مواقف مخصصة لأصحاب الهمم. ولا تشمل هذه المرحلة جميع قطاعات مصفّح، حيث كانت المرحلة الأولى تشمل القطاعات M1 وM2 وM3 وM4 وM24.",
-        "title_ar": "تفعيل المواقف المدفوعة – المرحلة الثانية في مصفّح"
+        "title_ar": "تفعيل المواقف المدفوعة – المرحلة الثانية في مصفّح",
+        "effective_from": "2026-04-20",
+        "verified_at": "2026-09-22"
       },
       {
         "body": "Before raising a loading/unloading permit request, agents MUST confirm customer has ALL THREE documents:\n1. Letter explaining the request\n2. Trade License\n3. Site Plan\n\nIf ANY document is missing → the request will be rejected. Do NOT raise it.",
@@ -1252,7 +1490,8 @@
         "color": "var(--red)",
         "title": "Loading/Unloading permit – ALL 3 documents mandatory",
         "body_ar": "",
-        "title_ar": ""
+        "title_ar": "",
+        "verified_at": "2026-09-22"
       },
       {
         "body": "Commercial sectors ME10 and ME11 in Mohammed Bin Zayed City are now paid parking (AED 2/hr). Also includes commercial areas along main street in villa zones Z17-01, Z19, Z20, Z27. Villa residential areas: permit holders only. Total spaces: 11,030.",
@@ -1260,7 +1499,8 @@
         "color": "var(--red)",
         "title": "Paid parking activated – MBZ City ME10 & ME11",
         "body_ar": "",
-        "title_ar": ""
+        "title_ar": "",
+        "verified_at": "2026-09-22"
       },
       {
         "body": "Barrierless/freeflow activated at W5 sector near Landmark Tower. On-street rates apply (AED 2/hr). Payment auto-deducted from DARB wallet upon exit.\nMap: https://maps.app.goo.gl/wj7GgDD7AT1qNvrR6",
@@ -1268,7 +1508,8 @@
         "color": "var(--red)",
         "title": "Freeflow activated – W5 (near Landmark Tower)",
         "body_ar": "",
-        "title_ar": ""
+        "title_ar": "",
+        "verified_at": "2026-09-22"
       },
       {
         "body": "Barrierless/freeflow parking activated at MSCP01. MSCP tariff: AED 2/hr, max AED 15/day. Payment auto-deducted from DARB wallet after exit. Agents: record any unknown edge cases and share daily with supervisor.",
@@ -1276,7 +1517,8 @@
         "color": "var(--red)",
         "title": "Freeflow activated – MSCP01 (Multi-Storey Building 1)",
         "body_ar": "",
-        "title_ar": ""
+        "title_ar": "",
+        "verified_at": "2026-09-22"
       },
       {
         "body": "For any car block case direct the customer to contact the WhatsApp 8003009",
@@ -1284,7 +1526,25 @@
         "color": "var(--red)",
         "title": "CarBlocking",
         "body_ar": "",
-        "title_ar": ""
+        "title_ar": "",
+        "verified_at": "2026-09-22"
+      },
+      {
+        "id": "UPD-2026-0616-E4-01-PDM-PILOT",
+        "date": "16 Jun 2026",
+        "title": "Madenat Zayed Souq E4-01 PDM Switch-Off Pilot",
+        "title_ar": "إيقاف أجهزة الدفع في القطاع E4-01 — مرحلة تجريبية",
+        "body": "All PDMs in sector E4-01 (Madenat Zayed Souq) were switched off for a one-month pilot until 16 July 2026. Customer tickets were logged for documentation, closed immediately, and not escalated to technical teams. The pilot period has ended and this is no longer a current instruction - the island-wide PDM switch-off now applies.",
+        "body_ar": "تم إيقاف جميع أجهزة الدفع في القطاع E4-01 لمدة شهر حتى 16 يوليو 2026 كمرحلة تجريبية. انتهت هذه المرحلة ولم تعد التعليمات سارية.",
+        "tag": "maw",
+        "color": "var(--red)",
+        "source": "Contact Centre operational update, Madenat Zayed Souq E4-01 PDM switch-off pilot",
+        "published_at": "2026-06-16",
+        "effective_from": "2026-06-16",
+        "effective_until": "2026-07-16",
+        "verified_at": "2026-09-22",
+        "updated_at": "2026-09-22T00:32:00+04:00",
+        "superseded_by": "UPD-2026-0921-PDM-BATCH3"
       }
     ],
     "article_FAQ-NEW-1775995092446": {
@@ -4676,6 +4936,298 @@
       "img_cap": "",
       "source": "Important Notes.txt; verified against Q Mobility and DARB official pages",
       "verified_on": "2026-09-21"
+    },
+    "article_MAW-2026-0921-PDM-SWITCHOFF": {
+      "id": "MAW-2026-0921-PDM-SWITCHOFF",
+      "q": "Parking payment machines (PDM) are being switched off - what do I tell the customer?",
+      "a": "<p><strong>Direct answer:</strong> tell the customer the machine has been discontinued and that they should now pay through the <strong>Darb app</strong>. Use the approved wording below and do not raise a technical ticket for a switched-off machine.</p><h4>Approved customer response (English)</h4><p>&ldquo;The PDM machine has been discontinued as we are moving to digital channels to ensure accuracy and quality of the parking payment service. You can use the Darb app to pay your parking fees easily, safely, and conveniently. Thank you for your understanding.&rdquo;</p><h4>Rollout</h4><table><tr><th>Stage</th><th>Scope</th><th>From</th></tr><tr><td>Sector-by-sector start</td><td>E3-01, E3-02, E4-02, E18-01, E18-02</td><td>25 August 2026</td></tr><tr><td>Batch 1</td><td>127 PDMs, various sectors</td><td>Completed</td></tr><tr><td>Batch 2</td><td>37 sectors / 487 PDMs, between Corniche Street and Hazza Bin Zayed the First Street</td><td>2 September 2026</td></tr><tr><td>Batch 3</td><td>23 sectors / 148 PDMs, remaining Abu Dhabi Island sectors</td><td>21 September 2026</td></tr><tr><td>Next</td><td>Al Ain and remaining areas</td><td>After Abu Dhabi Island completes</td></tr></table><h4>Payment channels to offer</h4><p>Darb app and Darb e-wallet (primary), TAMM, and SMS to 3009.</p><div class=\"info-box\"><strong>Agent action</strong><br>Do not log a technical fault for a switched-off PDM. Give the approved wording, offer the Darb app, and pass repeated complaints about the switch-off to your direct supervisor.</div><div class=\"info-box\"><strong>Tell the customer</strong><br>The machine has been discontinued as we move to digital channels. You can pay easily and securely through the Darb app.</div><div class=\"info-box\"><strong>Open item:</strong> there is <strong>no approved payment channel confirmed for non-GCC (international) plates</strong> on Abu Dhabi Island after PDM removal, and Darb/Darb X still do not cover GCC plates. Do not promise a channel &mdash; escalate to your supervisor. See the pending-approval list.</div><div class=\"footer\"><strong>Need help?</strong><br>Call/WhatsApp Q Mobility on <strong>800 3009</strong></div>",
+      "q_ar": "تم إيقاف أجهزة دفع رسوم المواقف (PDM) — ماذا أقول للمتعامل؟",
+      "a_ar": "<p><strong>الرد المعتمد:</strong> تم إيقاف الجهاز، ونتجه حاليًا إلى القنوات الرقمية عشان نضمن دقة وجودة خدمة دفع رسوم المواقف. تقدرون تستخدمون تطبيق درب لدفع رسوم المواقف بكل سهولة وأمان وراحة. شاكرين لكم تفهمكم وتعاونكم.</p><p>مراحل الإيقاف: القطاعات E3-01 وE3-02 وE4-02 وE18-01 وE18-02 من 25 أغسطس 2026؛ الدفعة الثانية (37 قطاعًا / 487 جهازًا) من 2 سبتمبر 2026؛ الدفعة الثالثة (23 قطاعًا / 148 جهازًا) من 21 سبتمبر 2026.</p><p>يرجى توثيق أي شكاوى متكررة ورفعها إلى المشرف المباشر.</p>",
+      "kw": "PDM parking display machine switched off switch-off deactivation removal batch 1 2 3 darb app digital channel corniche hazza bin zayed abu dhabi island E3-01 E3-02 E4-02 E18-01 E18-02 payment machine not working coin card جهاز الدفع ايقاف اجهزة الدفع مواقف درب",
+      "page": "faq-maw-hours",
+      "verified_at": "2026-09-22",
+      "updated_at": "2026-09-22T00:32:00+04:00",
+      "source": "ICC Operations circular, PDM deactivation - Abu Dhabi Island execution plan (Batch 3)",
+      "published_at": "2026-09-17T17:56:00+04:00",
+      "effective_from": "2026-09-21"
+    },
+    "article_MAW-2026-0918-PUBLIC-PLATE-PAYMENT": {
+      "id": "MAW-2026-0918-PUBLIC-PLATE-PAYMENT",
+      "q": "How does a public-plate (commercial/taxi) vehicle pay Mawaqif parking fees?",
+      "a": "<p><strong>Direct answer:</strong> public-plate vehicles pay through the <strong>Darb app</strong> or by <strong>SMS to 3009</strong>, using the public plate <em>category code</em> instead of a normal plate code.</p><h4>SMS format</h4><p><code>&lt;public plate code&gt; &lt;vehicle number&gt; &lt;parking type&gt; &lt;duration in hours&gt;</code></p><p>Example &mdash; Abu Dhabi Public plate (Category 1), number 12345, standard parking, 1 hour: <strong>AUHPUB1 12345 S 1</strong></p><h4>Approved public plate category codes</h4><table><tr><th>Category</th><th>Code</th></tr><tr><td>Public &ndash; Category 1</td><td><strong>AUHPUB1</strong></td></tr><tr><td>Public &ndash; Category 2</td><td><strong>AUHPUB2</strong></td></tr><tr><td>Public Orange</td><td><strong>AUHORA</strong></td></tr><tr><td>Public Yellow</td><td><strong>AUHYEL</strong></td></tr><tr><td>Public Green</td><td><strong>AUHGRE</strong></td></tr><tr><td>Dubai Public Black</td><td><strong>DXBBLA</strong></td></tr><tr><td>Dubai Public Yellow</td><td><strong>DXBYEL</strong></td></tr><tr><td>Dubai Public Green</td><td><strong>DXBGRE</strong></td></tr></table><div class=\"info-box\"><strong>Agent action</strong><br>Confirm the plate category with the customer before giving a code &mdash; the code, not the emirate name, is what the system reads.</div><div class=\"info-box\"><strong>Tell the customer</strong><br>Send an SMS to 3009 with your public plate code, vehicle number, parking type and the number of hours, for example AUHPUB1 12345 S 1. You can also pay in the Darb app.</div><div class=\"footer\"><strong>Need help?</strong><br>Call/WhatsApp Q Mobility on <strong>800 3009</strong></div>",
+      "q_ar": "كيف تدفع المركبات ذات اللوحات العمومية رسوم مواقف مواقف؟",
+      "a_ar": "<p>يمكن دفع رسوم المواقف للمركبات العمومية عبر تطبيق درب أو عبر رسالة نصية إلى الرقم 3009، متضمنة رمز اللوحة العمومية ثم رقم المركبة ثم نوع الموقف ثم مدة الوقوف بالساعات. مثال: مركبة تحمل لوحة أبوظبي عمومي (الفئة الأولى) رقم 12345 &mdash; AUHPUB1 12345 S 1.</p><p>رموز الفئات المعتمدة: عمومي الفئة الأولى AUHPUB1، عمومي الفئة الثانية AUHPUB2، عمومي برتقالي AUHORA، عمومي أصفر AUHYEL، عمومي أخضر AUHGRE، دبي أسود DXBBLA، دبي أصفر DXBYEL، دبي أخضر DXBGRE.</p>",
+      "kw": "public plate commercial taxi bus AUHPUB1 AUHPUB2 AUHORA AUHYEL AUHGRE DXBBLA DXBYEL DXBGRE public vehicle parking fee payment sms 3009 darb category code لوحة عمومية المركبات العمومية رمز الفئة دفع رسوم المواقف",
+      "page": "faq-maw-hours",
+      "verified_at": "2026-09-22",
+      "updated_at": "2026-09-22T00:32:00+04:00",
+      "source": "Q Mobility / Mawaqif official bilingual A5 flyer \"Public Vehicle Parking Fee Payment\", circulated by ICC Operations",
+      "published_at": "2026-09-18T15:34:00+04:00"
+    },
+    "article_MAW-2026-0921-MOTORCYCLE-YELLOW-PLATE": {
+      "id": "MAW-2026-0921-MOTORCYCLE-YELLOW-PLATE",
+      "q": "Can a motorcycle with a yellow plate pay Mawaqif parking fees now?",
+      "a": "<p><strong>Direct answer:</strong> yes. The yellow traffic-plate categories, including <strong>Motorcycle (Category 1 &ndash; Yellow)</strong>, were added to the Mawaqif inspection and payment system on <strong>21 September 2026</strong> so these customers can pay parking fees through the approved channels.</p><h4>Approved payment channels</h4><ul><li>Darb app</li><li>Darb e-wallet</li><li>SMS payment service</li><li>TAMM, according to the services available there</li></ul><h4>System reference</h4><p>Abu Dhabi source code 1, plate colour code 177 &ldquo;First Category Yellow&rdquo;, vehicle kind 20 &ldquo;Motorcycle&rdquo;.</p><div class=\"info-box\"><strong>Agent action</strong><br>If a motorcycle customer was previously told payment was not possible, confirm the category was added on 21 September 2026 and walk them through the Darb app. For a fine issued before that date, handle it as a normal grievance.</div><div class=\"info-box\"><strong>Tell the customer</strong><br>Yellow plate categories, including motorcycles, are now supported. You can pay your parking fees through the Darb app, the Darb wallet, SMS, or TAMM.</div><div class=\"info-box\">Separately, the official Mawaqif FAQ states that motorcycles are <strong>not charged</strong> inside <strong>Free Flow</strong> parking. This article covers on-street Mawaqif parking, not Free Flow.</div><div class=\"footer\"><strong>Need help?</strong><br>Call/WhatsApp Q Mobility on <strong>800 3009</strong></div>",
+      "q_ar": "هل يمكن للدراجة النارية ذات اللوحة الصفراء سداد رسوم المواقف؟",
+      "a_ar": "<p>نعم. تم تحديث وإضافة فئات اللوحات المرورية الصفراء، بما في ذلك فئة الدراجات النارية (1 &ndash; Yellow)، في نظام التفتيش بتاريخ 21 سبتمبر 2026، وذلك لتمكين المتعاملين من سداد رسوم المواقف من خلال قنوات الدفع المعتمدة: تطبيق DARB، والمحفظة الإلكترونية في تطبيق DARB، وخدمة الدفع عبر الرسائل النصية، وتطبيق TAMM وفقًا للخدمات المتاحة.</p>",
+      "kw": "motorcycle motorbike bike yellow plate first category 1 yellow 177 kind 20 pay parking sms darb tamm wallet plate category added دراجة نارية لوحة صفراء الفئة الاولى اصفر سداد رسوم المواقف",
+      "page": "faq-maw-hours",
+      "verified_at": "2026-09-22",
+      "updated_at": "2026-09-22T00:32:00+04:00",
+      "source": "ICC Operations circular, addition of yellow plate categories including motorcycles to the Mawaqif system",
+      "published_at": "2026-09-21T17:12:00+04:00",
+      "effective_from": "2026-09-21"
+    },
+    "article_MAW-2026-0917-POD-CARD-ZAYED-ONLY": {
+      "id": "MAW-2026-0917-POD-CARD-ZAYED-ONLY",
+      "q": "Which People of Determination card is accepted for a PoD parking request?",
+      "a": "<p><strong>Direct answer:</strong> only a People of Determination card issued by the <strong>Zayed Higher Organization for People of Determination</strong> is accepted. A card issued by the <strong>Ministry of Community Empowerment is not sufficient on its own</strong>.</p><h4>Before you route the request</h4><ul><li>Confirm a <strong>valid copy of the Zayed Higher Organization PoD card</strong> is attached.</li><li>Confirm the other documents required by the PoD parking guide are attached.</li><li>Do not transfer the request onward without the card &mdash; the Permits team will not approve it.</li></ul><div class=\"info-box\"><strong>Agent action</strong><br>Check the issuing authority on the card, not just that a PoD card exists. If the customer only holds a Ministry of Community Empowerment card, explain the requirement and do not raise the request.</div><div class=\"info-box\"><strong>Tell the customer</strong><br>For a People of Determination parking request we need a valid People of Determination card issued by the Zayed Higher Organization. Please attach a copy and we will proceed.</div><div class=\"footer\"><strong>Need help?</strong><br>Call/WhatsApp Q Mobility on <strong>800 3009</strong></div>",
+      "q_ar": "أي بطاقة أصحاب همم تُقبل لطلب موقف أصحاب الهمم؟",
+      "a_ar": "<p>يشترط لقبول طلب موقف أصحاب الهمم أن يكون مقدم الطلب حاصلاً على بطاقة أصحاب الهمم صادرة عن <strong>هيئة زايد لأصحاب الهمم</strong>، وعدم الاكتفاء بالبطاقة الصادرة عن وزارة تمكين المجتمع، بالإضافة إلى المستندات الأخرى الموضحة في الدليل المعتمد.</p><p>يُرجى التأكد من إرفاق نسخة سارية من البطاقة المذكورة عند استلام الطلب أو الشكوى، وعدم تحويل الطلب دون استيفاء هذا الشرط.</p>",
+      "kw": "people of determination PoD disabled accessible parking card zayed higher organization ministry of community empowerment not accepted eligibility documents اصحاب الهمم بطاقة هيئة زايد لأصحاب الهمم وزارة تمكين المجتمع موقف اصحاب الهمم",
+      "page": "faq-maw-permits",
+      "verified_at": "2026-09-22",
+      "updated_at": "2026-09-22T00:32:00+04:00",
+      "source": "Q Mobility Parking Operations circular on the complaints and requests mechanism",
+      "published_at": "2026-09-17T11:54:00+04:00",
+      "effective_from": "2026-09-17"
+    },
+    "article_OPS-2026-0918-L1-DOCUMENT-CHECKLIST": {
+      "id": "OPS-2026-0918-L1-DOCUMENT-CHECKLIST",
+      "q": "What documents must I confirm before submitting a parking or permit application (L1 checklist)?",
+      "a": "<p><strong>Direct answer:</strong> check the list for the request type below and do not submit an incomplete request &mdash; all cases carry a strict <strong>3-working-day resolution SLA</strong> and incomplete requests are rejected.</p><h4>1. Freight &amp; light cargo vehicle parking (3&ndash;5 ton light trucks)</h4><ul><li>Official email or request letter from the applying entity</li><li>Valid commercial licence (trade licence)</li><li>Exact GPS coordinates of the proposed location</li><li>Nearest prominent landmark</li></ul><h4>2. Commercial loading and unloading bays</h4><ul><li>Valid commercial licence matching the qualifying commercial activity</li><li>Clear operational justification and sector location details</li><li>All elements and criteria in the reference guide</li></ul><h4>3. People of Determination (accessible) parking</h4><ul><li>Valid PoD card issued by the <strong>Zayed Higher Organization only</strong></li><li>Valid Emirates ID and vehicle registration card (Mulkiya)</li><li>Proof of residence / tenancy contract</li><li>Verification that no suitable accessible space is already available nearby</li></ul><h4>4. Temporary entrance requests (workshop &amp; commercial owners)</h4><ul><li><strong>Musaffah Industrial Area:</strong> restricted to workshops, car washes and commercial shops requiring direct vehicle ingress/egress. Trade licence and activity details required.</li><li><strong>Al Ain City:</strong> commercial licence and full activity description required for the Permits Section to evaluate.</li></ul><div class=\"info-box\"><strong>Agent action</strong><br>Run the completeness check before you submit. Use the approved Salesforce categories and descriptions so the case routes correctly. Never write or say &ldquo;the concerned department&rdquo; &mdash; always represent Q Mobility as one team.</div><div class=\"info-box\"><strong>Tell the customer</strong><br>To process this we need the following documents. Once they are all attached we will raise the request, and it is resolved within 3 working days.</div><div class=\"footer\"><strong>Need help?</strong><br>Call/WhatsApp Q Mobility on <strong>800 3009</strong></div>",
+      "q_ar": "",
+      "a_ar": "",
+      "kw": "L1 checklist mandatory documents parking permit application freight light cargo 3 ton 5 ton truck loading unloading bay people of determination temporary entrance musaffah al ain trade licence GPS coordinates SLA 3 working days salesforce concerned department مستندات مطلوبة تحميل وتنزيل مدخل مؤقت",
+      "page": "faq-maw-permits",
+      "verified_at": "2026-09-22",
+      "updated_at": "2026-09-22T00:32:00+04:00",
+      "source": "Contact Centre management circular, mandatory document checklist for L1 parking and permit applications",
+      "published_at": "2026-09-18T08:12:00+04:00",
+      "effective_from": "2026-09-18"
+    },
+    "article_MAW-2026-0827-MSCP-LONG-STAY": {
+      "id": "MAW-2026-0827-MSCP-LONG-STAY",
+      "q": "A customer got an SMS that their vehicle exceeded the maximum parking duration in a multi-storey car park - what happens next?",
+      "a": "<p><strong>Direct answer:</strong> they have <strong>72 hours</strong> from the notification to remove the vehicle, or it may be fined and towed.</p><h4>Approved customer SMS</h4><p>&ldquo;Dear Customer, Your vehicle at Multi-Storey Parking has exceeded the maximum allowed parking duration. Please remove your vehicle within 72 hours to avoid fines and towing. Thank you.&rdquo;</p><p>Arabic: &ldquo;عزيزي المتعامل، لقد تجاوزت مركبتك المدة القصوى المسموح بها للوقوف في المواقف الطابقية العامة. يرجى إزالة المركبة خلال 72 ساعة لتجنب المخالفات وقطر المركبة. شكراً&rdquo;</p><p>The message includes the vehicle plate number.</p><h4>Enforcement</h4><p>Follow-up of long-stay vehicles in MSCPs started on <strong>16 September 2026</strong>. Enforcement and control are notified once the notifications are sent.</p><div class=\"info-box\"><strong>Agent action</strong><br>Confirm the SMS is genuine &mdash; it is sent officially by Q Mobility. Give the 72-hour window from the notification, and escalate to the supervisor if the customer cannot move the vehicle in time.</div><div class=\"info-box\"><strong>Tell the customer</strong><br>Your vehicle has exceeded the maximum parking duration allowed in the multi-storey car park. Please move it within 72 hours to avoid a fine and towing.</div><div class=\"footer\"><strong>Need help?</strong><br>Call/WhatsApp Q Mobility on <strong>800 3009</strong></div>",
+      "q_ar": "وصلت المتعامل رسالة بأن مركبته تجاوزت المدة القصوى في المواقف الطابقية — ماذا بعد؟",
+      "a_ar": "<p>أمام المتعامل <strong>72 ساعة</strong> من تاريخ الإشعار لإزالة المركبة، وإلا فقد تتعرض للمخالفة والقطر. نص الرسالة المعتمد: &ldquo;عزيزي المتعامل، لقد تجاوزت مركبتك المدة القصوى المسموح بها للوقوف في المواقف الطابقية العامة. يرجى إزالة المركبة خلال 72 ساعة لتجنب المخالفات وقطر المركبة. شكراً&rdquo;</p><p>بدأت متابعة المركبات المتجاوزة للمدة في المواقف الطابقية اعتبارًا من 16 سبتمبر 2026.</p>",
+      "kw": "MSCP multi storey car park long stay exceeded maximum parking duration 72 hours remove vehicle fine towing sms notification المركبات التي تجاوزت مدة الوقوف المقررة المواقف الطابقية 72 ساعة قطر المركبة",
+      "page": "faq-maw-hours",
+      "verified_at": "2026-09-22",
+      "updated_at": "2026-09-22T00:32:00+04:00",
+      "source": "Private Parking Management, long stay vehicles notification at MSCPs; execution confirmed by the Mawaqif inspection partner",
+      "published_at": "2026-08-27T12:08:00+04:00",
+      "effective_from": "2026-09-16"
+    },
+    "article_MAW-2026-0908-ZONING-SIGNS-SCRIPT": {
+      "id": "MAW-2026-0908-ZONING-SIGNS-SCRIPT",
+      "q": "A customer is asking about the new signs showing zoning information - what do I say?",
+      "a": "<p><strong>Direct answer:</strong> reassure them that nothing changes for them today, and use the approved script below. <strong>Do not give any information beyond it.</strong></p><h4>Approved script (English)</h4><p>&ldquo;Regarding the new signs showing zoning information, there is currently no action required from your side. You can continue using the existing payment methods and following the current parking regulations as usual.</p><p>The information displayed on these signs relates to a future update, which has not yet affected the current parking process or services.</p><p>Once any changes officially take effect, Q Mobility will inform customers accordingly. You can also follow our official social media channels and announcements to stay updated with the latest information.&rdquo;</p><div class=\"info-box\"><strong>Agent action</strong><br>Read the approved script. Do not speculate about dates, tariffs or zone boundaries, and do not confirm any future change. Pass anything the script does not cover to your supervisor.</div><div class=\"info-box\"><strong>Tell the customer</strong><br>There is no action required from you right now. Please continue using the current payment methods and parking rules as usual &mdash; these signs relate to a future update, and we will inform customers when anything officially changes.</div><div class=\"footer\"><strong>Need help?</strong><br>Call/WhatsApp Q Mobility on <strong>800 3009</strong></div>",
+      "q_ar": "المتعامل يسأل عن اللوحات الجديدة التي تتضمن معلومات عن مناطق الترميز — ماذا أقول؟",
+      "a_ar": "<p>الصيغة المعتمدة: &ldquo;بخصوص اللوحات الجديدة التي تتضمن معلومات عن مناطق الترميز، نود أن نطمئنكم بأنه لا يوجد أي إجراء مطلوب من جانبكم في الوقت الحالي. يمكنكم الاستمرار باستخدام طرق الدفع الحالية واتباع أنظمة ولوائح المواقف المعمول بها كالمعتاد.</p><p>المعلومات الموجودة على هذه اللوحات تتعلق بتحديث مستقبلي، ولم يترتب عليها حتى الآن أي تغيير في إجراءات أو خدمات المواقف الحالية.</p><p>وسيتم إبلاغ المتعاملين بجميع التفاصيل عند تطبيق أي تغييرات بشكل رسمي. كما يمكنكم متابعة القنوات الرسمية لكيو موبيليتي ووسائل التواصل الاجتماعي للاطلاع على آخر التحديثات.&rdquo;</p><p>يرجى عدم تقديم أي معلومات إضافية غير معتمدة.</p>",
+      "kw": "new signs zoning information zone sign board what do the new signs mean no action required future update approved script اللوحات الجديدة مناطق الترميز لوحات الترميز",
+      "page": "faq-maw-others",
+      "verified_at": "2026-09-22",
+      "updated_at": "2026-09-22T00:32:00+04:00",
+      "source": "Contact Centre guidance on customer queries regarding new zoning signs, corroborated by the ICC Operations circular of the same day",
+      "published_at": "2026-09-08T12:31:00+04:00",
+      "effective_from": "2026-09-08"
+    },
+    "article_MAW-2026-0827-FREEFLOW-ENTRY-SMS-DISABLED": {
+      "id": "MAW-2026-0827-FREEFLOW-ENTRY-SMS-DISABLED",
+      "q": "Why did the customer not get an SMS when entering a Free Flow parking area?",
+      "a": "<p><strong>Direct answer:</strong> entry SMS notifications for Free Flow locations have been <strong>disabled by management decision</strong>. Customers now receive an SMS only when a parking charge is incurred.</p><h4>What this means</h4><ul><li>No SMS on <strong>entry</strong> to a Free Flow location.</li><li>An SMS is still sent when a <strong>charge applies</strong>.</li><li>For real-time visibility of their parking activity, advise the customer to use the <strong>Darb app</strong>.</li></ul><div class=\"info-box\"><strong>Agent action</strong><br>Do not treat a missing entry SMS as a fault and do not raise a technical ticket for it. Offer the Darb app for live session visibility.</div><div class=\"info-box\"><strong>Tell the customer</strong><br>Entry notifications are no longer sent for Free Flow parking. You will still receive an SMS whenever a parking charge applies, and you can see your parking activity in real time in the Darb app.</div><div class=\"info-box\">The public Mawaqif FAQ on qmobility.ae still mentions that non-Darb users may receive an SMS on entering a parking area. That page is pending alignment &mdash; follow this instruction.</div><div class=\"footer\"><strong>Need help?</strong><br>Call/WhatsApp Q Mobility on <strong>800 3009</strong></div>",
+      "q_ar": "",
+      "a_ar": "",
+      "kw": "free flow freeflow entry sms notification disabled no sms on entry did not receive message barrierless darb app real time charge sms عدم استلام رسالة الدخول التدفق الحر",
+      "page": "faq-maw-others",
+      "verified_at": "2026-09-22",
+      "updated_at": "2026-09-22T00:32:00+04:00",
+      "source": "Private Parking Management, SMS notifications freeflow, cascaded by the Call Centre Manager",
+      "published_at": "2026-08-27T10:45:00+04:00",
+      "effective_from": "2026-08-27"
+    },
+    "article_MAW-2026-0807-FREEFLOW-INSPECTION-MODEL": {
+      "id": "MAW-2026-0807-FREEFLOW-INSPECTION-MODEL",
+      "q": "How is inspection handled inside Free Flow parking locations?",
+      "a": "<p><strong>Direct answer:</strong> Free Flow locations are handled by the <strong>automatic Free Flow system</strong>. Inspectors do not carry out normal parking-payment inspections inside them, and non-payment violations are generated <strong>automatically by the system</strong>.</p><h4>When handling the call</h4><ul><li>If the customer names one of these locations, treat it as a possible Free Flow location when explaining the process.</li><li>Operational complaints &mdash; blocked entrances or exits, traffic obstruction, other parking complaints &mdash; continue to follow the existing process.</li></ul><div class=\"info-box\"><strong>Agent action</strong><br>Do not tell a Free Flow customer that an inspector issued the violation manually. Confirm the location against the Smart Sector Map before explaining, and route operational complaints as normal.</div><div class=\"info-box\"><strong>Tell the customer</strong><br>This location uses the automatic Free Flow system, so parking charges and any non-payment violation are generated automatically rather than by an inspector on site.</div><div class=\"footer\"><strong>Need help?</strong><br>Call/WhatsApp Q Mobility on <strong>800 3009</strong></div>",
+      "q_ar": "",
+      "a_ar": "",
+      "kw": "free flow freeflow inspection inspector automatic system non payment violation generated automatically barrierless locations blocked entrance exit complaint process التدفق الحر التفتيش مخالفة تلقائية",
+      "page": "faq-maw-others",
+      "verified_at": "2026-09-22",
+      "updated_at": "2026-09-22T00:32:00+04:00",
+      "source": "Contact Centre process update, Free Flow parking locations",
+      "published_at": "2026-08-07T12:07:00+04:00",
+      "effective_from": "2026-08-07"
+    },
+    "article_OPS-2026-0807-COMPLAINT-DIGITAL-FIRST": {
+      "id": "OPS-2026-0807-COMPLAINT-DIGITAL-FIRST",
+      "q": "A customer wants to raise a complaint - do I raise it for them?",
+      "a": "<p><strong>Direct answer:</strong> no, not first. Your <strong>first and primary action is to guide the customer to submit the complaint themselves</strong> through the digital channel &mdash; the <strong>DARB App</strong> or <strong>DARB Urban</strong>, as applicable.</p><h4>Required process</h4><ol><li>Explain the available digital complaint channel to the customer.</li><li>Guide the customer on how to submit the complaint through it.</li><li>Encourage the customer to complete the submission from their side.</li><li><strong>Only if the customer insists after being guided</strong>, raise the complaint through the Contact Centre.</li><li>Before submitting, confirm the complaint is valid, all required information is available, supporting documents are attached where required, and the correct type and subtype are selected.</li></ol><h4>When you may raise it directly</h4><p>Only where the customer insists after being guided, or there is a genuine reason preventing them from using the digital channel.</p><div class=\"info-box\"><strong>Agent action</strong><br>Guide first, raise second. A complaint raised without first guiding the customer to the digital channel is treated as a failure to follow the process.</div><div class=\"info-box\"><strong>Tell the customer</strong><br>You can submit this complaint yourself in the DARB App, which lets you track it directly. I will walk you through it now.</div><div class=\"footer\"><strong>Need help?</strong><br>Call/WhatsApp Q Mobility on <strong>800 3009</strong></div>",
+      "q_ar": "",
+      "a_ar": "",
+      "kw": "complaint handling escalation guidelines digital channel first darb app darb urban raise complaint on behalf customer insists type subtype valid supporting documents شكوى القنوات الرقمية تطبيق درب رفع شكوى",
+      "page": "faq-maw-others",
+      "verified_at": "2026-09-22",
+      "updated_at": "2026-09-22T00:32:00+04:00",
+      "source": "Contact Centre management circular, complaint handling and escalation guidelines",
+      "published_at": "2026-08-07T17:14:00+04:00",
+      "effective_from": "2026-08-07"
+    },
+    "article_MAW-2026-0811-COMPANY-VEHICLE-GRIEVANCE-TAMM": {
+      "id": "MAW-2026-0811-COMPANY-VEHICLE-GRIEVANCE-TAMM",
+      "q": "How does a customer submit a Mawaqif fine grievance for a company vehicle via TAMM?",
+      "a": "<p><strong>Direct answer:</strong> through TAMM, using the <strong>Grievance for Transport Violations</strong> service. This route applies <strong>only to vehicles registered under a company name</strong>, and the grievance may be submitted from <strong>any TAMM account</strong> provided the violation is linked to a company-owned vehicle.</p><h4>Steps</h4><ol><li>Log in to the TAMM account.</li><li>In the search bar, search for <strong>&ldquo;Grievance for Transport Violations&rdquo;</strong>.</li><li>Select <strong>New Application</strong>.</li><li>Choose <strong>My Profile</strong> and click <strong>Next</strong>.</li><li>From the <strong>Violation Type</strong> drop-down, select <strong>Public Parking (Mawaqif)</strong>.</li><li>Enter the <strong>violation number</strong> and click <strong>Show Details</strong>.</li><li>Review the violation details and submit the grievance.</li></ol><div class=\"info-box\"><strong>Agent action</strong><br>For a company-owned vehicle do not tell the customer they must log in as the vehicle owner &mdash; any TAMM account works as long as the violation is linked to the company vehicle. For privately owned vehicles, use the standard owner-account grievance route.</div><div class=\"info-box\"><strong>Tell the customer</strong><br>For a company vehicle you can submit the grievance from your own TAMM account. Search for &ldquo;Grievance for Transport Violations&rdquo;, choose New Application, select Public Parking (Mawaqif), and enter the violation number.</div><div class=\"footer\"><strong>Need help?</strong><br>Call/WhatsApp Q Mobility on <strong>800 3009</strong></div>",
+      "q_ar": "",
+      "a_ar": "",
+      "kw": "grievance company vehicle corporate fleet tamm transport violations public parking mawaqif violation number new application my profile appeal object fine steps تظلم مركبة شركة تام مخالفة مواقف",
+      "page": "faq-maw-grievances",
+      "verified_at": "2026-09-22",
+      "updated_at": "2026-09-22T00:32:00+04:00",
+      "source": "Contact Centre circular, how to submit a grievance for a Mawaqif fine (company vehicle) via TAMM",
+      "published_at": "2026-08-11T15:57:00+04:00"
+    },
+    "article_MAW-2026-0911-COMMERCIAL-PLATE-PERMANENT-TRANSFER": {
+      "id": "MAW-2026-0911-COMMERCIAL-PLATE-PERMANENT-TRANSFER",
+      "q": "A commercial-plate customer cannot pay for parking and keeps getting fined - why?",
+      "a": "<p><strong>Direct answer:</strong> a commercial vehicle must have its <strong>temporary plate officially transferred to a permanent plate</strong> before the Mawaqif system can recognise it. Until that transfer is done the system will not accept the plate properly and <strong>fines will be issued</strong>.</p><div class=\"info-box\"><strong>Agent action</strong><br>Raise this proactively with any commercial-vehicle customer asking about parking payment or disputing a related fine &mdash; it is the most common root cause.</div><div class=\"info-box\"><strong>Tell the customer</strong><br>Your vehicle is still on a temporary plate. Please complete the transfer to a permanent plate so the Mawaqif system recognises it, otherwise parking payments will not register and fines will continue to be issued.</div><div class=\"info-box\">A separate, still-open technical issue prevents some commercial-plate payments through Darb and TAMM. If the plate is already permanent and payment still fails, escalate to your supervisor rather than promising a fix.</div><div class=\"footer\"><strong>Need help?</strong><br>Call/WhatsApp Q Mobility on <strong>800 3009</strong></div>",
+      "q_ar": "",
+      "a_ar": "",
+      "kw": "commercial plate temporary plate permanent plate transfer mawaqif system not recognised cannot pay parking fines issued commercial vehicle لوحة تجارية لوحة مؤقتة لوحة دائمة نقل اللوحة",
+      "page": "faq-maw-hours",
+      "verified_at": "2026-09-22",
+      "updated_at": "2026-09-22T00:32:00+04:00",
+      "source": "Contact Centre supervisor circular, mandatory permanent plate transfer for commercial vehicles",
+      "published_at": "2026-09-11T15:42:00+04:00",
+      "effective_from": "2026-09-11"
+    },
+    "article_OPS-2026-0901-WHATSAPP-SESSION-RULE": {
+      "id": "OPS-2026-0901-WHATSAPP-SESSION-RULE",
+      "q": "Why can I not start or continue a WhatsApp chat with a customer?",
+      "a": "<p><strong>Direct answer:</strong> WhatsApp messaging is governed by <strong>Meta policy</strong>. You can message a customer freely only inside the session that opens once the <strong>customer initiates or replies</strong>. Where the customer has not replied, you may only send <strong>Meta-approved WhatsApp templates</strong>.</p><p>This restriction comes from Meta/WhatsApp and <strong>cannot be bypassed or removed</strong> by Q Mobility.</p><h4>Known issue</h4><p>Numbers stored with a <strong>00</strong> prefix instead of <strong>+</strong> currently fail when starting a chat. A fix to the phone number format is in progress with the technical teams.</p><div class=\"info-box\"><strong>Agent action</strong><br>If the customer has not replied, use an approved template rather than a free-text message. If the number starts with 00 and the chat will not open, correct the format or use another channel, and report the number so it can be fixed.</div><div class=\"info-box\"><strong>Tell the customer</strong><br>I have sent you a message on WhatsApp &mdash; please reply to it so I can continue helping you there.</div><div class=\"footer\"><strong>Need help?</strong><br>Call/WhatsApp Q Mobility on <strong>800 3009</strong></div>",
+      "q_ar": "",
+      "a_ar": "",
+      "kw": "whatsapp cannot send message customer did not reply session window meta template approved 24 hour rule phone number format 00 prefix plus country code salesforce sms واتساب قالب معتمد",
+      "page": "faq-maw-others",
+      "verified_at": "2026-09-22",
+      "updated_at": "2026-09-22T00:32:00+04:00",
+      "source": "Application Support confirmation on WhatsApp integration constraints",
+      "published_at": "2026-09-01T09:54:00+04:00"
+    },
+    "article_MAW-2026-0901-E18-02-RECLASSIFICATION": {
+      "id": "MAW-2026-0901-E18-02-RECLASSIFICATION",
+      "q": "What changed for parking in sector E18-02 (Al Danah)?",
+      "a": "<p><strong>Direct answer:</strong> part of E18-02 changed from standard to <strong>premium (main) parking</strong>, and a new <strong>loading and unloading bay</strong> was created. Customers should check the signs and pay the posted tariff.</p><h4>What was done</h4><ul><li><strong>71</strong> standard (secondary) bays parallel to the main street and facing the buildings, plus <strong>3</strong> side bays, converted to <strong>premium (main)</strong> parking.</li><li><strong>1</strong> new loading and unloading bay next to <strong>Qasr Najd Restaurant &amp; Kitchen (Al Danah)</strong>.</li></ul><h4>Dates</h4><ul><li>Tariff updated in the GIS system: <strong>1 September 2026</strong></li><li>On-street inspection commenced: <strong>2 September 2026</strong></li><li>PDMs in this sector were switched off from <strong>25 August 2026</strong></li></ul><div class=\"info-box\"><strong>Agent action</strong><br>For a fine in E18-02 dated on or after 2 September 2026, check whether the customer paid the standard rather than the premium tariff before treating it as a system error. Confirm the sector on the Smart Sector Map.</div><div class=\"info-box\"><strong>Tell the customer</strong><br>Parking in part of sector E18-02 is now premium (main) parking. Please follow the signs and pay the posted tariff. There is also a new loading and unloading bay next to Qasr Najd Restaurant &amp; Kitchen.</div><div class=\"footer\"><strong>Need help?</strong><br>Call/WhatsApp Q Mobility on <strong>800 3009</strong></div>",
+      "q_ar": "",
+      "a_ar": "",
+      "kw": "E18-02 E18 Al Danah Aldana Qasr Najd restaurant loading unloading bay premium main parking secondary standard reclassification tariff GIS 71 bays قطاع E18-02 الدانة تغيير المواقف الفرعية الى مواقف رئيسية قصر نجد",
+      "page": "faq-maw-hours",
+      "verified_at": "2026-09-22",
+      "updated_at": "2026-09-22T00:32:00+04:00",
+      "source": "Parking Infrastructure Management approval and Contact Centre completion notice for sector E18-02",
+      "published_at": "2026-09-07T16:03:00+04:00",
+      "effective_from": "2026-09-01"
+    },
+    "article_MAW-2026-0918-W59-01-INSPECTION-RESUMED": {
+      "id": "MAW-2026-0918-W59-01-INSPECTION-RESUMED",
+      "q": "Inspection has resumed in sector W59-01 - what do I tell customers?",
+      "a": "<p><strong>Direct answer:</strong> inspection and enforcement resumed in <strong>W59-01</strong> on <strong>18 September 2026</strong>. Customers asking about main (premium) parking there should be directed to use <strong>resident-designated parking only</strong>, or the parking allocated to them <strong>inside their residential building</strong>.</p><div class=\"info-box\"><strong>Agent action</strong><br>Confirm the sector on the Smart Sector Map before advising. Keep to the approved direction and pass anything else to your supervisor.</div><div class=\"info-box\"><strong>Tell the customer</strong><br>Parking inspection is active again in this sector. Please use the parking designated for residents, or the parking allocated to you inside your building.</div><div class=\"footer\"><strong>Need help?</strong><br>Call/WhatsApp Q Mobility on <strong>800 3009</strong></div>",
+      "q_ar": "استؤنفت أعمال التفتيش في القطاع W59-01 — ماذا أقول للمتعاملين؟",
+      "a_ar": "<p>استؤنفت أعمال التفتيش والرقابة في القطاع W59-01 اعتبارًا من 18 سبتمبر 2026. في حال وجود أي استفسارات من المتعاملين بشأن المواقف الرئيسية، يرجى توجيههم إلى استخدام المواقف المخصصة للسكان فقط، أو المواقف المخصصة لهم داخل البنايات السكنية.</p>",
+      "kw": "W59-01 W59 sector inspection resumed enforcement restarted main parking premium resident designated parking residential building قطاع W59-01 استئناف اعمال التفتيش",
+      "page": "faq-maw-others",
+      "verified_at": "2026-09-22",
+      "updated_at": "2026-09-22T00:32:00+04:00",
+      "source": "ICC Operations circular, resumption of inspection in sector W59-01",
+      "published_at": "2026-09-18T15:15:00+04:00",
+      "effective_from": "2026-09-18"
+    },
+    "article_MAW-2026-0825-EAST48-INSPECTION-RESUMED": {
+      "id": "MAW-2026-0825-EAST48-INSPECTION-RESUMED",
+      "q": "Has inspection resumed in sector East 48 (Abu Dhabi Accountability Authority)?",
+      "a": "<p><strong>Direct answer:</strong> yes. Monitoring and inspection resumed at the <strong>Abu Dhabi Accountability Authority location in sector East 48</strong> from <strong>25 August 2026</strong>, under the approved operating procedures.</p><div class=\"info-box\"><strong>Agent action</strong><br>Confirm the sector on the Smart Sector Map before advising, and route any site-specific query about this location to your supervisor.</div><div class=\"info-box\"><strong>Tell the customer</strong><br>Parking inspection is active in this sector. Please make sure your parking is paid and that you are parked in a permitted space.</div><div class=\"footer\"><strong>Need help?</strong><br>Call/WhatsApp Q Mobility on <strong>800 3009</strong></div>",
+      "q_ar": "هل استؤنفت أعمال التفتيش في قطاع شرق 48؟",
+      "a_ar": "<p>نعم. تم استئناف أعمال الرقابة والتفتيش في موقع جهاز أبوظبي للمحاسبة &ndash; قطاع شرق 48، وذلك اعتبارًا من 25 أغسطس 2026، وفقًا للأنظمة والإجراءات والضوابط التشغيلية المعتمدة.</p>",
+      "kw": "east 48 SE48 SE-48 sector abu dhabi accountability authority inspection resumed monitoring enforcement restarted قطاع شرق 48 جهاز ابوظبي للمحاسبة استئناف اعمال الرقابة والتفتيش",
+      "page": "faq-maw-others",
+      "verified_at": "2026-09-22",
+      "updated_at": "2026-09-22T00:32:00+04:00",
+      "source": "ICC Operations circular, resumption of monitoring and inspection in East 48",
+      "published_at": "2026-08-25T15:22:00+04:00",
+      "effective_from": "2026-08-25"
+    },
+    "article_MAW-2026-0915-CAR-SHOWROOM-PARKING": {
+      "id": "MAW-2026-0915-CAR-SHOWROOM-PARKING",
+      "q": "What are the parking rules for car showrooms?",
+      "a": "<p><strong>Direct answer:</strong> a showroom may use the bays in front of and opposite the showroom and the sandy lots around it, provided every vehicle carries valid traffic plates, parking rules and fees are observed, and traffic is not obstructed.</p><h4>Permitted</h4><ul><li>Parking in the bays <strong>in front of and opposite the showroom</strong>, for showroom vehicles that carry plates and an official plate bearing the showroom name.</li><li>Parking <strong>outside the showroom</strong> where the vehicle carries valid traffic plates, parking regulations are followed and fees are paid.</li><li>Parking on the <strong>sandy lots around the showroom</strong>, in an orderly manner, without exceeding the showroom&rsquo;s own area and without obstructing traffic.</li></ul><h4>To avoid</h4><ul><li>Parking at intersections and exits</li><li>Parking outside the showroom without an official plate</li><li>Concealing traffic plates</li><li>Unofficial stickers</li><li>Using public parking as a permanent showroom</li><li>Placing barriers or reservation markers</li><li>Leaving neglected or damaged vehicles</li></ul><div class=\"info-box\"><strong>Agent action</strong><br>This official Mawaqif brochure was distributed to car showrooms in Al Ain and circulated to the Contact Centre. The Arabic brochure is the authority for exact wording &mdash; for a formal or disputed question, refer the customer to it rather than paraphrasing.</div><div class=\"info-box\"><strong>Tell the customer</strong><br>Showroom vehicles may use the bays in front of and opposite the showroom and the sandy lots around it, as long as every vehicle carries valid plates, parking fees are paid and traffic is not obstructed. Vehicles must not block intersections or exits, hide plates, or be left neglected or damaged.</div><div class=\"footer\"><strong>Need help?</strong><br>Call/WhatsApp Q Mobility on <strong>800 3009</strong></div>",
+      "q_ar": "ما هي ضوابط استخدام المواقف الخاصة بمعارض السيارات؟",
+      "a_ar": "<p>وفقًا للدليل الإرشادي المعتمد من مواقف: <strong>مصرح</strong> الوقوف أمام المعرض والجهة المقابلة للمركبات التي تحمل لوحات، والوقوف خارج المعرض بشرط أن تحمل المركبة لوحات مرورية سارية مع الالتزام بأنظمة المواقف وسداد الرسوم، والوقوف في الساحات الرملية حول المعرض دون تجاوز مساحته وبشكل منظم لا يعيق الحركة المرورية.</p><p><strong>يجب تجنب:</strong> الوقوف عند التقاطعات والمخارج، الوقوف بدون لوحة رسمية خارج المعرض، إخفاء اللوحات المرورية، الملصقات غير الرسمية، استخدام المواقف العامة كمعرض دائم، الحواجز ومواقع الحجز، والمركبات المهملة والتالفة.</p><p>للاستفسار والتواصل: 8003009. الدليل الإرشادي الرسمي هو المرجع للصياغة الدقيقة.</p>",
+      "kw": "car showroom car dealer dealership showroom parking al ain sandy lot plates official plate barriers reservation neglected damaged vehicles brochure guidance معارض السيارات مواقف معارض السيارات الساحات الرملية لوحة رسمية",
+      "page": "faq-maw-others",
+      "verified_at": "2026-09-22",
+      "updated_at": "2026-09-22T00:32:00+04:00",
+      "source": "Official Q Mobility / Mawaqif guidance brochure for car showrooms, circulated to Contact Centre staff",
+      "published_at": "2026-09-15T11:38:00+04:00"
+    },
+    "article_MAW-2026-0723-UNAVAILABLE-PARKING-SCRIPT": {
+      "id": "MAW-2026-0723-UNAVAILABLE-PARKING-SCRIPT",
+      "q": "A customer says there is no available parking space in their area - what do I do?",
+      "a": "<p><strong>Direct answer:</strong> it depends on whether they hold a valid permit for that area.</p><h4>Customer has no valid permit</h4><p>Say: &ldquo;You do not have a valid permit for this area. If you are unable to find an available parking space, you may park in another authorized area.&rdquo;</p><h4>Customer has a valid permit</h4><ol><li>Raise an enquiry through Salesforce using the approved template.</li><li>Provide the customer with the required information.</li><li>Close the enquiry after the call ends.</li></ol><div class=\"info-box\"><strong>Agent action</strong><br>Check the permit status before choosing the path. Do not leave the enquiry open after the call when the customer holds a valid permit.</div><div class=\"info-box\"><strong>Tell the customer</strong><br>If you cannot find an available space in this area, you may park in another authorized area.</div><div class=\"footer\"><strong>Need help?</strong><br>Call/WhatsApp Q Mobility on <strong>800 3009</strong></div>",
+      "q_ar": "",
+      "a_ar": "",
+      "kw": "no parking available unavailable parking space full occupied cannot find parking valid permit no permit authorized area salesforce enquiry template لا يوجد موقف متاح تصريح ساري",
+      "page": "faq-maw-others",
+      "verified_at": "2026-09-22",
+      "updated_at": "2026-09-22T00:32:00+04:00",
+      "source": "Contact Centre process updates, re-issued as a standing reminder",
+      "published_at": "2026-07-23T15:48:00+04:00",
+      "effective_from": "2026-07-23"
+    },
+    "article_OPS-2026-0911-TOWED-STATUS-MANUAL": {
+      "id": "OPS-2026-0911-TOWED-STATUS-MANUAL",
+      "q": "TEMPORARY: CRM shows a vehicle as untowed but the customer says it was towed - what do I do?",
+      "a": "<p><strong>Direct answer:</strong> do not rely on the CRM status alone. A system issue affecting the Enforcement Stage means vehicles in <strong>Abu Dhabi, Musaffah and Al Ain</strong> are temporarily being processed <strong>manually</strong>, so a towed vehicle can still show as untowed.</p><h4>What to do</h4><ol><li>Check the current manually-towed vehicle list circulated by Parking Operations.</li><li>If the vehicle is on it, handle the case as a towed vehicle.</li><li>If it is not, escalate to your supervisor before telling the customer the vehicle was not towed.</li></ol><div class=\"info-box\"><strong>Agent action</strong><br>Never confirm &ldquo;your vehicle was not towed&rdquo; from the CRM status while this is in force. The issue is with the IT team; there is no confirmed fix date.</div><div class=\"info-box\"><strong>Tell the customer</strong><br>Let me check this for you &mdash; our system is currently being updated manually for towed vehicles, so I want to confirm the status before I give you an answer.</div><div class=\"info-box\"><strong>Temporary instruction.</strong> Remove or update this article once Parking Operations confirm the Enforcement Stage fix.</div><div class=\"footer\"><strong>Need help?</strong><br>Call/WhatsApp Q Mobility on <strong>800 3009</strong></div>",
+      "q_ar": "",
+      "a_ar": "",
+      "kw": "towed vehicle not showing towed crm untowed status discrepancy manual towing enforcement stage system issue abu dhabi musaffah al ain temporary workaround مركبة مسحوبة لا تظهر في النظام سحب يدوي",
+      "page": "faq-maw-pound",
+      "verified_at": "2026-09-22",
+      "updated_at": "2026-09-22T00:32:00+04:00",
+      "source": "Parking Operations (Enforcement) confirmation of the Enforcement Stage system issue",
+      "published_at": "2026-09-14T09:24:00+04:00",
+      "effective_from": "2026-09-11"
+    },
+    "article_FAQ-0169": {
+      "id": "FAQ-0169",
+      "q": "What are the towing yards working hours?",
+      "a": "<p><strong>Direct answer:</strong></p><table><tr><th>Towing Yard</th><th>Operating Hours</th><th>Days</th></tr><tr><td><strong>Al Karama Car Pound</strong></td><td>24 hours</td><td>7 days a week</td></tr><tr><td><strong>Musaffah Car Pound</strong></td><td><strong>24 hours</strong></td><td>7 days a week</td></tr><tr><td><strong>Al Ain Car Pound</strong></td><td>8:00 AM to 12:00 Midnight</td><td>7 days a week</td></tr></table><div class=\"info-box\">The Musaffah Car Pound customer service office moved to <strong>24/7</strong> on <strong>1 September 2026</strong>. It previously opened 8:00 AM to 12:00 midnight. <strong>Al Ain is unchanged.</strong></div><div class=\"info-box\"><strong>Agent action</strong><br>Musaffah is now 24/7 &mdash; do not quote the old 8:00 AM to midnight hours. Release requires the vehicle ownership documents, and payment is taken in person at the pound customer service by credit card only.</div><div class=\"info-box\"><strong>Tell the customer</strong><br>The Musaffah Car Pound customer service office is open 24 hours a day, 7 days a week.</div><div class=\"footer\"><strong>Need help?</strong><br>Call/WhatsApp Q Mobility on <strong>800 3009</strong></div>",
+      "q_ar": "ما هي ساعات عمل ساحات الحجز؟",
+      "a_ar": "<p>حجز الكرامة: 24 ساعة، 7 أيام في الأسبوع. حجز مصفح: <strong>24 ساعة، 7 أيام في الأسبوع</strong> اعتبارًا من 1 سبتمبر 2026. حجز العين: من 8:00 صباحًا حتى 12:00 منتصف الليل، 7 أيام في الأسبوع.</p>",
+      "kw": "towing yard car pound working hours operating hours musaffah mussafah al karama al ain 24 hours 24/7 seven days midnight impound release collect vehicle حجز مصفح حجز الكرامة حجز العين ساعات العمل",
+      "page": "faq-maw-pound",
+      "verified_at": "2026-09-22",
+      "updated_at": "2026-09-22T00:32:00+04:00",
+      "source": "Q Mobility Parking Operations, Musaffah Car Pound customer service office 24/7 from 1 September 2026",
+      "published_at": "2026-08-27T15:00:00+04:00",
+      "effective_from": "2026-09-01",
+      "supersedes": "Musaffah Car Pound 8:00 AM to 12:00 midnight (in force 5 February 2026 to 31 August 2026)"
+    },
+    "article_FAQ-TOW-001": {
+      "id": "FAQ-TOW-001",
+      "q": "What are the towing yards' working hours?",
+      "a": "<p><strong>Direct answer:</strong></p><table><tr><th>Towing Yard</th><th>Operating Hours</th><th>Days</th></tr><tr><td><strong>Al Karama Car Pound</strong></td><td>24 hours</td><td>7 days a week</td></tr><tr><td><strong>Musaffah Car Pound</strong></td><td><strong>24 hours</strong></td><td>7 days a week</td></tr><tr><td><strong>Al Ain Car Pound</strong></td><td>8:00 AM to 12:00 Midnight</td><td>7 days a week</td></tr></table><div class=\"info-box\">The Musaffah Car Pound customer service office moved to <strong>24/7</strong> on <strong>1 September 2026</strong>. It previously opened 8:00 AM to 12:00 midnight. <strong>Al Ain is unchanged.</strong></div><div class=\"info-box\"><strong>Agent action</strong><br>Musaffah is now 24/7 &mdash; do not quote the old 8:00 AM to midnight hours. Release requires the vehicle ownership documents, and payment is taken in person at the pound customer service by credit card only.</div><div class=\"info-box\"><strong>Tell the customer</strong><br>The Musaffah Car Pound customer service office is open 24 hours a day, 7 days a week.</div><div class=\"footer\"><strong>Need help?</strong><br>Call/WhatsApp Q Mobility on <strong>800 3009</strong></div>",
+      "q_ar": "ما هي ساعات عمل ساحات الحجز؟",
+      "a_ar": "<p>حجز الكرامة: 24 ساعة، 7 أيام في الأسبوع. حجز مصفح: <strong>24 ساعة، 7 أيام في الأسبوع</strong> اعتبارًا من 1 سبتمبر 2026. حجز العين: من 8:00 صباحًا حتى 12:00 منتصف الليل، 7 أيام في الأسبوع.</p>",
+      "kw": "towing yard car pound working hours operating hours musaffah mussafah al karama al ain 24 hours 24/7 seven days midnight impound release collect vehicle حجز مصفح حجز الكرامة حجز العين ساعات العمل",
+      "page": "faq-maw-pound",
+      "verified_at": "2026-09-22",
+      "updated_at": "2026-09-22T00:32:00+04:00",
+      "source": "Q Mobility Parking Operations, Musaffah Car Pound customer service office 24/7 from 1 September 2026",
+      "published_at": "2026-08-27T15:00:00+04:00",
+      "effective_from": "2026-09-01",
+      "supersedes": "Musaffah Car Pound 8:00 AM to 12:00 midnight (in force 5 February 2026 to 31 August 2026)"
     }
   },
   "fines": [
@@ -4734,11 +5286,34 @@
       "title": "Q Mobility media library",
       "url": "https://www.qmobility.ae/en/media-library",
       "verified_on": "2026-09-21"
+    },
+    {
+      "title": "Mawaqif FAQ - Car Pound towing yard locations",
+      "url": "https://www.qmobility.ae/en/faqs/mawaqif-faqs",
+      "verified_on": "2026-09-22"
     }
   ],
   "_imported_from": [
     "Mawaqif.txt",
     "Darb.txt",
     "Important Notes.txt"
-  ]
+  ],
+  "email_review": {
+    "window_start": "2026-08-01T00:00:00+04:00",
+    "window_end": "2026-09-22T00:32:01+04:00",
+    "archive_files": 894,
+    "curated_files": 22,
+    "total_files": 916,
+    "parse_failures": 0,
+    "missing_internal_date": 0,
+    "unique_messages": 667,
+    "unique_threads": 380,
+    "screened_noise": 302,
+    "deep_reviewed": 78,
+    "include": 25,
+    "include_temporary": 2,
+    "review_conflict": 7,
+    "exclude": 346,
+    "report": "email-triage-report.md (held outside the repository)"
+  }
 }
