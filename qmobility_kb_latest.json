@@ -1,6 +1,6 @@
 {
-  "version": "v11-verified-2026-09-25",
-  "exported": "2026-09-25T10:00:00+04:00",
+  "version": "v12-verified-2026-09-25",
+  "exported": "2026-09-25T13:00:00+04:00",
   "verified_on": "2026-09-25",
   "source_priority": [
     "This JSON bundle for approved operational updates",
@@ -180,7 +180,10 @@
       "imgs": [],
       "q_ar": "",
       "img_cap": "",
-      "page": "kb-maw-parking-sms"
+      "page": "kb-maw-grievance",
+      "subcat": "Parking Grievance",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "page_locked": true
     },
     "article_FAQ-0200": {
       "a": "<p>If you believe a fine was issued incorrectly:</p><p>File a grievance through  TAMM</p><p>Upload supporting evidence (photos, receipts, timestamps)</p><p>If the grievance is accepted, the fine will be cancelled or refunded.</p>",
@@ -674,16 +677,19 @@
       "number": ""
     },
     "article_FAQ-0034": {
-      "a": "<p>Payment methods for Mawaqif public parking:</p><p>Darb App — virtual parking via wallet</p><p>TAMM App</p><p>SMS to 3009 — send plate number and sector</p><p>On-site payment machines PDM (coins)</p>",
+      "a": "<p>Public parking can be paid through the approved Mawaqif channels below.</p><table><tr><th>Channel</th><th>Agent note</th></tr><tr><td><strong>DARB App / Website</strong></td><td>Use Pay for Parking and deduct from the linked wallet.</td></tr><tr><td><strong>TAMM App / Website</strong></td><td>Use Pay for Parking from My TAMM / services.</td></tr><tr><td><strong>SMS to 3009</strong></td><td>Private vehicles, and public plates using their category code. Use the correct emirate/plate/category/zone/duration format. For 24-hour parking, type <strong>24</strong> as the final duration number.</td></tr><tr><td><strong>Payment machines (PDM)</strong></td><td><strong>Switched off on Abu Dhabi Island</strong> from 21 September 2026. Al Ain and the remaining areas follow in later phases.</td></tr></table><div class=\"info-box\"><strong>24-hour SMS rule:</strong> The last number in the SMS must be <strong>24</strong> to request 24 hours and avoid duration issues.</div><div class=\"info-box\"><strong>Current card note:</strong> The old rechargeable card feature is no longer supported. Remaining balances are accessed through the Darb app.</div><div class=\"footer\"><strong>Need help?</strong><br>Call/WhatsApp Q Mobility on <strong>800 3009</strong> or use the dedicated support section on the <strong>DARB App</strong>.</div>",
       "q": "How can I pay for public parking?",
       "id": "FAQ-0034",
-      "kw": "pay parking how payment method sms darb tamm machine",
+      "kw": "pay public parking mawaqif darb tamm sms 3009 machine coins rechargeable card closed wallet 24 hours duration last digit pdm switched off public plate sms",
       "img": "",
       "a_ar": "",
       "imgs": [],
       "q_ar": "",
       "img_cap": "",
-      "page": "kb-maw-parking-sms"
+      "page": "kb-maw-parking-sms",
+      "verified_at": "2026-09-25",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "source": "KB audit 25 September 2026 - reconciled with the PDM switch-off and public-plate circulars"
     },
     "article_FAQ-0198": {
       "a": "<p>Complaints about improper parking or misuse of spaces can be submitted by contacting WhatsApp 8003009.</p>",
@@ -974,48 +980,69 @@
       "page": "kb-maw-resident"
     },
     "article_FAQ-NEW-1775989360072": {
-      "a": "<p>User can pay for Classis Cars only through Darb, Tamm & PDM.</p><p>No SMS is for all Classis Vehicles.</p>",
-      "q": "Classis Cars",
+      "a": "<p>Classic cars pay through the <strong>Darb app</strong> or <strong>TAMM</strong>. <strong>SMS is not available</strong> for classic vehicles.</p><div class=\"info-box\"><strong>Payment machines (PDM) on Abu Dhabi Island have been switched off</strong> &mdash; all batches completed from 21 September 2026. On the island, direct customers to the Darb app, TAMM, or SMS to 3009. Al Ain and the remaining areas are switched off in later phases. Search <em>PDM machine switched off</em>.</div><p>On Abu Dhabi Island that leaves Darb or TAMM as the only options.</p>",
+      "q": "How do classic cars pay for parking?",
       "id": "FAQ-NEW-1775989360072",
-      "kw": "Classis Cars User can pay for Classis Cars only through Darb, Tamm & PDM. No SMS is for all Classis Vehicles.",
+      "kw": "classic car classis vintage old vehicle pay parking darb tamm no sms pdm",
       "img": "",
       "a_ar": "",
       "imgs": [],
       "q_ar": "",
       "img_cap": "",
-      "page": "kb-maw-parking-sms"
+      "page": "kb-maw-parking-sms",
+      "subcat": "Paid Parking",
+      "verified_at": "2026-09-25",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "source": "KB audit 25 September 2026 - reconciled with the PDM switch-off and public-plate circulars"
     },
     "article_FAQ-NEW-1775989481606": {
       "a": "User should remove the car immediately to avoid car being towed as there is no Grace period after issuing a fine.\nthe SMS the customer will receive after getting a fine\n(We regret to inform you a parking violation has been issued for the plate number (Car plate number) on DD/MM/YYYY. To avoid towing the vehicle, please remove it immediately.\nYou can apply for grievance in 60 days, or pay the fine to get a 25% discount )",
-      "q": "Towing Car for Parking in a Resident Parking Slot is after?",
+      "q": "When is a car parked in a resident parking slot towed?",
       "id": "FAQ-NEW-1775989481606",
       "kw": "RP Fine, Towing , Tow, Pound, Remove",
       "imgs": [],
       "type": "faq",
       "domain": "mawaqif",
-      "page": "kb-ff-faq"
+      "page": "kb-maw-impound",
+      "subcat": "Car Pound",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "page_locked": true,
+      "override_fields": [
+        "q"
+      ]
     },
     "article_FAQ-0237": {
-      "a": "<p>Mawaqif Parking Payment Methods</p><p>1. Mawaqif Machines</p><p>Accept coins only</p><p>2. SMS Payment</p><p>Send an SMS to 3009 using the following format:</p><p>AUH00 0000 P/S 1</p><p>Shortcuts for UAE Emiratis: AUH, DXB, SHJ, AJM, FUJ, UAQ, RAK</p><p>For GCC plates</p><p>Saudi: KSA, SAU</p><p>Kuwait: KWT</p><p>Bahrain: BHR, BAH</p><p>Oman: OMN</p><p>Qatar: QAT</p><p>Note: SMS payment is only for private vehicles. Other vehicle types must use the Darb app, website, or Mawaqif machines</p><p>Important Notes for SMS Payments</p><p>Must have a valid SIM card (postpaid or prepaid)</p><p>Postpaid: Ensure sufficient credit and that you haven’t reached your hard cap limit</p><p>Prepaid: Ensure you haven’t reached your hard cap limit and activate the M-Parking wallet by contacting your network provider</p><p>Network codes</p><p>Etisalat: 101</p><p>Du: 155</p><p>Virgin: 165</p><p>4. Third-Party Applications</p><p>Darb App: Sign in, Home screen, Select Paying for parking</p><p>TAMM App: Sign in, My TAMM, Select Pay for parking</p>",
+      "a": "<h3>Mawaqif Parking Payment Methods</h3>\n<h4>1. SMS Payment</h4>\n<p>Send an SMS to 3009 using the following format:</p>\n<p><strong>AUH00 0000 P/S 1</strong></p>\n<p>Shortcuts for UAE Emiratis: AUH, DXB, SHJ, AJM, FUJ, UAQ, RAK</p>\n<p>For GCC plates</p>\n<p><strong>Saudi: KSA, SAU</strong></p>\n<p>Kuwait: KWT</p>\n<p><strong>Bahrain: BHR, BAH</strong></p>\n<p>Oman: OMN</p>\n<p>Qatar: QAT</p>\n<ul>\n<li>SMS covers <strong>private vehicles</strong> and, since 21 September 2026, <strong>public plates</strong> using the approved category code &mdash; AUHPUB1, AUHPUB2, AUHORA, AUHYEL, AUHGRE, DXBBLA, DXBYEL, DXBGRE. Search <em>public plate parking payment</em>. Other vehicle types use the Darb app or website.</li>\n</ul>\n<h3>Important Notes for SMS Payments</h3>\n<p>Must have a valid SIM card (postpaid or prepaid)</p>\n<p>Postpaid: Ensure sufficient credit and that you haven’t reached your hard cap limit</p>\n<p>Prepaid: Ensure you haven’t reached your hard cap limit and activate the M-Parking wallet by contacting your network provider</p>\n<p>Network codes</p>\n<p>Etisalat: 101</p>\n<p>Du: 155</p>\n<p>Virgin: 165</p>\n<h4>2. Darb and TAMM apps</h4>\n<p>Darb App: Sign in, Home screen, Select Paying for parking</p>\n<p>TAMM App: Sign in, My TAMM, Select Pay for parking</p>\n<h4>3. Payment machines (PDM)</h4><div class=\"info-box\"><strong>Payment machines (PDM) on Abu Dhabi Island have been switched off</strong> &mdash; all batches completed from 21 September 2026. On the island, direct customers to the Darb app, TAMM, or SMS to 3009. Al Ain and the remaining areas are switched off in later phases. Search <em>PDM machine switched off</em>.</div><div class=\"footer\">\n<strong>Need help?</strong><br>\nCall/WhatsApp Q Mobility on <strong>800 3009</strong> or visit our dedicated support section on the <strong>DARB App</strong>.",
       "q": "What payment methods are available for Mawaqif parking?",
       "id": "FAQ-0237",
-      "kw": "what payment methods are available for mawaqif parking",
+      "kw": "Parking Paid Public parking What payment methods are available for Mawaqif parking",
       "img": "",
       "a_ar": "",
       "imgs": [],
       "q_ar": "",
       "img_cap": "",
-      "page": "kb-maw-parking-sms"
+      "page": "kb-maw-parking-sms",
+      "subcat": "Paid Parking",
+      "verified_at": "2026-09-25",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "source": "KB audit 25 September 2026 - reconciled with the PDM switch-off and public-plate circulars"
     },
     "article_FAQ-NEW-1775990129614": {
-      "a": "For any vehicle that is not registered as a private vehicle, such as public transport, classic vehicles, non-UAE plates, motorcycles, diplomatic vehicles, commercial vehicles, trailers, export plates, orange plates, green plates, yellow plates, tower plates (RAK), and government vehicles, registration can be completed through the following channels:\n\n* DARB App\n* TAMM App\n* PDM",
-      "q": "Public Plate Number Payment Methods are?",
       "id": "FAQ-NEW-1775990129614",
-      "kw": "Pay Parking, Public Parking Payment, Public, Public, Classis, Non UAE Plates, Motorcycle, Diplomatic, Commercial , Trailer, Export, Orange, Green, Yellow, the tower (RAK), Government",
-      "imgs": [],
-      "type": "faq",
-      "domain": "mawaqif",
-      "page": "kb-maw-parking-sms"
+      "q": "How do non-private vehicles pay for parking (public, commercial, classic, motorcycle, government, non-UAE)?",
+      "a": "<p><strong>It depends on the plate category.</strong></p><table><tr><th>Category</th><th>How to pay</th></tr><tr><td><strong>Public plates</strong> &ndash; First and Second Category, Orange, Yellow, Green (Abu Dhabi); Black, Yellow, Green (Dubai)</td><td><strong>SMS to 3009</strong> with the category code &mdash; AUHPUB1, AUHPUB2, AUHORA, AUHYEL, AUHGRE, DXBBLA, DXBYEL, DXBGRE &mdash; or the Darb app. Search <em>public plate parking payment</em>.</td></tr><tr><td><strong>Motorcycles</strong> (First Category &ndash; Yellow)</td><td>Added on 21 September 2026. The circular lists the Darb app, Darb e-wallet, SMS and TAMM. Search <em>motorcycle yellow plate</em>.</td></tr><tr><td><strong>GCC plates</strong></td><td>SMS with the GCC code (KSA, KWT, BHR, OMN, QAT) or TAMM.</td></tr><tr><td><strong>Commercial plates</strong></td><td>Darb app or TAMM. The temporary plate must be transferred to a <strong>permanent plate</strong> first &mdash; search <em>commercial plate permanent transfer</em>.</td></tr><tr><td>Classic, diplomatic, government, trailers, export and RAK tower plates</td><td>Darb app or TAMM. SMS is not available.</td></tr><tr><td><strong>Non-GCC international plates</strong></td><td><strong>No confirmed self-service channel</strong> on Abu Dhabi Island since the payment machines were switched off. Escalate to your supervisor &mdash; do not promise a channel.</td></tr></table><div class=\"info-box\"><strong>Payment machines (PDM) on Abu Dhabi Island have been switched off</strong> from 21 September 2026, so they are no longer an option on the island. Al Ain and the remaining areas follow in later phases.</div><div class=\"footer\"><strong>Need help?</strong><br>Call/WhatsApp Q Mobility on <strong>800 3009</strong></div>",
+      "kw": "non private vehicle public plate commercial classic motorcycle diplomatic government trailer export orange green yellow tower RAK non uae gcc international foreign plate pay parking channel darb tamm sms pdm Public Plate Number Payment Methods are",
+      "page": "kb-maw-parking-sms",
+      "subcat": "Paid Parking",
+      "override_fields": [
+        "q",
+        "a",
+        "kw",
+        "subcat"
+      ],
+      "source": "Reconciled with the ICC public-plate and motorcycle circulars (21 Sep 2026) and the PDM Batch 3 circular",
+      "verified_at": "2026-09-25",
+      "updated_at": "2026-09-25T13:30:00+04:00"
     },
     "article_FAQ-NEW-1775991060218": {
       "a": "the following documents must be provided:\n\n-Copy of the court judgment/ Judge order\n- List of violations statement stamped by the Traffic Prosecution\n- Stop Searching For Defendant Request\n-EID , Both Faces\n- Car Registration (Mulkiya), Both Faces",
@@ -1051,13 +1078,17 @@
       "a": "<p>To process violation closure for a deceased vehicle owner, the following documents must be provided:</p><p>-Official closure letter from the Traffic Prosecution</p><p>-Death certificate</p><p>-Vehicle Registration document in the name of the deceased (Mulkiya)</p><p>Request the customer to send it through email to proceed with his request and create a case after getting the attachments.</p>",
       "q": "Required attachments to close violations due to death?",
       "id": "FAQ-NEW-1775991689471",
-      "kw": "Required attachments to close violations due to death? To process violation closure for a deceased vehicle owner, the following documents must be provided: -Official closure letter from the Traffic Prosecution -Death certificate -Vehicle Registration document in the name of the deceased (Mulkiya) Request the customer to send it through email to proceed with his request and create a case after getting the attachments. Death, RIP, Dead, Skeleton, deceased.",
+      "kw": "Required attachments to close violations due to death? To process violation closure for a deceased vehicle owner, the following documents must be provided: -Official closure letter from the Traffic Prosecution -Death certificate -Vehicle Registration document in the name of the deceased (Mulkiya) Request the customer to send it through email to proceed with his request and create a case after getting the attachments. Death, RIP, Dead, Skeleton, deceased. Death, RIP, Dead, Skeleton, deceased.",
       "img": "",
       "a_ar": "",
       "imgs": [],
-      "q_ar": "Death, RIP, Dead, Skeleton, deceased.",
+      "q_ar": "",
       "img_cap": "",
-      "page": "kb-maw-grievance"
+      "page": "kb-maw-grievance",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "override_fields": [
+        "kw"
+      ]
     },
     "article_FAQ-NEW-1775991795755": {
       "a": "<p>To process parking violation closure related to embassies or GCC cases, the following documents must be provided:</p><p>-Official external letter addressed to Qmobility.</p><p>-Embassy letter clearly mentioning the vehicle plate -numbers or traffic code</p><p>-Vehicle Registration document showing diplomatic category (Mulkiya)</p><p>Request the customer to send it through email to proceed with his request and create a case after getting the attachments.</p>",
@@ -1099,7 +1130,11 @@
       "imgs": [],
       "type": "faq",
       "domain": "mawaqif",
-      "page": "kb-darb-reg"
+      "page": "kb-darb-reg",
+      "status": "superseded",
+      "superseded_by": "FAQ-NEW-1775992874713",
+      "superseded_reason": "Identical answer; titles differ only by a question mark.",
+      "updated_at": "2026-09-25T13:00:00+04:00"
     },
     "article_FAQ-NEW-1775992975016": {
       "a": "You can get copy of parking permit through the toll gate system (Darb) application , website\n \nLog in to your (Darb) account using a web browser, then choose parking permit \nYou will find 3 dots to access the permit functions \nModify the permit address/Car plate",
@@ -1183,7 +1218,10 @@
       "imgs": [],
       "type": "faq",
       "domain": "mawaqif",
-      "page": "kb-maw-mbz"
+      "page": "kb-maw-mussafah",
+      "subcat": "Mussafah",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "page_locked": true
     },
     "latest_updates": [
       {
@@ -1625,6 +1663,110 @@
         "verified_at": "2026-09-22",
         "updated_at": "2026-09-22T00:32:00+04:00",
         "superseded_by": "UPD-2026-0921-PDM-BATCH3"
+      },
+      {
+        "id": "UPD-LEGACY-20260515-CUSTOMERSQMOBILITY",
+        "date": "15 May 2026",
+        "title": "customers@qmobility.ae No Longer Active",
+        "body": "The old email is discontinued. All complaints must now go through the Darb App.",
+        "title_ar": "",
+        "body_ar": "",
+        "tag": "darb",
+        "color": "var(--red)",
+        "source": "Migrated from the hard-coded update list in index.html (single source of truth, 25 Sep 2026)",
+        "effective_from": "2026-05-15",
+        "verified_at": "2026-09-25"
+      },
+      {
+        "id": "UPD-LEGACY-20260420-MUSAFFAHPHASE2LAUN",
+        "date": "20 Apr 2026",
+        "title": "Musaffah Phase 2 Launched",
+        "body": "Phase 2 parking zones in Musaffah now operational.",
+        "title_ar": "",
+        "body_ar": "",
+        "tag": "maw",
+        "color": "var(--red)",
+        "source": "Migrated from the hard-coded update list in index.html (single source of truth, 25 Sep 2026)",
+        "effective_from": "2026-04-20",
+        "verified_at": "2026-09-25"
+      },
+      {
+        "id": "UPD-LEGACY-20260420-PERMITREFUNDSCENAR",
+        "date": "20 Apr 2026",
+        "title": "Permit Refund Scenarios Updated",
+        "body": "New policy guidance on when parking permit refunds are applicable.",
+        "title_ar": "",
+        "body_ar": "",
+        "tag": "maw",
+        "color": "var(--red)",
+        "source": "Migrated from the hard-coded update list in index.html (single source of truth, 25 Sep 2026)",
+        "effective_from": "2026-04-20",
+        "verified_at": "2026-09-25"
+      },
+      {
+        "id": "UPD-LEGACY-20260417-WHATSAPPCARBLOCKAG",
+        "date": "17 Apr 2026",
+        "title": "WhatsApp Car Blockage Service",
+        "body": "Customers can now report blocked vehicles via WhatsApp.",
+        "title_ar": "",
+        "body_ar": "",
+        "tag": "maw",
+        "color": "var(--red)",
+        "source": "Migrated from the hard-coded update list in index.html (single source of truth, 25 Sep 2026)",
+        "effective_from": "2026-04-17",
+        "verified_at": "2026-09-25"
+      },
+      {
+        "id": "UPD-LEGACY-20260311-4NEWMSCPBUILDINGSI",
+        "date": "11 Mar 2026",
+        "title": "4 New MSCP Buildings in MBZ",
+        "body": "1,446 new multi-storey parking spaces added across 4 buildings in Mohamed Bin Zayed City.",
+        "title_ar": "",
+        "body_ar": "",
+        "tag": "new",
+        "color": "var(--red)",
+        "source": "Migrated from the hard-coded update list in index.html (single source of truth, 25 Sep 2026)",
+        "effective_from": "2026-03-11",
+        "verified_at": "2026-09-25"
+      },
+      {
+        "id": "UPD-LEGACY-20260407-FREEFLOWW5ACTIVATE",
+        "date": "7 Apr 2026",
+        "title": "Freeflow W5 Activated",
+        "body": "New Freeflow sector W5 now operational.",
+        "title_ar": "",
+        "body_ar": "",
+        "tag": "darb",
+        "color": "var(--red)",
+        "source": "Migrated from the hard-coded update list in index.html (single source of truth, 25 Sep 2026)",
+        "effective_from": "2026-04-07",
+        "verified_at": "2026-09-25"
+      },
+      {
+        "id": "UPD-LEGACY-20260406-MBZME10ME11ACTIVAT",
+        "date": "6 Apr 2026",
+        "title": "MBZ ME10 & ME11 Activated",
+        "body": "Two new commercial sectors in MBZ City are now under Mawaqif coverage.",
+        "title_ar": "",
+        "body_ar": "",
+        "tag": "maw",
+        "color": "var(--red)",
+        "source": "Migrated from the hard-coded update list in index.html (single source of truth, 25 Sep 2026)",
+        "effective_from": "2026-04-06",
+        "verified_at": "2026-09-25"
+      },
+      {
+        "id": "UPD-LEGACY-20260406-FREEFLOWMSCP01LAUN",
+        "date": "6 Apr 2026",
+        "title": "Freeflow MSCP01 Launched",
+        "body": "First Freeflow Multi-Storey Car Park now operational.",
+        "title_ar": "",
+        "body_ar": "",
+        "tag": "darb",
+        "color": "var(--red)",
+        "source": "Migrated from the hard-coded update list in index.html (single source of truth, 25 Sep 2026)",
+        "effective_from": "2026-04-06",
+        "verified_at": "2026-09-25"
       }
     ],
     "article_FAQ-NEW-1775995092446": {
@@ -2651,16 +2793,20 @@
       "page": "kb-maw-limited"
     },
     "article_FAQ-NEW-1776833751425": {
-      "a": "<p>Payment for vehicles with commercial, green, and yellow plates can be completed only through PDM and the Darb app. These plate types are not supported through other payment channels.</p>",
-      "q": "Payment for Commercial, Green, and Yellow Plates",
+      "a": "<p><strong>Green and yellow public plates</strong> can pay by <strong>SMS to 3009</strong> using their category code, as well as through the Darb app. The codes are AUHPUB1, AUHPUB2, AUHORA, AUHYEL, AUHGRE, DXBBLA, DXBYEL and DXBGRE &mdash; search <em>public plate parking payment</em>.</p><p><strong>Commercial plates:</strong> the temporary plate must be officially transferred to a <strong>permanent plate</strong> before Mawaqif recognises it &mdash; search <em>commercial plate permanent transfer</em>. If the plate is already permanent and payment still fails through Darb or TAMM, escalate to your supervisor; that fault is still open.</p><div class=\"info-box\"><strong>Payment machines (PDM) on Abu Dhabi Island have been switched off</strong> &mdash; all batches completed from 21 September 2026. On the island, direct customers to the Darb app, TAMM, or SMS to 3009. Al Ain and the remaining areas are switched off in later phases. Search <em>PDM machine switched off</em>.</div>",
+      "q": "How do commercial, green and yellow plates pay for parking?",
       "id": "FAQ-NEW-1776833751425",
-      "kw": "Commercial payment , public parking",
+      "kw": "commercial green yellow public plate payment sms 3009 category code darb permanent plate transfer pdm",
       "img": "",
       "a_ar": "",
       "imgs": [],
       "q_ar": "",
       "img_cap": "",
-      "page": "kb-maw-parking-sms"
+      "page": "kb-maw-parking-sms",
+      "subcat": "Paid Parking",
+      "source": "Reconciled with the ICC public-plate circular (21 Sep 2026) and the PDM Batch 3 circular",
+      "verified_at": "2026-09-25",
+      "updated_at": "2026-09-25T13:00:00+04:00"
     },
     "article_FAQ-NEW-1777303686299": {
       "id": "FAQ-NEW-1777303686299",
@@ -2692,15 +2838,20 @@
     },
     "article_FAQ-NEW-1777303897179": {
       "id": "FAQ-NEW-1777303897179",
-      "q": "Is there a free parking period?",
+      "q": "Is there a free parking period at the Free Flow malls?",
       "a": "Yes, the first 3 hours are free once per day.",
-      "kw": "free grace",
+      "kw": "free grace Is there a free parking period?",
       "domain": "freeflow",
       "type": "faq",
       "q_ar": "هل توجد فترة مجانية؟",
       "a_ar": "نعم، ستكون أول 3 ساعات مرة واحدة يومياً مجانية.",
       "imgs": [],
-      "page": "kb-ff-faq"
+      "page": "kb-ff-faq",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "override_fields": [
+        "kw",
+        "q"
+      ]
     },
     "article_FAQ-NEW-1777303995772": {
       "id": "FAQ-NEW-1777303995772",
@@ -3840,20 +3991,32 @@
       "imgs": [],
       "img": "",
       "img_cap": "",
-      "source": "Mawaqif.txt"
+      "source": "Mawaqif.txt",
+      "status": "superseded",
+      "superseded_by": "FAQ-0237",
+      "superseded_reason": "Stale duplicate of the canonical payment-methods article; still advised coins at the machines.",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "override_fields": [
+        "q"
+      ]
     },
     "article_FAQ-MAW-1777672736182-9": {
       "id": "FAQ-MAW-1777672736182-9",
-      "q": "What Kind of permits that Mawaqif support?",
+      "q": "What kinds of permits does Mawaqif offer?",
       "a": "<p>Permits</p><p>Residence permit for Apartment:</p>",
-      "kw": "what kind permits that mawaqif support",
+      "kw": "what kind permits that mawaqif support What Kind of permits that Mawaqif support?",
       "page": "kb-maw-permits",
       "q_ar": "",
       "a_ar": "",
       "imgs": [],
       "img": "",
       "img_cap": "",
-      "source": "Mawaqif.txt"
+      "source": "Mawaqif.txt",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "override_fields": [
+        "kw",
+        "q"
+      ]
     },
     "article_FAQ-MAW-1777672736182-10": {
       "id": "FAQ-MAW-1777672736182-10",
@@ -3870,16 +4033,21 @@
     },
     "article_FAQ-MAW-1777672736182-11": {
       "id": "FAQ-MAW-1777672736182-11",
-      "q": "How much it Cost?",
+      "q": "How much does a resident parking permit cost?",
       "a": "<p>For Residence</p><p>1ST Vehicle 800 AED per year, 400 AED per 6 months</p><p>2nd Vehicle 1200 AED per year, 600 AED per 6 Months</p><p>For Emirati nationality its free</p><p>Residence permit for Villas:</p><p>Residence: Allow to have 4 vehicles under the same Villa contract</p><p>Cost:</p><p>1ST Vehicle 800 AED per year, 400 AED per 6 months</p><p>2nd/4th Vehicle till  1200 AED per year, 600 AED per 6 Months</p><p>Emirati nationality: Allow to have 10 vehicles under the same Villa contract</p><p>Cost: Free</p><p>Required Documents:</p><p>Tenancy Contract</p><p>Electricity & Water bill from last 3 months</p><p>Vehicle ownership</p><p>Emirates ID</p><p>How Can Apply :</p><p>Darb app or website (DARB Platform):</p><p>Sign in</p><p>In the home page  mawaqif section there an option for applying for</p><p>Residential permits.</p><p>TAMM app or website (TAMM - Login Page):</p><p>Sign In</p><p>Services</p><p>Individuals / Emriti</p><p>Drive & Transport</p><p>Parking Section</p><p>Issuing a Permit for Residents' Parking</p>",
-      "kw": "much cost",
+      "kw": "much cost How much it Cost?",
       "page": "kb-maw-general",
       "q_ar": "",
       "a_ar": "",
       "imgs": [],
       "img": "",
       "img_cap": "",
-      "source": "Mawaqif.txt"
+      "source": "Mawaqif.txt",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "override_fields": [
+        "kw",
+        "q"
+      ]
     },
     "article_FAQ-MAW-1777672736182-12": {
       "id": "FAQ-MAW-1777672736182-12",
@@ -4028,7 +4196,7 @@
     "article_FAQ-MAW-1777672736182-23": {
       "id": "FAQ-MAW-1777672736182-23",
       "q": "Can I issue a Residential permit for a yacht/Landscape?",
-      "a": "<p>No , but you can pay for daily parking using TAMM/Darb .</p><p>If I have maximum vehicles under my apartment or my villa, can I apply to add more</p>",
+      "a": "<p>No , but you can pay for daily parking using TAMM/Darb .</p><p> </p>",
       "kw": "issue residential permit yacht landscape",
       "page": "kb-maw-resident",
       "q_ar": "",
@@ -4036,20 +4204,30 @@
       "imgs": [],
       "img": "",
       "img_cap": "",
-      "source": "Mawaqif.txt"
+      "source": "Mawaqif.txt",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "override_fields": [
+        "a",
+        "q"
+      ]
     },
     "article_FAQ-MAW-1777672736182-24": {
       "id": "FAQ-MAW-1777672736182-24",
-      "q": "vehicles?",
+      "q": "I already have the maximum number of vehicles under my apartment or villa. Can I add more vehicles?",
       "a": "<p>Yes, by applying for an exemption using TAMM plat form and it will take 3 working days then you will have your approval or rejection on your request, and you can apply for it using the below steps:</p><p>TAMM app or website (TAMM - Login Page):</p><p>Sign In</p><p>Services</p><p>Individuals / Emriti</p><p>Drive & Transport</p><p>Parking Section</p><p>Issuing a Permit for Residents' Parking</p>",
-      "kw": "vehicles",
+      "kw": "vehicles vehicles?",
       "page": "kb-maw-general",
       "q_ar": "",
       "a_ar": "",
       "imgs": [],
       "img": "",
       "img_cap": "",
-      "source": "Mawaqif.txt"
+      "source": "Mawaqif.txt",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "override_fields": [
+        "kw",
+        "q"
+      ]
     },
     "article_FAQ-MAW-1777672736182-25": {
       "id": "FAQ-MAW-1777672736182-25",
@@ -4066,16 +4244,21 @@
     },
     "article_FAQ-MAW-1777672736182-26": {
       "id": "FAQ-MAW-1777672736182-26",
-      "q": "How can I apply for it?",
+      "q": "How can I apply for a Limited-Term Permit?",
       "a": "<p>Darb app or website (DARB Platform):</p><p>Sign in</p><p>In the home page  mawaqif section there an option for applying for</p><p>Limited-Term Permit for Standard Parking.</p><p>TAMM app or website (TAMM - Login Page):</p><p>Sign In</p><p>Services</p><p>Business</p><p>Safety & Mobility</p><p>Parking</p><p>Issue a Limited-Term Permit for Standard Parking</p><p>Sector Exceptions:</p><p>Holders of residential permits for the sectors listed in the first column are allowed to park in the specific nearby sectors listed in the second column.</p><p>Permit Sector\tAllowed Nearby Sectors (Permitted for Parking)</p>",
-      "kw": "apply",
+      "kw": "apply How can I apply for it?",
       "page": "kb-maw-general",
       "q_ar": "",
       "a_ar": "",
       "imgs": [],
       "img": "",
       "img_cap": "",
-      "source": "Mawaqif.txt"
+      "source": "Mawaqif.txt",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "override_fields": [
+        "kw",
+        "q"
+      ]
     },
     "article_FAQ-MAW-1777672736182-27": {
       "id": "FAQ-MAW-1777672736182-27",
@@ -4092,29 +4275,39 @@
     },
     "article_FAQ-MAW-1777672736182-28": {
       "id": "FAQ-MAW-1777672736182-28",
-      "q": "What are the Required Documents?",
+      "q": "What documents are required for a Multi-Storey (MSCP) permit?",
       "a": "<p>Emirates ID</p>",
-      "kw": "what required documents",
+      "kw": "what required documents What are the Required Documents?",
       "page": "kb-maw-general",
       "q_ar": "",
       "a_ar": "",
       "imgs": [],
       "img": "",
       "img_cap": "",
-      "source": "Mawaqif.txt"
+      "source": "Mawaqif.txt",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "override_fields": [
+        "kw",
+        "q"
+      ]
     },
     "article_FAQ-MAW-1777672736182-29": {
       "id": "FAQ-MAW-1777672736182-29",
-      "q": "How much is Cost?",
+      "q": "How much does a Multi-Storey (MSCP) permit cost?",
       "a": "<p>12 Months 5475 AED</p><p>6 Months 2738 AED</p><p>3 Months 1369 AED</p>",
-      "kw": "much cost",
+      "kw": "much cost How much is Cost?",
       "page": "kb-maw-general",
       "q_ar": "",
       "a_ar": "",
       "imgs": [],
       "img": "",
       "img_cap": "",
-      "source": "Mawaqif.txt"
+      "source": "Mawaqif.txt",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "override_fields": [
+        "kw",
+        "q"
+      ]
     },
     "article_FAQ-MAW-1777672736182-30": {
       "id": "FAQ-MAW-1777672736182-30",
@@ -4170,16 +4363,21 @@
     },
     "article_FAQ-MAW-1777672736182-34": {
       "id": "FAQ-MAW-1777672736182-34",
-      "q": "Who is eligible for it?",
+      "q": "Who is eligible for an Abu Dhabi Mall parking permit?",
       "a": "<p>it's only available for Mall tenant and their employees keep in mind that overnight parking is not permitted even for such paid packages .</p>",
-      "kw": "eligible",
+      "kw": "eligible Who is eligible for it?",
       "page": "kb-maw-general",
       "q_ar": "",
       "a_ar": "",
       "imgs": [],
       "img": "",
       "img_cap": "",
-      "source": "Mawaqif.txt"
+      "source": "Mawaqif.txt",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "override_fields": [
+        "kw",
+        "q"
+      ]
     },
     "article_FAQ-MAW-1777672736182-35": {
       "id": "FAQ-MAW-1777672736182-35",
@@ -4432,55 +4630,75 @@
     },
     "article_FAQ-MAW-1777672736182-54": {
       "id": "FAQ-MAW-1777672736182-54",
-      "q": "Why was this system launched?",
+      "q": "Why was the People of Determination parking system for malls and private facilities launched?",
       "a": "<p>The system aims to make it easier for People of Determination to access parking spaces in malls and private facilities, while improving the management of these spaces.</p>",
-      "kw": "this system launched",
+      "kw": "this system launched Why was this system launched?",
       "page": "kb-maw-general",
       "q_ar": "",
       "a_ar": "",
       "imgs": [],
       "img": "",
       "img_cap": "",
-      "source": "Mawaqif.txt"
+      "source": "Mawaqif.txt",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "override_fields": [
+        "kw",
+        "q"
+      ]
     },
     "article_FAQ-MAW-1777672736182-55": {
       "id": "FAQ-MAW-1777672736182-55",
-      "q": "How will entities benefit from this service?",
+      "q": "How do malls and private entities benefit from the People of Determination parking system?",
       "a": "<p>Private entities like shopping centers will be able to check and manage vehicles occupying designated People of Determination parking spaces.</p>",
-      "kw": "will entities benefit from this service",
+      "kw": "will entities benefit from this service How will entities benefit from this service?",
       "page": "kb-maw-general",
       "q_ar": "",
       "a_ar": "",
       "imgs": [],
       "img": "",
       "img_cap": "",
-      "source": "Mawaqif.txt"
+      "source": "Mawaqif.txt",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "override_fields": [
+        "kw",
+        "q"
+      ]
     },
     "article_FAQ-MAW-1777672736182-56": {
       "id": "FAQ-MAW-1777672736182-56",
-      "q": "Will the system be integrated with other parking systems?",
+      "q": "Will the People of Determination parking system integrate with other parking systems?",
       "a": "<p>Yes, the system can be integrated with other entity parking systems depending on the readiness of the technology.</p>",
-      "kw": "will system integrated with other parking systems",
+      "kw": "will system integrated with other parking systems Will the system be integrated with other parking systems?",
       "page": "kb-maw-general",
       "q_ar": "",
       "a_ar": "",
       "imgs": [],
       "img": "",
       "img_cap": "",
-      "source": "Mawaqif.txt"
+      "source": "Mawaqif.txt",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "override_fields": [
+        "kw",
+        "q"
+      ]
     },
     "article_FAQ-MAW-1777672736182-57": {
       "id": "FAQ-MAW-1777672736182-57",
-      "q": "Are applicant or vehicle data stored?",
+      "q": "Does the People of Determination parking system store applicant or vehicle data?",
       "a": "<p>The system keeps vehicle-related information private. Only personal details of People of Determination are kept confidential.</p>",
-      "kw": "applicant vehicle data stored",
+      "kw": "applicant vehicle data stored Are applicant or vehicle data stored?",
       "page": "kb-maw-general",
       "q_ar": "",
       "a_ar": "",
       "imgs": [],
       "img": "",
       "img_cap": "",
-      "source": "Mawaqif.txt"
+      "source": "Mawaqif.txt",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "override_fields": [
+        "kw",
+        "q"
+      ]
     },
     "article_FAQ-MAW-1777672736182-58": {
       "id": "FAQ-MAW-1777672736182-58",
@@ -4497,42 +4715,57 @@
     },
     "article_FAQ-MAW-1777672736182-59": {
       "id": "FAQ-MAW-1777672736182-59",
-      "q": "How to apply?",
+      "q": "How does a government entity apply for parking permits?",
       "a": "<p>You can apply by sending the required documents via email to gov.pr@qmobility.ae .</p>",
-      "kw": "apply",
+      "kw": "apply How to apply?",
       "page": "kb-maw-general",
       "q_ar": "",
       "a_ar": "",
       "imgs": [],
       "img": "",
       "img_cap": "",
-      "source": "Mawaqif.txt"
+      "source": "Mawaqif.txt",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "override_fields": [
+        "kw",
+        "q"
+      ]
     },
     "article_FAQ-MAW-1777672736182-60": {
       "id": "FAQ-MAW-1777672736182-60",
-      "q": "What are required documents?",
+      "q": "What documents does a government entity need to issue or renew parking permits?",
       "a": "<p>Required Documents for Issuing and Renewing Permits</p><p>Submit a formal request to the \"Mawaqif\" team for approval to issue permits for the entity and to authorize the total quota.</p><p>A letter specifying the number of permits required (Issuance / Renewal).</p><p>A list of employee names containing: (Employee Name / Vehicle Number & Category / Kinship Relationship, if applicable).</p><p>Attachments required for each employee:</p><p>Work ID Card (issued by the entity).</p><p>Employee Emirates ID (Valid, both sides).</p><p>Vehicle Registration / Mulkiya (Valid, both sides).</p><p>Proof of kinship, if applicable (Spouse / Parents / Siblings).</p><p>2. Required Documents for Changing Vehicle Details on a Permit</p><p>An email from the entity, sent by the designated coordinator, requesting the amendment.</p><p>The new Employee Work ID Card.</p><p>The new Vehicle Registration (Valid, both sides).</p><p>The new Employee Emirates ID (Valid, both sides).</p>",
-      "kw": "what required documents",
+      "kw": "what required documents What are required documents?",
       "page": "kb-maw-general",
       "q_ar": "",
       "a_ar": "",
       "imgs": [],
       "img": "",
       "img_cap": "",
-      "source": "Mawaqif.txt"
+      "source": "Mawaqif.txt",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "override_fields": [
+        "kw",
+        "q"
+      ]
     },
     "article_FAQ-MAW-1777672736182-61": {
       "id": "FAQ-MAW-1777672736182-61",
-      "q": "Which areas it will cover?",
+      "q": "Which area does a government parking permit cover?",
       "a": "<p>Important Regulations</p><p>Location: Government permits cover only the sector where the workplace is located.</p><p>Time Validity: Permits are active from 8:00 AM to 4:00 PM only. Outside of these hours, parking fees apply.</p><p>Exclusions: Government permits do not cover residential parking areas.</p><p>School Zones: Parking Regulations in Abu Dhabi & Al Ain</p><p>Abu Dhabi Emirate</p><p>Morning Permitted Period: 7:00 AM to 9:00 AM.</p><p>Afternoon Permitted Period: 12:00 PM to 4:00 PM.</p><p>Al Ain City</p><p>Parking fees apply in school zones from 08:00 AM until 11:59 PM (Midnight).</p>",
-      "kw": "which areas will cover",
+      "kw": "which areas will cover Which areas it will cover?",
       "page": "kb-maw-general",
       "q_ar": "",
       "a_ar": "",
       "imgs": [],
       "img": "",
       "img_cap": "",
-      "source": "Mawaqif.txt"
+      "source": "Mawaqif.txt",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "override_fields": [
+        "kw",
+        "q"
+      ]
     },
     "article_FAQ-MAW-1777672736182-62": {
       "id": "FAQ-MAW-1777672736182-62",
@@ -4562,7 +4795,7 @@
     },
     "article_FAQ-MAW-1777672736182-64": {
       "id": "FAQ-MAW-1777672736182-64",
-      "q": "1. What is the goal of using smart vehicles and AI in Mawaqif?",
+      "q": "What is the goal of using smart vehicles and AI in Mawaqif?",
       "a": "<p>The initiative aims to upgrade public parking management using modern technologies and Artificial Intelligence (AI).</p><p>It facilitates automatic payment checks, reduces occupancy errors, improves system efficiency, and provides a smoother experience for users.</p>",
       "kw": "what goal using smart vehicles mawaqif",
       "page": "kb-maw-inspection",
@@ -4571,11 +4804,15 @@
       "imgs": [],
       "img": "",
       "img_cap": "",
-      "source": "Mawaqif.txt"
+      "source": "Mawaqif.txt",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "override_fields": [
+        "q"
+      ]
     },
     "article_FAQ-MAW-1777672736182-65": {
       "id": "FAQ-MAW-1777672736182-65",
-      "q": "2. Do these cameras monitor individuals?",
+      "q": "Do these cameras monitor individuals?",
       "a": "<p>No, absolutely not. The cameras are designed solely to monitor public parking data and vehicle compliance.</p><p>All data is processed and protected in full accordance with applicable laws to ensure complete privacy for individuals.</p>",
       "kw": "these cameras monitor individuals",
       "page": "kb-maw-general",
@@ -4584,11 +4821,15 @@
       "imgs": [],
       "img": "",
       "img_cap": "",
-      "source": "Mawaqif.txt"
+      "source": "Mawaqif.txt",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "override_fields": [
+        "q"
+      ]
     },
     "article_FAQ-MAW-1777672736182-66": {
       "id": "FAQ-MAW-1777672736182-66",
-      "q": "3. Is this system being tested in specific areas only?",
+      "q": "Is this system being tested in specific areas only?",
       "a": "<p>Yes, it starts with pilot phases to ensure system efficiency and suitability before gradually expanding based on results.</p>",
       "kw": "this system being tested specific areas only",
       "page": "kb-maw-general",
@@ -4597,11 +4838,15 @@
       "imgs": [],
       "img": "",
       "img_cap": "",
-      "source": "Mawaqif.txt"
+      "source": "Mawaqif.txt",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "override_fields": [
+        "q"
+      ]
     },
     "article_FAQ-MAW-1777672736182-67": {
       "id": "FAQ-MAW-1777672736182-67",
-      "q": "4. Are there any changes to parking laws or regulations?",
+      "q": "Are there any changes to parking laws or regulations?",
       "a": "<p>No, there are no changes to existing laws or regulations.</p>",
       "kw": "there changes parking laws regulations",
       "page": "kb-maw-general",
@@ -4610,11 +4855,15 @@
       "imgs": [],
       "img": "",
       "img_cap": "",
-      "source": "Mawaqif.txt"
+      "source": "Mawaqif.txt",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "override_fields": [
+        "q"
+      ]
     },
     "article_FAQ-MAW-1777672736182-68": {
       "id": "FAQ-MAW-1777672736182-68",
-      "q": "5. What is the function of this vehicle?",
+      "q": "What is the function of this vehicle?",
       "a": "<p>It is a smart vehicle dedicated to inspecting public parking automatically.</p><p>It ensures vehicles comply with parking regulations (e.g., valid permit or payment) without human intervention.</p>",
       "kw": "what function this vehicle",
       "page": "kb-maw-general",
@@ -4623,11 +4872,15 @@
       "imgs": [],
       "img": "",
       "img_cap": "",
-      "source": "Mawaqif.txt"
+      "source": "Mawaqif.txt",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "override_fields": [
+        "q"
+      ]
     },
     "article_FAQ-MAW-1777672736182-69": {
       "id": "FAQ-MAW-1777672736182-69",
-      "q": "6. Does the vehicle take photos?",
+      "q": "Does the vehicle take photos?",
       "a": "<p>Yes, the vehicle captures images of the license plate and the surrounding environment only when a violation is found.</p><p>These images are used as evidence to document the case, and data is secured according to privacy policies.</p>",
       "kw": "does vehicle take photos",
       "page": "kb-maw-general",
@@ -4636,11 +4889,15 @@
       "imgs": [],
       "img": "",
       "img_cap": "",
-      "source": "Mawaqif.txt"
+      "source": "Mawaqif.txt",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "override_fields": [
+        "q"
+      ]
     },
     "article_FAQ-MAW-1777672736182-70": {
       "id": "FAQ-MAW-1777672736182-70",
-      "q": "7. Can I object to a fine issued by a smart vehicle?",
+      "q": "Can I object to a fine issued by a smart vehicle?",
       "a": "<p>Yes, you can submit a request to object to the violation.</p>",
       "kw": "object fine issued smart vehicle",
       "page": "kb-maw-fines",
@@ -4649,11 +4906,15 @@
       "imgs": [],
       "img": "",
       "img_cap": "",
-      "source": "Mawaqif.txt"
+      "source": "Mawaqif.txt",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "override_fields": [
+        "q"
+      ]
     },
     "article_FAQ-MAW-1777672736182-71": {
       "id": "FAQ-MAW-1777672736182-71",
-      "q": "8. Do the vehicles cover all areas in Abu Dhabi?",
+      "q": "Do the vehicles cover all areas in Abu Dhabi?",
       "a": "<p>The smart vehicles currently operate according to a coverage plan that includes vital residential and commercial areas in the Emirate of Abu Dhabi, with gradual expansion.</p>",
       "kw": "vehicles cover areas dhabi",
       "page": "kb-maw-general",
@@ -4662,11 +4923,15 @@
       "imgs": [],
       "img": "",
       "img_cap": "",
-      "source": "Mawaqif.txt"
+      "source": "Mawaqif.txt",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "override_fields": [
+        "q"
+      ]
     },
     "article_FAQ-MAW-1777672736182-72": {
       "id": "FAQ-MAW-1777672736182-72",
-      "q": "9. Is there a grace period before recording a violation?",
+      "q": "Is there a grace period before recording a violation?",
       "a": "<p>Yes. The smart vehicle passes by the same location twice.</p><p>There is a 10-minute grace period between the first and second scan to allow time for payment.</p><p>No violation is registered immediately without verifying that the fee has not been paid.</p>",
       "kw": "there grace period before recording violation",
       "page": "kb-maw-general",
@@ -4675,11 +4940,15 @@
       "imgs": [],
       "img": "",
       "img_cap": "",
-      "source": "Mawaqif.txt"
+      "source": "Mawaqif.txt",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "override_fields": [
+        "q"
+      ]
     },
     "article_FAQ-MAW-1777672736182-73": {
       "id": "FAQ-MAW-1777672736182-73",
-      "q": "10. Will this technology increase the number of fines?",
+      "q": "Will this technology increase the number of fines?",
       "a": "<p>The goal is not to increase fines, but to improve compliance with parking rules ensuring fair usage for everyone.</p>",
       "kw": "will this technology increase number fines",
       "page": "kb-maw-fines",
@@ -4688,11 +4957,15 @@
       "imgs": [],
       "img": "",
       "img_cap": "",
-      "source": "Mawaqif.txt"
+      "source": "Mawaqif.txt",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "override_fields": [
+        "q"
+      ]
     },
     "article_FAQ-MAW-1777672736182-74": {
       "id": "FAQ-MAW-1777672736182-74",
-      "q": "11. Will current inspectors be replaced?",
+      "q": "Will current inspectors be replaced?",
       "a": "<p>No. Their role will shift to focusing on awareness and field monitoring, while smart vehicles handle the routine checks to cover a larger number of locations.</p>",
       "kw": "will current inspectors replaced",
       "page": "kb-maw-general",
@@ -4701,11 +4974,15 @@
       "imgs": [],
       "img": "",
       "img_cap": "",
-      "source": "Mawaqif.txt"
+      "source": "Mawaqif.txt",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "override_fields": [
+        "q"
+      ]
     },
     "article_FAQ-MAW-1777672736182-75": {
       "id": "FAQ-MAW-1777672736182-75",
-      "q": "12. Is it possible for the technology to make mistakes?",
+      "q": "Is it possible for the technology to make mistakes?",
       "a": "<p>All systems may encounter a limited error rate; however, every case can be reviewed and corrected if an error is proven.</p>",
       "kw": "possible technology make mistakes",
       "page": "kb-maw-general",
@@ -4714,11 +4991,15 @@
       "imgs": [],
       "img": "",
       "img_cap": "",
-      "source": "Mawaqif.txt"
+      "source": "Mawaqif.txt",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "override_fields": [
+        "q"
+      ]
     },
     "article_FAQ-MAW-1777672736182-76": {
       "id": "FAQ-MAW-1777672736182-76",
-      "q": "13. Was the public informed beforehand?",
+      "q": "Was the public informed beforehand?",
       "a": "<p>Yes, the public is informed through official channels, social media, and awareness campaigns to ensure the system is understood.</p>",
       "kw": "public informed beforehand",
       "page": "kb-maw-public",
@@ -4727,11 +5008,15 @@
       "imgs": [],
       "img": "",
       "img_cap": "",
-      "source": "Mawaqif.txt"
+      "source": "Mawaqif.txt",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "override_fields": [
+        "q"
+      ]
     },
     "article_FAQ-MAW-1777672736182-77": {
       "id": "FAQ-MAW-1777672736182-77",
-      "q": "14. Will this be used in residential neighborhoods (villas)?",
+      "q": "Will this be used in residential neighborhoods (villas)?",
       "a": "<p>Not currently. If the situation requires it later to improve organization in those areas, it will be based on specific standards.</p>",
       "kw": "will this used residential neighborhoods villas",
       "page": "kb-maw-resident",
@@ -4740,11 +5025,15 @@
       "imgs": [],
       "img": "",
       "img_cap": "",
-      "source": "Mawaqif.txt"
+      "source": "Mawaqif.txt",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "override_fields": [
+        "q"
+      ]
     },
     "article_FAQ-MAW-1777672736182-78": {
       "id": "FAQ-MAW-1777672736182-78",
-      "q": "15. Do cameras record video or just photos?",
+      "q": "Do cameras record video or just photos?",
       "a": "<p>The cameras capture high-resolution images for violations only.</p><p>They do not perform continuous video recording, in order to protect public privacy.</p>",
       "kw": "cameras record video just photos",
       "page": "kb-maw-general",
@@ -4753,11 +5042,15 @@
       "imgs": [],
       "img": "",
       "img_cap": "",
-      "source": "Mawaqif.txt"
+      "source": "Mawaqif.txt",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "override_fields": [
+        "q"
+      ]
     },
     "article_FAQ-MAW-1777672736182-79": {
       "id": "FAQ-MAW-1777672736182-79",
-      "q": "16. What types of violations do the cameras detect?",
+      "q": "What types of violations do the cameras detect?",
       "a": "<p>They detect violations such as parking in unauthorized places, parking without payment or a permit, or exceeding the paid time limit.</p>",
       "kw": "what types violations cameras detect",
       "page": "kb-maw-general",
@@ -4766,11 +5059,15 @@
       "imgs": [],
       "img": "",
       "img_cap": "",
-      "source": "Mawaqif.txt"
+      "source": "Mawaqif.txt",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "override_fields": [
+        "q"
+      ]
     },
     "article_FAQ-MAW-1777672736182-80": {
       "id": "FAQ-MAW-1777672736182-80",
-      "q": "17. Who reviews the videos or photos?",
+      "q": "Who reviews the videos or photos?",
       "a": "<p>Images are reviewed by precise automated systems and specialized audit teams to ensure accuracy before any measure is taken.</p>",
       "kw": "reviews videos photos",
       "page": "kb-maw-general",
@@ -4779,11 +5076,15 @@
       "imgs": [],
       "img": "",
       "img_cap": "",
-      "source": "Mawaqif.txt"
+      "source": "Mawaqif.txt",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "override_fields": [
+        "q"
+      ]
     },
     "article_FAQ-MAW-1777672736182-81": {
       "id": "FAQ-MAW-1777672736182-81",
-      "q": "18. Can I request the photo or video to support my objection?",
+      "q": "Can I request the photo or video to support my objection?",
       "a": "<p>When submitting an objection, the images are reviewed internally. Users can view the evidence according to the applicable procedures.</p><p>Judicial Rulings and Violation Waivers:</p><p>Attachments Related to Judicial Rulings</p><p>1. Text of Judgments (Court Rulings)</p><p>A copy of the Court Judgment Text.</p><p>Payment Receipt from the Court.</p><p>A statement of Mawaqif + Traffic Violations, stamped by the Traffic Prosecution.</p><p>The total number of violations mentioned in the judgment text must match the number of violations listed in the attached statements and send them too Customer.care@qmobility.ae.</p><p>2. Waiving Violations for Judicial Authority Members</p><p>A letter from the Traffic Prosecution.</p><p>Work ID Card proving status as a Judicial Authority Member.</p><p>Vehicle Registration (Mulkiya).</p><p>3. Waiving Violations Due to Statute of Limitations (Older than 5 Years)</p><p>A dismissal/waiver letter from the Traffic Prosecution.</p><p>Vehicle Registration (Mulkiya).</p><p>4. Waiving Violations Due to Death</p><p>A dismissal/waiver letter from the Traffic Prosecution.</p><p>Death Certificate.</p><p>Vehicle Registration (Mulkiya) belonging to the deceased.</p><p>5. Waiving Violations for Embassies & GCC Countries (Mawaqif Violations)</p><p>An external letter addressed to the Integrated Transport Centre (ITC).</p><p>An official letter from the Embassy listing the vehicle plate numbers or the Traffic Code Number (TCN).</p><p>Vehicle Registration (Mulkiya) specifying the category as \"Diplomatic\".</p><p>Mawaqif Violations on a Previous Owner</p><p>1. Required Action: If you discover violations on your vehicle that belong to a previous owner, you must follow these steps:</p><p>Go to the Traffic Department (Muroor).</p><p>Obtain a \"Vehicle Data Certificate\" (شهادة بيانات مركبة).</p><p>Visit a Qmobility branch to submit this certificate.</p><p>2. Purpose of the Certificate:</p><p>This certificate is used specifically for cases involving old violations committed by a previous owner.</p><p>It serves as official proof that the vehicle was not registered under your name at the time the violation was issued.</p><p>Once submitted, the violations will be transferred to the previous owner.</p><p>Branches locations :</p><p>Abu Dhabi Branch</p><p>Department: Driver and Vehicle Licensing.</p><p>Location: Intersection of Sultan Bin Zayed the First Street and Al Dhafra Street, Al Mushrif area (Opposite Mushrif Mall)</p><p>Link:https://maps.app.goo.gl/pzSSHbop7BsvtpiTA</p><p>Al Ain Branch</p><p>Department: Main Center for Driver and Vehicle Licensing.</p><p>Location: Falaj Hazza, Al Ain, Al Hilla Street.</p><p>Link:https://maps.app.goo.gl/gCF3FuiQ1HqMcabw9</p><p>Branch Working Hours</p><p>Monday to Thursday: 7:30 AM – 3:30 PM.</p><p>Friday: 7:30 AM – 11:30 AM.</p>",
       "kw": "request photo video support objection",
       "page": "kb-maw-general",
@@ -4792,7 +5093,11 @@
       "imgs": [],
       "img": "",
       "img_cap": "",
-      "source": "Mawaqif.txt"
+      "source": "Mawaqif.txt",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "override_fields": [
+        "q"
+      ]
     },
     "article_FAQ-MAW-1777672736182-82": {
       "id": "FAQ-MAW-1777672736182-82",
@@ -4809,7 +5114,7 @@
     },
     "article_FAQ-MAW-1777672736182-83": {
       "id": "FAQ-MAW-1777672736182-83",
-      "q": "1. Why was the rechargeable card feature closed?",
+      "q": "Why was the rechargeable card feature closed?",
       "a": "<p>The feature was discontinued as part of a service modernization to improve the user experience. The \"DARB\" app now offers a safer method with simplified payment options.</p>",
       "kw": "rechargeable card feature closed",
       "page": "kb-maw-general",
@@ -4818,11 +5123,15 @@
       "imgs": [],
       "img": "",
       "img_cap": "",
-      "source": "Mawaqif.txt"
+      "source": "Mawaqif.txt",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "override_fields": [
+        "q"
+      ]
     },
     "article_FAQ-MAW-1777672736182-84": {
       "id": "FAQ-MAW-1777672736182-84",
-      "q": "2. Can I continue using my current rechargeable card?",
+      "q": "Can I continue using my current rechargeable card?",
       "a": "<p>No. The rechargeable card feature is no longer supported. You must now use the \"DARB\" app to access your remaining balance.</p>",
       "kw": "continue using current rechargeable card",
       "page": "kb-maw-general",
@@ -4831,11 +5140,15 @@
       "imgs": [],
       "img": "",
       "img_cap": "",
-      "source": "Mawaqif.txt"
+      "source": "Mawaqif.txt",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "override_fields": [
+        "q"
+      ]
     },
     "article_FAQ-MAW-1777672736182-85": {
       "id": "FAQ-MAW-1777672736182-85",
-      "q": "3. What happens to the balance on my rechargeable card?",
+      "q": "What happens to the balance on my rechargeable card?",
       "a": "<p>Your balance is not lost. Any remaining amount has been transferred directly to your account and can be used immediately via the \"DARB\" app.</p>",
       "kw": "what happens balance rechargeable card",
       "page": "kb-maw-general",
@@ -4844,11 +5157,15 @@
       "imgs": [],
       "img": "",
       "img_cap": "",
-      "source": "Mawaqif.txt"
+      "source": "Mawaqif.txt",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "override_fields": [
+        "q"
+      ]
     },
     "article_FAQ-MAW-1777672736182-86": {
       "id": "FAQ-MAW-1777672736182-86",
-      "q": "4. How can I access and use my balance now?",
+      "q": "How can I access and use my balance now?",
       "a": "<p>You can access and use your balance through the DARB application. Simply log in using your UAE Pass, and your balance will appear within your account.</p>",
       "kw": "access balance",
       "page": "kb-maw-general",
@@ -4857,11 +5174,15 @@
       "imgs": [],
       "img": "",
       "img_cap": "",
-      "source": "Mawaqif.txt"
+      "source": "Mawaqif.txt",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "override_fields": [
+        "q"
+      ]
     },
     "article_FAQ-MAW-1777672736182-87": {
       "id": "FAQ-MAW-1777672736182-87",
-      "q": "5. Do I need to create a new account to use the DARB app?",
+      "q": "Do I need to create a new account to use the DARB app?",
       "a": "<p>No. All you need to do is log in using your UAE Pass, and any balance linked to your personal profile will appear automatically.</p>",
       "kw": "need create account darb",
       "page": "kb-maw-general",
@@ -4870,11 +5191,15 @@
       "imgs": [],
       "img": "",
       "img_cap": "",
-      "source": "Mawaqif.txt"
+      "source": "Mawaqif.txt",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "override_fields": [
+        "q"
+      ]
     },
     "article_FAQ-MAW-1777672736182-88": {
       "id": "FAQ-MAW-1777672736182-88",
-      "q": "6. Can I top up my balance via the DARB app?",
+      "q": "Can I top up my balance via the DARB app?",
       "a": "<p>Yes. The \"DARB\" app provides easy and secure options to top up your balance at any time.</p>",
       "kw": "balance darb",
       "page": "kb-maw-general",
@@ -4883,11 +5208,15 @@
       "imgs": [],
       "img": "",
       "img_cap": "",
-      "source": "Mawaqif.txt"
+      "source": "Mawaqif.txt",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "override_fields": [
+        "q"
+      ]
     },
     "article_FAQ-MAW-1777672736182-89": {
       "id": "FAQ-MAW-1777672736182-89",
-      "q": "7. are there any additional fees for using the DARB app?",
+      "q": "are there any additional fees for using the DARB app?",
       "a": "<p>No, there are no additional fees. The standard applicable fees remain the same.</p>",
       "kw": "there additional fees using darb",
       "page": "kb-maw-general",
@@ -4896,11 +5225,15 @@
       "imgs": [],
       "img": "",
       "img_cap": "",
-      "source": "Mawaqif.txt"
+      "source": "Mawaqif.txt",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "override_fields": [
+        "q"
+      ]
     },
     "article_FAQ-MAW-1777672736182-90": {
       "id": "FAQ-MAW-1777672736182-90",
-      "q": "8. What should I do if I face a problem with my balance or the app?",
+      "q": "What should I do if I face a problem with my balance or the app?",
       "a": "<p>If you encounter any issues, you can contact the Customer Support Center in DARB for assistance.</p>",
       "kw": "what should face problem with balance",
       "page": "kb-maw-general",
@@ -4909,11 +5242,15 @@
       "imgs": [],
       "img": "",
       "img_cap": "",
-      "source": "Mawaqif.txt"
+      "source": "Mawaqif.txt",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "override_fields": [
+        "q"
+      ]
     },
     "article_FAQ-MAW-1777672736182-91": {
       "id": "FAQ-MAW-1777672736182-91",
-      "q": "9. Why should I use the DARB app instead of the rechargeable card?",
+      "q": "Why should I use the DARB app instead of the rechargeable card?",
       "a": "<p>The \"DARB\" app offers several benefits:</p><p>Instant balance updates.</p><p>Faster and safer payment methods.</p><p>Convenient top-up options.</p><p>Reliable service.</p><p>Direct integration with the UAE Pass.</p><p>Important notes :</p><p>Mawaqif only responsible about mentioned sectors and cities .</p><p>Mawaqif only responsible about parking inside Abu Dhabi mall only .</p>",
       "kw": "should darb instead rechargeable card",
       "page": "kb-maw-general",
@@ -4922,7 +5259,11 @@
       "imgs": [],
       "img": "",
       "img_cap": "",
-      "source": "Mawaqif.txt"
+      "source": "Mawaqif.txt",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "override_fields": [
+        "q"
+      ]
     },
     "article_FAQ-DARB-1777672736182-92": {
       "id": "FAQ-DARB-1777672736182-92",
@@ -5045,20 +5386,24 @@
     "article_OFFICIAL-MUSSAFAH-COVERAGE-2026-09-21": {
       "id": "OFFICIAL-MUSSAFAH-COVERAGE-2026-09-21",
       "q": "Which Musaffah sectors have paid Mawaqif parking?",
-      "a": "<p>Paid parking was activated in three phases:</p><ul><li><strong>Phase 1:</strong> M1, M2, M3, M4, and M24 from 12 January 2026.</li><li><strong>Phase 2:</strong> M7, M8, M9, M14, and M15 from 20 April 2026.</li><li><strong>Phase 3:</strong> M5, M6, M21, M22, and M23 from 18 May 2026.</li></ul><p>The standard fee is AED 2 per hour. Payment channels are DARB, TAMM, SMS, and on-site payment machines.</p>",
+      "a": "<p>Paid parking was activated in three phases:</p><ul><li><strong>Phase 1:</strong> M1, M2, M3, M4, and M24 from 12 January 2026.</li><li><strong>Phase 2:</strong> M7, M8, M9, M14, and M15 from 20 April 2026.</li><li><strong>Phase 3:</strong> M5, M6, M21, M22, and M23 from 18 May 2026.</li></ul><p>The standard fee is AED 2 per hour. Payment channels are DARB, TAMM, SMS, and on-site payment machines.</p><div class=\"info-box\">The PDM switch-off has been completed on <strong>Abu Dhabi Island</strong> only. Machines in this area are due to be switched off in a later phase &mdash; if a customer reports the machine is off, direct them to the Darb app, TAMM or SMS.</div>",
       "kw": "official musaffah paid parking sectors M1 M2 M3 M4 M5 M6 M7 M8 M9 M14 M15 M21 M22 M23 M24 phases",
       "page": "kb-maw-general",
       "source": "https://www.qmobility.ae/en/media-library/news/2026/11-05-2026",
-      "verified_on": "2026-09-21"
+      "verified_on": "2026-09-21",
+      "verified_at": "2026-09-25",
+      "updated_at": "2026-09-25T13:00:00+04:00"
     },
     "article_OFFICIAL-MBZ-COVERAGE-2026-09-21": {
       "id": "OFFICIAL-MBZ-COVERAGE-2026-09-21",
       "q": "Which Mohamed Bin Zayed City sectors have paid Mawaqif parking?",
-      "a": "<p>Commercial sectors ME10 and ME11, plus the main-street commercial areas in villa zones Z17-01, Z19, Z20, and Z27, became paid parking on 6 April 2026.</p><p>Commercial sectors ME9 and ME12 became paid parking on 6 May 2026.</p><p>The standard fee is AED 2 per hour. Payment channels are DARB, TAMM, SMS, and payment machines.</p>",
+      "a": "<p>Commercial sectors ME10 and ME11, plus the main-street commercial areas in villa zones Z17-01, Z19, Z20, and Z27, became paid parking on 6 April 2026.</p><p>Commercial sectors ME9 and ME12 became paid parking on 6 May 2026.</p><p>The standard fee is AED 2 per hour. Payment channels are DARB, TAMM, SMS, and payment machines.</p><div class=\"info-box\">The PDM switch-off has been completed on <strong>Abu Dhabi Island</strong> only. Machines in this area are due to be switched off in a later phase &mdash; if a customer reports the machine is off, direct them to the Darb app, TAMM or SMS.</div>",
       "kw": "official MBZ Mohamed Bin Zayed paid parking ME9 ME10 ME11 ME12 Z17-01 Z19 Z20 Z27",
       "page": "kb-maw-mbz",
       "source": "https://www.qmobility.ae/en/media-library/news/2026/29-04-2026",
-      "verified_on": "2026-09-21"
+      "verified_on": "2026-09-21",
+      "verified_at": "2026-09-25",
+      "updated_at": "2026-09-25T13:00:00+04:00"
     },
     "article_OFFICIAL-MUSHRIF-FREEFLOW-2026-09-21": {
       "id": "OFFICIAL-MUSHRIF-FREEFLOW-2026-09-21",
@@ -5072,7 +5417,7 @@
     "article_FAQ-NOTES-1777672736182": {
       "id": "FAQ-NOTES-1777672736182",
       "q": "Important Notes — Critical Agent Reference",
-      "a": "<h4>Critical Agent Notes</h4><p><strong>1.</strong> Customers cannot issue Mawaqif permits for yachts or landscaping vehicles. Only daily parking payment is allowed using the Darb app or the parking machine.</p><p><strong>2.</strong> If the vehicle is a company vehicle, an NOC from the company is required, along with a valid employee ID showing the same company name.</p><p><strong>3.</strong> Darb registration can only be completed through the vehicle owner’s Darb account.</p><p><strong>4.</strong> If a permit is cancelled due to missing documents, and the required documents are not submitted within 14 working days, the paid amount will not be refunded.</p><p><strong>5.</strong> Paid parking is active in MBZ commercial sectors ME9, ME10, ME11, and ME12, and in Musaffah sectors M1-M9, M14, M15, and M21-M24. Use the latest official coverage articles for phase dates and payment details.</p><p><strong>6.</strong> If you receive a Mawaqif fine, you will not receive another fine for the same reason and in the same sector on the same day.</p><p><strong>7.</strong> Prayer time exemption is available only in mosque parking areas. It is valid for 45 minutes starting from the first call to prayer (Adhan).</p><p><strong>8.</strong> The grace period is allowed only once per day before paying the first parking ticket. It is valid for 10 minutes only. If you already have a ticket and it expires, a fine will be issued immediately once the vehicle is detected by a smart vehicle or inspector.</p><p><strong>9.</strong> If you change your vehicle number and it is registered in the Darb toll system, you must submit a request through the Darb app by following these steps:</p><p>Login → Requests → Complaints → tap the (+) sign → submit a request.</p><p>If using the website, submit a vehicle registration complaint and attach both the old and new vehicle registration cards.</p><p><strong>10.</strong> If you change the vehicle but keep the same plate number, you must pay again to register the new vehicle in the Darb toll system.</p><p><strong>11.</strong> Darb toll fines have a grace period of 10 working days from the crossing time. For non-Abu Dhabi vehicles, if the vehicle is registered but has insufficient balance, a grace period of 5 working days is given to pay the unpaid toll fees.</p><p><strong>12.</strong> Toll fees cannot be paid without Darb registration. Registration is mandatory for users who pass through DARB gates and is available online through the Darb website or app.</p><p><strong>13.</strong> The Darb toll gate does not require any card or badge. Only online registration is required.</p><p><strong>14.</strong> Individuals may use the DARB app or website. Establishment accounts must use the DARB website.</p>",
+      "a": "<h4>Critical Agent Notes</h4><p><strong>1.</strong> Customers cannot issue Mawaqif permits for yachts or landscaping vehicles. Only daily parking payment is allowed, using the Darb app or TAMM (payment machines on Abu Dhabi Island have been switched off).</p><p><strong>2.</strong> If the vehicle is a company vehicle, an NOC from the company is required, along with a valid employee ID showing the same company name.</p><p><strong>3.</strong> Darb registration can only be completed through the vehicle owner’s Darb account.</p><p><strong>4.</strong> If a permit is cancelled due to missing documents, and the required documents are not submitted within 14 working days, the paid amount will not be refunded.</p><p><strong>5.</strong> Paid parking is active in MBZ commercial sectors ME9, ME10, ME11, and ME12, and in Musaffah sectors M1-M9, M14, M15, and M21-M24. Use the latest official coverage articles for phase dates and payment details.</p><p><strong>6.</strong> If you receive a Mawaqif fine, you will not receive another fine for the same reason and in the same sector on the same day.</p><p><strong>7.</strong> Prayer time exemption is available only in mosque parking areas. It is valid for 45 minutes starting from the first call to prayer (Adhan).</p><p><strong>8.</strong> The grace period is allowed only once per day before paying the first parking ticket. It is valid for 10 minutes only. If you already have a ticket and it expires, a fine will be issued immediately once the vehicle is detected by a smart vehicle or inspector.</p><p><strong>9.</strong> If you change your vehicle number and it is registered in the Darb toll system, you must submit a request through the Darb app by following these steps:</p><p>Login → Requests → Complaints → tap the (+) sign → submit a request.</p><p>If using the website, submit a vehicle registration complaint and attach both the old and new vehicle registration cards.</p><p><strong>10.</strong> If you change the vehicle but keep the same plate number, you must pay again to register the new vehicle in the Darb toll system.</p><p><strong>11.</strong> Darb toll fines have a grace period of 10 working days from the crossing time. For non-Abu Dhabi vehicles, if the vehicle is registered but has insufficient balance, a grace period of 5 working days is given to pay the unpaid toll fees.</p><p><strong>12.</strong> Toll fees cannot be paid without Darb registration. Registration is mandatory for users who pass through DARB gates and is available online through the Darb website or app.</p><p><strong>13.</strong> The Darb toll gate does not require any card or badge. Only online registration is required.</p><p><strong>14.</strong> Individuals may use the DARB app or website. Establishment accounts must use the DARB website.</p>",
       "kw": "important notes critical agent reference yacht NOC permit refund mussafah grace period prayer time exemption",
       "page": "kb-maw-general",
       "q_ar": "",
@@ -5081,7 +5426,9 @@
       "img": "",
       "img_cap": "",
       "source": "Important Notes.txt; verified against Q Mobility and DARB official pages",
-      "verified_on": "2026-09-21"
+      "verified_on": "2026-09-21",
+      "verified_at": "2026-09-25",
+      "updated_at": "2026-09-25T13:00:00+04:00"
     },
     "article_MAW-2026-0921-PDM-SWITCHOFF": {
       "id": "MAW-2026-0921-PDM-SWITCHOFF",
@@ -5674,13 +6021,14 @@
       "q_ar": "",
       "a_ar": "",
       "kw": "on-street on street smart park smartpark public lot W4 free flow barrier free ANPR 28 September go live tariff AED 2 per hour 7 hours AED 15 first 10 minutes free 00:00 08:00 sunday public holiday المواقف الذكية على الطريق القطاع W4 التدفق الحر wallet insufficient balance top up 24 hours fine issued check session status darb app",
-      "page": "kb-ff-faq",
-      "subcat": "Free Flow",
+      "page": "kb-maw-public",
+      "subcat": "W4 SmartPark",
       "verified_at": "2026-09-25",
-      "updated_at": "2026-09-25T10:00:00+04:00",
+      "updated_at": "2026-09-25T13:00:00+04:00",
       "source": "Contact Centre briefing \"On-Street Free Flow - W4 ahead of the 28 September go-live\", with the Private Parking Management On-Street Public Lot FAQ",
       "published_at": "2026-09-24T12:09:00+04:00",
-      "effective_from": "2026-09-28"
+      "effective_from": "2026-09-28",
+      "page_locked": true
     },
     "article_MAW-2026-0928-ONSTREET-NONDARB-SMS": {
       "id": "MAW-2026-0928-ONSTREET-NONDARB-SMS",
@@ -5689,13 +6037,14 @@
       "q_ar": "",
       "a_ar": "",
       "kw": "non darb not registered on-street smart park public lot pay sms 10 minutes advance QR code freeflow.qmobility.ae not available cannot pay website fine immediately no grace period visitor abroad foreign plate rental W4 مركبة غير مسجلة في درب الدفع عبر الرسائل النصية خلال 10 دقائق keep sms confirmation proof of payment receipt",
-      "page": "kb-ff-faq",
-      "subcat": "Free Flow",
+      "page": "kb-maw-public",
+      "subcat": "W4 SmartPark",
       "verified_at": "2026-09-25",
-      "updated_at": "2026-09-25T10:00:00+04:00",
+      "updated_at": "2026-09-25T13:00:00+04:00",
       "source": "Contact Centre briefing \"On-Street Free Flow - W4 ahead of the 28 September go-live\", with the Private Parking Management On-Street Public Lot FAQ",
       "published_at": "2026-09-24T12:09:00+04:00",
-      "effective_from": "2026-09-28"
+      "effective_from": "2026-09-28",
+      "page_locked": true
     },
     "article_MAW-2026-0928-ONSTREET-PERMITS-TICKETS": {
       "id": "MAW-2026-0928-ONSTREET-PERMITS-TICKETS",
@@ -5704,13 +6053,14 @@
       "q_ar": "",
       "a_ar": "",
       "kw": "on-street smart park permit resident limited term people of determination PoD MSCP permit not valid street existing ticket standard premium still valid until expiry charged W4 public lot تصريح سكني تصريح مؤقت اصحاب الهمم تصريح المواقف الطابقية غير صالح في الشارع",
-      "page": "kb-ff-faq",
-      "subcat": "Free Flow",
+      "page": "kb-maw-public",
+      "subcat": "W4 SmartPark",
       "verified_at": "2026-09-24",
-      "updated_at": "2026-09-24T14:00:00+04:00",
+      "updated_at": "2026-09-25T13:00:00+04:00",
       "source": "Private Parking Management FAQ for On-Street Free Flow (Public Lot), circulated by the Call Centre Manager 24 September 2026",
       "published_at": "2026-09-24T12:09:00+04:00",
-      "effective_from": "2026-09-28"
+      "effective_from": "2026-09-28",
+      "page_locked": true
     },
     "article_MAW-2026-0928-ONSTREET-REENTRY-REMAINING": {
       "id": "MAW-2026-0928-ONSTREET-REENTRY-REMAINING",
@@ -5719,13 +6069,14 @@
       "q_ar": "",
       "a_ar": "",
       "kw": "charged full hour 30 minutes part thereof re-enter re entry remaining time still valid smart park zone sms paid time standard zone darb wallet deduction on-street W4 احتساب الساعة او جزء منها اعادة الدخول الوقت المتبقي",
-      "page": "kb-ff-faq",
-      "subcat": "Free Flow",
+      "page": "kb-maw-public",
+      "subcat": "W4 SmartPark",
       "verified_at": "2026-09-24",
-      "updated_at": "2026-09-24T14:00:00+04:00",
+      "updated_at": "2026-09-25T13:00:00+04:00",
       "source": "Private Parking Management FAQ for On-Street Free Flow (Public Lot), circulated by the Call Centre Manager 24 September 2026",
       "published_at": "2026-09-24T12:09:00+04:00",
-      "effective_from": "2026-09-28"
+      "effective_from": "2026-09-28",
+      "page_locked": true
     },
     "article_MAW-2026-0923-NUKHBA-SCHOOL-ME09": {
       "id": "MAW-2026-0923-NUKHBA-SCHOOL-ME09",
@@ -5797,13 +6148,56 @@
       "q_ar": "المتعامل يعترض على رسوم المواقف الذكية على الطريق أو يسأل إن كانت الرسالة النصية رسمية — ماذا أفعل؟",
       "a_ar": "<p>رسائل إشعار الدفع <strong>رسمية</strong> وصادرة عن كيو موبيليتي، ويمكن التحقق من التفاصيل عبر تطبيق درب.</p><p>عند الاعتراض على أي رسوم، يرجى جمع: <strong>رقم لوحة المركبة</strong>، و<strong>تاريخ الوقوف</strong>، و<strong>وقت الدخول والخروج</strong>.</p><p>للشكاوى والاقتراحات أو الرسوم غير الصحيحة: مركز الاتصال <strong>8003009</strong>.</p>",
       "kw": "on-street smart park wrong charge incorrect deduction dispute complaint investigate plate number date entry exit time is the sms genuine real official fake scam proof of payment darb app 8003009 W4 public lot رسوم غير صحيحة رسالة رسمية اثبات الدفع رقم اللوحة",
-      "page": "kb-ff-faq",
-      "subcat": "Free Flow",
+      "page": "kb-maw-public",
+      "subcat": "W4 SmartPark",
       "source": "Contact Centre briefing \"On-Street Free Flow - W4 ahead of the 28 September go-live\", with the Private Parking Management On-Street Public Lot FAQ",
       "published_at": "2026-09-24T12:09:00+04:00",
       "effective_from": "2026-09-28",
       "verified_at": "2026-09-25",
-      "updated_at": "2026-09-25T10:00:00+04:00"
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "page_locked": true
+    },
+    "article_FAQ-PB-SMS": {
+      "id": "FAQ-PB-SMS",
+      "q": "What is the SMS format to pay for parking, and the emirate/GCC codes?",
+      "a": "<p>Make sure your phone has credit, then send an SMS to <strong>3009</strong> (private vehicles and public plates):</p><ul><li><strong>Abu Dhabi vehicle:</strong> <code>AUH10 00000 S/P 1:24</code> (plate code, plate number, S=Standard/P=Premium, hours)</li><li><strong>GCC vehicle (e.g. Qatar):</strong> <code>QAT 00000 S/P 1:24</code></li></ul><h4>UAE emirate short codes</h4><p>Abu Dhabi = <strong>AUH</strong>, Dubai = <strong>DXB</strong>, Sharjah = <strong>SHJ</strong>, Ajman = <strong>AJM</strong>, Fujairah = <strong>FUJ</strong>, Umm Al Quwain = <strong>UAQ</strong>, Ras Al Khaimah = <strong>RAK</strong></p><h4>GCC short codes</h4><p>Saudi = <strong>KSA</strong> or <strong>SAU</strong>, Qatar = <strong>QAT</strong>, Kuwait = <strong>KWT</strong>, Bahrain = <strong>BAH</strong> or <strong>BHR</strong>, Oman = <strong>OMN</strong></p><div class=\"info-box\">SMS covers <strong>private vehicles</strong> and, since 21 September 2026, <strong>public plates</strong> using the approved category code &mdash; AUHPUB1, AUHPUB2, AUHORA, AUHYEL, AUHGRE, DXBBLA, DXBYEL, DXBGRE. Search <em>public plate parking payment</em>. Other categories pay via the Darb app or website. Payment machines on Abu Dhabi Island have been switched off. If the SMS fails, it is usually low credit or a SIM issue — use another method and contact the telecom provider.</div><div class=\"footer\"><strong>Need help?</strong><br>Call/WhatsApp Q Mobility on <strong>800 3009</strong></div>",
+      "kw": "sms format pay parking 3009 AUH DXB SHJ AJM FUJ UAQ RAK KSA QAT KWT BAH OMN emirate gcc code standard premium private vehicle how to text message public plate AUHPUB1 AUHPUB2 AUHORA AUHYEL AUHGRE DXBBLA DXBYEL DXBGRE",
+      "page": "faq-maw-others",
+      "a_ar": "<p>تأكد من وجود رصيد، ثم أرسل رسالة إلى <strong>3009</strong> (للسيارات الخصوصية والمركبات العمومية):</p><ul><li><strong>مركبة أبوظبي:</strong> <code>AUH10 00000 S/P 1:24</code></li><li><strong>مركبة خليجية (قطر مثلاً):</strong> <code>QAT 00000 S/P 1:24</code></li></ul><p><strong>رموز الإمارات:</strong> أبوظبي AUH، دبي DXB، الشارقة SHJ، عجمان AJM، الفجيرة FUJ، أم القيوين UAQ، رأس الخيمة RAK</p><p><strong>رموز الخليج:</strong> السعودية KSA/SAU، قطر QAT، الكويت KWT، البحرين BAH/BHR، عُمان OMN</p><div class=\"info-box\">تم إضافة فئات المركبات العمومية (Public Plates) إلى نظام مواقف، مما يتيح لمستخدمي هذه الفئات سداد رسوم المواقف عبر خدمة الرسائل النصية باستخدام الرموز المعتمدة لكل فئة: AUHPUB1، AUHPUB2، AUHORA، AUHYEL، AUHGRE، DXBBLA، DXBYEL، DXBGRE. وتم إيقاف أجهزة دفع رسوم المواقف في جزيرة أبوظبي.</div>",
+      "q_ar": "ما هي صيغة الرسالة النصية لدفع رسوم المواقف ورموز الإمارات ودول الخليج؟",
+      "verified_at": "2026-09-25",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "source": "KB audit 25 September 2026 - reconciled with the PDM switch-off and public-plate circulars"
+    },
+    "article_FAQ-FF-OPS-2026": {
+      "id": "FAQ-FF-OPS-2026",
+      "q": "What are the current Free Flow parking operating rules?",
+      "a": "<h4>Normal Parking (Landmark)</h4><ul><li>Rollout will include five new locations to be finalized.</li><li>Payment channels: SMS, Darb X, Darb and TAMM. Payment machines on Abu Dhabi Island have been switched off.</li><li>Customers with an active limited-term permit or residence permit for the same parking area are exempt from charges.</li><li>Fine policy is still under testing: it is not yet confirmed whether a customer already fined will receive another fine when entering Free Flow normal parking.</li></ul><h4>Multi-storey parking</h4><ul><li>Operational 24/7. Public-holiday free-parking rules do not apply.</li><li>Customers have 10 minutes after entry to secure a parking slot.</li><li>If the 10-minute window is exceeded, the fee is payable even if the customer did not find a slot.</li><li><strong>Maximum stay:</strong> 15 days without an MSCP permit, or 30 days with an active MSCP permit. MSCP is parking, not vehicle storage.</li></ul><h4>Private parking and malls</h4><p>Rules are location-specific. Agents should refer to localized signage and the mall-specific KB topic.</p><h4>Billing</h4><ul><li><strong>Registered Darb users:</strong> automatic deduction from assigned wallet; wallet must stay positive.</li><li><strong>Known issue:</strong> if a Free Flow point is crossed with insufficient balance, recharge must happen in the original wallet within 24 hours. Cross-deduction after switching wallets is not currently supported.</li><li><strong>Non-registered users:</strong> normal parking can be settled through standard channels or the Free Flow portal. Multi-storey/private parking must be paid through <a href=\"https://freeflow.qmobility.ae/\" target=\"_blank\">https://freeflow.qmobility.ae/</a>.</li></ul><div class=\"info-box\"><strong>On-street SmartPark (Public Lot), e.g. W4 from 28 September 2026:</strong> a non-Darb vehicle must pay <strong>by SMS within 10 minutes of entry</strong> and cannot use the Free Flow portal. Whether that rule also applies to other on-street Free Flow zones, such as W5, has not been confirmed &mdash; check with your supervisor before advising.</div><div class=\"footer\"><strong>Need help?</strong><br>Call/WhatsApp Q Mobility on <strong>800 3009</strong> or use the dedicated support section on the <strong>DARB App</strong>.</div>",
+      "kw": "free flow operating rules normal parking landmark mscp multi-storey private malls registered non registered wallet insufficient balance 24 hours cross deduction",
+      "page": "faq-priv-general",
+      "verified_at": "2026-09-25",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "source": "KB audit 25 September 2026 - reconciled with the PDM switch-off and public-plate circulars"
+    },
+    "article_FAQ-MUS-003": {
+      "id": "FAQ-MUS-003",
+      "q": "How do I pay for parking in Musaffah, and what are the fees?",
+      "a": "<p>The fee for standard surface parking in Musaffah is <span class=\"amount\">AED 2 per hour</span> (capped at <span class=\"amount\">AED 15 per day</span>), Monday–Saturday 8:00 AM–12:00 AM. Free on Sundays and public holidays.</p><p>Payment channels:</p><ul><li><strong>Darb</strong> app</li><li><strong>TAMM</strong> app</li><li><strong>SMS</strong></li><li><strong>Payment machines</strong> available in the area</li></ul><div class=\"info-box\">The PDM switch-off has been completed on <strong>Abu Dhabi Island</strong> only. Machines in this area are due to be switched off in a later phase &mdash; if a customer reports the machine is off, direct them to the Darb app, TAMM or SMS.</div><div class=\"footer\"><strong>Need help?</strong><br>Call/WhatsApp Q Mobility on <strong>800 3009</strong></div>",
+      "kw": "Musaffah Mussafah parking fee how to pay 2 AED hour 15 day darb tamm sms machine payment",
+      "page": "faq-maw-mussafah",
+      "verified_at": "2026-09-25",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "source": "KB audit 25 September 2026 - reconciled with the PDM switch-off and public-plate circulars"
+    },
+    "article_FAQ-MBZ-003": {
+      "id": "FAQ-MBZ-003",
+      "q": "How do I pay for parking in MBZ City, and what are the fees?",
+      "a": "<p>The fee for parking in Mohamed Bin Zayed City is <span class=\"amount\">AED 2 per hour</span>. Payment can be made through:</p><ul><li><strong>Darb</strong> app</li><li><strong>TAMM</strong> app</li><li><strong>SMS</strong></li><li><strong>Payment machines</strong> available in the area</li></ul><div class=\"info-box\">The PDM switch-off has been completed on <strong>Abu Dhabi Island</strong> only. Machines in this area are due to be switched off in a later phase &mdash; if a customer reports the machine is off, direct them to the Darb app, TAMM or SMS.</div><div class=\"footer\"><strong>Need help?</strong><br>Call/WhatsApp Q Mobility on <strong>800 3009</strong></div>",
+      "kw": "MBZ Mohamed Bin Zayed City parking fee how to pay 2 AED hour darb tamm sms machine payment",
+      "page": "faq-maw-mbz",
+      "verified_at": "2026-09-25",
+      "updated_at": "2026-09-25T13:00:00+04:00",
+      "source": "KB audit 25 September 2026 - reconciled with the PDM switch-off and public-plate circulars"
     }
   },
   "fines": [

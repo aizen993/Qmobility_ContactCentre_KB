@@ -1545,21 +1545,10 @@ function renderUpdates(el) {
 }
 
 // ===== LATEST UPDATES =====
-var LATEST_UPDATES = [
-  {date:"23 Jun 2026", title:"Mushrif Mall FreeFlow AI Launch", desc:"Expected launch of barrierless, ticketless paid parking. First 3 hours free once per day; Darb X wallet auto-deduction; insufficient balance must be topped up within 24 hours after exit.", tag:"new"},
-  {date:"16 Jun 2026", title:"Madenat Zayed Souq E4-01 PDM Switch-Off Pilot", desc:"All PDMs in E4-01 are switched off for one month until 16 July 2026. Log customer tickets for documentation, close immediately, and do not escalate to technical teams.", tag:"maw"},
-  {date:"1 Jun 2026", title:"Free Flow Auto-Deduction Parking Launched", desc:"AI plate-recognition parking with automatic fee deduction from the Darb wallet — no tickets, barriers, or cash. Live at Abu Dhabi Mall, several MSCPs (Buildings 1, 2, 5), MBZ ME9/ME10/ME12, and sectors W5, W13-01, E18-01, E19. Non-Darb users pay within 24h at freeflow.qmobility.ae.", tag:"new"},
-  {date:"18 May 2026", title:"Musaffah Phase 3 Activated", desc:"Mawaqif paid parking extended to Phase 3 sectors M5, M6, M21, M22, M23 (3,921 spaces) in the Musaffah industrial area. AED 2/hr.", tag:"maw"},
-  {date:"15 May 2026", title:"customers@qmobility.ae No Longer Active", desc:"The old email is discontinued. All complaints must now go through the Darb App.", tag:"darb"},
-  {date:"6 May 2026", title:"MBZ ME9 & ME12 Commercial Sectors Activated", desc:"Mohamed Bin Zayed City commercial sectors ME9 and ME12 now live on Mawaqif.", tag:"maw"},
-  {date:"20 Apr 2026", title:"Musaffah Phase 2 Launched", desc:"Phase 2 parking zones in Musaffah now operational.", tag:"maw"},
-  {date:"20 Apr 2026", title:"Permit Refund Scenarios Updated", desc:"New policy guidance on when parking permit refunds are applicable.", tag:"maw"},
-  {date:"17 Apr 2026", title:"WhatsApp Car Blockage Service", desc:"Customers can now report blocked vehicles via WhatsApp.", tag:"maw"},
-  {date:"11 Mar 2026", title:"4 New MSCP Buildings in MBZ", desc:"1,446 new multi-storey parking spaces added across 4 buildings in Mohamed Bin Zayed City.", tag:"new"},
-  {date:"7 Apr 2026", title:"Freeflow W5 Activated", desc:"New Freeflow sector W5 now operational.", tag:"darb"},
-  {date:"6 Apr 2026", title:"MBZ ME10 & ME11 Activated", desc:"Two new commercial sectors in MBZ City are now under Mawaqif coverage.", tag:"maw"},
-  {date:"6 Apr 2026", title:"Freeflow MSCP01 Launched", desc:"First Freeflow Multi-Storey Car Park now operational.", tag:"darb"},
-];
+// ===== LATEST UPDATES =====
+// Deliberately empty. qmobility_kb_latest.json is the single source of truth
+// for updates; a second hard-coded list here drifted out of date before.
+var LATEST_UPDATES = [];
 
 // ============================================================
 
@@ -1606,41 +1595,7 @@ var QUICK_CONTACTS = [
   {svc:"Emirates Auctions", contact:"800-0666666", hrs:"Business hrs"}
 ];
 
-// ===== NAVIGATION CONFIG =====
-var NAV_CONFIG = [
-  {id:"lbl_0", type:"label", page:"", label_en:"MAIN", label_ar:"الرئيسية", hidden:false},
-  {id:"item_1", type:"item", page:"dashboard", label_en:"🏠 Dashboard", label_ar:"🏠 لوحة التحكم", hidden:false},
-  {id:"item_2", type:"item", page:"quick", label_en:"⚡ Quick Reference", label_ar:"⚡ المرجع السريع", hidden:false},
-  {id:"item_3", type:"item", page:"updates", label_en:"🔴 Latest Updates", label_ar:"🔴 آخر التحديثات", hidden:false},
-  {id:"item_4", type:"item", page:"", label_en:"🔍 Search (Ctrl+K)", label_ar:"", hidden:false},
-  {id:"item_4b", type:"item", page:"find-fast", label_en:"🌳 Find Fast", label_ar:"🌳 البحث السريع", hidden:false},
-  {id:"lbl_5", type:"label", page:"", label_en:"QUICK JUMP", label_ar:"وصول سريع", hidden:false},
-  {id:"item_6", type:"item", page:"kb-maw-fines", label_en:"Fines & Grievances", label_ar:"المخالفات والتظلمات", hidden:false},
-  {id:"item_7", type:"item", page:"kb-maw-permits", label_en:"Permits", label_ar:"التصاريح", hidden:false},
-  {id:"item_8", type:"item", page:"kb-maw-parking-sms", label_en:"📱 Parking SMS", label_ar:"📱 رسائل SMS للمواقف", hidden:false},
-  {id:"item_9", type:"item", page:"kb-darb-reg", label_en:"Registration", label_ar:"التسجيل والحساب", hidden:false},
-  {id:"item_10", type:"item", page:"kb-darb-disputes", label_en:"⚡ Violations", label_ar:"⚡ مخالفات درب", hidden:true},
-  {id:"item_11", type:"item", page:"kb-fines", label_en:"Fines Table", label_ar:"جدول المخالفات والغرامات", hidden:false},
-  {id:"item_12", type:"item", page:"kb-maw-training", label_en:"⚠ Training Notes", label_ar:"⚠ ملاحظات التدريب الأساسية", hidden:false},
-  {id:"lbl_13", type:"label", page:"", label_en:"ALL SECTIONS", label_ar:"جميع الأقسام", hidden:false},
-  {id:"grp_30", type:"group", page:"", label_en:"Mawaqif Parking", label_ar:"مواقف السيارات", hidden:false},
-  {id:"grp_38", type:"group", page:"", label_en:"Darb Toll", label_ar:"نظام درب للرسوم", hidden:false},
-  {id:"grp_42", type:"group", page:"", label_en:"Freeflow", label_ar:"فري فلو — بدون حواجز", hidden:false},
-  {id:"lbl_43", type:"label", page:"", label_en:"REFERENCE", label_ar:"المراجع", hidden:false},
-  {id:"item_44", type:"item", page:"kb-fines", label_en:"Fines Table", label_ar:"جدول المخالفات والغرامات", hidden:false},
-  {id:"item_45", type:"item", page:"kb-permits", label_en:"Permits Reference", label_ar:"مرجع جميع التصاريح", hidden:false},
-  {id:"item_46", type:"item", page:"vehicle-types", label_en:"Vehicle Types", label_ar:"أنواع المركبات وقواعدها", hidden:false},
-  {id:"lbl_47", type:"label", page:"", label_en:"VOICE SCRIPTS", label_ar:"نصوص المكالمات الهاتفية", hidden:false},
-  {id:"grp_51", type:"group", page:"", label_en:"Mawaqif Scripts", label_ar:"نصوص مواقف السيارات", hidden:false},
-  {id:"grp_55", type:"group", page:"", label_en:"Darb Scripts", label_ar:"نصوص نظام درب", hidden:false},
-  {id:"lbl_56", type:"label", page:"", label_en:"TEMPLATES", label_ar:"قوالب الردود", hidden:false},
-  {id:"grp_59", type:"group", page:"", label_en:"Email Templates", label_ar:"قوالب البريد الإلكتروني", hidden:false},
-  {id:"grp_62", type:"group", page:"", label_en:"Chat Templates", label_ar:"قوالب المحادثة", hidden:false},
-  {id:"grp_73", type:"group", page:"", label_en:"Salesforce SMS", label_ar:"رسائل SMS — سيلزفورس", hidden:false},
-  {id:"lbl_74", type:"label", page:"", label_en:"ADMIN", label_ar:"لوحة الإدارة", hidden:true},
-  {id:"item_75", type:"item", page:"admin-panel", label_en:"⚙ Admin Panel", label_ar:"⚙ لوحة المشرفين", hidden:true},
-  {id:"item_76", type:"item", page:"admin-analytics", label_en:"📊 Analytics", label_ar:"📊 إحصائيات", hidden:true}
-];
+
 
 // ===== PERMIT TYPES AND FEES =====
 var PERMITS = [
@@ -3420,61 +3375,6 @@ function render(page) {
   requestAnimationFrame(function(){ enhanceKbVisuals(el); });
 }
 
-// ===== FIX 1: DASHBOARD with correct counts by page prefix =====
-function renderDashboard(el) {
-  // FIX 1: Count by page prefix instead of category string
-  // Sector counts come from one shared classifier so the dashboard, the
-  // agent hero and Find Fast can never disagree, and the three numbers
-  // always add up to FAQS.length. Previously three copies of this block
-  // existed with two different rules for private parking, and MSCP was
-  // counted under both Mawaqif and Private.
-  var _sc = _kbSectorCounts();
-  var mawCount = _sc.maw, darbCount = _sc.darb, privCount = _sc.priv;
-
-  var h = '<div class="page-header"><div>';
-  h += '<div class="page-title">' + (S.lang==='ar'?'قاعدة معارف كيوموبيليتي':'QMobility Knowledge Base') + '</div>';
-  h += '<div class="page-subtitle">' + (S.lang==='ar'?'بوابة موظفي مركز الاتصال v20':'Call Center Agent Portal v20') + ' | 8003009</div>';
-  h += '</div></div>';
-
-  // Sector cards
-  h += '<div class="sector-grid">';
-  h += '<div class="sector-card" onclick="go(&#39;sector-maw&#39;,&#39;Mawaqif&#39;)">';
-  h += '<img src="assets/inline-1.png" alt="Mawaqif" style="height:64px;width:auto;margin-bottom:8px;">';
-  h += '<div class="title">' + (S.lang==='ar'?'مواقف':'Mawaqif') + '</div>';
-  h += '<div class="desc">' + (S.lang==='ar'?'المواقف العامة، التصاريح، المخالفات، التنفيذ':'Public parking, permits, fines, enforcement') + '</div>';
-  h += '<div class="count">' + mawCount + ' ' + (S.lang==='ar'?'مقال':'articles') + '</div>';
-  h += '</div>';
-
-  h += '<div class="sector-card" onclick="go(&#39;sector-darb&#39;,&#39;DARB&#39;)" style="border-top-color:var(--darb)">';
-  h += '<img src="assets/inline-2.png" alt="DARB" style="height:64px;width:auto;margin-bottom:8px;">';
-  h += '<div class="title">DARB</div>';
-  h += '<div class="desc">' + (S.lang==='ar'?'بوابات الرسوم، التسجيل، الإعفاءات، المحفظة':'Toll gates, registration, exemptions, wallet') + '</div>';
-  h += '<div class="count">' + darbCount + ' ' + (S.lang==='ar'?'مقال':'articles') + '</div>';
-  h += '</div>';
-
-  h += '<div class="sector-card" onclick="go(&#39;sector-priv&#39;,&#39;Private Parking&#39;)" style="border-top-color:var(--priv)">';
-  h += '<div class="icon">&#127970;</div>';
-  h += '<div class="title">' + (S.lang==='ar'?'مواقف خاصة':'Private Parking') + '</div>';
-  h += '<div class="desc">' + (S.lang==='ar'?'مواقف المولات، التدفق الحر، المرافق الخاصة':'Mall parking, Free Flow, private facilities') + '</div>';
-  h += '<div class="count">' + privCount + ' ' + (S.lang==='ar'?'مقال':'articles') + '</div>';
-  h += '</div>';
-  h += '</div>';
-
-  // FIX 7: Latest Updates
-  h += '<div style="margin-top:24px"><h2>&#128227; ' + (S.lang==='ar'?'آخر التحديثات':'Latest Updates') + '</h2></div>';
-  h += kbUpdatesListHtml(LATEST_UPDATES, 6);
-
-  // Quick Access
-  h += '<div style="margin-top:24px"><h2>&#9889; ' + (S.lang==='ar'?'وصول سريع':'Quick Access') + '</h2></div>';
-  h += '<div class="quick-grid">';
-  h += '<div class="quick-card" onclick="go(&#39;kb-fines&#39;,&#39;Fines Table&#39;)"><div class="icon">&#128203;</div><div class="title">Fines Table</div></div>';
-  h += '<div class="quick-card" onclick="go(&#39;kb-permits&#39;,&#39;Permits Ref&#39;)"><div class="icon">&#128221;</div><div class="title">Permits Ref</div></div>';
-  h += '<div class="quick-card" onclick="go(&#39;sms&#39;,&#39;SMS Templates&#39;)"><div class="icon">&#128172;</div><div class="title">SMS Templates</div></div>';
-  h += '<div class="quick-card" onclick="go(&#39;call-scripts&#39;,&#39;Call Scripts&#39;)"><div class="icon">&#128483;</div><div class="title">Call Scripts</div></div>';
-  h += '</div>';
-
-  el.innerHTML = h;
-}
 
 
 // ===== SECTOR RENDERER =====
@@ -4432,6 +4332,8 @@ function _scrollActive(){
 // Open a single FAQ in a focused view (from dropdown).
 var _lastOpenedFaqId = null;
 function openFaqById(id){
+  // An old link to a superseded or merged article opens its canonical replacement.
+  if (window.KB_REDIRECTS && KB_REDIRECTS[id]) id = KB_REDIRECTS[id];
   var f = FAQS.filter(function(x){return x.id===id;})[0];
   if(!f) return;
   _lastOpenedFaqId = id;
@@ -7413,6 +7315,7 @@ function _authorityPage(page) {
     'kb-maw-commercial':'faq-maw-permits',
     'kb-maw-govpermit':'faq-maw-permits',
     'kb-ff-faq':'faq-priv-general',
+    'kb-maw-mussafah':'faq-maw-mussafah',
     'kb-darb-general':'faq-darb-general',
     'kb-darb-reg':'faq-darb-reg',
     'kb-darb-registration':'faq-darb-reg',
@@ -7517,6 +7420,17 @@ function applyAuthorityData(data) {
       target.accuracy = 'Verified';
       target.authority_version = data.version || '';
     }
+    // Field-level corrections that apply even when the record is not fully
+    // authoritative. A record names exactly which fields it corrects, so fixing
+    // a question title or a page can never silently replace the answer as well.
+    var fields = (article.override_fields || []).slice();
+    if (article.page_locked && fields.indexOf('page') < 0) fields.push('page');
+    fields.forEach(function(k){
+      if (article[k] === undefined || article[k] === null) return;
+      if (k === 'page') target.page = _authorityPage(article.page);
+      else if (k === 'a' || k === 'a_ar') target[k] = _authorityHtml(article[k]);
+      else target[k] = article[k];
+    });
     target._idx = false;
   });
 
@@ -7575,6 +7489,42 @@ function applyAuthorityData(data) {
     sms_count:SMS_TEMPLATES.length
   };
   window.KB_SOURCE_PRIORITY = data.source_priority || [];
+
+  // One canonical article per question. A superseded record stays in the
+  // authority file for the audit trail, but it leaves search, navigation and
+  // Find Fast, and any link to it opens the article that replaced it.
+  var redirects = {};
+  Object.keys(edits).forEach(function(key){
+    var rec = edits[key];
+    if (key.indexOf('article_') !== 0 || !rec || rec.status !== 'superseded') return;
+    var oldId = rec.id || key.replace(/^article_/, '');
+    if (rec.superseded_by) redirects[oldId] = rec.superseded_by;
+  });
+  for (var si = FAQS.length - 1; si >= 0; si--) {
+    var sf = FAQS[si];
+    if (sf && sf.id && Object.prototype.hasOwnProperty.call(redirects, sf.id)) {
+      var winner = FAQS.find(function(x){ return x && x.id === redirects[sf.id]; });
+      if (winner) {
+        winner.aliasIds = winner.aliasIds || [];
+        if (winner.aliasIds.indexOf(sf.id) < 0) winner.aliasIds.push(sf.id);
+        // keep the retired wording findable so an agent's old habit still lands
+        winner.kw = String(winner.kw || '') + ' ' + String(sf.q || '');
+      }
+      FAQS.splice(si, 1);
+    }
+  }
+  window.KB_REDIRECTS = redirects;
+
+  // An "Arabic" field that contains no Arabic is not a translation. Clearing
+  // it stops the language toggle showing stale English under an Arabic label,
+  // and keeps the bilingual coverage figures honest.
+  var AR = /[؀-ۿ]/;
+  FAQS.forEach(function(f){
+    if (!f) return;
+    if (f.q_ar && !AR.test(f.q_ar)) f.q_ar = '';
+    if (f.a_ar && !AR.test(stripHtml(f.a_ar))) f.a_ar = '';
+  });
+
   _resetAuthoritySearchIndex();
   ALL_FAQ = FAQS;
   return true;
@@ -7941,78 +7891,6 @@ function _kbPageGallery(page, title) {
   return h;
 }
 
-function renderDashboard(el) {
-  // Sector counts come from one shared classifier so the dashboard, the
-  // agent hero and Find Fast can never disagree, and the three numbers
-  // always add up to FAQS.length. Previously three copies of this block
-  // existed with two different rules for private parking, and MSCP was
-  // counted under both Mawaqif and Private.
-  var _sc = _kbSectorCounts();
-  var mawCount = _sc.maw, darbCount = _sc.darb, privCount = _sc.priv;
-  var h = '<div class="agent-shell">';
-
-  h += '<section class="agent-hero">';
-  h += '<div>';
-  h += '<div class="agent-eyebrow">YOUR DAILY KNOWLEDGE DESK</div>';
-  h += '<h1>Agent answer desk</h1>';
-  h += '<p>Start with search for the caller question, then use the fast lanes below for the most common parking, toll, permit, payment, template, and escalation answers.</p>';
-  h += '<div class="agent-search-wrap">';
-  h += '<form class="agent-search-panel" onsubmit="return startHeroSearch(event)">';
-  h += '<input id="heroSearch" aria-label="Search verified answers" type="search" autocomplete="off" placeholder="Search fine, permit, DARB, SMS..." oninput="instantHeroSearch()" onfocus="instantHeroSearch()" onkeydown="heroSearchKeyNav(event)">';
-  h += '<button class="btn" type="submit">Search</button>';
-  h += '</form>';
-  h += '<div class="search-dropdown hero-search-dropdown" id="heroSearchDropdown"></div>';
-  h += '</div>';
-  h += '<div class="agent-chip-row">';
-  ['parking fine','resident permit documents','DARB exemption','SMS 3009','Free Flow payment','DARB X complaint','DARB X vehicle registration'].forEach(function(q){
-    h += '<button type="button" class="agent-chip" onclick="quickFind(\'' + q + '\')">' + q + '</button>';
-  });
-  h += '</div>';
-  h += '</div>';
-  h += '<div class="agent-panel">';
-  h += '<h2>Coverage</h2>';
-  h += '<span class="agent-badge">PDF source extracted</span><span class="agent-badge">Workbook FAQs complete</span><span class="agent-badge">Duplicates hidden</span>';
-  h += '<div class="agent-kpis">';
-  h += '<div class="agent-kpi"><strong>' + mawCount + '</strong><span>Mawaqif answers</span></div>';
-  h += '<div class="agent-kpi"><strong>' + darbCount + '</strong><span>DARB answers</span></div>';
-  h += '<div class="agent-kpi"><strong>' + privCount + '</strong><span>Private parking</span></div>';
-  h += '</div>';
-  h += '</div>';
-  h += '</section>';
-
-  h += '<section class="agent-grid-two">';
-  h += '<div class="agent-panel"><h2>Fast Lanes</h2><div class="agent-actions">';
-  h += _kbAct('Fine / grievance', 'Appeal, pay, discount, rejected grievance, image view.', 'parking fine grievance appeal pay discount');
-  h += _kbAct('Pay parking', 'DARB, TAMM, SMS 3009, machines, renewal.', 'pay public parking sms 3009 mawaqif machine');
-  h += _kbAct('Resident permit', 'Eligibility, documents, kinship, TAMM errors.', 'resident parking permit documents eligibility kinship');
-  h += _kbAct('Toll exemption', 'PoD, senior, retired, low income, relative rules.', 'darb toll exemption people of determination senior retired low income');
-  h += _kbAct('Car pound', 'Towing yards, release documents, payment, appeals.', 'towing yard car pound release documents hours');
-  h += _kbAct('Free Flow', 'Auto deduction, wallet balance, non-DARB payment link.', 'free flow auto deduction wallet non darb payment');
-  h += _kbAct('SMS templates', 'Guidance messages and customer follow-up text.', 'sms template guidance');
-  h += _kbAct('Call scripts', 'Opening, verification, scenario handling.', 'call script mawaqif darb scenario');
-  h += '</div></div>';
-
-  h += '<div class="agent-panel"><h2>Current Facts</h2><div class="agent-alerts">';
-  h += _kbAlert('maw', 'Musaffah Phase 3', 'Active 18 May 2026: M5, M6, M21, M22, M23. 3,921 spaces. AED 2/hour.', 'musaffah phase 3 M5 M6 M21 M22 M23');
-  h += _kbAlert('maw', 'MBZ Phase 3', 'ME9, ME10, ME11, and ME12 are commercial + permit sectors. Villa zones Z01-Z17, Z19, Z20, Z27 can issue villa permits.', 'mbz phase 3 ME9 ME10 ME11 ME12 permit villa zones');
-  h += _kbAlert('priv', 'Free Flow parking', 'DARB wallet auto-deduction. Non-DARB users pay through freeflow.qmobility.ae.', 'free flow parking auto deduction wallet');
-  h += _kbAlert('darb', 'DARB X card setup', 'Wallet, Top-Up, amount, payment method, Add Credit/Debit Card.', 'DARB X add credit debit card top up');
-  h += _kbAlert('darb', 'DARB X vehicle registration', 'Send the app.qmobility.ae/BI7O SMS and advise AED 100 balance: AED 50 registration + AED 50 credit.', 'DARB X vehicle registration SMS BI7O 100 AED');
-  h += _kbAlert('warn', 'Rechargeable card closed', 'Old card is no longer supported. Remaining balance is accessed through the DARB app.', 'rechargeable card closed balance darb app');
-  h += _kbAlert('maw', 'Payment machine note', 'Mawaqif machines accept coins only; SMS payment is for private vehicles.', 'mawaqif machine coins sms private vehicles');
-  h += '</div></div>';
-  h += '</section>';
-
-  h += '<section class="agent-panel"><h2>Source Coverage</h2><div class="agent-source-grid">';
-  h += _kbSource('PDF call-center guide', '62-page PDF text extracted and represented in search, scripts, quick facts, and support flows.');
-  h += _kbSource('Mawaqif regulation PDF', '35-page image PDF checked as an official reference; no embedded text was available for direct extraction.');
-  h += _kbSource('Official FAQ workbook', '204 validated FAQ article IDs are present in the index.');
-  h += _kbSource('2026 PR / FAQ files', 'MBZ, Musaffah, Free Flow, DARB X complaint, vehicle registration, card setup, and SMS template updates are included.');
-  h += '</div></section>';
-
-  h += '</div>';
-  el.innerHTML = h;
-}
 
 // Visual dashboard renderer for the agent home screen.
 function renderDashboard(el) {
