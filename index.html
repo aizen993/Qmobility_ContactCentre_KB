@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>QMobility Knowledge Base v20 - Verified</title>
+<title>QMobility Knowledge Base | Agent workspace</title>
 <meta name="description" content="Verified QMobility call-center knowledge base for DARB, Mawaqif, Free Flow, and customer communication templates.">
 <style>
 :root{--qm:#2e7d32;--qm-l:#e8f5e9;--darb:#1976d2;--darb-l:#e3f2fd;--priv:#7b1fa2;--priv-l:#f3e8ff;--tech:#ef6c00;--tech-l:#fff3e0;--feed:#c62828;--feed-l:#ffebee;--bg:#f0f2f5;--surf:#fff;--text:#1a1a2e;--text2:#6b7280;--border:#e5e7eb}
@@ -633,20 +633,22 @@ body[dir="rtl"] .wa-search input{padding:0 42px 0 14px}body[dir="rtl"] .wa-searc
     return _sbPromise;
   }
 </script>
+<link rel="stylesheet" href="assets/kb-refresh.css?v=20260922-1">
+<meta name="theme-color" content="#137563">
 </head>
 <body dir="ltr">
 <div class="app" id="app">
 <div class="sidebar" id="sidebar">
-<div class="sidebar-header"><span class="logo-dot"></span> QMobility KB v20</div>
+<div class="sidebar-header"><span class="logo-dot" aria-hidden="true"></span><span class="kb-brand-copy">QMobility<span><small>Knowledge base</small></span></span></div>
 <div id="nav-container"></div>
-<div class="sidebar-footer">8003009 &middot; QMobility.ae<br>Updated 2026-06-07 &middot; Smart Search</div>
+<div class="sidebar-footer">8003009 &middot; QMobility.ae<br>Updated 22 Sep 2026 &middot; Agent workspace</div>
 </div>
 <div class="main" id="main">
 <div class="topbar" id="topbar">
-<button class="menu-btn" onclick="toggleSidebar()">&#9776;</button>
-<button class="menu-btn" onclick="goBack()">&#8592;</button>
-<button class="menu-btn" onclick="goHome()">&#127969;</button>
-<div class="search-box"><input type="text" id="searchInput" autocomplete="off" placeholder="Search KB… (Ctrl+K)" onkeydown="searchKeyNav(event)" oninput="instantSearch()" onfocus="instantSearch()"><div class="search-dropdown" id="searchDropdown"></div></div>
+<button class="menu-btn" aria-label="Toggle navigation" title="Toggle navigation" onclick="toggleSidebar()">&#9776;</button>
+<button class="menu-btn" aria-label="Go back" title="Go back" onclick="goBack()">&#8592;</button>
+<button class="menu-btn" aria-label="Home" title="Home" onclick="goHome()">&#127969;</button>
+<div class="search-box"><input type="text" id="searchInput" aria-label="Search knowledge base" autocomplete="off" placeholder="Search KB… (Ctrl+K)" onkeydown="searchKeyNav(event)" oninput="instantSearch()" onfocus="instantSearch()"><div class="search-dropdown" id="searchDropdown"></div></div>
 <button class="lang-toggle" onclick="toggleLang()" id="langBtn"><span id="langLabel">&#127468;&#127463; EN</span></button>
 <button class="btn" onclick="showAdminModal()">&#9881; Admin</button>
 </div>
@@ -1299,12 +1301,12 @@ var WHATSAPP_RESPONSES = [
   {id:"WA-302",category:"Free Flow",category_ar:"التدفق الحر",title_en:"Mushrif Mall parking tariff",title_ar:"تعرفة مواقف مشرف مول",en:"Mushrif Mall visitor parking operates from 6:00 AM to 2:00 AM.\n• First 3 hours free once per day\n• From 3 to 7 hours: AED 10 per hour or part thereof\n• More than 7 hours: capped at AED 80 per day per visit\n• Overnight from 2:00–6:00 AM: AED 250\n• Saturdays, Sundays, and public holidays are free, excluding overnight parking\n\nDARB-registered vehicles are charged automatically. Other vehicles must pay within 24 hours after exit.",ar:"تعمل مواقف زوار مشرف مول من الساعة 6:00 صباحاً حتى 2:00 صباحاً.\n• أول 3 ساعات مجانية مرة واحدة يومياً\n• من 3 إلى 7 ساعات: 10 دراهم لكل ساعة أو جزء منها\n• أكثر من 7 ساعات: حد أقصى 80 درهماً لليوم لكل زيارة\n• الوقوف الليلي من 2:00 إلى 6:00 صباحاً: 250 درهماً\n• السبت والأحد والعطلات الرسمية مجانية باستثناء الوقوف الليلي\n\nيتم الخصم تلقائياً للمركبات المسجلة في درب، وعلى المركبات الأخرى الدفع خلال 24 ساعة من الخروج.",keywords:"mushrif mall fees 3 hours 10 80 overnight 250 weekends"},
   {id:"WA-303",category:"Free Flow",category_ar:"التدفق الحر",title_en:"Mushrif Mall gym visitors overnight",title_ar:"زوار النادي الرياضي في مشرف مول ليلاً",en:"Gym visitors parking at Mushrif Mall between 2:00 AM and 6:00 AM must have the vehicle number validated directly by the gym. A correctly validated vehicle receives the first 3 hours free during the overnight window. Without gym validation, the AED 250 overnight charge applies. Validation disputes must be directed to gym management unless there is a separate parking-system issue.",ar:"يجب على زوار النادي الرياضي الذين يوقفون مركباتهم في مشرف مول بين الساعة 2:00 و6:00 صباحاً التحقق من رقم المركبة مباشرةً لدى النادي. تحصل المركبة التي تم اعتمادها بشكل صحيح على أول 3 ساعات مجاناً خلال فترة الوقوف الليلي. عند عدم الاعتماد، تطبق رسوم الوقوف الليلي بقيمة 250 درهماً. يتم توجيه أي اعتراض على الاعتماد إلى إدارة النادي ما لم توجد مشكلة منفصلة في نظام المواقف.",keywords:"mushrif gym overnight validation 3 hours free 250 management"},
   {id:"WA-304",category:"Free Flow",category_ar:"التدفق الحر",title_en:"Abu Dhabi Mall parking tariff",title_ar:"تعرفة مواقف أبوظبي مول",en:"Abu Dhabi Mall visitor parking operates from 6:00 AM to 2:00 AM.\n• First 3 hours free once per day\n• Every additional hour or part thereof: AED 10\n• Overnight parking from 2:00–6:00 AM is prohibited except for permitted vehicles\n• Saturdays, Sundays, and public holidays are free, excluding overnight parking\n\nDARB-registered vehicles are charged automatically. Other vehicles must pay within 24 hours after exit.",ar:"تعمل مواقف زوار أبوظبي مول من الساعة 6:00 صباحاً حتى 2:00 صباحاً.\n• أول 3 ساعات مجانية مرة واحدة يومياً\n• كل ساعة إضافية أو جزء منها: 10 دراهم\n• الوقوف الليلي من 2:00 إلى 6:00 صباحاً ممنوع باستثناء المركبات المصرح لها\n• السبت والأحد والعطلات الرسمية مجانية باستثناء الوقوف الليلي\n\nيتم الخصم تلقائياً للمركبات المسجلة في درب، وعلى المركبات الأخرى الدفع خلال 24 ساعة من الخروج.",keywords:"abu dhabi mall fees 3 hours 10 overnight prohibited weekends"},
-  {id:"WA-305",category:"Free Flow",category_ar:"التدفق الحر",title_en:"Etihad Rail station parking",title_ar:"مواقف محطة قطار الاتحاد",en:"Etihad Rail passenger-station parking operates 24/7, including public holidays.\n• First 15 minutes from entry: free\n• Up to 5 hours: AED 5 per hour\n• More than 5 hours and up to 24 hours: AED 30\n• Entry between 2:00–6:00 AM: AED 30 flat tariff for up to 24 hours\n\nFree Flow payment rules apply to the detected vehicle.",ar:"تعمل مواقف محطة قطار الاتحاد للركاب على مدار الساعة طوال أيام الأسبوع بما فيها العطلات الرسمية.\n• أول 15 دقيقة من الدخول مجانية\n• حتى 5 ساعات: 5 دراهم لكل ساعة\n• أكثر من 5 ساعات وحتى 24 ساعة: 30 درهماً\n• الدخول بين 2:00 و6:00 صباحاً: رسم ثابت 30 درهماً لمدة تصل إلى 24 ساعة\n\nتطبق قواعد دفع مواقف التدفق الحر على المركبة التي تم رصدها.",keywords:"etihad rail station parking 24 7 15 minutes 5 hour 30 overnight"},
+  {"id": "WA-305", "category": "Free Flow", "category_ar": "التدفق الحر", "title_en": "Etihad Rail MBZ Smart Park", "title_ar": "مواقف قطارات الاتحاد - مدينة محمد بن زايد", "en": "Etihad Rail MBZ parking operates 24/7, including public holidays.\n• First 15 minutes per session: free\n• Standard entry (6:00 AM–2:00 AM): AED 5/hour or part-hour up to 3 hours; AED 15 for more than 3 hours up to 24 hours\n• Night entry (2:00 AM–6:00 AM): AED 20 for 24 hours from entry\n• After the first 24 hours: AED 20 per additional 24 hours or part-day\nAll charges include VAT. Standard-entry sessions keep the standard tariff after 2:00 AM.\nDarb vehicles pay automatically from the wallet; top up within 24 hours of exit. Non-Darb vehicles pay through freeflow.qmobility.ae or the on-site QR code within 24 hours of exit. Resident and other permits are not valid here.", "ar": "تعمل مواقف قطارات الاتحاد بمدينة محمد بن زايد على مدار الساعة، بما فيها العطلات الرسمية.\n• أول 15 دقيقة لكل مدة وقوف مجانية\n• الدخول من 6 صباحاً إلى 2 صباحاً: 5 دراهم لكل ساعة أو جزء منها حتى 3 ساعات، ثم 15 درهماً لأكثر من 3 ساعات وحتى 24 ساعة\n• الدخول الليلي من 2 إلى 6 صباحاً: 20 درهماً لمدة 24 ساعة من الدخول\n• بعد أول 24 ساعة: 20 درهماً لكل 24 ساعة إضافية أو جزء منها\nجميع الرسوم شاملة الضريبة. تبقى تعرفة الدخول الاعتيادي مطبقة عند استمرار الوقوف بعد الثانية صباحاً.\nيتم الخصم تلقائياً للمركبات المسجلة في درب، ويجب شحن المحفظة خلال 24 ساعة من الخروج. للمركبات غير المسجلة: السداد عبر freeflow.qmobility.ae أو رمز QR خلال 24 ساعة من الخروج. لا تسري التصاريح السكنية أو غيرها هنا.", "keywords": "Etihad Rail MBZ Smart Park v3 15 20 multi day night tariff station parking"},
   {id:"WA-306",category:"Free Flow",category_ar:"التدفق الحر",title_en:"Multi-storey parking rates and permits",title_ar:"رسوم وتصاريح المواقف الطابقية",en:"Public multi-storey parking is available at AED 2 per hour, up to AED 15 per day. Permit options are also available for 3, 6, or 12 months. A valid public MSCP permit may be used at eligible Mawaqif-managed multi-storey facilities.",ar:"تتوفر المواقف الطابقية العامة برسوم قدرها درهمان للساعة وبحد أقصى 15 درهماً لليوم. كما تتوفر تصاريح لمدة 3 أو 6 أو 12 شهراً. يمكن استخدام تصريح المواقف الطابقية العام الساري في المرافق المؤهلة التي تديرها مواقف.",keywords:"mscp multi storey 2 hour 15 day permit 3 6 12 months"},
   {id:"WA-307",category:"Free Flow",category_ar:"التدفق الحر",title_en:"Private parking facility rules",title_ar:"قواعد مرافق المواقف الخاصة",en:"Private parking rules may differ by facility. Customers must follow the signs, marked bays, operating hours, and tariff displayed at the location. Vehicles must not block EV charging bays, People of Determination spaces, access routes, or other restricted areas. Unauthorized parking may result in a fine or towing.",ar:"قد تختلف قواعد المواقف الخاصة من منشأة إلى أخرى. يجب على المتعامل اتباع اللوحات الإرشادية والمواقف المحددة وساعات التشغيل والتعرفة المعروضة في الموقع. يمنع إعاقة مواقف شحن المركبات الكهربائية أو مواقف أصحاب الهمم أو مسارات الدخول والمناطق المقيدة. قد يؤدي الوقوف غير المصرح به إلى مخالفة أو سحب المركبة.",keywords:"private parking rules ev charging pod restricted unauthorized towing"},
 
   {id:"WA-401",category:"Support",category_ar:"الدعم",title_en:"Submit a complaint through DARB",title_ar:"تقديم شكوى عبر تطبيق درب",en:"Customer complaints must be submitted through the DARB or DARB X application using the appropriate complaint type and subtype. Please attach all required evidence and documents. The old customers@qmobility.ae mailbox is no longer an active complaint channel.",ar:"يجب تقديم شكاوى المتعاملين من خلال تطبيق درب أو درب X مع اختيار نوع الشكوى والتصنيف الفرعي الصحيح وإرفاق جميع الأدلة والمستندات المطلوبة. لم يعد البريد customers@qmobility.ae قناة فعالة لاستقبال الشكاوى.",keywords:"complaint darb x app old email discontinued evidence subtype"},
-  {id:"WA-402",category:"Support",category_ar:"الدعم",title_en:"Towing-yard operating hours",title_ar:"ساعات عمل ساحات الحجز",en:"Towing-yard operating hours:\n• Al Karama Car Pound: 24 hours, 7 days a week\n• Al Ain Car Pound: 8:00 AM to 12:00 midnight, daily\n• Musaffah Car Pound: 8:00 AM to 12:00 midnight, daily\n\nPlease confirm the vehicle location before directing the customer.",ar:"ساعات عمل ساحات الحجز:\n• ساحة الكرامة: على مدار الساعة طوال أيام الأسبوع\n• ساحة العين: من 8:00 صباحاً حتى 12:00 منتصف الليل يومياً\n• ساحة مصفح: من 8:00 صباحاً حتى 12:00 منتصف الليل يومياً\n\nيرجى التأكد من موقع المركبة قبل توجيه المتعامل.",keywords:"towing yard pound hours karama al ain musaffah 24 7"},
+  {id:"WA-402",category:"Support",category_ar:"الدعم",title_en:"Towing-yard operating hours",title_ar:"ساعات عمل ساحات الحجز",en:"Towing-yard operating hours:\n• Al Karama Car Pound: 24 hours, 7 days a week\n• Musaffah Car Pound: 24 hours, 7 days a week\n• Al Ain Car Pound: 8:00 AM to 12:00 midnight, daily\n\nPlease confirm the vehicle location before directing the customer.",ar:"ساعات عمل ساحات الحجز:\n• ساحة الكرامة: على مدار الساعة طوال أيام الأسبوع\n• ساحة مصفح: على مدار الساعة طوال أيام الأسبوع\n• ساحة العين: من 8:00 صباحاً حتى 12:00 منتصف الليل يومياً\n\nيرجى التأكد من موقع المركبة قبل توجيه المتعامل.",keywords:"towing yard pound hours karama al ain musaffah 24 7 24/7 round the clock"},
   {id:"WA-403",category:"Support",category_ar:"الدعم",title_en:"Vehicle towing and release fees",title_ar:"رسوم سحب وإفراج المركبة",en:"The standard vehicle towing fee is AED 500 and must be paid before release. Additional storage or impound fees may apply depending on the case and collection time. Court settlement or a time-barred fine does not automatically cancel towing and impound fees.",ar:"تبلغ رسوم سحب المركبة القياسية 500 درهم ويجب دفعها قبل الإفراج عن المركبة. قد تطبق رسوم إضافية للتخزين أو الحجز بحسب الحالة ومدة التأخير في الاستلام. لا يؤدي سداد المخالفة عن طريق المحكمة أو سقوطها بالتقادم إلى إلغاء رسوم السحب والحجز تلقائياً.",keywords:"towing release fee 500 storage impound court settlement"},
   {id:"WA-404",category:"Support",category_ar:"الدعم",title_en:"Q Mobility branch working hours",title_ar:"ساعات عمل فروع كيو موبيليتي",en:"Q Mobility branch working hours:\n• Monday to Thursday: 7:30 AM to 3:30 PM\n• Friday: 7:30 AM to 11:00 AM\n\nBranches are available in Abu Dhabi and Al Ain. Please use the KB location links to send the correct map to the customer.",ar:"ساعات عمل فروع كيو موبيليتي:\n• من الاثنين إلى الخميس: 7:30 صباحاً حتى 3:30 مساءً\n• الجمعة: 7:30 صباحاً حتى 11:00 صباحاً\n\nتتوفر الفروع في أبوظبي والعين. يرجى استخدام روابط المواقع في قاعدة المعرفة لإرسال الخريطة الصحيحة للمتعامل.",keywords:"q mobility branch hours abu dhabi al ain maps"},
   {id:"WA-405",category:"Support",category_ar:"الدعم",title_en:"Information not available",title_ar:"المعلومة غير متوفرة",en:"Thank you for your inquiry. The requested information is not currently available in the approved knowledge base. I will document the question and refer it through the correct internal channel for verification. We will avoid providing an unconfirmed answer.",ar:"شكراً لاستفساركم. المعلومة المطلوبة غير متوفرة حالياً في قاعدة المعرفة المعتمدة. سأقوم بتوثيق السؤال وإحالته عبر القناة الداخلية الصحيحة للتحقق، ولن نقدم معلومة غير مؤكدة.",keywords:"not found unavailable verify request article unconfirmed"}
@@ -1742,7 +1744,7 @@ var PRIVATE_LOCATIONS = [
    location_ar:"مواقف محطة قطار الاتحاد للركاب، أبوظبي.",
    hours_en:"Open 24 hours a day, 7 days a week, including public holidays. The first 15 minutes from entry are free.",
    hours_ar:"مفتوح على مدار الساعة طوال أيام الأسبوع بما فيها العطلات الرسمية. أول 15 دقيقة من وقت الدخول مجانية.",
-   fee_short:"AED 5/hour up to 5 hours; AED 30 for more than 5 hours up to 24 hours. Entry 2AM-6AM: AED 30 flat for 24 hours."},
+   fee_short:"Standard entry: AED 5/hour up to 3 hours, then AED 15 through 24 hours. Entry 2AM-6AM: AED 20 for 24 hours. Additional day or part-day: AED 20."},
   {id:"freeflow-zones", icon:"🌊", name_en:"Free Flow Zones", name_ar:"مناطق التدفق الحر",
    hours_short:"Various — see zone",
    location_en:"Free Flow active zones: W5 (near Khalifa Park), MSCP01 (Multi-Storey Building 1), Mushrif Mall freeflow area, and other private/freeflow facilities.",
@@ -3754,7 +3756,7 @@ function renderFaqCard(f, highlightQuery) {
   var visualIcon = _kbVisualIcon([q, f.cat || '', f.subcat || '', f.kw || '', f.page || ''].join(' '));
 
   var r = '<div class="faq-card" id="' + escHtml(f.id) + '" style="--accent:' + accent + ';">';
-  r += '<div class="faq-card-top faq-q" onclick="toggleFaqBody(\'' + _kbJsArg(cardId) + '\')">';
+  r += '<div class="faq-card-top faq-q" role="button" tabindex="0" aria-expanded="true" onkeydown="if(event.key===&#39;Enter&#39;||event.key===&#39; &#39;){event.preventDefault();this.click();}" onclick="toggleFaqBody(\'' + _kbJsArg(cardId) + '\')">';
   r += '<div class="faq-q-main"><span class="faq-q-icon" aria-hidden="true">' + visualIcon + '</span><span class="faq-q-text">' + q + sourceBadge + '</span></div>';
   r += '<span class="faq-arrow" id="' + escHtml(cardId) + '-arrow" aria-hidden="true">&#9662;</span>';
   r += '</div>';
@@ -3804,6 +3806,8 @@ function toggleFaqBody(cardId) {
   if (!body) return;
   var isHidden = body.style.display === 'none';
   body.style.display = isHidden ? '' : 'none';
+  var control = body.previousElementSibling;
+  if (control) control.setAttribute('aria-expanded', String(isHidden));
   if (isHidden) { body.classList.remove('faq-body-anim'); void body.offsetWidth; body.classList.add('faq-body-anim'); }
   if (arrow) arrow.style.transform = isHidden ? 'rotate(0deg)' : 'rotate(-90deg)';
 }
@@ -4514,6 +4518,7 @@ function renderSearch(el, query) {
 
   var filtered = _currentSearchFilter === 'all' ? results : (byCat[_currentSearchFilter] || []);
   var showCount = Math.min(filtered.length, 20);
+  h += '<div class="kb-reading-controls"><span>Open an answer to read the full guidance</span><div class="kb-reading-actions"><button type="button" onclick="setSearchAnswersExpanded(false)">Collapse all</button><button type="button" onclick="setSearchAnswersExpanded(true)">Expand all</button></div></div>';
   h += '<div class="faq-list" id="search-results">';
   for (var i = 0; i < showCount; i++) {
     h += renderFaqCard(filtered[i], query);
@@ -4525,6 +4530,12 @@ function renderSearch(el, query) {
   }
 
   el.innerHTML = h;
+}
+
+function setSearchAnswersExpanded(expanded) {
+  document.querySelectorAll('#search-results .faq-card-top').forEach(function(control){
+    if ((control.getAttribute('aria-expanded') === 'true') !== expanded) control.click();
+  });
 }
 
 function filterSearchResults(cat) {
@@ -7016,34 +7027,23 @@ var KB_OPERATIONAL_FAQS = [
     status_label:'Active Transition',effective_date:'27 July 2026',source:'Operational instruction package 27 July 2026',reviewed_at:'2026-07-27',owner:'Call Center Management',accuracy:'Verified',updated:true
   },
   {
-    id:'OPS-2026-0727-ETIHAD-RAIL',
-    q:'Etihad Rail Station - Free-Flow Paid Parking',
-    q_ar:'محطة قطار الاتحاد - المواقف الذكية المدفوعة',
-    a:[
-      '<div class="danger-box"><strong>Location-specific tariff:</strong> Use these rules only for Etihad Rail parking. Do not apply the AED 2/AED 15 on-street tariff, Mushrif Mall tariff, or any other Free Flow location tariff.</div>',
-      '<p>The facility is managed by Q Mobility under Abu Dhabi MAWAQIF regulations. Fees apply <strong>24 hours a day, seven days a week, including public holidays</strong>.</p>',
-      '<h4>Grace period and tariff</h4>',
-      '<p>The first <strong>15 minutes from entry are free</strong>. Staying longer means the user accepts the tariff and terms.</p>',
-      '<table><tr><th>Entry / stay</th><th>Charge</th></tr><tr><td>6:00 AM to 2:00 AM - up to 1 hour</td><td class="amount">AED 5</td></tr><tr><td>Up to 2 hours</td><td class="amount">AED 10</td></tr><tr><td>Up to 3 hours</td><td class="amount">AED 15</td></tr><tr><td>Up to 4 hours</td><td class="amount">AED 20</td></tr><tr><td>Up to 5 hours</td><td class="amount">AED 25</td></tr><tr><td>More than 5 hours and up to 24 hours</td><td class="amount">AED 30</td></tr><tr><td>Entry between 2:00 AM and 6:00 AM</td><td class="amount">AED 30 flat rate, valid for 24 hours from entry</td></tr></table>',
-      '<p>During the first five hours, charging is AED 5 per hour or any part of an hour. All charges include VAT.</p>',
-      '<h4>DARB-registered vehicles</h4>',
-      '<p>Fees are automatically deducted from the DARB wallet. The customer must maintain sufficient balance or top up within <strong>24 hours after exit</strong> to avoid fines or enforcement.</p>',
-      '<h4>Vehicles not registered in DARB</h4>',
-      '<p>Settle within <strong>24 hours after exit</strong> through <a href="https://freeflow.qmobility.ae" target="_blank" rel="noopener">freeflow.qmobility.ae</a> or the QR code at the facility.</p>',
-      '<h4>Who may use the facility?</h4>',
-      '<p>Etihad Rail passengers, their companions, and vehicles dropping off or picking up passengers.</p>',
-      '<h4>Parking and enforcement rules</h4>',
-      '<ol><li>Pay all charges within 24 hours after exit.</li><li>Follow traffic instructions and posted speed limits.</li><li>Parking outside designated bays or on yellow lines may result in a fine and towing.</li><li>People of Determination spaces require a valid permit.</li><li>The facility is for vehicle parking only; equipment, boats, trailers, furniture, and stored materials are prohibited.</li><li>Do not block utility or service doors.</li><li>The driver is responsible for facility damage, including height-limit damage.</li><li>EV charging bays are only for vehicles actively charging and must be vacated when charging ends.</li><li>Ladies and pregnant-women spaces are restricted to their designated users.</li><li>Use is at the user&apos;s own risk under the official terms and applicable law.</li></ol>',
-      '<h4>Support</h4>',
-      '<p>Contact Center: <strong>8003009</strong>. The Etihad Rail signage also lists <strong>customers&#64;qmobility.ae</strong>. For complaint creation, follow the current DARB/DARB X complaint procedure.</p>',
-      '<div class="article-gallery"><figure><img class="poster" src="'+KB_EMBEDDED_MEDIA.etihadRail+'" alt="Etihad Rail Free Flow Paid Parking tariff and terms signage"><figcaption>Official Etihad Rail entry signage - tariff and terms</figcaption></figure></div>',
-      _kbFooter()
-    ].join(''),
-    a_ar:'<div class="danger-box"><strong>تعرفة خاصة بالموقع:</strong> تطبق هذه القواعد على مواقف قطار الاتحاد فقط، ولا تستخدم تعرفة المواقف العامة أو مشرف مول أو أي موقع آخر.</div><p>تطبق الرسوم على مدار <strong>24 ساعة طوال أيام الأسبوع بما فيها العطلات الرسمية</strong>. أول <strong>15 دقيقة من الدخول مجانية</strong>.</p><h4>التعرفة</h4><ul><li>من 6:00 صباحاً إلى 2:00 صباحاً: 5 دراهم لكل ساعة أو جزء منها حتى خمس ساعات.</li><li>أكثر من خمس ساعات وحتى 24 ساعة: 30 درهماً.</li><li>الدخول بين 2:00 صباحاً و6:00 صباحاً: 30 درهماً صالحة لمدة 24 ساعة من وقت الدخول.</li><li>جميع الرسوم شاملة ضريبة القيمة المضافة.</li></ul><h4>الدفع</h4><p>للمركبات المسجلة في درب يتم الخصم تلقائياً، ويجب توفير الرصيد أو الشحن خلال 24 ساعة من الخروج. للمركبات غير المسجلة يتم السداد خلال 24 ساعة عبر freeflow.qmobility.ae أو رمز QR في الموقع.</p><h4>الالتزام</h4><p>يجب الوقوف في الأماكن المخصصة واحترام تعليمات المرور، وتستخدم مواقف الشحن الكهربائي للمركبات التي تشحن فعلياً فقط. قد تؤدي المخالفات إلى الغرامة والسحب.</p>',
-    page:'faq-priv-etihad-rail',cat:'Private Parking - Free Flow',subcat:'Etihad Rail',
-    kw:'Etihad Rail parking Etihad train station free-flow tariff AED 5 AED 30 first 15 minutes free insufficient DARB wallet balance automatic deduction top up within 24 hours after exit public holiday night 2 AM 6 AM EV charging passenger non-DARB freeflow موقف قطار الاتحاد مواقف قطار الاتحاد خصم تلقائي محفظة درب أول 15 دقيقة مجاناً رسوم 30 درهم رسوم 5 دراهم',
-    status_label:'Active',effective_date:'27 July 2026',source:'Etihad Rail - Tariff and Terms signage',reviewed_at:'2026-07-27',owner:'Q Mobility',accuracy:'Verified',trending:true,updated:true
-  },
+  "id": "OPS-2026-0727-ETIHAD-RAIL",
+  "q": "Etihad Rail MBZ Smart Park - tariff, payment and parking rules (v3)",
+  "q_ar": "مواقف قطارات الاتحاد بمدينة محمد بن زايد - التعرفة والدفع والقواعد (الإصدار الثالث)",
+  "a": "<div class=\"info-box\"><strong>Etihad Rail MBZ only.</strong> This guidance follows the supplied v3 FAQ. Entry time determines the tariff for the session.</div><h4>Grace period</h4><p>Yes, the first 15 minutes upon entry are free (per parking session, this does not accumulate across multiple entries). Staying beyond 15 minutes means you agree to the applicable tariff, terms, and conditions.</p><h4>Parking charges and multi-day examples</h4><p>Standard operating hours (6:00 AM - 2:00 AM): AED 5 per hour (or part thereof) up to 3 hours; AED 15 flat for more than 3 hours up to 24 hours.</p><p>Nighttime (2:00 AM - 6:00 AM): a flat AED 20, valid for 24 hours from the time of entry, per session/day.</p><p>Multi-day parking: After the first 24 hours, a flat rate of AED 20 will be charged for each additional 24-hour period (per day or part of the day)</p><p>All charges are inclusive of VAT and apply 24 hours a day, 7 days a week, including public holidays.</p><p>Multi-day Parking:</p><table><tr><th>Duration</th><th>Charges</th></tr><tr><td>1hr</td><td>AED 5</td></tr><tr><td>2hrs</td><td>AED 10</td></tr><tr><td>3hrs</td><td>AED 15</td></tr><tr><td>4hrs</td><td>AED 15</td></tr><tr><td>24hrs</td><td>AED 15</td></tr><tr><td>25hrs</td><td>AED 35</td></tr><tr><td>47hrs</td><td>AED 35</td></tr><tr><td>49hrs</td><td>AED 55</td></tr></table><h4>Staying after 2:00 AM</h4><p>The standard (hourly) tariff applies for that session - not the night flat rate.</p><h4>DARB wallet payment</h4><p>Parking fees are auto deducted from your Darb wallet. You must ensure your Darb wallet has sufficient balance, or top it up within 24 hours of exit, to avoid fines.</p><p>You will also receive an SMS to your registered mobile number upon entering and exiting the facility, showing the applicable charge.</p><h4>Insufficient balance</h4><p>If your Darb wallet balance is insufficient, you will receive an SMS asking you to top it up within 24 hours of exiting the parking facility. Once topped up, the parking fee will be deducted automatically. Failure to top up within this period will result in fine(s).</p><h4>Rental and non-DARB vehicles</h4><p>If the rented vehicle is already registered in Darb, parking fees will be auto deducted from the associated Darb wallet. If it is not Darb-registered, it is treated as a non-Darb-registered vehicle and payment must be settled within 24 hours of exit via <a href=\"https://freeflow.qmobility.ae\" target=\"_blank\" rel=\"noopener\">freeflow.qmobility.ae</a> or by scanning the on-site QR code.</p><h4>SMS notifications</h4><p>SMS notifications are provided as a convenience service only. Vehicle owners remain responsible for ensuring that parking fees are paid within 24 hours of exiting the parking facility, even if an SMS is not received.</p><h4>Resident and other permits</h4><p>Resident and/or (any) other permits are not valid at the Etihad Rail Parking Facility. The Free Flow tariff applies regardless of any permit held.</p><h4>Designated spaces and facility use</h4><p>The facility is designated exclusively for Etihad Rail users - passengers and their companions - and for vehicles dropping off or picking up passengers at the station. Parking in spaces designated for ladies or pregnant women by anyone outside these categories is prohibited and will result in a fine and vehicle towing at the owner’s expense.</p><h4>EV charging spaces</h4><p>No. EV charging spaces are strictly reserved for vehicles undergoing active charging and must be vacated immediately once charging is complete. Unauthorized parking or leaving a vehicle in the space after charging finishes, may result in a fine and towing at the owner’s expense.</p><h4>Contact</h4><p>You can reach out to Q Mobility Contact Center: 8003009</p>",
+  "a_ar": "<div class=\"info-box\"><strong>مواقف قطارات الاتحاد بمدينة محمد بن زايد فقط.</strong> وفق الإصدار الثالث من الأسئلة الشائعة، يحدد وقت الدخول التعرفة المطبقة.</div><h4>فترة السماح</h4><p>نعم، تكون أول 15 دقيقة من وقت الدخول إلى المواقف مجانية (لكل مدة وقوف، ولا تُحتسب بشكل تراكمي عند كل دخول). وإذا تجاوزت مدة الوقوف 15 دقيقة، فإن ذلك يعني موافقتك على التعرفة والشروط والأحكام المطبقة.</p><h4>التعرفة والوقوف لأكثر من يوم</h4><p>خلال ساعات العمل الرسمية (6:00 صباحاً – 2:00 صباحاً): 5 د.إ لكل ساعة (أو جزء منها) حتى 3 ساعات، و15 د.إ. كرسوم ثابتة للوقوف لأكثر من 3 ساعات وحتى 24 ساعة.</p><p>خلال الفترة الليلية (2:00 صباحاً – 6:00 صباحاً): 20 د.إ. صالح لمدة 24 ساعة من وقت الدخول، لكل مدة وقوف.</p><p>الوقوف لأكثر من يوم: بعد أول 24 ساعة، يتم احتساب رسم ثابت قدره 20 د.إ. عن كل 24 ساعة إضافية أو جزء منها</p><p>جميع الرسوم شاملة ضريبة القيمة المضافة، وتُطبق على مدار 24 ساعة يومياً، وطوال أيام الأسبوع، بما في ذلك العطلات الرسمية.</p><p>الوقوف لأكثر من يوم</p><table><tr><th>الرسوم</th><th>المدة</th></tr><tr><td>د.إ 5</td><td>1 ساعة</td></tr><tr><td>د.إ 10</td><td>2 ساعة</td></tr><tr><td>د.إ 15</td><td>3 ساعة</td></tr><tr><td>د.إ 15</td><td>4 ساعة</td></tr><tr><td>د.إ 15</td><td>24 ساعة</td></tr><tr><td>د.إ 35</td><td>25 ساعة</td></tr><tr><td>د.إ 35</td><td>47 ساعة</td></tr><tr><td>د.إ 55</td><td>49 ساعة</td></tr></table><h4>البقاء بعد الثانية صباحاً</h4><p>تُطبق التعرفة الاعتيادية (بالساعة) على مدة الوقوف بالكامل، ولا تُطبق التعرفة الليلية الثابتة.</p><h4>الدفع ومحفظة درب</h4><p>يتمّ خصم رسوم المواقف تلقائياً من محفظتك في تطبيق &quot;درب&quot;. ويجب التأكد من توفر رصيد كافٍ في المحفظة، أو شحنها خلال 24 ساعة من وقت الخروج لتجنب المخالفات.</p><p>كما ستتلقى رسالة نصية على رقم الهاتف المحمول المسجل لديك، عند الدخول والخروج من المواقف، توضح الرسوم المستحقة.</p><p>إذا لم يكن رصيد محفظة &quot;درب&quot; كافياً، ستصلك رسالة نصية تطلب منك شحن المحفظة خلال 24 ساعة من مغادرة المواقف. وبعد شحنها، سيتم خصم رسوم المواقف تلقائياً. وفي حال عدم شحن المحفظة خلال هذه المدة، فقد تترتب عليك مخالفة أو مخالفات.</p><h4>المركبات المستأجرة وغير المسجلة</h4><p>إذا كانت السيارة المستأجرة مسجلة مسبقاً في نظام &quot;درب&quot;، فسيتم خصم رسوم المواقف تلقائياً من محفظة &quot;درب&quot; المرتبطة بها. أما إذا لم تكن مسجلة في &quot;درب&quot;، فسيتم التعامل معها كمركبة غير مسجلة، ويجب سداد الرسوم خلال 24 ساعة من وقت الخروج عبر موقع<a href=\"https://freeflow.qmobility.ae\" target=\"_blank\" rel=\"noopener\">freeflow.qmobility.ae</a>  أو من خلال مسح رمز الاستجابة السريعة الموجود في الموقع.</p><h4>الرسائل النصية والتصاريح</h4><p>تُعد الرسائل النصية خدمةً إضافية لراحلة المتعامل فقط. ويبقى مالك المركبة مسؤولاً عن التأكد من سداد رسوم المواقف خلال 24 ساعة من مغادرة المواقف، حتى في حال عدم استلام رسالة نصية.</p><p>لا تُقبل التصاريح السكنية أو أي تصاريح مواقف أخرى في مواقف قطارات الاتحاد. وتُطبق تعرفة نظام المواقف الذكية المدفوعة بغض النظر عن أي تصريح يحمله المستخدم.</p><h4>المواقف المخصصة والشحن الكهربائي</h4><p>تُخصص هذه المواقف حصرياً لمستخدمي قطارات الاتحاد، بمن فيهم الركاب ومرافقوهم، وكذلك للمركبات التي تقوم بإنزال أو اصطحاب الركاب من المحطة. ويُحظر على أي شخص من غير هذه الفئات استخدام المواقف المخصصة للسيدات أو الحوامل، ويترتب على ذلك فرض مخالفة وسحب المركبة على نفقة مالكها.</p><p>لا. تُخصص مواقف شحن المركبات الكهربائية حصرياً للمركبات التي تكون قيد الشحن الفعلي، ويجب إخلاؤها فور اكتمال عملية الشحن. وقد يؤدي الوقوف غير المصرح به أو ترك المركبة في المكان بعد انتهاء الشحن، إلى فرض مخالفة وسحب المركبة على نفقة مالكها.</p><p>يمكن التواصل مباشرة مع مركز اتصال كيو موبيليتي  8003009</p>",
+  "page": "faq-priv-etihad-rail",
+  "cat": "Private Parking - Free Flow",
+  "subcat": "Etihad Rail",
+  "kw": "Etihad Rail MBZ Smart Park train station free flow parking tariff 15 minutes 3 hours AED 15 AED 20 multiday 25 hours 35 49 hours 55 night 2 AM 6 AM wallet SMS permits ANPR قطارات الاتحاد مدينة محمد بن زايد رسوم المواقف",
+  "source": "FAQ Etihad Rail MBZ v3.docx",
+  "verified_at": "2026-09-22",
+  "updated_at": "2026-09-22T10:11:07+04:00",
+  "reviewed_at": "2026-09-22",
+  "accuracy": "Verified",
+  "owner": "Q Mobility",
+  "updated": true
+},
   {
     id:'FAQ-PDM-E401',
     q:'What is the PDM switch-off pilot at Madenat Zayed Souq E4-01?',
@@ -7482,7 +7482,7 @@ function applyAuthorityData(data) {
         a_ar:_authorityHtml(article.a_ar),
         kw:article.kw || '',
         page:_authorityPage(article.page),
-        cat:(article.domain === 'darb' || String(article.page || '').indexOf('kb-darb') === 0) ? 'DARB - Verified' : 'MAWAQIF - Verified',
+        cat:article.cat || ((article.domain === 'darb' || String(article.page || '').indexOf('kb-darb') === 0) ? 'DARB - Verified' : 'MAWAQIF - Verified'),
         // Pages such as Permits are subcategory hubs: an article only appears
         // under a tile whose filter matches its subcat, so honour the value the
         // authority record supplies instead of always stamping a generic one.
@@ -7581,7 +7581,7 @@ function applyAuthorityData(data) {
 }
 
 async function loadAuthorityData() {
-  var response = await fetch('qmobility_kb_latest.json', {cache:'default'});
+  var response = await fetch('qmobility_kb_latest.json?v=20260922-v9', {cache:'default'});
   if (!response.ok) throw new Error('Authority JSON HTTP ' + response.status);
   var data = await response.json();
   if (!data || !data.admin_edits) throw new Error('Authority JSON is invalid');
@@ -7748,9 +7748,10 @@ function _kbAssetForKey(key) {
 }
 
 function _kbPhotoStyle(key) {
-  var primary = _kbAssetForKey(key);
-  var fallback = primary.split('/').pop();
-  return ' style="--kb-photo:url(&quot;' + escHtml(primary) + '&quot;),url(&quot;' + escHtml(fallback) + '&quot;)"';
+  var asset = _kbAssetForKey(key);
+  // Resolve at the document so external stylesheets also work on project Pages URLs.
+  var primary = new URL(asset, document.baseURI).href;
+  return ' style="--kb-photo:url(&quot;' + escHtml(primary) + '&quot;)"';
 }
 
 function _kbAssetForPage(page, fallback) {
@@ -7952,12 +7953,12 @@ function renderDashboard(el) {
 
   h += '<section class="agent-hero">';
   h += '<div>';
-  h += '<div class="agent-eyebrow">QMobility KB 2026</div>';
+  h += '<div class="agent-eyebrow">YOUR DAILY KNOWLEDGE DESK</div>';
   h += '<h1>Agent answer desk</h1>';
   h += '<p>Start with search for the caller question, then use the fast lanes below for the most common parking, toll, permit, payment, template, and escalation answers.</p>';
   h += '<div class="agent-search-wrap">';
   h += '<form class="agent-search-panel" onsubmit="return startHeroSearch(event)">';
-  h += '<input id="heroSearch" type="search" autocomplete="off" placeholder="Search fine, permit, DARB, SMS..." oninput="instantHeroSearch()" onfocus="instantHeroSearch()" onkeydown="heroSearchKeyNav(event)">';
+  h += '<input id="heroSearch" aria-label="Search verified answers" type="search" autocomplete="off" placeholder="Search fine, permit, DARB, SMS..." oninput="instantHeroSearch()" onfocus="instantHeroSearch()" onkeydown="heroSearchKeyNav(event)">';
   h += '<button class="btn" type="submit">Search</button>';
   h += '</form>';
   h += '<div class="search-dropdown hero-search-dropdown" id="heroSearchDropdown"></div>';
@@ -8023,30 +8024,30 @@ function renderDashboard(el) {
   var _sc = _kbSectorCounts();
   var mawCount = _sc.maw, darbCount = _sc.darb, privCount = _sc.priv;
   var totalCount = FAQS.length;
-  var syncLabel = KB_SYNC_ENDPOINT ? 'Cloud sync ready' : 'Local mode';
+  var syncLabel = 'Agent reference';
   var h = '<div class="agent-shell">';
 
   h += '<section class="agent-hero kb-photo-hero"' + _kbPhotoStyle('hero') + '>';
   h += '<div>';
-  h += '<div class="agent-eyebrow">QMobility KB 2026</div>';
-  h += '<h1>Visual answer desk</h1>';
-  h += '<p>Fine, permit, DARB, SMS, Free Flow, sector, payment, complaint, and template answers in one fast operational view.</p>';
+  h += '<div class="agent-eyebrow">YOUR DAILY KNOWLEDGE DESK</div>';
+  h += '<h1>Every answer.<br>One place.</h1>';
+  h += '<p>Find the right guidance for every conversation. Search verified answers, explore services, or pick up the latest updates.</p>';
   h += '<div class="agent-search-wrap">';
   h += '<form class="agent-search-panel" onsubmit="return startHeroSearch(event)">';
-  h += '<input id="heroSearch" type="search" autocomplete="off" placeholder="Search fine, permit, DARB, SMS..." oninput="instantHeroSearch()" onfocus="instantHeroSearch()" onkeydown="heroSearchKeyNav(event)">';
+  h += '<input id="heroSearch" aria-label="Search verified answers" type="search" autocomplete="off" placeholder="Search fine, permit, DARB, SMS..." oninput="instantHeroSearch()" onfocus="instantHeroSearch()" onkeydown="heroSearchKeyNav(event)">';
   h += '<button class="btn" type="submit">Search</button>';
   h += '</form>';
   h += '<div class="search-dropdown hero-search-dropdown" id="heroSearchDropdown"></div>';
   h += '</div>';
   h += '<div class="agent-chip-row">';
-  ['parking fine','resident permit documents','DARB exemption','SMS 3009','Free Flow payment','DARB X complaint','Mushrif Mall','MBZ permit sectors'].forEach(function(q){
+  ['PDM switched off','Etihad Rail MBZ','public plate SMS','resident permit','parking fine','DARB exemption'].forEach(function(q){
     h += '<button type="button" class="agent-chip" onclick="quickFind(\'' + _kbJsArg(q) + '\')">' + escHtml(q) + '</button>';
   });
   h += '</div>';
   h += '</div>';
 
   h += '<div class="agent-photo-panel">';
-  h += '<div class="agent-visual-head"><b>Live coverage</b><span class="agent-live-dot">' + syncLabel + '</span></div>';
+  h += '<div class="agent-visual-head"><b>Knowledge at a glance</b><span class="agent-live-dot">' + syncLabel + '</span></div>';
   h += '<div class="agent-kpis">';
   h += '<div class="agent-kpi"><strong>' + mawCount + '</strong><span>Mawaqif answers</span></div>';
   h += '<div class="agent-kpi"><strong>' + darbCount + '</strong><span>DARB answers</span></div>';
@@ -8075,10 +8076,10 @@ function renderDashboard(el) {
   // hard-coded, so it can never drift from the records underneath it.
   var _newest = kbSortUpdates(LATEST_UPDATES).filter(function(u){ return !kbIsExpired(u); })[0];
   var _newestLabel = _newest ? kbUpdateDisplayDate(_newest) : '';
-  h += '<div class="kb-section-head"><div><h2>Latest operational updates</h2><p>Source-backed guidance added without changing the existing agent tools.</p></div>' +
+  h += '<div class="kb-section-head"><div><h2>Latest operational updates</h2><p>The latest guidance, with sources and review dates.</p></div>' +
        '<span class="kb-section-date">' + (_newestLabel ? 'Latest ' + escHtml(_newestLabel) : 'Reviewed 27 Jul 2026') + '</span></div>';
   h += '<div class="kb-update-strip">';
-  h += _kbUpdateCard('OPS-2026-0727-ETIHAD-RAIL', 'etihadRail', 'Etihad Rail', 'Free-Flow Paid Parking', '24/7 tariff, 15-minute grace period, payment, and station terms.');
+  h += _kbUpdateCard('OPS-2026-0727-ETIHAD-RAIL', 'etihadRail', 'Etihad Rail', 'Free-Flow Paid Parking', 'MBZ v3 tariff, 15-minute grace, v3 tariff, multi-day charges, and payment.');
   h += _kbUpdateCard('OPS-2026-0727-MZY-MSCP2', 'madinatZayed', 'Madinat Zayed', 'MSCP2 Free Parking', 'Free-parking system active at the market parking from 27 July.');
   h += _kbUpdateCard('OPS-2026-0722-MBZ-ME09-816', 'me09After', 'MBZ ME09', '816 New Parking Bays', 'Completed parking-infrastructure expansion and operational reference.');
   h += _kbUpdateCard('OPS-2026-0721-NOVIOL-ZONES', 'noViolationSite', 'Operations', 'Temporary No-Violation Zones', 'Approved locations, maps, and agent handling instructions.');
@@ -8109,7 +8110,7 @@ function renderDashboard(el) {
   h += '</div></div>';
 
   h += '<div class="agent-panel"><h2>Current Facts</h2><div class="agent-alerts">';
-  h += _kbAlert('priv', 'Etihad Rail is location-specific', 'Use the station tariff only: 15 minutes free, then AED 5 hourly steps and AED 30 daily cap.', 'Etihad Rail parking tariff 15 minutes AED 5 AED 30');
+  h += _kbAlert('priv', 'Etihad Rail is location-specific', 'MBZ v3: 15 minutes free; standard entry up to AED 15 for 24 hours, night entry AED 20. Each additional day or part-day: AED 20.', 'Etihad Rail MBZ v3 tariff 15 minutes AED 15 AED 20');
   h += _kbAlert('maw', 'Madinat Zayed MSCP2', 'Free-parking system active from 27 July 2026 at 10:00 AM; access is on foot only.', 'Madinat Zayed Market MSCP2 free parking');
   h += _kbAlert('warn', 'E12 reservation cancelled', 'Do not create a complaint or case for the cancelled Al Dhafra E12 reserved permit.', 'Al Dhafra E12 cancelled permit no complaint');
   h += _kbAlert('maw', 'ME09 added 816 bays', 'The MBZ ME09 parking-infrastructure project is complete with 816 new bays.', 'ME09 816 new parking bays');

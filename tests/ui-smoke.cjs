@@ -137,6 +137,36 @@ function intersects(a, b) {
     if (!pdmResult.hasStamp) failures.push(`${viewport.name}: search results do not expose a verified/updated date`);
     if (pdmResult.overflowX > 1) failures.push(`${viewport.name}: search results horizontal overflow ${pdmResult.overflowX}px`);
 
+    await page.getByRole('button', { name: 'Collapse all', exact: true }).click();
+    if (await page.locator('#search-results .faq-card-top[aria-expanded="true"]').count()) failures.push(`${viewport.name}: collapse all failed`);
+    const firstAnswer = page.locator('#search-results .faq-card-top').first();
+    await firstAnswer.focus();
+    await page.keyboard.press('Enter');
+    if (await firstAnswer.getAttribute('aria-expanded') !== 'true') failures.push(`${viewport.name}: keyboard accordion failed`);
+    await page.getByRole('button', { name: 'Expand all', exact: true }).click();
+    if (await page.locator('#search-results .faq-card-top[aria-expanded="false"]').count()) failures.push(`${viewport.name}: expand all failed`);
+
+    await page.locator('#searchInput').fill('Etihad Rail MBZ');
+    await page.waitForSelector('#searchDropdown .sd-item', { state: 'visible' });
+    const dropdownVisible = await page.locator('#searchDropdown .sd-item').first().evaluate(node => {
+      const r = node.getBoundingClientRect();
+      return node.contains(document.elementFromPoint(r.x + 12, r.y + Math.min(20, r.height / 2)));
+    });
+    if (!dropdownVisible) failures.push(`${viewport.name}: search dropdown clipped or covered`);
+    await page.keyboard.press('Escape');
+    await page.evaluate(() => { go('faq-priv-etihad-rail', 'Etihad Rail MBZ'); });
+    const railPage = await page.locator('#content').textContent();
+    if (!railPage.includes('AED 35') || !railPage.includes('AED 55')) failures.push(`${viewport.name}: category is missing v3 multi-day table`);
+    await page.locator('#langBtn').click();
+    const arabicRail = await page.locator('#content').textContent();
+    if (!arabicRail.includes('20') || !arabicRail.includes('قطارات الاتحاد')) failures.push(`${viewport.name}: Arabic Etihad article missing`);
+    await page.locator('#langBtn').click();
+
+    if (viewport.name === 'desktop' || viewport.name === 'mobile') {
+      await page.evaluate(() => quickFind('PDM machine switched off'));
+      await page.screenshot({ path: path.join(outputDir, `${viewport.name}-search.png`), fullPage: true, animations: 'disabled' });
+    }
+
     // Find Fast must still reach the tree and the new subject areas.
     await page.evaluate(() => go('find-fast', 'Find Fast'));
     await page.waitForSelector('#fftWrap');
@@ -150,10 +180,10 @@ function intersects(a, b) {
     if (viewport.name === 'desktop' || viewport.name === 'mobile') {
       await page.evaluate(() => go('updates', 'Latest Updates'));
       await page.waitForSelector('.updates-list');
-      await page.screenshot({ path: path.join(outputDir, `${viewport.name}-updates.png`), fullPage: true });
+      await page.screenshot({ path: path.join(outputDir, `${viewport.name}-updates.png`), fullPage: true, animations: 'disabled' });
       await page.evaluate(() => go('dashboard', 'Home'));
       await page.waitForSelector('.agent-hero');
-      await page.screenshot({ path: path.join(outputDir, `${viewport.name}.png`), fullPage: true });
+      await page.screenshot({ path: path.join(outputDir, `${viewport.name}.png`), fullPage: true, animations: 'disabled' });
     }
 
     errors.forEach(error => failures.push(`${viewport.name}: ${error}`));

@@ -14,9 +14,33 @@ window.kbAssertions = function (viewportName) {
 
   // ---------- existing guarantees that must not regress ----------
   ok(window.FAQS.length >= 439, 'expected at least 439 merged articles, found ' + window.FAQS.length);
-  ok(window.SMS_TEMPLATES.length === 89, 'expected 89 SMS templates, found ' + window.SMS_TEMPLATES.length);
+  ok(window.SMS_TEMPLATES.length === 97, 'expected 89 workbook + 8 public-plate SMS templates, found ' + window.SMS_TEMPLATES.length);
   ok(window.LATEST_UPDATES.length >= 21, 'expected merged official and operational updates, found ' + window.LATEST_UPDATES.length);
   ok(window.KB_AUTHORITY_STATUS && window.KB_AUTHORITY_STATUS.loaded === true, 'authority JSON did not load');
+
+  // Supplied Etihad MBZ v3 FAQ supersedes the old AED 30 tariff everywhere.
+  var rail = window.FAQS.find(function(f){return f.id === 'OPS-2026-0727-ETIHAD-RAIL';});
+  ok(rail && /AED 15/.test(rail.a) && /AED 20/.test(rail.a), 'Etihad MBZ v3 tariff missing');
+  ok(rail && /25hrs<\/td><td>AED 35/.test(rail.a) && /49hrs<\/td><td>AED 55/.test(rail.a), 'multi-day examples differ from v3 source table');
+  var railFaqs = window.FAQS.filter(function(f){return /^ETIHAD-MBZ-V3-/.test(f.id);});
+  ok(railFaqs.length === 16, 'expected all 16 bilingual v3 FAQs, got ' + railFaqs.length);
+  railFaqs.forEach(function(f){
+    ok(f.a && f.a_ar && f.q_ar, 'incomplete bilingual FAQ: ' + f.id);
+    ok(f.page === 'faq-priv-etihad-rail' && f.subcat === 'Etihad Rail', 'Etihad FAQ absent from category: ' + f.id);
+    ok(!f.effective_from, 'source did not supply a v3 effective date: ' + f.id);
+    ok(runSearch(f.q).some(function(hit){return hit.id === f.id;}), 'Etihad FAQ unreachable by search: ' + f.id);
+  });
+  var railWa = window.WHATSAPP_RESPONSES.find(function(f){return f.id === 'WA-305';});
+  ok(railWa && /AED 15/.test(railWa.en) && /AED 20/.test(railWa.en), 'WhatsApp still has old Etihad charges');
+  var railLocation = window.PRIVATE_LOCATIONS.find(function(f){return f.id === 'etihad-rail';});
+  [rail.a, rail.a_ar, railWa.en, railWa.ar, railLocation.fee_short].forEach(function(text){
+    ok(!/AED 30|30 درهم|خمس ساعات|up to 5 hours/i.test(text), 'superseded Etihad tariff remains in runtime content');
+  });
+  var plate = window.FAQS.find(function(f){return f.id === 'MAW-2026-0918-PUBLIC-PLATE-PAYMENT';});
+  ['AUHPUB1','AUHPUB2','AUHORA','AUHYEL','AUHGRE','DXBBLA','DXBYEL','DXBGRE'].forEach(function(code){
+    ok(plate && plate.a.includes(code) && plate.a_ar.includes(code), 'public plate code missing: ' + code);
+    ok(window.SMS_TEMPLATES.some(function(row){return row.cat === 'Public plates SMS' && row.tmpl === code + ' 12345 S 1';}), 'public plate copy example missing: ' + code);
+  });
 
   var kwi = window.SMS_TEMPLATES.find(function (r) { return r.cat === 'GCC plates SMS' && r.label_en === 'KWI'; });
   ok(kwi && kwi.tmpl.indexOf('KWT Plate SMS to 3009 Text: KWI 12345ABC S/P 3') >= 0,
@@ -158,6 +182,48 @@ window.kbAssertions = function (viewportName) {
     ok(!GENERIC_SUBCATS[f.subcat],
        p.id + ' has the placeholder subcat "' + f.subcat + '", so it is hidden on subcategory hub pages');
   });
+
+  // ---------- payment rules must stay scoped to the right environment ----------
+  // On-street SmartPark (Public Lot, W4 from 28 Sep 2026) does NOT allow the
+  // QR code / freeflow.qmobility.ae / 24-hour-after-exit route that facilities
+  // do. Any record that offers that route to a non-Darb vehicle must say which
+  // environment it is talking about, or an agent will give the wrong answer.
+  var _plain = function (h) { return String(h || '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' '); };
+  var _records = []
+    .concat((window.FAQS || []).map(function (f) { return { k: 'FAQ ' + f.id, t: _plain([f.q, f.a, f.a_ar].join(' ')) }; }))
+    .concat((window.WHATSAPP_RESPONSES || []).map(function (f) { return { k: 'WA ' + f.id, t: _plain([f.en, f.ar].join(' ')) }; }));
+
+  var _unscoped = _records.filter(function (r) {
+    return /(non[- ]?darb|not registered)[\s\S]{0,180}(24\s*hours|QR code|freeflow\.qmobility\.ae)/i.test(r.t)
+        && !/on[- ]street|smart ?park|mall|MSCP|multi-storey|etihad|mushrif|abu dhabi mall/i.test(r.t);
+  }).map(function (r) { return r.k; });
+  ok(_unscoped.length === 0,
+     'these records offer the 24h/QR payment route without saying where it applies: ' + _unscoped.join(', '));
+
+  // Musaffah Car Pound moved to 24/7 on 1 Sep 2026. No record may still present
+  // the old 8:00 AM-midnight hours for Musaffah as the current answer.
+  var _pound = _records.filter(function (r) {
+    return /Musaffah[^\n.;•]{0,40}8:00\s*AM/i.test(r.t) && !/previously|moved to 24/i.test(r.t);
+  }).map(function (r) { return r.k; });
+  ok(_pound.length === 0, 'Musaffah pound still shown as 8:00 AM-midnight in: ' + _pound.join(', '));
+
+  // The on-street rules must be present and reachable.
+  [['MAW-2026-0928-ONSTREET-SMARTPARK-W4', 'on street smart park W4 charges'],
+   ['MAW-2026-0928-ONSTREET-NONDARB-SMS', 'non darb on-street smart park'],
+   ['MAW-2026-0928-ONSTREET-PERMITS-TICKETS', 'MSCP permit valid on street'],
+   ['MAW-2026-0928-ONSTREET-REENTRY-REMAINING', 'charged full hour 30 minutes re-enter'],
+   ['MAW-2026-0923-NUKHBA-SCHOOL-ME09', 'school drop off fine towed ME09'],
+   ['MAW-2026-0925-W2-COLLEGE-PARKING-ACTIVATED', 'W2 college parking activated']
+  ].forEach(function (pair) {
+    var f = window.FAQS.find(function (x) { return x.id === pair[0]; });
+    ok(f, 'missing article: ' + pair[0]);
+    if (f) ok(runSearch(pair[1]).some(function (h) { return h.id === pair[0]; }),
+              'search "' + pair[1] + '" did not reach ' + pair[0]);
+  });
+  // The critical on-street facts themselves.
+  var _os = window.FAQS.find(function (x) { return x.id === 'MAW-2026-0928-ONSTREET-NONDARB-SMS'; });
+  ok(_os && /10 minutes of entry/i.test(_os.a), 'on-street 10-minute SMS window missing');
+  ok(_os && /cannot/i.test(_os.a) && /QR/i.test(_os.a), 'on-street article does not rule out the QR route');
 
   // ---------- no duplicate result inflation ----------
   NEW_PROCESSES.slice(0, 6).forEach(function (p) {
