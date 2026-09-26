@@ -262,6 +262,54 @@ body[dir="rtl"] .update-item{border-left:none;border-right:3px solid var(--qm)}
 .kb-best{border:2px solid var(--accent,var(--qm));box-shadow:0 4px 18px rgba(0,0,0,.07)}
 .kb-best-label{font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--accent,var(--qm));margin-bottom:6px}
 .kb-path-tag{background:var(--bg2);color:var(--text2);border:1px solid var(--border)}
+.kb-ccard{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.kb-ccard-head{display:flex;align-items:center;gap:10px;border:0;background:var(--bg2);padding:14px 16px;font:inherit;color:var(--text);cursor:pointer;text-align:start}
+.kb-ccard-head:hover,.kb-ccard-head:focus-visible{background:#e6f2ee;outline:none}
+.kb-ccard-head .kb-bcard-title{flex:1}
+.kb-ccard-subs{display:flex;flex-wrap:wrap;gap:6px;padding:12px 14px 14px}
+.kb-cgrid{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.kb-sublink{border:1px solid var(--border);background:#fff;border-radius:999px;padding:6px 12px;font:inherit;font-size:13px;color:var(--text);cursor:pointer;text-align:start}
+.kb-sublink b{color:var(--qm);font-weight:800;margin-inline-start:2px}
+.kb-sublink small{color:var(--text2)}
+.kb-sublink:hover,.kb-sublink:focus-visible{border-color:var(--qm);background:var(--bg2);outline:none}
+.kb-search-topics{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:4px 0 14px}
+.kb-picks{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:8px;margin-bottom:16px}
+.kb-pick{display:flex;align-items:center;gap:10px;border:1px solid var(--border);background:#fff;border-radius:12px;padding:12px 14px;font:inherit;font-size:14px;font-weight:600;color:var(--text);cursor:pointer;text-align:start}
+.kb-pick span{font-size:20px}
+.kb-pick:hover,.kb-pick:focus-visible{border-color:var(--qm);background:var(--bg2);outline:none}
+.sd-goto-head{font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--text2);padding:8px 14px 2px}
+.sd-goto{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:9px 14px;cursor:pointer;border-bottom:1px solid var(--border);font-size:14px}
+.sd-goto small{color:var(--text2);margin-inline-start:4px}
+.sd-goto em{font-style:normal;font-weight:800;color:var(--qm)}
+.sd-goto:hover{background:var(--bg2)}
+.kb-upd-tools{margin:6px 0 10px;display:flex}
+.kb-upd-tools .kb-browse-filter{width:100%}
+.kb-chip-row{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:8px}
+.kb-chip-lbl{font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--text2);min-width:62px}
+.kb-chip{border:1px solid var(--border);background:#fff;border-radius:999px;padding:6px 12px;font:inherit;font-size:13px;color:var(--text);cursor:pointer}
+.kb-chip b{color:var(--text2);font-weight:700;margin-inline-start:2px}
+.kb-chip.on{background:var(--qm);border-color:var(--qm);color:#fff}
+.kb-chip.on b{color:#fff}
+.kb-chip[disabled]{opacity:.45;cursor:default}
+.kb-upd-month{font-size:13px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--text2);margin:18px 0 6px}
+.kb-upd-rows{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden}
+.kb-upd-line{border-bottom:1px solid var(--border);border-inline-start:4px solid transparent}
+.kb-upd-line:last-child{border-bottom:0}
+.kb-upd-line.st-upcoming{border-inline-start-color:#1a4fa0}.kb-upd-line.st-temp{border-inline-start-color:#c26a00}.kb-upd-line.st-today,.kb-upd-line.st-week{border-inline-start-color:var(--qm)}.kb-upd-line.st-expired{opacity:.6}
+.kb-upd-line summary{display:grid;grid-template-columns:96px 28px 1fr auto;gap:10px;align-items:center;padding:11px 14px;cursor:pointer;list-style:none}
+.kb-upd-line summary::-webkit-details-marker{display:none}
+.kb-upd-line summary:hover{background:var(--bg2)}
+.kb-upd-d{font-size:12px;color:var(--text2);white-space:nowrap}
+.kb-upd-t{font-size:14px;font-weight:600;line-height:1.35}
+.kb-upd-line.unread .kb-upd-t{font-weight:800}
+.kb-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#c62828;margin-inline-end:6px;vertical-align:middle}
+.kb-upd-st{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:var(--text2);border:1px solid var(--border);border-radius:999px;padding:2px 8px;white-space:nowrap}
+.kb-upd-body{padding:4px 16px 14px 148px;font-size:14px;line-height:1.55}
+.kb-upd-act{background:#f1f8f5;border-radius:8px;padding:8px 10px}
+.kb-az-jump{display:flex;flex-wrap:wrap;gap:4px;position:sticky;top:0;background:var(--bg,#f5f7f6);padding:8px 0;z-index:2}
+.kb-az-jump a{min-width:30px;text-align:center;padding:5px 8px;border:1px solid var(--border);border-radius:8px;background:#fff;font-weight:700;cursor:pointer;color:var(--qm)}
+.kb-az-path{color:var(--text2);font-weight:400;margin-inline-start:6px}
+@media (max-width:600px){.kb-upd-line summary{grid-template-columns:1fr auto;grid-template-areas:"d st" "t t"}.kb-upd-d{grid-area:d}.kb-upd-svc{display:none}.kb-upd-t{grid-area:t}.kb-upd-st{grid-area:st}.kb-upd-body{padding:4px 14px 14px}.kb-cgrid{grid-template-columns:1fr}.kb-chip-lbl{min-width:0;width:100%}}
 .kb-backbar{display:inline-flex;align-items:center;gap:8px;max-width:100%;margin:0 0 12px;padding:9px 16px;border:1px solid var(--border);border-radius:999px;background:#fff;font:inherit;font-size:14px;font-weight:600;color:var(--qm);cursor:pointer;box-shadow:0 1px 3px rgba(0,0,0,.05);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .kb-backbar:hover,.kb-backbar:focus-visible{border-color:var(--qm);background:var(--bg2);outline:none}
 .kb-browse{margin:4px 0 22px}
@@ -3329,6 +3377,7 @@ function buildNav() {
   h += '<div class="nav-sidebar-item' + (S.page==='dashboard'?' active':'') + '" data-page="dashboard" onclick="go(&#39;dashboard&#39;,&#39;Home&#39;)">' + t('home') + '</div>';
   h += '<div class="nav-sidebar-item' + (S.page==='search'?' active':'') + '" onclick="focusSearch()">&#128269; ' + t('search') + '</div>';
   h += '<div class="nav-sidebar-item' + (S.page==='updates'?' active':'') + '" onclick="go(&#39;updates&#39;,&#39;Latest Updates&#39;)">&#128227; ' + (S.lang==='ar'?'آخر التحديثات':'Latest Updates') + ' <span id="kbUnreadNav" class="kb-unread-dot" hidden></span></div>';
+  h += '<div class="nav-sidebar-item' + (S.page==='topic-index'?' active':'') + '" onclick="go(&#39;topic-index&#39;,&#39;All topics A–Z&#39;)">&#128292; ' + (S.lang==='ar'?'كل المواضيع أ-ي':'All topics A–Z') + '</div>';
 
   // Sectors
   h += '<div class="nav-sidebar-label">Sectors</div>';
@@ -3520,6 +3569,7 @@ function render(page) {
 
   if (page === 'dashboard') renderDashboard(el);
   else if (page === 'updates') renderUpdates(el);
+  else if (page === 'topic-index') renderTopicIndex(el);
   else if (page === 'sector-maw') renderSector(el, 'sector-maw');
   else if (page === 'sector-darb') renderSector(el, 'sector-darb');
   else if (page === 'sector-priv') renderSector(el, 'sector-priv');
@@ -3588,6 +3638,9 @@ function renderSector(el, sectorId) {
     {value: sectorId === 'sector-darb' ? '4 gates' : sectorId === 'sector-priv' ? 'FreeFlow' : 'MSCP + street', label: 'Visual scope'}
   ]);
 
+  var browseSector = sectorId === 'sector-darb' ? 'darb' : sectorId === 'sector-priv' ? 'priv' : 'maw';
+  h += '<div id="kbBrowse" class="kb-browse"></div>';
+
   // DARB Toll Gates clickable banner (for DARB sector)
   if (sectorId === 'sector-darb') {
     // ⚡ Recharge Wallet CTA — prominent, no login required
@@ -3634,9 +3687,7 @@ function renderSector(el, sectorId) {
     h += '</div>';
   }
 
-  // Category -> subtype -> answer, from the shared taxonomy.
-  var browseSector = sectorId === 'sector-darb' ? 'darb' : sectorId === 'sector-priv' ? 'priv' : 'maw';
-  h += '<div id="kbBrowse" class="kb-browse"></div>';
+  // Category -> subtype -> answer grid sits above the banners (see top).
   // Tabs that are really external links stay available as quick actions.
   var linkTabs = topics.filter(function(tc){ return tc.url && !tc.hidden; });
   if (linkTabs.length) {
@@ -4421,12 +4472,12 @@ function instantSearch(){
   var results = runSearch(raw).slice(0,8);
   _ddResults = results; _ddActive = -1;
   if(results.length===0){
-    dd.innerHTML = '<div class="sd-empty">No quick matches for "'+escHtml(raw)+'".<br>Press <kbd>Enter</kbd> for full search &amp; official sources.</div>';
+    dd.innerHTML = kbTopicSuggestHtml(raw) + '<div class="sd-empty">No quick matches for "'+escHtml(raw)+'".<br>Press <kbd>Enter</kbd> for full search &amp; official sources.</div>';
     dd.style.display='block';
     document.body.classList.add('search-open');
     return;
   }
-  var h='';
+  var h=kbTopicSuggestHtml(raw);
   results.forEach(function(f,i){
     var q = (S.lang==='ar'&&f.q_ar)?f.q_ar:f.q;
     var snip = _snippet(f, ex);
@@ -4551,6 +4602,13 @@ function renderSearch(el, query) {
   h += '<div class="page-title" style="margin:0">🔍 "' + escHtml(query) + '"</div>';
   h += '<span style="font-size:13px;color:var(--text2);">' + results.length + ' result' + (results.length===1?'':'s') + '</span>';
   h += '</div>';
+  var tops = kbFindTopics(query, 4);
+  if (tops.length) {
+    h += '<div class="kb-search-topics"><span class="kb-chip-lbl">' + (S.lang === 'ar' ? 'مواضيع' : 'Topics') + '</span>' + tops.map(function (e) {
+      return '<button type="button" class="kb-sublink" onclick="kbGoTopic(\'' + e.sec + '\',\'' + e.g + '\',\'' + e.sub + '\',\'' + e.topic + '\')">📂 ' +
+             escHtml(e.label) + ' <small>' + escHtml(e.path) + '</small> <b>' + e.count + '</b></button>';
+    }).join('') + '</div>';
+  }
 
   if (results.length === 0) {
     h += '<div class="card" style="padding:32px;text-align:center;">';
@@ -5162,6 +5220,147 @@ function kbTopicOf(f, path) {
 }
 function kbTopicLabel(k) { var l = KB_TOPIC_LABEL[k] || [k, k]; return S.lang === 'ar' ? l[1] : l[0]; }
 
+// ===== TOPIC INDEX =====
+// Every category, subtype and topic group as one searchable list. Feeds the
+// "Go to topic" suggestions in search and the A-Z page.
+var _kbTopicIdx = null, _kbTopicIdxKey = '';
+function kbTopicIndex() {
+  var key = FAQS.length + '|' + S.lang;
+  if (_kbTopicIdx && _kbTopicIdxKey === key) return _kbTopicIdx;
+  var ar = S.lang === 'ar', tree = kbTree(), out = [];
+  ['maw', 'darb', 'priv'].forEach(function (sec) {
+    var sn = KB_SECTOR_LABEL[sec][ar ? 1 : 0], other = KB_SECTOR_LABEL[sec][ar ? 0 : 1];
+    kbOrderedGroups(sec, tree).forEach(function (g) {
+      var bucket = tree[sec][g], gl = KB_TAXONOMY[sec].groups[g];
+      var subs = kbOrderedSubs(sec, g, bucket), gcount = 0;
+      subs.forEach(function (sb) {
+        var list = bucket[sb], sl = gl.subs[sb] || [sb, sb];
+        gcount += list.length;
+        out.push({sec: sec, g: g, sub: sb, topic: '', label: sl[ar ? 1 : 0], path: sn + ' › ' + (ar ? gl.ar : gl.en), count: list.length, own: [sl[0], sl[1], sb].join(' ').toLowerCase(),
+                  text: [sl[0], sl[1], gl.en, gl.ar, sb, g, sn, other].join(' ').toLowerCase()});
+        if (list.length > KB_TOPIC_SPLIT) {
+          var p = sec + '/' + g + '/' + sb, t = {};
+          list.forEach(function (f) { var k = kbTopicOf(f, p); t[k] = (t[k] || 0) + 1; });
+          Object.keys(t).forEach(function (k) {
+            var tl = KB_TOPIC_LABEL[k] || [k, k];
+            out.push({sec: sec, g: g, sub: sb, topic: k, label: tl[ar ? 1 : 0] + ' — ' + sl[ar ? 1 : 0], path: sn + ' › ' + (ar ? gl.ar : gl.en) + ' › ' + sl[ar ? 1 : 0],
+                      count: t[k], own: [tl[0], tl[1], k].join(' ').toLowerCase(), text: [tl[0], tl[1], sl[0], sl[1], gl.en, sb, sn].join(' ').toLowerCase()});
+          });
+        }
+      });
+      out.push({sec: sec, g: g, sub: '', topic: '', label: ar ? gl.ar : gl.en, path: sn, count: gcount, own: [gl.en, gl.ar, g].join(' ').toLowerCase(), text: [gl.en, gl.ar, g, sn, other].join(' ').toLowerCase()});
+    });
+  });
+  _kbTopicIdx = out; _kbTopicIdxKey = key;
+  return out;
+}
+// Common words agents type that are not in the labels.
+var KB_TOPIC_SYNONYM = {rp: 'resident', residential: 'resident', residence: 'resident', tow: 'towing', towed: 'towing', pound: 'towing yards',
+  impound: 'towing', grievance: 'grievance', objection: 'grievance', appeal: 'grievance', dispute: 'grievance', pod: 'determination',
+  disability: 'determination', topup: 'top-up', recharge: 'top-up', toll: 'toll', gate: 'gates', exemption: 'exempt', visitor: 'visitors',
+  villa: 'visitors', mall: 'mall', mscp: 'mscp', etihad: 'etihad', freeflow: 'free flow', login: 'login', otp: 'login', pdm: 'machines',
+  meter: 'machines', w4: 'smartpark', smartpark: 'smartpark', school: 'school', kinship: 'kinship', commercial: 'commercial', government: 'government'};
+function kbFindTopics(q, limit) {
+  var words = String(q || '').toLowerCase().split(/\s+/).filter(function (w) { return w.length >= 2; });
+  if (!words.length) return [];
+  var scored = [];
+  kbTopicIndex().forEach(function (e) {
+    // A word in the entry's own name counts far more than one in its path;
+    // on a tie the broader level (category, then subtype) comes first.
+    var hits = 0, score = 0;
+    words.forEach(function (w) {
+      var syn = KB_TOPIC_SYNONYM[w];
+      var inOwn = e.own.indexOf(w) >= 0 || (syn && e.own.indexOf(syn) >= 0);
+      if (inOwn || e.text.indexOf(w) >= 0 || (syn && e.text.indexOf(syn) >= 0)) { hits++; score += inOwn ? 10 : 3; }
+    });
+    if (hits === words.length) scored.push({e: e, s: score + (e.topic ? 1 : e.sub ? 2 : 3) + Math.min(e.count, 20) / 40});
+  });
+  scored.sort(function (a, b) { return b.s - a.s; });
+  return scored.slice(0, limit || 3).map(function (x) { return x.e; });
+}
+function kbGoTopic(sec, g, sub, topic) {
+  hideSearchDropdown();
+  var hd = document.getElementById('heroSearchDropdown'); if (hd) hd.style.display = 'none';
+  kbPushHistory();
+  var st = kbBrowseState(sec);
+  st.group = g || ''; st.sub = sub || ''; st.topic = topic || ''; st.filter = '';
+  var page = sec === 'darb' ? 'sector-darb' : sec === 'priv' ? 'sector-priv' : 'sector-maw';
+  _kbRestoring = true;
+  try { go(page, KB_SECTOR_LABEL[sec][0]); } finally { _kbRestoring = false; }
+  var el = document.getElementById('kbBrowse');
+  if (el) el.scrollIntoView({block: 'start'});
+}
+function kbTopicSuggestHtml(q) {
+  var t = kbFindTopics(q, 3);
+  if (!t.length) return '';
+  var ar = S.lang === 'ar';
+  return '<div class="sd-goto-head">' + (ar ? 'انتقل إلى الموضوع' : 'Go to topic') + '</div>' + t.map(function (e) {
+    return '<div class="sd-goto" onmousedown="event.preventDefault();kbGoTopic(\'' + e.sec + '\',\'' + e.g + '\',\'' + e.sub + '\',\'' + e.topic + '\')">' +
+           '<span>📂 <b>' + escHtml(e.label) + '</b> <small>' + escHtml(e.path) + '</small></span><em>' + e.count + '</em></div>';
+  }).join('');
+}
+
+// "Customer wants to..." - the requests agents get most, one click each.
+var KB_QUICK_PICKS = [
+  ['maw', 'pay', '', '', 'Pay for parking', 'دفع رسوم المواقف', '💳'],
+  ['maw', 'fines', 'checkpay', '', 'Check or pay a fine', 'الاستعلام عن مخالفة ودفعها', '🔎'],
+  ['maw', 'fines', 'grievance', '', 'Object to a fine', 'الاعتراض على مخالفة', '⚖️'],
+  ['maw', 'permits', 'resident', 'apply', 'Apply for a resident permit', 'التقديم على تصريح السكان', '📝'],
+  ['maw', 'permits', 'resident', 'errors', 'Resident permit error / lease', 'خطأ في تصريح السكان / العقد', '⚠️'],
+  ['maw', 'permits', 'resident', 'visitors', 'Villa visitor parking', 'مواقف زوار الفلل', '👥'],
+  ['maw', 'permits', 'pod', '', 'People of Determination permit', 'تصريح أصحاب الهمم', '♿'],
+  ['maw', 'towing', 'status', '', 'Is my car towed?', 'هل تم سحب مركبتي؟', '🚚'],
+  ['maw', 'towing', 'yards', '', 'Pound hours & release', 'ساعات الحجز والإفراج', '🏁'],
+  ['maw', 'areas', 'smartpark', '', 'W4 on-street SmartPark', 'المواقف الذكية W4', '📷'],
+  ['darb', 'wallet', 'topup', '', 'Top up DARB wallet', 'شحن محفظة درب', '💰'],
+  ['darb', 'exempt', '', '', 'Toll exemption', 'إعفاء من رسوم البوابات', '🎫'],
+  ['darb', 'reg', 'account', '', 'DARB account & sign-in', 'حساب درب وتسجيل الدخول', '👤'],
+  ['priv', 'freeflow', '', '', 'Mall / Free Flow payment', 'الدفع في المراكز التجارية', '🏬'],
+  ['priv', 'etihad', '', '', 'Etihad Rail parking', 'مواقف قطارات الاتحاد', '🚆']
+];
+function kbQuickPicksHtml(sector) {
+  var ar = S.lang === 'ar', tree = kbTree();
+  return '<div class="kb-picks">' + KB_QUICK_PICKS.filter(function (p) { return (!sector || p[0] === sector) && tree[p[0]][p[1]]; }).map(function (p) {
+    return '<button type="button" class="kb-pick" onclick="kbGoTopic(\'' + p[0] + '\',\'' + p[1] + '\',\'' + p[2] + '\',\'' + p[3] + '\')">' +
+           '<span aria-hidden="true">' + p[6] + '</span>' + escHtml(ar ? p[5] : p[4]) + '</button>';
+  }).join('') + '</div>';
+}
+
+// ===== A-Z TOPIC INDEX PAGE =====
+S.azFilter = S.azFilter || '';
+function renderTopicIndex(el) {
+  var ar = S.lang === 'ar';
+  var h = '<div class="breadcrumb"><a onclick="goHome()">' + (ar ? 'الرئيسية' : 'Home') + '</a> / ' + (ar ? 'كل المواضيع' : 'All topics A–Z') + '</div>';
+  h += '<div class="page-header"><div><h1>🔤 ' + (ar ? 'كل المواضيع من أ إلى ي' : 'All topics A–Z') + '</h1><p class="kb-muted">' +
+       (ar ? 'كل فئة وموضوع في قاعدة المعرفة، مرتبة أبجدياً.' : 'Every category, subtype and topic group in the KB, alphabetically.') + '</p></div></div>';
+  h += '<h2 class="kb-upd-group">' + (ar ? 'المتعامل يريد أن…' : 'Customer wants to…') + '</h2>' + kbQuickPicksHtml();
+  h += '<div class="kb-upd-tools"><input type="search" id="kbAzQ" class="kb-browse-filter" placeholder="' + escHtml(ar ? 'ابحث عن موضوع…' : 'Find a topic: permit, towing, wallet, visitors…') +
+       '" value="' + escHtml(S.azFilter) + '" oninput="S.azFilter=this.value;kbAzPaint(true)"></div><div id="kbAzBody"></div>';
+  el.innerHTML = h;
+  kbAzPaint(false, el);
+}
+function kbAzPaint(keepFocus, root) {
+  var box = (root || document).querySelector('#kbAzBody');
+  if (!box) return;
+  var ar = S.lang === 'ar';
+  var list = S.azFilter.trim().length >= 2 ? kbFindTopics(S.azFilter, 400) : kbTopicIndex().slice();
+  list.sort(function (a, b) { return a.label.localeCompare(b.label, ar ? 'ar' : 'en'); });
+  var letters = [], by = {};
+  list.forEach(function (e) { var L = e.label.charAt(0).toUpperCase(); if (!by[L]) { by[L] = []; letters.push(L); } by[L].push(e); });
+  var h = '<div class="kb-az-jump">' + letters.map(function (L) { return '<a onclick="var t=document.getElementById(\'az-' + escHtml(L) + '\');if(t)t.scrollIntoView({block:\'start\'})">' + escHtml(L) + '</a>'; }).join('') + '</div>';
+  if (!list.length) h += '<p class="kb-browse-empty">' + (ar ? 'لا توجد مواضيع مطابقة.' : 'No topics match.') + '</p>';
+  letters.forEach(function (L) {
+    h += '<h3 class="kb-upd-month" id="az-' + escHtml(L) + '">' + escHtml(L) + '</h3><div class="kb-qlist">';
+    by[L].forEach(function (e) {
+      h += '<button type="button" class="kb-qrow" onclick="kbGoTopic(\'' + e.sec + '\',\'' + e.g + '\',\'' + e.sub + '\',\'' + e.topic + '\')">' +
+           '<span><b>' + escHtml(e.label) + '</b> <small class="kb-az-path">' + escHtml(e.path) + '</small></span><span class="kb-bcard-ct">' + e.count + '</span></button>';
+    });
+    h += '</div>';
+  });
+  box.innerHTML = h;
+  if (keepFocus) { var i = document.getElementById('kbAzQ'); if (i) { i.focus(); i.setSelectionRange(i.value.length, i.value.length); } }
+}
+
 // ===== BROWSE (grid drill-down) =====
 // Sector -> category -> subtype -> topic group -> questions. The position is
 // kept per sector in S.kbNav so the back button returns to the same grid.
@@ -5254,13 +5453,20 @@ function kbBrowseRender(sector, keepFocus) {
     if (st.group) body += '<nav class="kb-bcrumb">' + (st.group ? '<button type="button" class="kb-bback" onclick="' + (st.topic ? go(st.group, st.sub) : st.sub ? go(st.group) : go()) + '">←</button>' : '') + crumbs.join(' <span>›</span> ') + '</nav>';
 
     if (!st.group) {
-      body += '<div class="kb-bgrid">';
+      body += '<div class="kb-bgrid kb-cgrid">';
       kbOrderedGroups(sector, tree).forEach(function (gk) {
         var bucket = tree[sector][gk], g = tx.groups[gk];
         var subs = kbOrderedSubs(sector, gk, bucket);
         var all = [].concat.apply([], subs.map(function (s) { return bucket[s]; }));
-        var preview = subs.slice(0, 3).map(function (s) { return kbSubLabel(sector, gk, s); }).join(' · ');
-        body += _kbCardHtml(go(gk), g.icon, ar ? g.ar : g.en, all.length, _kbFreshCount(all), preview);
+        var fresh = _kbFreshCount(all);
+        body += '<div class="kb-ccard"><button type="button" class="kb-ccard-head" onclick="' + go(gk) + '">' +
+                '<span class="kb-bcard-ic" aria-hidden="true">' + g.icon + '</span><span class="kb-bcard-title">' + escHtml(ar ? g.ar : g.en) + '</span>' +
+                (fresh ? '<span class="kb-fresh kb-fresh-new">' + fresh + ' ' + (ar ? 'جديد' : 'new') + '</span>' : '') +
+                '<span class="kb-bcard-ct">' + all.length + '</span></button><div class="kb-ccard-subs">';
+        subs.forEach(function (sk) {
+          body += '<button type="button" class="kb-sublink" onclick="' + go(gk, sk) + '">' + escHtml(kbSubLabel(sector, gk, sk)) + ' <b>' + bucket[sk].length + '</b></button>';
+        });
+        body += '</div></div>';
       });
       body += '</div>';
     } else if (!st.sub) {
@@ -8260,18 +8466,18 @@ function instantHeroSearch() {
   _heroDdResults = results;
   _heroDdActive = -1;
   if (!results.length) {
-    dd.innerHTML = '<div class="sd-empty">No related topics yet for "' + escHtml(raw) + '".<br>Keep typing or press <kbd>Enter</kbd> for the full search.</div>';
+    dd.innerHTML = kbTopicSuggestHtml(raw) + '<div class="sd-empty">No related answers yet for "' + escHtml(raw) + '".<br>Keep typing or press <kbd>Enter</kbd> for the full search.</div>';
     dd.style.display = 'block';
     return;
   }
-  var h = '';
+  var h = kbTopicSuggestHtml(raw);
   results.forEach(function(f, i) {
     var title = (S.lang === 'ar' && f.q_ar) ? f.q_ar : f.q;
     var snip = _snippet(f, ex);
     h += '<div class="sd-item" data-i="' + i + '" onmousedown="event.preventDefault();openHeroSearchResult(\'' + _kbJsArg(f.id) + '\')" onmouseenter="_heroDdSetActive(' + i + ')">';
     h += '<div class="sd-q">' + (f.icon || '&#128172;') + ' ' + _hl(title, ex) + '</div>';
     if (snip) h += '<div class="sd-snip">' + _hl(snip, ex) + '</div>';
-    if (f.cat) h += '<span class="sd-cat">' + escHtml(f.cat) + '</span>';
+    h += '<span class="sd-cat">' + escHtml(kbTaxPath(f)) + '</span>' + kbStatusPill(f, {hideCurrent: true});
     h += '</div>';
   });
   h += '<div class="sd-foot"><span><kbd>&uarr;</kbd><kbd>&darr;</kbd> navigate &middot; <kbd>Enter</kbd> open</span><span onmousedown="event.preventDefault();openHeroFullSearch()" style="cursor:pointer;color:var(--qm);font-weight:600;">See all results &rarr;</span></div>';
@@ -8660,11 +8866,7 @@ function kbUpdateCardRich(u, seen) {
 
 function kbOpenGroup(sectorPage, group) {
   var labels = {'sector-maw': 'Mawaqif', 'sector-darb': 'DARB', 'sector-priv': 'Private Parking'};
-  go(sectorPage, labels[sectorPage]);
-  setTimeout(function () {
-    var d = document.querySelector('.kb-acc-group[data-group="' + group + '"]');
-    if (d) { d.open = true; d.scrollIntoView({block: 'start', behavior: 'smooth'}); }
-  }, 60);
+  kbGoTopic(sectorPage === 'sector-darb' ? 'darb' : sectorPage === 'sector-priv' ? 'priv' : 'maw', group, '', '');
 }
 
 // ===== HOMEPAGE =====
@@ -8723,8 +8925,10 @@ function renderDashboard(el) {
   h += '</div></section>';
 
   h += '<section class="kb-home-sec">';
-  h += '<div class="kb-home-head"><h2>' + (ar ? 'الأكثر استخداماً' : 'Most used') + '</h2></div>';
-  h += '<div class="kb-lanes">';
+  h += '<div class="kb-home-head"><h2>' + (ar ? 'المتعامل يريد أن…' : 'Customer wants to…') + '</h2>' +
+       '<a onclick="go(\'topic-index\',\'All topics A–Z\')">' + (ar ? 'كل المواضيع ←' : 'All topics A–Z →') + '</a></div>';
+  h += kbQuickPicksHtml();
+  h += '<div class="kb-lanes" style="display:none">';
   [['sector-maw', 'fines', ar ? 'المخالفات' : 'Fines'],
    ['sector-maw', 'permits', ar ? 'التصاريح' : 'Permits'],
    ['sector-maw', 'pay', ar ? 'دفع الرسوم' : 'Pay Parking'],
@@ -8743,47 +8947,129 @@ function renderDashboard(el) {
 }
 
 // ===== LATEST UPDATES PAGE =====
+// Find any update fast: search, service and status filters with counts,
+// unread-only, and a compact view grouped by month next to the card view.
+S.updUi = S.updUi || {q: '', svc: 'all', status: 'all', unread: false, view: 'compact'};
+try { S.updUi.view = localStorage.getItem('kb_upd_view') || S.updUi.view; } catch (e) {}
+
+function kbUpdService(u) {
+  var art = u.related ? FAQS.find(function (x) { return x.id === u.related; }) : null;
+  if (art) return kbClassify(art).sector;
+  var t = ((u.title || '') + ' ' + (u.desc || '')).toLowerCase();
+  if (/mall|free ?flow|etihad|mscp|multi.?storey|mushrif/.test(t)) return 'priv';
+  if (u.tag === 'darb' || /\bdarb\b|toll|wallet/.test(t)) return 'darb';
+  if (u.tag === 'maw' || /mawaqif|parking|permit|fine|sector|pdm|tow|pound|plate/.test(t)) return 'maw';
+  return 'ops';
+}
+function kbUpdStatus(u, now, todayStart) {
+  if (kbIsExpired(u, now)) return 'expired';
+  if (u.effective_until || /^TEMPORARY/i.test(u.title || '')) return 'temp';
+  var eff = kbParseStamp(u.effective_from) || kbParseStamp(u.published_at) || kbParseStamp(u.date);
+  var ms = eff ? eff.ms : 0;
+  if (ms > now) return 'upcoming';
+  if (ms >= todayStart) return 'today';
+  if (now - ms <= 7 * 86400000) return 'week';
+  return 'earlier';
+}
+var KB_UPD_STATUS = [['upcoming', 'Upcoming', 'قادم'], ['today', 'Today', 'اليوم'], ['week', 'This week', 'هذا الأسبوع'],
+  ['temp', 'Temporary', 'مؤقت'], ['earlier', 'Earlier', 'سابقاً'], ['expired', 'Expired', 'منتهي']];
+var KB_UPD_SVC = [['maw', 'Mawaqif', 'مواقف', '🅿️'], ['darb', 'DARB', 'درب', '🛣️'], ['priv', 'Private', 'خاصة', '🏢'], ['ops', 'Operations', 'العمليات', '🎧']];
+
+function kbUpdSet(k, v) {
+  S.updUi[k] = v;
+  if (k === 'view') { try { localStorage.setItem('kb_upd_view', v); } catch (e) {} }
+  kbUpdPaint(k === 'q');
+}
+
 function renderUpdates(el) {
   var ar = S.lang === 'ar';
-  var now = Date.now();
-  var all = kbSortUpdates(LATEST_UPDATES);
-  var seen = kbSeenSet();
-  var day = 86400000;
-  var todayStart = kbParseStamp(new Intl.DateTimeFormat('en-CA', {timeZone: 'Asia/Dubai'}).format(new Date(now))).ms;
-  var groups = {upcoming: [], today: [], week: [], temp: [], earlier: [], expired: []};
-  all.forEach(function (u) {
-    if (kbIsExpired(u, now)) { groups.expired.push(u); return; }
-    var eff = kbParseStamp(u.effective_from) || kbParseStamp(u.published_at) || kbParseStamp(u.date);
-    var ms = eff ? eff.ms : 0;
-    if (u.effective_until || /^TEMPORARY/i.test(u.title || '')) groups.temp.push(u);
-    else if (ms > now) groups.upcoming.push(u);
-    else if (ms >= todayStart) groups.today.push(u);
-    else if (now - ms <= 7 * day) groups.week.push(u);
-    else groups.earlier.push(u);
-  });
-  groups.upcoming.reverse(); // soonest first
-
-  var h = '<div class="breadcrumb"><a onclick="goHome()">' + (ar ? 'الرئيسية' : 'Home') + '</a> / ' +
-          (ar ? 'آخر التحديثات' : 'Latest Updates') + '</div>';
+  var h = '<div class="breadcrumb"><a onclick="goHome()">' + (ar ? 'الرئيسية' : 'Home') + '</a> / ' + (ar ? 'آخر التحديثات' : 'Latest Updates') + '</div>';
   h += '<div class="page-header"><div><h1>&#128227; ' + (ar ? 'آخر التحديثات' : 'Latest Updates') + '</h1>' +
        '<p class="kb-muted">' + (ar ? 'جميع الأوقات بتوقيت الإمارات (GST).' : 'All times are UAE time (GST).') + '</p></div>' +
-       '<button type="button" class="btn" onclick="kbMarkSeen(kbRecentUpdates().map(kbUpdateKey));render(\'updates\')">' +
-       (ar ? 'تعليم الكل كمقروء' : 'Mark all read') + '</button></div>';
-  [['upcoming', ar ? 'قادم' : 'Upcoming'], ['today', ar ? 'اليوم' : 'Today'], ['week', ar ? 'هذا الأسبوع' : 'This week'],
-   ['temp', ar ? 'تعليمات مؤقتة' : 'Temporary instructions'], ['earlier', ar ? 'سابقاً' : 'Earlier']
-  ].forEach(function (g) {
-    if (!groups[g[0]].length) return;
-    h += '<h2 class="kb-upd-group">' + escHtml(g[1]) + ' <span>' + groups[g[0]].length + '</span></h2>';
-    h += '<div class="kb-upd-grid">' + groups[g[0]].map(function (u) { return kbUpdateCardRich(u, seen); }).join('') + '</div>';
-  });
-  if (groups.expired.length) {
-    h += '<div class="kb-expired-head">' + (ar ? 'منتهية — لم تعد تعليمات سارية' : 'Expired — no longer current instructions') +
-         ' (' + groups.expired.length + ')</div><div class="updates-list">';
-    groups.expired.forEach(function (u) { h += kbUpdateCardHtml(u, true); });
-    h += '</div>';
-  }
+       '<button type="button" class="btn" onclick="kbMarkSeen(kbRecentUpdates().map(kbUpdateKey));kbUpdPaint()">' + (ar ? 'تعليم الكل كمقروء' : 'Mark all read') + '</button></div>';
+  h += '<div class="kb-upd-tools"><input type="search" id="kbUpdQ" class="kb-browse-filter" placeholder="' +
+       escHtml(ar ? 'ابحث في التحديثات: W4، PDM، مصفح، تصريح…' : 'Search updates: W4, PDM, Musaffah, permit, Etihad…') +
+       '" value="' + escHtml(S.updUi.q) + '" oninput="kbUpdSet(\'q\', this.value)"></div>';
+  h += '<div id="kbUpdChips"></div><div id="kbUpdList"></div>';
   el.innerHTML = h;
+  kbUpdPaint(false, el);
+}
+
+function kbUpdPaint(keepFocus, root) {
+  root = root || document;
+  var box = root.querySelector('#kbUpdList'), chips = root.querySelector('#kbUpdChips');
+  if (!box || !chips) return;
+  var ar = S.lang === 'ar', ui = S.updUi, now = Date.now();
+  var todayStart = kbParseStamp(new Intl.DateTimeFormat('en-CA', {timeZone: 'Asia/Dubai'}).format(new Date(now))).ms;
+  var seen = kbSeenSet();
+  var words = String(ui.q || '').toLowerCase().split(/\s+/).filter(Boolean);
+  var all = kbSortUpdates(LATEST_UPDATES).map(function (u) {
+    return {u: u, svc: kbUpdService(u), st: kbUpdStatus(u, now, todayStart), unread: !seen[kbUpdateKey(u)] && kbRecentUpdates(now).indexOf(u) >= 0,
+            text: [u.title, u.title_ar, stripHtml(u.desc || ''), stripHtml(u.desc_ar || ''), u.date, u.source].join(' ').toLowerCase()};
+  });
+  var byQ = all.filter(function (r) { return words.every(function (w) { return r.text.indexOf(w) >= 0; }); });
+  var bySvc = byQ.filter(function (r) { return ui.svc === 'all' || r.svc === ui.svc; });
+  var byUnread = bySvc.filter(function (r) { return !ui.unread || r.unread; });
+  var shown = byUnread.filter(function (r) { return ui.status === 'all' || r.st === ui.status; });
+
+  var chip = function (k, v, label, n, on) {
+    return '<button type="button" class="kb-chip' + (on ? ' on' : '') + '"' + (n === 0 && !on ? ' disabled' : '') +
+           ' onclick="kbUpdSet(\'' + k + '\',' + (typeof v === 'boolean' ? v : '\'' + v + '\'') + ')">' + label + (n !== null ? ' <b>' + n + '</b>' : '') + '</button>';
+  };
+  var c = '<div class="kb-chip-row"><span class="kb-chip-lbl">' + (ar ? 'الخدمة' : 'Service') + '</span>' +
+          chip('svc', 'all', ar ? 'الكل' : 'All', byQ.length, ui.svc === 'all');
+  KB_UPD_SVC.forEach(function (s) { c += chip('svc', s[0], s[3] + ' ' + (ar ? s[2] : s[1]), byQ.filter(function (r) { return r.svc === s[0]; }).length, ui.svc === s[0]); });
+  c += '</div><div class="kb-chip-row"><span class="kb-chip-lbl">' + (ar ? 'الحالة' : 'When') + '</span>' +
+       chip('status', 'all', ar ? 'الكل' : 'All', byUnread.length, ui.status === 'all');
+  KB_UPD_STATUS.forEach(function (s) { c += chip('status', s[0], ar ? s[2] : s[1], byUnread.filter(function (r) { return r.st === s[0]; }).length, ui.status === s[0]); });
+  c += '</div><div class="kb-chip-row">' +
+       chip('unread', !ui.unread, (ar ? 'غير المقروء فقط' : 'Unread only'), bySvc.filter(function (r) { return r.unread; }).length, ui.unread) +
+       '<span class="kb-view-toggle" style="margin-inline-start:auto">' +
+       '<button type="button" class="' + (ui.view === 'compact' ? 'on' : '') + '" onclick="kbUpdSet(\'view\',\'compact\')">☰ ' + (ar ? 'مختصر' : 'Compact') + '</button>' +
+       '<button type="button" class="' + (ui.view === 'cards' ? 'on' : '') + '" onclick="kbUpdSet(\'view\',\'cards\')">▦ ' + (ar ? 'بطاقات' : 'Cards') + '</button></span></div>';
+  chips.innerHTML = c;
+
+  var h = '<div class="kb-browse-head">' + shown.length + ' ' + (ar ? 'تحديث' : (shown.length === 1 ? 'update' : 'updates')) + '</div>';
+  if (!shown.length) h += '<p class="kb-browse-empty">' + (ar ? 'لا توجد تحديثات مطابقة.' : 'No updates match these filters.') + '</p>';
+  if (ui.view === 'cards') {
+    KB_UPD_STATUS.forEach(function (s) {
+      var list = shown.filter(function (r) { return r.st === s[0]; });
+      if (s[0] === 'upcoming') list.reverse();
+      if (!list.length) return;
+      h += '<h2 class="kb-upd-group">' + escHtml(ar ? s[2] : s[1]) + ' <span>' + list.length + '</span></h2>';
+      h += s[0] === 'expired'
+        ? '<div class="updates-list">' + list.map(function (r) { return kbUpdateCardHtml(r.u, true); }).join('') + '</div>'
+        : '<div class="kb-upd-grid">' + list.map(function (r) { return kbUpdateCardRich(r.u, seen); }).join('') + '</div>';
+    });
+  } else {
+    // Compact: one line per update, grouped by month, expand in place.
+    var month = '';
+    shown.forEach(function (r) {
+      var u = r.u, p = kbParseStamp(u.effective_from) || kbParseStamp(u.published_at) || kbParseStamp(u.date);
+      var m = p ? (p.y ? KB_MONTHS[p.m - 1] + ' ' + p.y : (kbFormatStamp(u.effective_from || u.published_at || u.date).split(' ').slice(1, 3).join(' ').replace(',', ''))) : (ar ? 'بدون تاريخ' : 'Undated');
+      if (m !== month) { if (month) h += '</div>'; month = m; h += '<h3 class="kb-upd-month">' + escHtml(m) + '</h3><div class="kb-upd-rows">'; }
+      var key = kbUpdateKey(u), art = u.related ? FAQS.find(function (x) { return x.id === u.related; }) : null;
+      var svc = KB_UPD_SVC.filter(function (s) { return s[0] === r.svc; })[0];
+      var st = KB_UPD_STATUS.filter(function (s) { return s[0] === r.st; })[0];
+      var title = ar && u.title_ar ? u.title_ar : (u.title || '');
+      var desc = ar && u.desc_ar ? u.desc_ar : (u.desc || '');
+      var action = art ? kbAgentAction(art) : '';
+      h += '<details class="kb-upd-line st-' + r.st + (r.unread ? ' unread' : '') + '" ontoggle="if(this.open)kbMarkSeen([\'' + _kbJsArg(key) + '\'])">' +
+           '<summary><span class="kb-upd-d">' + escHtml(kbUpdateDisplayDate(u).replace(/, \d\d:\d\d GST$/, '')) + '</span>' +
+           '<span class="kb-upd-svc" title="' + escHtml(svc[1]) + '">' + svc[3] + '</span>' +
+           '<span class="kb-upd-t">' + (r.unread ? '<i class="kb-dot"></i>' : '') + escHtml(title) + '</span>' +
+           '<span class="kb-upd-st">' + escHtml(ar ? st[2] : st[1]) + '</span></summary>' +
+           '<div class="kb-upd-body"><p>' + escHtml(stripHtml(desc)) + '</p>' +
+           (action ? '<p class="kb-upd-act"><b>' + (ar ? 'إجراء الموظف: ' : 'Agent action: ') + '</b>' + escHtml(action) + '</p>' : '') +
+           kbTimingMetaHtml(u) +
+           (art ? '<button type="button" class="btn" onclick="kbOpenUpdate(\'' + _kbJsArg(key) + '\',\'' + _kbJsArg(u.related) + '\')">' + (ar ? 'فتح المقالة ←' : 'Open full article →') + '</button>' : '') +
+           '</div></details>';
+    });
+    if (month) h += '</div>';
+  }
+  box.innerHTML = h;
   kbPaintUnread();
+  if (keepFocus) { var i = document.getElementById('kbUpdQ'); if (i) { i.focus(); i.setSelectionRange(i.value.length, i.value.length); } }
 }
 
 // ===== INIT =====

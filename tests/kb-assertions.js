@@ -382,10 +382,12 @@ window.kbAssertions = function (viewportName) {
 
   // The updates page files every update exactly once.
   var _up = document.createElement('div');
+  var _updUi = JSON.stringify(S.updUi); S.updUi = {q: '', svc: 'all', status: 'all', unread: false, view: 'compact'};
   renderUpdates(_up);
+  S.updUi = JSON.parse(_updUi);
   // Current updates use the new card; expired ones keep the struck-through
   // "Expired" card so they can never read as live instructions.
-  var _upTitles = _up.querySelectorAll('.kb-upd, .update-item.update-expired').length;
+  var _upTitles = _up.querySelectorAll('.kb-upd, .update-item.update-expired, .kb-upd-line').length;
   ok(_upTitles === window.LATEST_UPDATES.length,
      'updates page shows ' + _upTitles + ' of ' + window.LATEST_UPDATES.length + ' updates');
 
