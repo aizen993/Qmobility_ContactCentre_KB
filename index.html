@@ -262,6 +262,33 @@ body[dir="rtl"] .update-item{border-left:none;border-right:3px solid var(--qm)}
 .kb-best{border:2px solid var(--accent,var(--qm));box-shadow:0 4px 18px rgba(0,0,0,.07)}
 .kb-best-label{font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--accent,var(--qm));margin-bottom:6px}
 .kb-path-tag{background:var(--bg2);color:var(--text2);border:1px solid var(--border)}
+.kb-browse{margin:4px 0 22px}
+.kb-browse-bar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px}
+.kb-browse-filter{flex:1;min-width:180px;padding:11px 14px;border:1px solid var(--border);border-radius:12px;font:inherit;font-size:14px;background:#fff;color:var(--text)}
+.kb-browse-filter:focus{outline:2px solid var(--qm);outline-offset:1px}
+.kb-view-toggle{display:inline-flex;border:1px solid var(--border);border-radius:10px;overflow:hidden;background:#fff}
+.kb-view-toggle button{border:0;background:none;padding:9px 14px;font:inherit;font-size:13px;font-weight:600;color:var(--text2);cursor:pointer}
+.kb-view-toggle button.on{background:var(--qm);color:#fff}
+.kb-bgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+.kb-bcard{display:flex;align-items:flex-start;gap:12px;text-align:start;background:#fff;border:1px solid var(--border);border-radius:14px;padding:16px;font:inherit;color:var(--text);cursor:pointer;min-height:84px;transition:border-color .15s,box-shadow .15s,transform .15s}
+.kb-bcard:hover,.kb-bcard:focus-visible{border-color:var(--qm);box-shadow:0 6px 18px rgba(0,0,0,.07);transform:translateY(-1px);outline:none}
+.kb-bcard-ic{font-size:24px;line-height:1;flex-shrink:0}
+.kb-bcard-main{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px}
+.kb-bcard-title{font-weight:700;font-size:15px;line-height:1.3}
+.kb-bcard-sub{font-size:12px;color:var(--text2);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.kb-bcard-meta{display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex-shrink:0}
+.kb-bcard-ct{font-size:13px;font-weight:800;color:var(--qm);background:var(--bg2);border-radius:999px;padding:2px 10px}
+.kb-bcrumb{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-bottom:12px;font-size:14px}
+.kb-bcrumb a{color:var(--qm);font-weight:600;cursor:pointer}
+.kb-bcrumb span{color:var(--text2)}
+.kb-bback{border:1px solid var(--border);background:#fff;border-radius:8px;padding:4px 10px;cursor:pointer;font:inherit;margin-inline-end:4px}
+.kb-qlist{display:flex;flex-direction:column;background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:12px}
+.kb-qrow{display:flex;align-items:center;gap:10px;justify-content:space-between;text-align:start;border:0;border-bottom:1px solid var(--border);background:none;padding:13px 16px;font:inherit;font-size:14px;color:var(--text);cursor:pointer}
+.kb-qrow:last-child{border-bottom:0}
+.kb-qrow:hover,.kb-qrow:focus-visible{background:var(--bg2);outline:none}
+.kb-browse-head{font-size:13px;color:var(--text2);margin-bottom:8px}
+.kb-browse-empty{color:var(--text2);font-size:14px}
+@media (max-width:520px){.kb-bgrid{grid-template-columns:1fr}.kb-bcard{min-height:0;padding:14px}}
 .kb-ar-pending{font-size:12px;color:#7a4f00;background:#fff8e1;border:1px solid #ffe082;border-radius:8px;padding:6px 10px;margin-bottom:8px}
 @media (max-width:420px){.kb-status{white-space:normal}}
 @media (max-width:420px){.kb-acc-group>summary{padding:12px 14px;font-size:14px}.kb-acc-body{padding:2px 12px 12px}}
@@ -3537,7 +3564,8 @@ function renderSector(el, sectorId) {
   }
 
   // Category -> subtype -> answer, from the shared taxonomy.
-  h += kbSectorAccordionHtml(sectorId === 'sector-darb' ? 'darb' : sectorId === 'sector-priv' ? 'priv' : 'maw');
+  var browseSector = sectorId === 'sector-darb' ? 'darb' : sectorId === 'sector-priv' ? 'priv' : 'maw';
+  h += '<div id="kbBrowse" class="kb-browse"></div>';
   // Tabs that are really external links stay available as quick actions.
   var linkTabs = topics.filter(function(tc){ return tc.url && !tc.hidden; });
   if (linkTabs.length) {
@@ -3549,6 +3577,7 @@ function renderSector(el, sectorId) {
   }
 
   el.innerHTML = h;
+  kbBrowseRender(browseSector);
 }
 
 // ===== FAQ CARD with optional highlighting, collapsible, and source badge =====
@@ -4391,10 +4420,19 @@ function openFaqById(id){
   S.page = 'faqview';
   var el = document.getElementById('content');
   if(!el) return;
-  var back = _lastSearchQuery
-    ? '<a onclick="document.getElementById(\'searchInput\').value=_lastSearchQuery;doSearch()">Search</a>'
-    : '<a onclick="goHome()">Home</a>';
-  var h = '<div class="breadcrumb"><a onclick="goHome()">Home</a> / '+back+' / Answer</div>';
+  // Opened from a sector grid: the breadcrumb leads back to that exact grid
+  // position. Otherwise it leads back to the search, or just Home.
+  var origin = window._kbBrowseOrigin; window._kbBrowseOrigin = null;
+  var trail = '';
+  if (origin) {
+    var c = kbClassify(f), st = kbBrowseState(origin.sector);
+    trail = '<a onclick="goBack()">' + escHtml(KB_SECTOR_LABEL[c.sector][S.lang === 'ar' ? 1 : 0]) + '</a> / ' +
+            escHtml(kbGroupLabel(c.sector, c.group)) + ' / ' + escHtml(kbSubLabel(c.sector, c.group, c.sub)) +
+            (st.topic ? ' / ' + escHtml(kbTopicLabel(st.topic)) : '') + ' / ';
+  } else if (_lastSearchQuery) {
+    trail = '<a onclick="document.getElementById(\'searchInput\').value=_lastSearchQuery;doSearch()">Search</a> / ';
+  }
+  var h = '<div class="breadcrumb"><a onclick="goHome()">Home</a> / ' + trail + 'Answer</div>';
   h += '<div class="faq-list">'+renderFaqCard(f, _lastSearchQuery)+'</div>';
   el.innerHTML = h;
   el.scrollTop = 0;
@@ -4994,6 +5032,189 @@ function kbTaxPath(f) {
 function kbSearchBucket(f) {
   if (f && (f.page === 'sms' || f.page === 'email')) return 'tmpl';
   return kbClassify(f).sector;
+}
+
+// ===== TOPIC GROUPS (level 3) =====
+// Large subtypes are split once more by what the customer is asking, so no
+// screen shows more than a handful of questions. Specific groups first; the
+// generic intent groups apply to every subtype.
+var KB_TOPIC_SPECIFIC = {
+  'maw/permits/resident': [['visitors', /visitor/], ['kinship', /kinship|relative/], ['special', /motorcycle|rented|yacht|boat|trailer|landscape/], ['sectors', /sector|combined|merged|nearby/]],
+  'maw/areas/inspection': [['sectors', /\bsector\b|\bw\d|\be\d{1,2}-|east ?48|plot|tmp25|college|zoning|signs/], ['smart', /smart|camera|vehicle|technology|ai\b|photo|video|inspector|monitor|system|informed|mistake/]],
+  'maw/fines/types': [['waivers', /close|waive|death|embassy|judicial|5 years|previous owner/], ['grace', /grace|prayer|exempt|do-not-issue/], ['report', /report|download|check|verify/]],
+  'maw/fines/grievance': [['waivers', /waive|previous owner|judge|deceased|embassy/]],
+  'maw/permits/pod': [['card', /\bcard\b/], ['mallsys', /mall|private|integrate|store|inquiry system|entities/], ['documents', /document|attach/]],
+  'maw/pay/general': [['company', /q mobility|qmobility|vision|mission|responsible|job|call center|what is mawaqif/]],
+  'maw/areas/mscp': [['permit', /permit|renew|modify|apply/]],
+  'darb/toll/gates': [['qurmghantout', /qurm|ghantout/]],
+  'priv/mushrif/general': [['tariff', /tariff|fee|free|overnight|weekend|holiday|maximum/]]
+};
+var KB_TOPIC_GENERIC = [
+  ['errors', /error|not showing|can't|cannot|can not|problem|fail|doesn't|not working|why is|why was/],
+  ['renew', /renew|modify|change|update|cancel|transfer|move|sold|address|remaining days|extend/],
+  ['documents', /document|attach|requirement|required|papers|lease|tawtheeq|upload/],
+  ['fees', /fee|cost|price|\baed\b|pay|tariff|charge|rate|free|discount|payment/],
+  ['limits', /eligib|who can|who is|how many|limit|maximum|multiple|number of|allowed/],
+  ['apply', /apply|issue|how do i get|how can i get|request|register|how to/],
+  ['timing', /how long|duration|valid|processing|grace|expire|hours|when/],
+  ['where', /where|which area|location|zone|overnight|weekend|holiday/],
+  ['about', /what is|what are|how does|how do|work/]
+];
+var KB_TOPIC_LABEL = {
+  visitors: ['Visitors', 'الزوار'], kinship: ['Kinship', 'صلة القرابة'], special: ['Special vehicles', 'مركبات خاصة'],
+  sectors: ['Sector updates & coverage', 'تحديثات القطاعات والتغطية'], smart: ['Smart inspection vehicles & cameras', 'مركبات التفتيش الذكية والكاميرات'],
+  waivers: ['Waivers & closing fines', 'إسقاط وإغلاق المخالفات'], grace: ['Grace periods & exemptions', 'فترات السماح والاستثناءات'],
+  report: ['Check or download fines', 'الاستعلام عن المخالفات وتحميلها'], card: ['PoD card', 'بطاقة أصحاب الهمم'],
+  mallsys: ['Malls & private facilities system', 'نظام المراكز التجارية والمواقف الخاصة'], company: ['About Q Mobility', 'عن كيو موبيليتي'],
+  permit: ['MSCP permits', 'تصاريح المواقف الطابقية'], qurmghantout: ['Al Qurm & Ghantout gates', 'بوابتا القرم والغنتوت'],
+  tariff: ['Tariffs & free periods', 'الرسوم والفترات المجانية'],
+  errors: ['Errors & problems', 'الأخطاء والمشكلات'], renew: ['Renew, change or cancel', 'التجديد والتعديل والإلغاء'],
+  documents: ['Documents', 'المستندات'], fees: ['Fees & payment', 'الرسوم والدفع'], limits: ['Eligibility & limits', 'الأهلية والحدود'],
+  apply: ['How to apply', 'طريقة التقديم'], timing: ['Validity & timing', 'الصلاحية والمدة'], where: ['Where & when it applies', 'أين ومتى ينطبق'],
+  about: ['About this service', 'عن الخدمة'], other: ['Other questions', 'أسئلة أخرى']
+};
+var KB_TOPIC_ICON = {visitors:'👥', kinship:'👪', special:'🏍️', sectors:'🗺️', smart:'📷', waivers:'📄', grace:'⏱️', report:'🔎', card:'🪪',
+  mallsys:'🏬', company:'🏢', permit:'🅿️', qurmghantout:'🛣️', tariff:'💵', errors:'⚠️', renew:'🔁', documents:'📄', fees:'💳',
+  limits:'✅', apply:'📝', timing:'⏳', where:'📍', about:'ℹ️', other:'💬'};
+var KB_TOPIC_SPLIT = 8; // split a subtype into topic groups above this many questions
+
+function kbTopicOf(f, path) {
+  if (f.topic) return f.topic;
+  var q = String(f.q || '').toLowerCase();
+  var rules = (KB_TOPIC_SPECIFIC[path] || []).concat(KB_TOPIC_GENERIC);
+  for (var i = 0; i < rules.length; i++) if (rules[i][1].test(q)) return rules[i][0];
+  return 'other';
+}
+function kbTopicLabel(k) { var l = KB_TOPIC_LABEL[k] || [k, k]; return S.lang === 'ar' ? l[1] : l[0]; }
+
+// ===== BROWSE (grid drill-down) =====
+// Sector -> category -> subtype -> topic group -> questions. The position is
+// kept per sector in S.kbNav so the back button returns to the same grid.
+S.kbNav = S.kbNav || {};
+function kbBrowseState(sector) { return S.kbNav[sector] = S.kbNav[sector] || {group: '', sub: '', topic: '', filter: ''}; }
+function kbViewMode() { try { return localStorage.getItem('kb_browse_view') || 'grid'; } catch (e) { return 'grid'; } }
+function kbSetView(mode, sector) { try { localStorage.setItem('kb_browse_view', mode); } catch (e) {} kbBrowseRender(sector); }
+function kbBrowseGo(sector, group, sub, topic) {
+  var st = kbBrowseState(sector);
+  st.group = group || ''; st.sub = sub || ''; st.topic = topic || '';
+  kbBrowseRender(sector);
+  var el = document.getElementById('kbBrowse');
+  if (el && el.getBoundingClientRect().top < 0) el.scrollIntoView({block: 'start'});
+}
+function kbBrowseFilter(sector, value) {
+  kbBrowseState(sector).filter = value;
+  kbBrowseRender(sector, true);
+}
+function kbOpenFromBrowse(sector, id) {
+  window._kbBrowseOrigin = {sector: sector, page: S.page};
+  NAV_HISTORY.push({page: S.page, label: NAV_LABELS[S.page] || 'Home', subcat: S.subcat});
+  openFaqById(id);
+}
+
+function _kbCardHtml(onclick, icon, title, count, fresh, sub) {
+  return '<button type="button" class="kb-bcard" onclick="' + onclick + '">' +
+    '<span class="kb-bcard-ic" aria-hidden="true">' + icon + '</span>' +
+    '<span class="kb-bcard-main"><span class="kb-bcard-title">' + escHtml(title) + '</span>' +
+    (sub ? '<span class="kb-bcard-sub">' + escHtml(sub) + '</span>' : '') + '</span>' +
+    '<span class="kb-bcard-meta">' + (fresh ? '<span class="kb-fresh kb-fresh-new">' + fresh + ' ' + (S.lang === 'ar' ? 'جديد' : 'new') + '</span>' : '') +
+    '<span class="kb-bcard-ct">' + count + '</span></span></button>';
+}
+function _kbQList(sector, list) {
+  var ar = S.lang === 'ar';
+  var sorted = list.slice().sort(function (a, b) {
+    var fa = kbFreshness(a) ? 0 : 1, fb = kbFreshness(b) ? 0 : 1;
+    return fa - fb || String(a.q).localeCompare(String(b.q));
+  });
+  var h = '<div class="kb-qlist">';
+  sorted.forEach(function (f) {
+    h += '<button type="button" class="kb-qrow" onclick="kbOpenFromBrowse(\'' + sector + '\',\'' + _kbJsArg(f.id) + '\')">' +
+         '<span>' + escHtml((ar && f.q_ar ? f.q_ar : f.q) || f.id) + '</span>' + kbStatusPill(f, {hideCurrent: true}) + '</button>';
+  });
+  return h + '</div>';
+}
+function _kbFreshCount(list) { return list.filter(function (f) { return kbFreshness(f); }).length; }
+
+function kbBrowseRender(sector, keepFocus) {
+  var el = document.getElementById('kbBrowse');
+  if (!el) return;
+  var ar = S.lang === 'ar';
+  var st = kbBrowseState(sector);
+  var tree = kbTree();
+  var tx = KB_TAXONOMY[sector];
+  var secName = KB_SECTOR_LABEL[sector][ar ? 1 : 0];
+  var view = kbViewMode();
+  var go = function (g, s, t) { return "kbBrowseGo('" + sector + "','" + (g || '') + "','" + (s || '') + "','" + (t || '') + "')"; };
+
+  // Toolbar: quick filter + grid/list toggle
+  var h = '<div class="kb-browse-bar"><input type="search" id="kbBrowseFilter" class="kb-browse-filter" placeholder="' +
+          escHtml((ar ? 'ابحث في مواضيع ' : 'Filter ') + secName + (ar ? '' : ' topics…')) + '" value="' + escHtml(st.filter) +
+          '" oninput="kbBrowseFilter(\'' + sector + '\', this.value)">' +
+          '<div class="kb-view-toggle" role="group" aria-label="View">' +
+          '<button type="button" class="' + (view === 'grid' ? 'on' : '') + '" onclick="kbSetView(\'grid\',\'' + sector + '\')">▦ ' + (ar ? 'شبكة' : 'Grid') + '</button>' +
+          '<button type="button" class="' + (view === 'list' ? 'on' : '') + '" onclick="kbSetView(\'list\',\'' + sector + '\')">☰ ' + (ar ? 'قائمة' : 'List') + '</button></div></div>';
+
+  var body = '';
+  var filter = String(st.filter || '').trim().toLowerCase();
+  if (filter.length >= 2) {
+    // Filter mode: every matching question in the sector, grouped by path.
+    var words = filter.split(/\s+/);
+    var hits = FAQS.filter(function (f) {
+      if (!f || kbClassify(f).sector !== sector) return false;
+      var t = (f.q + ' ' + (f.q_ar || '') + ' ' + (f.kw || '')).toLowerCase();
+      return words.every(function (w) { return t.indexOf(w) >= 0; });
+    });
+    body += '<div class="kb-browse-head">' + hits.length + ' ' + (ar ? 'نتيجة' : (hits.length === 1 ? 'match' : 'matches')) + '</div>';
+    var byPath = {};
+    hits.forEach(function (f) { var p = kbTaxPath(f); (byPath[p] = byPath[p] || []).push(f); });
+    Object.keys(byPath).sort().forEach(function (p) { body += '<div class="kb-acc-subhead">' + escHtml(p) + '</div>' + _kbQList(sector, byPath[p]); });
+    if (!hits.length) body += '<p class="kb-browse-empty">' + (ar ? 'لا توجد نتائج. جرّب البحث العام في الأعلى.' : 'No topics match. Try the main search at the top.') + '</p>';
+  } else if (view === 'list') {
+    body += kbSectorAccordionHtml(sector);
+  } else {
+    // Breadcrumb for the drill-down
+    var crumbs = ['<a onclick="' + go() + '">' + escHtml(secName) + '</a>'];
+    if (st.group) crumbs.push(st.sub ? '<a onclick="' + go(st.group) + '">' + escHtml(kbGroupLabel(sector, st.group)) + '</a>' : '<b>' + escHtml(kbGroupLabel(sector, st.group)) + '</b>');
+    if (st.sub) crumbs.push(st.topic ? '<a onclick="' + go(st.group, st.sub) + '">' + escHtml(kbSubLabel(sector, st.group, st.sub)) + '</a>' : '<b>' + escHtml(kbSubLabel(sector, st.group, st.sub)) + '</b>');
+    if (st.topic) crumbs.push('<b>' + escHtml(kbTopicLabel(st.topic)) + '</b>');
+    if (st.group) body += '<nav class="kb-bcrumb">' + (st.group ? '<button type="button" class="kb-bback" onclick="' + (st.topic ? go(st.group, st.sub) : st.sub ? go(st.group) : go()) + '">←</button>' : '') + crumbs.join(' <span>›</span> ') + '</nav>';
+
+    if (!st.group) {
+      body += '<div class="kb-bgrid">';
+      kbOrderedGroups(sector, tree).forEach(function (gk) {
+        var bucket = tree[sector][gk], g = tx.groups[gk];
+        var subs = kbOrderedSubs(sector, gk, bucket);
+        var all = [].concat.apply([], subs.map(function (s) { return bucket[s]; }));
+        var preview = subs.slice(0, 3).map(function (s) { return kbSubLabel(sector, gk, s); }).join(' · ');
+        body += _kbCardHtml(go(gk), g.icon, ar ? g.ar : g.en, all.length, _kbFreshCount(all), preview);
+      });
+      body += '</div>';
+    } else if (!st.sub) {
+      var bucket = tree[sector][st.group] || {};
+      var subs = kbOrderedSubs(sector, st.group, bucket);
+      if (subs.length === 1) { st.sub = subs[0]; return kbBrowseRender(sector); }
+      body += '<div class="kb-bgrid">';
+      subs.forEach(function (sk) {
+        body += _kbCardHtml(go(st.group, sk), tx.groups[st.group].icon, kbSubLabel(sector, st.group, sk), bucket[sk].length, _kbFreshCount(bucket[sk]), '');
+      });
+      body += '</div>';
+    } else {
+      var list = ((tree[sector][st.group] || {})[st.sub]) || [];
+      var path = sector + '/' + st.group + '/' + st.sub;
+      if (list.length > KB_TOPIC_SPLIT && !st.topic) {
+        var topics = {};
+        list.forEach(function (f) { var k = kbTopicOf(f, path); (topics[k] = topics[k] || []).push(f); });
+        var keys = Object.keys(topics).sort(function (a, b) { return a === 'other' ? 1 : b === 'other' ? -1 : topics[b].length - topics[a].length; });
+        body += '<div class="kb-bgrid">';
+        keys.forEach(function (k) { body += _kbCardHtml(go(st.group, st.sub, k), KB_TOPIC_ICON[k] || '💬', kbTopicLabel(k), topics[k].length, _kbFreshCount(topics[k]), topics[k].slice(0, 2).map(function (f) { return f.q; }).join(' · ')); });
+        body += '</div>';
+      } else {
+        if (st.topic) list = list.filter(function (f) { return kbTopicOf(f, path) === st.topic; });
+        body += _kbQList(sector, list);
+      }
+    }
+  }
+  el.innerHTML = h + body;
+  if (keepFocus) { var inp = document.getElementById('kbBrowseFilter'); if (inp) { inp.focus(); inp.setSelectionRange(inp.value.length, inp.value.length); } }
 }
 
 // ===== SECTOR ACCORDION =====
