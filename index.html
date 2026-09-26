@@ -262,6 +262,8 @@ body[dir="rtl"] .update-item{border-left:none;border-right:3px solid var(--qm)}
 .kb-best{border:2px solid var(--accent,var(--qm));box-shadow:0 4px 18px rgba(0,0,0,.07)}
 .kb-best-label{font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--accent,var(--qm));margin-bottom:6px}
 .kb-path-tag{background:var(--bg2);color:var(--text2);border:1px solid var(--border)}
+.kb-backbar{display:inline-flex;align-items:center;gap:8px;max-width:100%;margin:0 0 12px;padding:9px 16px;border:1px solid var(--border);border-radius:999px;background:#fff;font:inherit;font-size:14px;font-weight:600;color:var(--qm);cursor:pointer;box-shadow:0 1px 3px rgba(0,0,0,.05);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.kb-backbar:hover,.kb-backbar:focus-visible{border-color:var(--qm);background:var(--bg2);outline:none}
 .kb-browse{margin:4px 0 22px}
 .kb-browse-bar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px}
 .kb-browse-filter{flex:1;min-width:180px;padding:11px 14px;border:1px solid var(--border);border-radius:12px;font:inherit;font-size:14px;background:#fff;color:var(--text)}
@@ -2547,12 +2549,87 @@ var NAV_LABELS = {
   'services':'Qmobility Services'
 };
 
+// ===== ONE BACK HISTORY =====
+// Every step an agent takes - a page, a level in a sector grid, an opened
+// answer, a search - is one entry, so Back (the on-page button, the top-bar
+// arrow, or the browser/mouse back button) always returns to the previous view.
+var _kbRestoring = false;
+function kbSnapshot() {
+  return {page: S.page, label: NAV_LABELS[S.page] || 'Home', subcat: S.subcat || null,
+          faq: S.page === 'faqview' ? _lastOpenedFaqId : null, q: _lastSearchQuery || '',
+          nav: JSON.stringify(S.kbNav || {})};
+}
+function kbPushHistory() {
+  if (_kbRestoring || !S.page) return;
+  var snap = kbSnapshot(), top = NAV_HISTORY[NAV_HISTORY.length - 1];
+  if (top && JSON.stringify(top) === JSON.stringify(snap)) return;
+  NAV_HISTORY.push(snap);
+  if (NAV_HISTORY.length > 50) NAV_HISTORY.shift();
+  try { history.pushState({kb: true}, ''); } catch (e) {}
+}
+function kbRestore(prev) {
+  _kbRestoring = true;
+  try {
+    S.page = prev.page; S.subcat = prev.subcat || null;
+    try { S.kbNav = JSON.parse(prev.nav || '{}'); } catch (e) { S.kbNav = {}; }
+    _lastSearchQuery = prev.q || '';
+    var input = document.getElementById('searchInput');
+    if (prev.page === 'faqview' && prev.faq) {
+      if (input) input.value = prev.q || '';
+      openFaqById(prev.faq);
+    } else if (prev.page === 'search' && prev.q) {
+      if (input) input.value = prev.q;
+      renderSearch(document.getElementById('content'), prev.q);
+      kbInjectBack();
+    } else {
+      if (input) input.value = '';
+      render(S.page);
+    }
+    buildNav();
+    document.title = (prev.label || 'Home') + ' | QMobility KB';
+  } finally { _kbRestoring = false; }
+  window.scrollTo(0, 0);
+}
+function kbDoBack() {
+  if (NAV_HISTORY.length) kbRestore(NAV_HISTORY.pop());
+  else { _kbRestoring = true; try { go('dashboard', 'Home'); } finally { _kbRestoring = false; } }
+}
+window.addEventListener('popstate', function () { kbDoBack(); });
+
+// Where Back will take the agent, in words.
+function kbBackLabel() {
+  var prev = NAV_HISTORY[NAV_HISTORY.length - 1];
+  var ar = S.lang === 'ar';
+  if (!prev) return ar ? 'الرئيسية' : 'Home';
+  if (prev.page === 'search') return (ar ? 'نتائج البحث' : 'Search results') + (prev.q ? ': “' + prev.q + '”' : '');
+  if (prev.page === 'faqview') return ar ? 'الإجابة السابقة' : 'Previous answer';
+  if (/^sector-/.test(prev.page)) {
+    var sec = prev.page === 'sector-darb' ? 'darb' : prev.page === 'sector-priv' ? 'priv' : 'maw', st = {};
+    try { st = (JSON.parse(prev.nav || '{}')[sec]) || {}; } catch (e) {}
+    if (st.topic) return kbTopicLabel(st.topic);
+    if (st.sub) return kbSubLabel(sec, st.group, st.sub);
+    if (st.group) return kbGroupLabel(sec, st.group);
+    return KB_SECTOR_LABEL[sec][ar ? 1 : 0];
+  }
+  if (prev.page === 'dashboard') return ar ? 'الرئيسية' : 'Home';
+  var l = prev.label || '';
+  if (!l || l === prev.page) { l = String(prev.page).replace(/^faq-/, '').replace(/-/g, ' '); l = l.charAt(0).toUpperCase() + l.slice(1); }
+  return l;
+}
+function kbInjectBack() {
+  var el = document.getElementById('content');
+  if (!el || S.page === 'dashboard' || el.querySelector(':scope > .kb-backbar')) return;
+  var b = document.createElement('button');
+  b.type = 'button'; b.className = 'kb-backbar';
+  b.onclick = goBack;
+  b.innerHTML = '<span aria-hidden="true">' + (S.lang === 'ar' ? '→' : '←') + '</span> ' +
+    (S.lang === 'ar' ? 'رجوع إلى ' : 'Back to ') + escHtml(kbBackLabel());
+  el.insertBefore(b, el.firstChild);
+}
+
 function go(page, label, subcat) {
   ANALYTICS.trackClick(page, label);
-  if (S.page !== page || S.subcat !== subcat) {
-    NAV_HISTORY.push({page:S.page, label:NAV_LABELS[S.page]||'Home', subcat:S.subcat});
-    if (NAV_HISTORY.length > 20) NAV_HISTORY.shift();
-  }
+  if (S.page !== page || S.subcat !== subcat) kbPushHistory();
   S.page = page;
   S.subcat = subcat || null;
   if (label) NAV_LABELS[page] = label;
@@ -2565,16 +2642,9 @@ function go(page, label, subcat) {
 }
 
 function goBack() {
-  if (NAV_HISTORY.length > 0) {
-    var prev = NAV_HISTORY.pop();
-    S.page = prev.page;
-    S.subcat = prev.subcat || null;
-    render(S.page);
-    buildNav();
-    document.title = (prev.label || NAV_LABELS[S.page] || 'Home') + ' | QMobility KB';
-  } else {
-    goHome();
-  }
+  // Keep the browser's own history in step: its back fires popstate -> kbDoBack.
+  if (NAV_HISTORY.length && history.state && history.state.kb) history.back();
+  else kbDoBack();
 }
 
 function goHome() {
@@ -3475,6 +3545,7 @@ function render(page) {
   else if (page === 'faqview') { if (_lastOpenedFaqId) openFaqById(_lastOpenedFaqId); else renderSearch(el, _lastSearchQuery||''); }
   else if (page && page.indexOf('faq-') === 0) renderFaqPage(el, page);
   else el.innerHTML = '<div class="card"><p>Page not found: ' + escHtml(page) + '</p></div>';
+  kbInjectBack();
   el.classList.remove('page-enter'); void el.offsetWidth; el.classList.add('page-enter');
   requestAnimationFrame(function(){ enhanceKbVisuals(el); });
 }
@@ -4413,6 +4484,7 @@ function openFaqById(id){
   // SMS / email template hits live in the search-only corpus, not in FAQS.
   var f = FAQS.concat(_searchAux).filter(function(x){return x.id===id;})[0];
   if(!f) return;
+  kbPushHistory();
   _lastOpenedFaqId = id;
   hideSearchDropdown();
   var input = document.getElementById('searchInput');
@@ -4435,6 +4507,7 @@ function openFaqById(id){
   var h = '<div class="breadcrumb"><a onclick="goHome()">Home</a> / ' + trail + 'Answer</div>';
   h += '<div class="faq-list">'+renderFaqCard(f, _lastSearchQuery)+'</div>';
   el.innerHTML = h;
+  kbInjectBack();
   el.scrollTop = 0;
   window.scrollTo(0,0);
 }
@@ -4444,16 +4517,18 @@ function doSearch(silent) {
   var q = document.getElementById('searchInput').value.trim();
   if (!q) return;
   hideSearchDropdown();
+  if (silent !== true && !(S.page === 'search' && _lastSearchQuery === q)) kbPushHistory(); // before the query changes
   _lastSearchQuery = q;
   _currentSearchFilter = 'all';
   if (silent === true) {
     S.page = 'search';
     var el = document.getElementById('content');
-    if (el) renderSearch(el, q);
+    if (el) { renderSearch(el, q); kbInjectBack(); }
   } else {
-    go('search', 'Search: ' + q);
+    _kbRestoring = true; // already recorded above
+    try { go('search', 'Search: ' + q); } finally { _kbRestoring = false; }
     var el2 = document.getElementById('content');
-    if (el2) renderSearch(el2, q);
+    if (el2) { renderSearch(el2, q); kbInjectBack(); }
   }
 }
 
@@ -5096,6 +5171,7 @@ function kbViewMode() { try { return localStorage.getItem('kb_browse_view') || '
 function kbSetView(mode, sector) { try { localStorage.setItem('kb_browse_view', mode); } catch (e) {} kbBrowseRender(sector); }
 function kbBrowseGo(sector, group, sub, topic) {
   var st = kbBrowseState(sector);
+  if (st.group !== (group || '') || st.sub !== (sub || '') || st.topic !== (topic || '')) kbPushHistory();
   st.group = group || ''; st.sub = sub || ''; st.topic = topic || '';
   kbBrowseRender(sector);
   var el = document.getElementById('kbBrowse');
@@ -5107,7 +5183,6 @@ function kbBrowseFilter(sector, value) {
 }
 function kbOpenFromBrowse(sector, id) {
   window._kbBrowseOrigin = {sector: sector, page: S.page};
-  NAV_HISTORY.push({page: S.page, label: NAV_LABELS[S.page] || 'Home', subcat: S.subcat});
   openFaqById(id);
 }
 
@@ -5214,6 +5289,9 @@ function kbBrowseRender(sector, keepFocus) {
     }
   }
   el.innerHTML = h + body;
+  // The page-level Back button names the view it returns to; refresh it.
+  var oldBack = document.querySelector('#content > .kb-backbar');
+  if (oldBack) { oldBack.remove(); kbInjectBack(); }
   if (keepFocus) { var inp = document.getElementById('kbBrowseFilter'); if (inp) { inp.focus(); inp.setSelectionRange(inp.value.length, inp.value.length); } }
 }
 
