@@ -190,6 +190,81 @@ body[dir="rtl"] .update-item{border-left:none;border-right:3px solid var(--qm)}
 .update-date{font-size:12px;color:var(--text2)}
 .update-title{font-weight:600;margin:4px 0}
 .update-desc{font-size:13px;color:var(--text2)}
+.kb-home{display:flex;flex-direction:column;gap:26px}
+.agent-hero.kb-home-hero{display:block;padding:30px 30px 24px;text-align:start}
+.kb-home-hero h1{font-size:30px;line-height:1.15;margin:0 0 16px;max-width:none}
+.kb-home-hero .agent-search-panel input{font-size:17px;padding:15px 18px}
+.kb-home-meta{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin-top:14px;font-size:13px;color:var(--text2)}
+.kb-unread-pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);background:var(--bg);border-radius:999px;padding:6px 14px 6px 6px;font:inherit;font-size:13px;font-weight:700;color:var(--text);cursor:pointer}
+.kb-unread-dot{display:inline-block;background:#c62828;color:#fff;font-size:11px;font-weight:800;border-radius:999px;padding:3px 9px;line-height:1.3}
+.kb-unread-dot[hidden]{display:none}
+.kb-unread-top{border:0;background:#c62828;color:#fff;font:inherit;font-size:12px;font-weight:800;border-radius:999px;padding:6px 12px;cursor:pointer;white-space:nowrap}
+.kb-unread-top[hidden]{display:none}
+.kb-home-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:12px}
+.kb-home-head h2{margin:0;font-size:18px}
+.kb-home-head a{font-size:13px;font-weight:700;cursor:pointer;color:var(--qm)}
+.kb-muted{color:var(--text2);font-size:13px;margin:4px 0 0}
+.kb-upd-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px}
+.kb-upd{display:flex;flex-direction:column;gap:8px;text-align:start;border:1px solid var(--border);border-left:4px solid var(--border);background:var(--bg);border-radius:12px;padding:14px 16px;font:inherit;color:var(--text);cursor:pointer}
+.kb-upd.unread{border-left-color:#c62828}
+.kb-upd:hover{box-shadow:0 8px 20px rgba(16,24,40,.08)}
+.kb-upd-top{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px}
+.kb-upd-top b{font-size:15px;line-height:1.3;flex:1 1 180px;min-width:0}
+.kb-upd-eff{font-size:11px;font-weight:700;color:var(--text2);white-space:nowrap}
+.kb-upd-row{font-size:13px;line-height:1.45;color:var(--text2)}
+.kb-upd-row span{display:block;font-size:10px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--text);margin-bottom:2px}
+.kb-upd-row.act{background:var(--bg2);border-radius:8px;padding:8px 10px;color:var(--text)}
+.kb-upd-go{font-size:12px;font-weight:800;color:var(--qm);margin-top:auto}
+.kb-upd-group{font-size:15px;margin:22px 0 10px}
+.kb-upd-group span{font-size:12px;color:var(--text2);font-weight:600}
+.kb-svc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.kb-svc{display:flex;flex-direction:column;align-items:flex-start;gap:4px;text-align:start;border:1px solid var(--border);background:var(--bg);border-radius:14px;padding:18px;font:inherit;color:var(--text);cursor:pointer}
+.kb-svc:hover{border-color:var(--qm);box-shadow:0 8px 20px rgba(16,24,40,.08)}
+.kb-svc-ic{font-size:26px}
+.kb-svc b{font-size:17px}
+.kb-svc span{font-size:13px;color:var(--text2);line-height:1.4}
+.kb-svc em{font-style:normal;font-size:12px;font-weight:700;color:var(--text2);margin-top:4px}
+.kb-lanes{display:flex;flex-wrap:wrap;gap:8px}
+.kb-lane{border:1px solid var(--border);background:var(--bg);border-radius:999px;padding:9px 16px;font:inherit;font-size:14px;font-weight:700;color:var(--text);cursor:pointer}
+.kb-lane:hover{border-color:var(--qm);color:var(--qm)}
+.kb-lane.ghost{border-style:dashed;color:var(--text2)}
+@media (max-width:780px){.kb-svc-grid{grid-template-columns:1fr}.kb-upd-grid{grid-template-columns:1fr}}
+@media (max-width:420px){.agent-hero.kb-home-hero{padding:20px 16px}.kb-home-hero h1{font-size:23px}.kb-unread-top{padding:5px 9px;font-size:11px}}
+.kb-acc{display:flex;flex-direction:column;gap:10px;margin:18px 0 22px}
+.kb-acc-group{border:1px solid var(--border);border-radius:14px;background:var(--bg);overflow:hidden}
+.kb-acc-group>summary{list-style:none;display:flex;align-items:center;gap:12px;padding:14px 18px;cursor:pointer;font-weight:700;font-size:15px;user-select:none}
+.kb-acc-group>summary::-webkit-details-marker{display:none}
+.kb-acc-group>summary::after{content:"\25BE";margin-inline-start:4px;color:var(--text2);transition:transform .2s}
+.kb-acc-group[open]>summary::after{transform:rotate(180deg)}
+.kb-acc-group>summary:hover{background:var(--bg2)}
+.kb-acc-ic{font-size:18px;width:24px;text-align:center}
+.kb-acc-name{flex:1;min-width:0}
+.kb-acc-ct{font-size:12px;font-weight:700;color:var(--text2);background:var(--bg2);border-radius:999px;padding:2px 10px}
+.kb-acc-body{padding:4px 18px 16px;border-top:1px solid var(--border)}
+.kb-acc-sub{margin-top:12px}
+.kb-acc-subhead{font-size:11px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--text2);margin-bottom:4px}
+.kb-acc-subhead span{font-weight:600;opacity:.7}
+.kb-acc-item{display:flex;align-items:center;gap:8px;width:100%;text-align:start;background:none;border:0;border-radius:8px;padding:8px 10px;font:inherit;font-size:14px;color:var(--text);cursor:pointer;line-height:1.4}
+.kb-acc-item:hover,.kb-acc-item:focus-visible{background:var(--bg2);outline:none}
+.kb-acc-item>span:first-child{flex:1;min-width:0}
+.kb-acc-links{display:flex;flex-wrap:wrap;gap:8px;margin:-8px 0 20px}
+.kb-fresh{flex-shrink:0;font-size:10px;font-weight:800;letter-spacing:.03em;border-radius:999px;padding:2px 8px;text-transform:uppercase}
+.kb-fresh-new{background:#e8f5e9;color:#1b5e20;border:1px solid #a5d6a7}
+.kb-fresh-updated{background:#fff8e1;color:#7a4f00;border:1px solid #ffe082}
+.kb-status{display:inline-block;vertical-align:middle;margin-inline-start:6px;font-size:10px;font-weight:800;letter-spacing:.03em;border-radius:999px;padding:2px 8px;white-space:nowrap;line-height:1.5;border:1px solid transparent}
+.kb-status-current{background:#eef2f6;color:#46566a;border-color:#d5dde7}
+.kb-status-new{background:#e8f5e9;color:#1b5e20;border-color:#a5d6a7}
+.kb-status-updated{background:#fff8e1;color:#7a4f00;border-color:#ffe082}
+.kb-status-upcoming{background:#e8f0fe;color:#1a4fa0;border-color:#b6ccf5}
+.kb-status-temporary{background:#fff1e6;color:#8a3b00;border-color:#ffc999}
+.kb-status-expired{background:#fdecea;color:#9b2c21;border-color:#f5c6c0}
+.sd-item .kb-status{margin-inline-start:6px}
+.kb-best{border:2px solid var(--accent,var(--qm));box-shadow:0 4px 18px rgba(0,0,0,.07)}
+.kb-best-label{font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--accent,var(--qm));margin-bottom:6px}
+.kb-path-tag{background:var(--bg2);color:var(--text2);border:1px solid var(--border)}
+.kb-ar-pending{font-size:12px;color:#7a4f00;background:#fff8e1;border:1px solid #ffe082;border-radius:8px;padding:6px 10px;margin-bottom:8px}
+@media (max-width:420px){.kb-status{white-space:normal}}
+@media (max-width:420px){.kb-acc-group>summary{padding:12px 14px;font-size:14px}.kb-acc-body{padding:2px 12px 12px}}
 .kb-timing{display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px;margin-top:6px;font-size:11px;line-height:1.5;color:var(--text2)}
 .kb-timing a{color:var(--text2);text-decoration:underline}
 .kb-timing-sep{opacity:.45}
@@ -648,6 +723,7 @@ body[dir="rtl"] .wa-search input{padding:0 42px 0 14px}body[dir="rtl"] .wa-searc
 <button class="menu-btn" aria-label="Toggle navigation" title="Toggle navigation" onclick="toggleSidebar()">&#9776;</button>
 <button class="menu-btn" aria-label="Go back" title="Go back" onclick="goBack()">&#8592;</button>
 <button class="menu-btn" aria-label="Home" title="Home" onclick="goHome()">&#127969;</button>
+<button class="kb-unread-top" id="kbUnreadTop" type="button" hidden aria-label="Unread updates" onclick="go('updates','Latest Updates')"></button>
 <div class="search-box"><input type="text" id="searchInput" aria-label="Search knowledge base" autocomplete="off" placeholder="Search KB… (Ctrl+K)" onkeydown="searchKeyNav(event)" oninput="instantSearch()" onfocus="instantSearch()"><div class="search-dropdown" id="searchDropdown"></div></div>
 <button class="lang-toggle" onclick="toggleLang()" id="langBtn"><span id="langLabel">&#127468;&#127463; EN</span></button>
 <button class="btn" onclick="showAdminModal()">&#9881; Admin</button>
@@ -1169,7 +1245,7 @@ var SMS_TEMPLATES = [
 // ===== TOW YARD DATA (from XLSX) =====
 var TOW_YARDS = [
   {name_en:"Al Karama Impounding Yard", name_ar:"ساحة حجز الكرامة", link:"https://maps.app.goo.gl/1j8xEWWzmjRDn5Kg6", hours_en:"24/7", hours_ar:"على مدار الساعة", phone:""},
-  {name_en:"Mussafah Impounding Yard", name_ar:"ساحة حجز مصفح", link:"https://maps.app.goo.gl/yff1kBHgCYa9bumN9", hours_en:"8 AM - 12 AM", hours_ar:"8 ص - 12 ص", phone:""},
+  {name_en:"Mussafah Impounding Yard", name_ar:"ساحة حجز مصفح", link:"https://maps.app.goo.gl/yff1kBHgCYa9bumN9", hours_en:"24/7", hours_ar:"على مدار الساعة", phone:""},
   {name_en:"Al Ain Impounding Yard", name_ar:"ساحة حجز العين", link:"https://maps.app.goo.gl/6CMuwUwqE29L3CMK9", hours_en:"8 AM - 12 AM", hours_ar:"8 ص - 12 ص", phone:""}
 ];
 
@@ -1278,7 +1354,7 @@ var WHATSAPP_RESPONSES = [
   {id:"WA-101",category:"Mawaqif",category_ar:"مواقف",title_en:"Public parking hours and rates",title_ar:"أوقات ورسوم المواقف العامة",en:"Mawaqif public parking is generally chargeable from Monday to Saturday, 8:00 AM to 12:00 midnight.\n\n• Standard parking: AED 2 per hour, up to AED 15 per day\n• Premium parking: AED 3 per hour, with a maximum stay of 4 hours\n• Sundays and public holidays are free unless the signs at the location state otherwise\n\nPlease always follow the parking signs at the selected bay.",ar:"تطبق رسوم مواقف العامة عادةً من الاثنين إلى السبت، من الساعة 8:00 صباحاً حتى 12:00 منتصف الليل.\n\n• المواقف العادية: درهمان للساعة وبحد أقصى 15 درهماً لليوم\n• المواقف المميزة: 3 دراهم للساعة وبحد أقصى 4 ساعات للوقوف\n• أيام الأحد والعطلات الرسمية مجانية ما لم توضح اللوحات في الموقع خلاف ذلك\n\nيرجى دائماً اتباع اللوحات الإرشادية في موقف المركبة.",keywords:"mawaqif public parking hours rates standard premium sunday holiday 2 3 15"},
   {id:"WA-102",category:"Mawaqif",category_ar:"مواقف",title_en:"Pay parking by SMS to 3009",title_ar:"دفع رسوم المواقف برسالة إلى 3009",en:"To pay for parking by SMS, send the message to 3009 using this format:\n\n[Emirate and plate category] [Plate number] [S or P] [Number of hours]\n\nExample: AUH10 12345 S 2\n\nS = Standard parking\nP = Premium parking\n\nPlease confirm the plate details and parking type before sending.",ar:"لدفع رسوم المواقف عبر الرسائل النصية، أرسل الرسالة إلى الرقم 3009 بالصيغة التالية:\n\n[رمز الإمارة وفئة اللوحة] [رقم اللوحة] [S أو P] [عدد الساعات]\n\nمثال: AUH10 12345 S 2\n\nS = موقف عادي\nP = موقف مميز\n\nيرجى التأكد من بيانات اللوحة ونوع الموقف قبل الإرسال.",keywords:"sms 3009 parking payment format standard premium plate"},
   {id:"WA-103",category:"Mawaqif",category_ar:"مواقف",title_en:"Pay parking through digital channels",title_ar:"دفع المواقف عبر القنوات الرقمية",en:"Parking fees can be paid through the DARB application or wallet, TAMM, or SMS to 3009. Please verify the vehicle plate, parking sector, parking type, and required duration before confirming the payment.",ar:"يمكن دفع رسوم المواقف من خلال تطبيق أو محفظة درب، أو منصة تم، أو عبر رسالة نصية إلى الرقم 3009. يرجى التأكد من لوحة المركبة وقطاع المواقف ونوع الموقف والمدة المطلوبة قبل تأكيد الدفع.",keywords:"darb tamm wallet digital pay parking sector"},
-  {id:"WA-104",category:"Mawaqif",category_ar:"مواقف",title_en:"Residential parking permit documents",title_ar:"مستندات تصريح مواقف السكان",en:"For a residential parking permit request, the customer normally needs:\n• Emirates ID\n• Vehicle registration card\n• Valid Tawtheeq tenancy contract or property ownership document\n• Utility bill when required\n• Proof of kinship when applying for an eligible relative\n\nApplications are submitted through TAMM or the available DARB permit service.",ar:"لطلب تصريح مواقف السكان، يحتاج المتعامل عادةً إلى:\n• الهوية الإماراتية\n• بطاقة ملكية المركبة\n• عقد إيجار موثق ساري أو مستند ملكية العقار\n• فاتورة خدمات عند الطلب\n• إثبات صلة القرابة عند التقديم لقريب مؤهل\n\nيتم تقديم الطلب عبر منصة تم أو خدمة التصاريح المتاحة في تطبيق درب.",keywords:"resident residential permit documents tawtheeq eid vehicle registration kinship"},
+  {id:"WA-104",category:"Mawaqif",category_ar:"مواقف",title_en:"Residential parking permit documents",title_ar:"مستندات تصريح مواقف السكان",en:"For a residential parking permit request, the customer normally needs:\n• Emirates ID\n• Vehicle registration card\n• A valid lease (Tawtheeq) or ownership record that can be validated digitally through DARI, ADDC or Abu Dhabi Police - manual lease upload is no longer available\n• Proof of kinship when applying for an eligible relative\n\nApplications are submitted through the DARB app (TAMM digital validation is in progress).",ar:"لطلب تصريح مواقف السكان، يحتاج المتعامل عادةً إلى:\n• الهوية الإماراتية\n• بطاقة ملكية المركبة\n• عقد إيجار ساري يمكن التحقق منه إلكترونيًا عبر داري (DARI) أو شركة أبوظبي للتوزيع (ADDC) أو شرطة أبوظبي\n• إثبات صلة القرابة عند التقديم لقريب مؤهل\n\nيتم تقديم الطلب عبر منصة تم أو خدمة التصاريح المتاحة في تطبيق درب.",keywords:"resident residential permit documents tawtheeq eid vehicle registration kinship"},
   {id:"WA-105",category:"Mawaqif",category_ar:"مواقف",title_en:"Mawaqif permit and reservation services",title_ar:"خدمات تصاريح وحجز مواقف",en:"Mawaqif permit services include residential permits, limited-term standard parking permits, multi-storey parking permits, parking reservations, infrastructure, maintenance, basement extension, advertising, and charity permits.\n\nPlease select the exact service from the official Q Mobility Mawaqif services page:\nhttps://www.qmobility.ae/en/services/mawaqif",ar:"تشمل خدمات تصاريح مواقف: تصاريح السكان، والتصاريح محددة المدة للمواقف العادية، وتصاريح المواقف الطابقية، وحجز المواقف، وتصاريح البنية التحتية والصيانة والتوسعة السفلية والحملات الإعلانية والخيرية.\n\nيرجى اختيار الخدمة المطلوبة من صفحة خدمات مواقف الرسمية:\nhttps://www.qmobility.ae/ar/services/mawaqif",keywords:"permit reservation limited term commercial infrastructure maintenance charity advertising official services"},
   {id:"WA-106",category:"Mawaqif",category_ar:"مواقف",title_en:"Parking fine payment and discount",title_ar:"دفع مخالفة المواقف والخصم",en:"The customer can review and pay Mawaqif parking fines through the DARB application or TAMM. When applicable, paying the fine within 60 days from the issue date provides a 25% discount. Please verify the fine status before confirming eligibility.",ar:"يمكن للمتعامل مراجعة مخالفات مواقف ودفعها من خلال تطبيق درب أو منصة تم. عند انطباق الشروط، يمنح دفع المخالفة خلال 60 يوماً من تاريخ إصدارها خصماً بنسبة 25%. يرجى التحقق من حالة المخالفة قبل تأكيد الاستحقاق.",keywords:"fine payment discount 25 percent 60 days"},
   {id:"WA-107",category:"Mawaqif",category_ar:"مواقف",title_en:"Parking grievance",title_ar:"التظلم على مخالفة مواقف",en:"A parking grievance can be submitted through the DARB application. Please attach the relevant evidence and ensure the fine details are correct. Review and decision may take up to 7 working days. If the grievance is rejected or exceeds the approved period, the customer may contact ITC on 800 850.",ar:"يمكن تقديم التظلم على مخالفة مواقف من خلال تطبيق درب. يرجى إرفاق الأدلة ذات الصلة والتأكد من صحة بيانات المخالفة. قد تستغرق المراجعة وإصدار القرار حتى 7 أيام عمل. إذا تم رفض التظلم أو تجاوز المدة المعتمدة، يمكن للمتعامل التواصل مع مركز النقل المتكامل على الرقم 800 850.",keywords:"parking grievance appeal evidence 7 working days ITC 800850"},
@@ -1297,7 +1373,7 @@ var WHATSAPP_RESPONSES = [
   {id:"WA-207",category:"DARB",category_ar:"درب",title_en:"DARB exemption application",title_ar:"طلب إعفاء درب",en:"DARB exemptions are available for eligible categories such as People of Determination, senior citizens, retired citizens, and eligible low-income customers. The application normally requires Emirates ID, vehicle registration, category evidence, and proof of kinship when the vehicle belongs to an eligible relative.",ar:"تتوفر إعفاءات درب للفئات المؤهلة مثل أصحاب الهمم وكبار المواطنين والمتقاعدين ومستحقي الدعم من ذوي الدخل المحدود. يتطلب الطلب عادةً الهوية الإماراتية وملكية المركبة والمستند المثبت للفئة وإثبات صلة القرابة إذا كانت المركبة تخص قريباً مؤهلاً.",keywords:"darb exemption pod senior retired low income documents kinship"},
   {id:"WA-208",category:"DARB",category_ar:"درب",title_en:"Switch to the DARB X experience",title_ar:"الانتقال إلى تجربة درب X",en:"The “Switch to the New Experience” option has been added to the current DARB application as part of the transition to DARB X. The customer may select this option to access the updated application experience. It is not an error or an unrelated advertisement.",ar:"تمت إضافة خيار «الانتقال إلى التجربة الجديدة» في تطبيق درب الحالي ضمن عملية الانتقال إلى تجربة درب X. يمكن للمتعامل اختيار هذا الخيار للوصول إلى تجربة التطبيق المحدثة. هذا الخيار ليس خطأً أو إعلاناً لتطبيق غير مرتبط.",keywords:"darb x switch new experience transition app"},
 
-  {id:"WA-301",category:"Free Flow",category_ar:"التدفق الحر",title_en:"How Free Flow parking works",title_ar:"آلية عمل مواقف التدفق الحر",en:"Free Flow parking uses automatic plate recognition without tickets or barriers. For DARB-registered vehicles, eligible fees are deducted automatically from the DARB wallet. Non-registered vehicles must pay within 24 hours after exit using the QR code provided or:\nhttps://freeflow.qmobility.ae",ar:"تعمل مواقف التدفق الحر بالتعرف الآلي على لوحات المركبات من دون تذاكر أو حواجز. للمركبات المسجلة في درب، يتم خصم الرسوم المستحقة تلقائياً من المحفظة. أما المركبات غير المسجلة فيجب دفع الرسوم خلال 24 ساعة من الخروج عبر رمز QR أو من خلال:\nhttps://freeflow.qmobility.ae",keywords:"free flow anpr barrierless 24 hours payment qr darb wallet"},
+  {id:"WA-301",category:"Free Flow",category_ar:"التدفق الحر",title_en:"How Free Flow parking works",title_ar:"آلية عمل مواقف التدفق الحر",en:"Free Flow parking uses automatic plate recognition without tickets or barriers. For DARB-registered vehicles, eligible fees are deducted automatically from the DARB wallet. In malls, multi-storey car parks and Etihad Rail parking, non-registered vehicles must pay within 24 hours after exit using the QR code provided or:\nhttps://freeflow.qmobility.ae\n\nIn on-street SmartPark zones (e.g. sector W4 from 28 September 2026), non-registered vehicles must pay by SMS within 10 minutes of entry; the QR code and website cannot be used there.",ar:"تعمل مواقف التدفق الحر بالتعرف الآلي على لوحات المركبات من دون تذاكر أو حواجز. للمركبات المسجلة في درب، يتم خصم الرسوم المستحقة تلقائياً من المحفظة. أما المركبات غير المسجلة فيجب دفع الرسوم خلال 24 ساعة من الخروج عبر رمز QR أو من خلال:\nhttps://freeflow.qmobility.ae\n\n(Mall, multi-storey and Etihad Rail parking only. On-street SmartPark, e.g. W4: SMS within 10 minutes of entry.)",keywords:"free flow anpr barrierless 24 hours payment qr darb wallet"},
   {id:"WA-302",category:"Free Flow",category_ar:"التدفق الحر",title_en:"Mushrif Mall parking tariff",title_ar:"تعرفة مواقف مشرف مول",en:"Mushrif Mall visitor parking operates from 6:00 AM to 2:00 AM.\n• First 3 hours free once per day\n• From 3 to 7 hours: AED 10 per hour or part thereof\n• More than 7 hours: capped at AED 80 per day per visit\n• Overnight from 2:00–6:00 AM: AED 250\n• Saturdays, Sundays, and public holidays are free, excluding overnight parking\n\nDARB-registered vehicles are charged automatically. Other vehicles must pay within 24 hours after exit.",ar:"تعمل مواقف زوار مشرف مول من الساعة 6:00 صباحاً حتى 2:00 صباحاً.\n• أول 3 ساعات مجانية مرة واحدة يومياً\n• من 3 إلى 7 ساعات: 10 دراهم لكل ساعة أو جزء منها\n• أكثر من 7 ساعات: حد أقصى 80 درهماً لليوم لكل زيارة\n• الوقوف الليلي من 2:00 إلى 6:00 صباحاً: 250 درهماً\n• السبت والأحد والعطلات الرسمية مجانية باستثناء الوقوف الليلي\n\nيتم الخصم تلقائياً للمركبات المسجلة في درب، وعلى المركبات الأخرى الدفع خلال 24 ساعة من الخروج.",keywords:"mushrif mall fees 3 hours 10 80 overnight 250 weekends"},
   {id:"WA-303",category:"Free Flow",category_ar:"التدفق الحر",title_en:"Mushrif Mall gym visitors overnight",title_ar:"زوار النادي الرياضي في مشرف مول ليلاً",en:"Gym visitors parking at Mushrif Mall between 2:00 AM and 6:00 AM must have the vehicle number validated directly by the gym. A correctly validated vehicle receives the first 3 hours free during the overnight window. Without gym validation, the AED 250 overnight charge applies. Validation disputes must be directed to gym management unless there is a separate parking-system issue.",ar:"يجب على زوار النادي الرياضي الذين يوقفون مركباتهم في مشرف مول بين الساعة 2:00 و6:00 صباحاً التحقق من رقم المركبة مباشرةً لدى النادي. تحصل المركبة التي تم اعتمادها بشكل صحيح على أول 3 ساعات مجاناً خلال فترة الوقوف الليلي. عند عدم الاعتماد، تطبق رسوم الوقوف الليلي بقيمة 250 درهماً. يتم توجيه أي اعتراض على الاعتماد إلى إدارة النادي ما لم توجد مشكلة منفصلة في نظام المواقف.",keywords:"mushrif gym overnight validation 3 hours free 250 management"},
   {id:"WA-304",category:"Free Flow",category_ar:"التدفق الحر",title_en:"Abu Dhabi Mall parking tariff",title_ar:"تعرفة مواقف أبوظبي مول",en:"Abu Dhabi Mall visitor parking operates from 6:00 AM to 2:00 AM.\n• First 3 hours free once per day\n• Every additional hour or part thereof: AED 10\n• Overnight parking from 2:00–6:00 AM is prohibited except for permitted vehicles\n• Saturdays, Sundays, and public holidays are free, excluding overnight parking\n\nDARB-registered vehicles are charged automatically. Other vehicles must pay within 24 hours after exit.",ar:"تعمل مواقف زوار أبوظبي مول من الساعة 6:00 صباحاً حتى 2:00 صباحاً.\n• أول 3 ساعات مجانية مرة واحدة يومياً\n• كل ساعة إضافية أو جزء منها: 10 دراهم\n• الوقوف الليلي من 2:00 إلى 6:00 صباحاً ممنوع باستثناء المركبات المصرح لها\n• السبت والأحد والعطلات الرسمية مجانية باستثناء الوقوف الليلي\n\nيتم الخصم تلقائياً للمركبات المسجلة في درب، وعلى المركبات الأخرى الدفع خلال 24 ساعة من الخروج.",keywords:"abu dhabi mall fees 3 hours 10 overnight prohibited weekends"},
@@ -1390,6 +1466,16 @@ function kbParseStamp(value) {
     if (mi >= 0) {
       var ly = +legacy[3], ld = +legacy[1];
       return {y:ly, m:mi + 1, d:ld, hasTime:false, ms:Date.UTC(ly, mi, ld) - KB_DUBAI_OFFSET_MS};
+    }
+  }
+  // US-style legacy dates, e.g. "Apr 6, 2026".
+  var us = s.match(/^([A-Za-z]{3,})\s+(\d{1,2}),?\s+(\d{4})$/);
+  if (us) {
+    var ukey = us[1].slice(0,1).toUpperCase() + us[1].slice(1,3).toLowerCase();
+    var umi = KB_MONTHS.indexOf(ukey);
+    if (umi >= 0) {
+      var uy = +us[3], ud = +us[2];
+      return {y:uy, m:umi + 1, d:ud, hasTime:false, ms:Date.UTC(uy, umi, ud) - KB_DUBAI_OFFSET_MS};
     }
   }
   return null;
@@ -1532,17 +1618,6 @@ function kbUpdatesListHtml(list, limit) {
   return h;
 }
 
-function renderUpdates(el) {
-  var h = '<div class="breadcrumb"><a onclick="goHome()">Home</a> / ' + (S.lang === 'ar' ? 'آخر التحديثات' : 'Latest Updates') + '</div>';
-  h += '<div class="page-header"><div><h1>&#128227; ' + (S.lang === 'ar' ? 'آخر التحديثات' : 'Latest Updates') + '</h1>';
-  h += '<p style="color:var(--text2);font-size:13px;margin:4px 0 0;">' +
-       (S.lang === 'ar'
-         ? 'مرتبة حسب تاريخ السريان. جميع الأوقات بتوقيت الإمارات (GST).'
-         : 'Sorted by effective date. All times are shown in UAE time (GST).') +
-       '</p></div></div>';
-  h += kbUpdatesListHtml(LATEST_UPDATES);
-  el.innerHTML = h;
-}
 
 // ===== LATEST UPDATES =====
 // ===== LATEST UPDATES =====
@@ -1580,7 +1655,7 @@ var FINES = [
 var VEHICLE_TYPES = [
   {type:"Car / SUV / Van (standard)", sms_ok:"✓ Yes", parking:"✓ Yes", permit_ok:"✓ Yes", ok:true},
   {type:"Light pickup (Hilux/Ranger-type)", sms_ok:"✓ Yes", parking:"✓ Yes", permit_ok:"✓ Yes", ok:true},
-  {type:"Motorcycle", sms_ok:"✗ No", parking:"✓ Yes paid in normal parking, in Motorbike Parking for Free ", permit_ok:"✓ Yes", ok:true},
+  {type:"Motorcycle", sms_ok:"✓ Yes (yellow plate, since 21 Sep 2026)", parking:"✓ Yes paid in normal parking, in Motorbike Parking for Free ", permit_ok:"✓ Yes", ok:true},
   {type:"Heavy pickup (>1 ton)", sms_ok:"✗ No", parking:"✗ Designated zones only", permit_ok:"✗ No", ok:false},
   {type:"Medium/heavy trucks", sms_ok:"✗ No", parking:"✗ Designated zones only", permit_ok:"✗ No", ok:false},
   {type:"Large buses", sms_ok:"✗ No", parking:"✗ Designated yards only", permit_ok:"✗ No", ok:false}
@@ -1599,9 +1674,9 @@ var QUICK_CONTACTS = [
 
 // ===== PERMIT TYPES AND FEES =====
 var PERMITS = [
-  {type:"Residential – Expat 1st Vehicle", fee:"AED 800/year\nor AED 400/6 months", docs:"Tawtheeq, 3-month electricity bill or ADDC NOC, Mulkiya, Emirates ID", platform:"TAMM / Darb"},
+  {type:"Residential – Expat 1st Vehicle", fee:"AED 800/year\nor AED 400/6 months", docs:"Lease (Tawtheeq) or ownership record validated digitally via DARI / ADDC / Abu Dhabi Police (no manual lease entry or upload), Mulkiya, Emirates ID", platform:"Darb (TAMM digital validation in progress)"},
   {type:"Residential – Expat 2nd–4th Vehicle", fee:"AED 1,200/year", docs:"Same as above", platform:"TAMM / Darb"},
-  {type:"Residential – UAE National", fee:"Free", docs:"Tawtheeq or ownership proof, Mulkiya, Emirates ID", platform:"TAMM / Darb"},
+  {type:"Residential – UAE National", fee:"Free", docs:"Lease (Tawtheeq) or ownership record validated digitally via DARI / ADDC / Abu Dhabi Police (no manual lease entry or upload), Mulkiya, Emirates ID", platform:"Darb (TAMM digital validation in progress)"},
   {type:"Government / Institution", fee:"AED 1,200/vehicle/year\n(or AED 55/day)", docs:"Official letter, employee list, work ID, Emirates ID, Mulkiya, kinship proof (if applicable)", platform:"Email: gov.pr@qmobility.ae"},
   {type:"Commercial – Government Entity", fee:"AED 200 app fee + AED 55/day\nor AED 10,000/6mo or AED 20,000/yr", docs:"Trade license, NOC, municipality approval", platform:"TAMM"},
   {type:"Commercial – Private", fee:"AED 200 app fee + AED 85/day\nor AED 15,000/6mo or AED 30,000/yr", docs:"Trade license, NOC, ground plan if required", platform:"TAMM"},
@@ -1623,7 +1698,7 @@ var EMAIL_TEMPLATES = [
   {id:"E7", label_en:"Senior +70 Exemption", label_ar:"إعفاء كبار المواطنين +70", en:"Dear Customer,\n\nTo apply for the senior citizen (+70) parking exemption:\n1. Emirates ID showing age 70+\n2. Vehicle registration\n\nApplication is submitted through TAMM portal.\n\nBest regards,\nQMobility Support", ar:"عميلنا العزيز،\n\nللتقديم على إعفاء موقف كبار المواطنين (+70):\n1. الهوية الإماراتية تظهر العمر 70+\n2. تسجيل المركبة\n\nيتم التقديم عبر بوابة تم.\n\nمع أطيب التحيات،\nفريق دعم كيوموبيليتي"},
   {id:"E8", label_en:"Account Closure Request", label_ar:"طلب إغلاق الحساب", en:"Dear Customer,\n\nTo close your DARB account:\n1. Clear all outstanding fines\n2. Withdraw wallet balance\n3. Remove all registered vehicles\n4. Submit closure request through DARB app\n\nBest regards,\nQMobility Support", ar:"عميلنا العزيز،\n\nلإغلاق حساب درب:\n1. سداد جميع المخالفات المستحقة\n2. سحب رصيد المحفظة\n3. إزالة جميع المركبات المسجلة\n4. تقديم طلب الإغلاق عبر تطبيق درب\n\nمع أطيب التحيات،\nفريق دعم كيوموبيليتي"},
   {id:"E9", label_en:"Wallet Top-up Issue", label_ar:"مشكلة شحن المحفظة", en:"Dear Customer,\n\nWe have received your complaint regarding wallet top-up issues.\n\nPlease try the following:\n1. Check card balance and expiry\n2. Try a different payment method\n3. Clear app cache and retry\n\nIf the issue persists, please contact us at 8003009.\n\nBest regards,\nQMobility Support", ar:"عميلنا العزيز،\n\nتم استلام شكواك بخصوص مشكلة شحن المحفظة.\n\nيرجى تجربة ما يلي:\n1. التحقق من رصيد البطاقة وتاريخ الانتهاء\n2. تجربة طريقة دفع مختلفة\n3. مسح ذاكرة التخزين المؤقت وإعادة المحاولة\n\nإذا استمرت المشكلة، يرجى الاتصال بنا على 8003009.\n\nمع أطيب التحيات،\nفريق دعم كيوموبيليتي"},
-  {id:"E10", label_en:"Toll Fee Dispute", label_ar:"نزاع رسوم التعرفة", en:"Dear Customer,\n\nRegarding your toll fee dispute:\n\nPlease note that toll fees are charged automatically when passing through a toll gate with insufficient balance.\n\nTo dispute:\n1. Login to DARB app\n2. Go to Violations > Dispute\n3. Submit your grievance with supporting documents\n\nBest regards,\nQMobility Support", ar:"عميلنا العزيز،\n\nبخصوص نزاع رسوم التعرفة:\n\nيرجى ملاحظة أن رسوم التعرفة تُخصم تلقائياً عند المرور عبر بوابة التعرفة برصيد غير كافٍ.\n\nللتظلم:\n1. سجّل الدخول لتطبيق درب\n2. اذهب إلى المخالفات > تقديم تظلم\n3. قدم تظلمك مع المستندات الداعمة\n\nمع أطيب التحيات،\nفريق دعم كيوموبيليتي"},
+  {id:"E10", label_en:"Toll Fee Dispute", label_ar:"نزاع رسوم التعرفة", en:"Dear Customer,\n\nRegarding your toll fee dispute:\n\nPlease note that toll fees are deducted automatically from your linked DARB wallet for each crossing during peak hours. If your balance is insufficient, the fee stays pending until you top up.\n\nTo dispute:\n1. Login to DARB app\n2. Go to Violations > Dispute\n3. Submit your grievance with supporting documents\n\nBest regards,\nQMobility Support", ar:"عميلنا العزيز،\n\nبخصوص نزاع رسوم التعرفة:\n\nيرجى ملاحظة أن رسوم التعرفة تُخصم تلقائياً من محفظة درب المرتبطة عند كل عبور.\n\nللتظلم:\n1. سجّل الدخول لتطبيق درب\n2. اذهب إلى المخالفات > تقديم تظلم\n3. قدم تظلمك مع المستندات الداعمة\n\nمع أطيب التحيات،\nفريق دعم كيوموبيليتي"},
   {id:"E11", label_en:"Vehicle Transfer - New Owner", label_ar:"نقل المركبة - مالك جديد", en:"Dear Customer,\n\nTo transfer a vehicle to a new owner in DARB:\n1. Remove vehicle from current account\n2. New owner adds vehicle to their account\n3. Update email/TAMM if company vehicle\n\nBest regards,\nQMobility Support", ar:"عميلنا العزيز،\n\nلنقل مركبة إلى مالك جديد في درب:\n1. إزالة المركبة من الحساب الحالي\n2. يقوم المالك الجديد بإضافة المركبة إلى حسابه\n3. تحديث البريد/تم إذا كانت مركبة شركة\n\nمع أطيب التحيات،\nفريق دعم كيوموبيليتي"},
   {id:"E12", label_en:"Court Fine / Old Fine", label_ar:"غرامة المحكمة / الغرامة القديمة", en:"Dear Valued Customer,\n\nThank you for contacting us via email.\n\nIn order to assist you effectively, we kindly request that you provide the following documents related to your request:\n\n• Stop search document\n• Court judgment or judge's order\n• Emirates ID\n• Vehicle registration card (both sides)\n• Official fines statement stamped by the relevant authority\n\nOnce we receive the above documents, our team will proceed accordingly.\n\nShould you have any further questions or require additional assistance, please do not hesitate to contact us via email or call us at 800 3009.\n\nBest regards,\nCustomer Service Team – Q Mobility", ar:"عزيزي العميل،\n\nشكرًا لتواصلك معنا عبر البريد الإلكتروني.\n\nحرصًا منا على تقديم المساعدة بالشكل المناسب، نرجو منكم تزويدنا بالمستندات التالية المتعلقة بطلبكم:\n\n• مستند إيقاف البحث\n• حكم المحكمة أو أمر القاضي\n• بطاقة الهوية الإماراتية\n• بطاقة تسجيل المركبة (الجانبان)\n• بيان المخالفات الرسمي مختوم من الجهة المختصة\n\nبمجرد استلام المستندات المذكورة أعلاه، سيقوم فريقنا بمراجعتها واتخاذ اللازم.\n\nفي حال وجود أي استفسارات إضافية أو الحاجة إلى مزيد من المساعدة، لا تترددوا في التواصل معنا عبر البريد الإلكتروني أو الاتصال على الرقم 800 3009.\n\nمع أطيب التحيات،\nفريق خدمة العملاء – كيو موبيليتي"},
   {id:"E13", label_en:"Exemption Request Status", label_ar:"حالة طلب الإعفاء", en:"Dear Customer,\n\nYour exemption request status:\n\nYou can check the status through:\n1. DARB app > Exemptions\n2. TAMM portal\n3. Call Center 8003009\n\nProcessing time: Up to 10 working days\n\nBest regards,\nQMobility Support", ar:"عميلنا العزيز،\n\nحالة طلب الإعفاء:\n\nيمكنك التحقق من الحالة من خلال:\n1. تطبيق درب > الإعفاءات\n2. بوابة تم\n3. مركز الاتصال 8003009\n\nمدة المعالجة: حتى 10 أيام عمل\n\nمع أطيب التحيات،\nفريق دعم كيوموبيليتي"},
@@ -1702,8 +1777,8 @@ var PRIVATE_LOCATIONS = [
    fee_short:"Standard entry: AED 5/hour up to 3 hours, then AED 15 through 24 hours. Entry 2AM-6AM: AED 20 for 24 hours. Additional day or part-day: AED 20."},
   {id:"freeflow-zones", icon:"🌊", name_en:"Free Flow Zones", name_ar:"مناطق التدفق الحر",
    hours_short:"Various — see zone",
-   location_en:"Free Flow active zones: W5 (near Khalifa Park), MSCP01 (Multi-Storey Building 1), Mushrif Mall freeflow area, and other private/freeflow facilities.",
-   location_ar:"مناطق التدفق الحر النشطة: W5 (قرب حديقة خليفة)، MSCP01 (المبنى متعدد الطوابق 1)، منطقة مشرف مول للتدفق الحر، ومرافق أخرى خاصة.",
+   location_en:"Free Flow active zones: W5 (near Landmark Tower), MSCP01 (Multi-Storey Building 1), Mushrif Mall freeflow area, and other private/freeflow facilities.",
+   location_ar:"مناطق التدفق الحر النشطة: W5 (قرب برج لاندمارك)، MSCP01 (المبنى متعدد الطوابق 1)، منطقة مشرف مول للتدفق الحر، ومرافق أخرى خاصة.",
    hours_en:"Each zone operates on its own schedule. AI-powered automatic detection. Payment via Darb wallet (auto-deducted) or 24-hour grace via freeflow.qmobility.ae.",
    hours_ar:"كل منطقة تعمل بجدول خاص بها. كشف تلقائي مدعوم بالذكاء الاصطناعي. الدفع عبر محفظة درب (خصم تلقائي) أو فترة سماح 24 ساعة عبر freeflow.qmobility.ae.",
    fee_short:"Zone-specific rates. Auto-debit from Darb wallet."},
@@ -1755,7 +1830,7 @@ var DARB_X_FEATURES = [
 var VEHICLE_TYPES = [
   {type:"Car / SUV / Van (standard)", sms_ok:"✓ Yes", parking:"✓ Yes", permit_ok:"✓ Yes", ok:true},
   {type:"Light pickup (Hilux/Ranger-type)", sms_ok:"✓ Yes", parking:"✓ Yes", permit_ok:"✓ Yes", ok:true},
-  {type:"Motorcycle", sms_ok:"✗ No", parking:"✓ Yes paid in normal parking, in Motorbike Parking for Free", permit_ok:"✓ Yes", ok:true},
+  {type:"Motorcycle", sms_ok:"✓ Yes (yellow plate, since 21 Sep 2026)", parking:"✓ Yes paid in normal parking, in Motorbike Parking for Free", permit_ok:"✓ Yes", ok:true},
   {type:"Heavy pickup (>1 ton)", sms_ok:"✗ No", parking:"✗ Designated zones only", permit_ok:"✗ No", ok:false},
   {type:"Medium/heavy trucks", sms_ok:"✗ No", parking:"✗ Designated zones only", permit_ok:"✗ No", ok:false},
   {type:"Large buses", sms_ok:"✗ No", parking:"✗ Designated yards only", permit_ok:"✗ No", ok:false}
@@ -1774,7 +1849,7 @@ var QUICK_CONTACTS = [
 var VTYPE_DATA = [
   {type_en:"Regular Cars / Small Vans (≤7 seats)", type_ar:"سيارات عادية / فان صغير (7 مقاعد أو أقل)", note_en:"Same rules as regular private cars. Park in any standard Mawaqif spaces. All permit types available. Pay via SMS, Darb App, TAMM.", note_ar:"نفس قواعد السيارات الخاصة العادية. اركن في أي موقف مواقف قياسي. جميع أنواع التصاريح متاحة. ادفع عبر الرسائل، تطبيق درب، تم.", parkLikeCar:"✓ Yes", permit:"✓ Yes", sms:"✓ Yes", isHeavy:false},
   {type_en:"Light Pickups (e.g. Hilux / Ford Ranger)", type_ar:"بيك أب خفيف (مثل هايلوكس / فورد رينجر)", note_en:"Treated like regular private cars. Park in any standard Mawaqif spaces. Residential and other permits available. Pay via SMS, Darb, TAMM.", note_ar:"تُعامل مثل السيارات الخاصة العادية. اركن في أي موقف قياسي. تصاريح السكنية والأخرى متاحة. ادفع عبر الرسائل، درب، تم.", parkLikeCar:"✓ Yes", permit:"✓ Yes", sms:"✓ Yes", isHeavy:false, caution_en:"Applies to light-duty pickups only. Vehicles over 1 ton use heavy pickup rules. If unsure — contact supervisor before advising customer.", caution_ar:"ينطبق على البيك أب الخفيف فقط. المركبات التي تزيد عن طن تستخدم قواعد البيك أب الثقيلة. إذا لم تكن متأكداً — اتصل بالمشرف قبل إرشاد العميل."},
-  {type_en:"Motorcycle / Motorbike", type_ar:"دراجة نارية", note_en:"Can park in normal paid parking (fees apply) or in designated Motorbike Parking for FREE. No SMS payment support. Permits available.", note_ar:"يمكن الوقوف في مواقف الدفع العادية (تنطبق الرسوم) أو في مواقف الدراجات النارية المخصصة مجاناً. لا يدعم الدفع عبر الرسائل. التصاريح متاحة.", parkLikeCar:"✓ Yes (or FREE in motorbike parking)", permit:"✓ Yes", sms:"✗ No", isHeavy:false},
+  {type_en:"Motorcycle / Motorbike", type_ar:"دراجة نارية", note_en:"Can park in normal paid parking (fees apply) or in designated Motorbike Parking for FREE. Yellow-plate motorcycles (First Category – Yellow) can pay through the Darb app, Darb e-wallet, SMS or TAMM since 21 September 2026. Permits available.", note_ar:"يمكن الوقوف في مواقف الدفع العادية (تنطبق الرسوم) أو في مواقف الدراجات النارية المخصصة مجاناً. التصاريح متاحة.", parkLikeCar:"✓ Yes (or FREE in motorbike parking)", permit:"✓ Yes", sms:"✓ Yes (yellow plate)", isHeavy:false},
   {type_en:"Heavy Pickups (>1 ton) / Medium Trucks", type_ar:"بيك أب ثقيلة (>1 طن) / شاحنات متوسطة", note_en:"Must use designated truck/pickup areas only. NOT allowed in regular public parking. No SMS parking or standard permits.", note_ar:"يجب استخدام مناطق الشاحنات/البيك أب المخصصة فقط. غير مسموح في المواقف العامة العادية. لا رسائل أو تصاريح قياسية.", parkLikeCar:"✗ Designated zones only", permit:"✗ No", sms:"✗ No", isHeavy:true, permittedHours_en:"Permitted hours: 8AM-9PM (Abu Dhabi & Al Ain), 6AM-11PM (Mussafah)", permittedHours_ar:"الساعات المسموحة: 8ص-9م (أبوظبي والعين)، 6ص-11م (مصفح)", zones:[
     {sector:"E3-01", hours:"8AM-9PM", landmark_en:"Opposite Mohammed Akhtar Supermarket", landmark_ar:"مقابل سوبرماركت محمد اختي"},
     {sector:"E3-02", hours:"8AM-9PM", landmark_en:"Opposite Al Manhal School", landmark_ar:"مقابل مدرسة المنهل"},
@@ -1798,9 +1873,9 @@ var VTYPE_DATA = [
 
 // ===== PERMIT TYPES AND FEES =====
 var PERMITS = [
-  {type:"Residential – Expat 1st Vehicle", fee:"AED 800/year or AED 400/6 months", docs:"Tawtheeq, 3-month electricity bill or ADDC NOC, Mulkiya, Emirates ID", platform:"TAMM / Darb"},
+  {type:"Residential – Expat 1st Vehicle", fee:"AED 800/year or AED 400/6 months", docs:"Lease (Tawtheeq) or ownership record validated digitally via DARI / ADDC / Abu Dhabi Police (no manual lease entry or upload), Mulkiya, Emirates ID", platform:"Darb (TAMM digital validation in progress)"},
   {type:"Residential – Expat 2nd–4th Vehicle", fee:"AED 1,200/year", docs:"Same as above", platform:"TAMM / Darb"},
-  {type:"Residential – UAE National", fee:"Free", docs:"Tawtheeq or ownership proof, Mulkiya, Emirates ID", platform:"TAMM / Darb"},
+  {type:"Residential – UAE National", fee:"Free", docs:"Lease (Tawtheeq) or ownership record validated digitally via DARI / ADDC / Abu Dhabi Police (no manual lease entry or upload), Mulkiya, Emirates ID", platform:"Darb (TAMM digital validation in progress)"},
   {type:"Government / Institution", fee:"AED 1,200/vehicle/year (or AED 55/day)", docs:"Official letter, employee list, work ID, Emirates ID, Mulkiya, kinship proof (if applicable)", platform:"Email: gov.pr@qmobility.ae"},
   {type:"Commercial – Government Entity", fee:"AED 200 app fee + AED 55/day or AED 10,000/6mo or AED 20,000/yr", docs:"Trade license, NOC, municipality approval", platform:"TAMM"},
   {type:"Commercial – Private", fee:"AED 200 app fee + AED 85/day or AED 15,000/6mo or AED 30,000/yr", docs:"Trade license, NOC, ground plan if required", platform:"TAMM"},
@@ -3156,6 +3231,7 @@ function buildNav() {
   h += '<div class="nav-sidebar-label">' + t('home') + '</div>';
   h += '<div class="nav-sidebar-item' + (S.page==='dashboard'?' active':'') + '" data-page="dashboard" onclick="go(&#39;dashboard&#39;,&#39;Home&#39;)">' + t('home') + '</div>';
   h += '<div class="nav-sidebar-item' + (S.page==='search'?' active':'') + '" onclick="focusSearch()">&#128269; ' + t('search') + '</div>';
+  h += '<div class="nav-sidebar-item' + (S.page==='updates'?' active':'') + '" onclick="go(&#39;updates&#39;,&#39;Latest Updates&#39;)">&#128227; ' + (S.lang==='ar'?'آخر التحديثات':'Latest Updates') + ' <span id="kbUnreadNav" class="kb-unread-dot" hidden></span></div>';
 
   // Sectors
   h += '<div class="nav-sidebar-label">Sectors</div>';
@@ -3218,6 +3294,7 @@ function buildNav() {
   }
 
   c.innerHTML = h;
+  if (typeof kbPaintUnread === 'function') kbPaintUnread();
 }
 
 function focusSearch() {
@@ -3459,55 +3536,17 @@ function renderSector(el, sectorId) {
     h += '</div>';
   }
 
-  // Show sub-menu cards for each topic
-  h += '<div class="submenu-grid">';
-  var usedTopicAssets = {};
-  topics.forEach(function(tc){
-    if (tc.hidden) return;
-    var count = FAQS.filter(function(f){return f.page===tc.page && (!filterFn || filterFn(f));}).length;
-    var click;
-    var linkBadge = '';
-    if (tc.url) {
-      // External-link tab
-      click = 'window.open(&#39;' + escHtml(tc.url) + '&#39;,&#39;_blank&#39;)';
-      linkBadge = ' <span style="background:#1565C0;color:#fff;font-size:9px;font-weight:700;padding:1px 6px;border-radius:8px;vertical-align:middle;">LINK</span>';
-    } else {
-      if (tc.inspFilter) {
-        // Filter count by keyword
-        var ifilts = tc.inspFilter.toLowerCase().split('|');
-        count = FAQS.filter(function(f){
-          if (f.page !== tc.page) return false;
-          var kw = (f.kw||'').toLowerCase();
-          var cat = (f.cat||'').toLowerCase();
-          var sub = (f.subcat||'').toLowerCase();
-          var q = (f.q||'').toLowerCase();
-          return ifilts.some(function(fl){return kw.indexOf(fl)>=0||cat.indexOf(fl)>=0||sub.indexOf(fl)>=0||q.indexOf(fl)>=0;});
-        }).length;
-        click = 'S.subcat=&#39;' + escHtml(tc.inspFilter) + '&#39;;go(&#39;'+tc.page+'&#39;,&#39;'+escHtml(tc.label_en)+'&#39;)';
-      } else {
-        click = 'S.subcat=null;go(&#39;'+tc.page+'&#39;,&#39;'+escHtml(tc.label_en)+'&#39;)';
-      }
-    }
-    var topicAsset = _kbTopicAsset(tc, sectorId);
-    var topicSoft = _kbTopicShouldStaySoft(tc) || usedTopicAssets[topicAsset];
-    var topicClass = 'submenu-card visual-topic-card' + (topicSoft ? ' visual-topic-soft' : '');
-    if (!topicSoft) usedTopicAssets[topicAsset] = true;
-    h += '<div class="' + topicClass + '"' + _kbPhotoStyle(topicAsset) + ' onclick="' + click + '">';
-    h += '<div class="icon">' + (tc.icon||'') + '</div>';
-    h += '<div class="title">' + (S.lang==='ar'&&tc.label_ar?tc.label_ar:tc.label_en) + linkBadge + '</div>';
-    h += '<div class="desc">' + (S.lang==='ar'&&tc.desc_ar?tc.desc_ar:(tc.desc_en||'')) + '</div>';
-    if (!tc.url) {
-      if (tc.noCount) {
-        h += '<div class="count" style="color:#1565C0;">&#128221; Info page</div>';
-      } else {
-        h += '<div class="count">' + count + ' ' + (S.lang==='ar'?(count===1?'مقال':'مقالات'):(count===1?'article':'articles')) + '</div>';
-      }
-    } else {
-      h += '<div class="count" style="color:#1565C0;">' + (S.lang==='ar'?'رابط خارجي ↗':'External link ↗') + '</div>';
-    }
+  // Category -> subtype -> answer, from the shared taxonomy.
+  h += kbSectorAccordionHtml(sectorId === 'sector-darb' ? 'darb' : sectorId === 'sector-priv' ? 'priv' : 'maw');
+  // Tabs that are really external links stay available as quick actions.
+  var linkTabs = topics.filter(function(tc){ return tc.url && !tc.hidden; });
+  if (linkTabs.length) {
+    h += '<div class="kb-acc-links">';
+    linkTabs.forEach(function(tc){
+      h += '<a class="btn" href="' + escHtml(tc.url) + '" target="_blank" rel="noopener">' + escHtml(S.lang==='ar'&&tc.label_ar?tc.label_ar:tc.label_en) + ' &#8599;</a>';
+    });
     h += '</div>';
-  });
-  h += '</div>';
+  }
 
   el.innerHTML = h;
 }
@@ -3625,10 +3664,12 @@ function renderFaqCard(f, highlightQuery) {
 
 // Visual answer card renderer. This intentionally follows the legacy renderer
 // so the newer visual markup wins without disturbing the older data logic above.
-function renderFaqCard(f, highlightQuery) {
+function renderFaqCard(f, highlightQuery, opts) {
+  opts = opts || {};
   var q = S.lang === 'ar' && f.q_ar ? f.q_ar : f.q;
   var a = repairAnswerHtml(S.lang === 'ar' && f.a_ar ? f.a_ar : f.a);
   var cardId = 'faq-' + f.id;
+  var collapsed = !!opts.collapsed;
 
   if (highlightQuery && typeof highlightQuery === 'string' && highlightQuery.length > 0) {
     var hq = highlightQuery.toLowerCase();
@@ -3655,13 +3696,16 @@ function renderFaqCard(f, highlightQuery) {
   else if (p === 'sms' || p === 'email') accent = 'var(--tech)';
   var visualIcon = _kbVisualIcon([q, f.cat || '', f.subcat || '', f.kw || '', f.page || ''].join(' '));
 
-  var r = '<div class="faq-card" id="' + escHtml(f.id) + '" style="--accent:' + accent + ';">';
-  r += '<div class="faq-card-top faq-q" role="button" tabindex="0" aria-expanded="true" onkeydown="if(event.key===&#39;Enter&#39;||event.key===&#39; &#39;){event.preventDefault();this.click();}" onclick="toggleFaqBody(\'' + _kbJsArg(cardId) + '\')">';
-  r += '<div class="faq-q-main"><span class="faq-q-icon" aria-hidden="true">' + visualIcon + '</span><span class="faq-q-text">' + q + sourceBadge + '</span></div>';
-  r += '<span class="faq-arrow" id="' + escHtml(cardId) + '-arrow" aria-hidden="true">&#9662;</span>';
+  var r = '<div class="faq-card' + (opts.best ? ' kb-best' : '') + '" id="' + escHtml(f.id) + '" style="--accent:' + accent + ';">';
+  if (opts.best) r += '<div class="kb-best-label">' + (S.lang === 'ar' ? 'أفضل إجابة' : 'Best answer') + '</div>';
+  r += '<div class="faq-card-top faq-q" role="button" tabindex="0" aria-expanded="' + (collapsed ? 'false' : 'true') + '" onkeydown="if(event.key===&#39;Enter&#39;||event.key===&#39; &#39;){event.preventDefault();this.click();}" onclick="toggleFaqBody(\'' + _kbJsArg(cardId) + '\')">';
+  r += '<div class="faq-q-main"><span class="faq-q-icon" aria-hidden="true">' + visualIcon + '</span><span class="faq-q-text">' + q + sourceBadge + ' ' + kbStatusPill(f) + '</span></div>';
+  r += '<span class="faq-arrow" id="' + escHtml(cardId) + '-arrow" aria-hidden="true"' + (collapsed ? ' style="transform:rotate(-90deg)"' : '') + '>&#9662;</span>';
   r += '</div>';
-  r += '<div id="' + escHtml(cardId) + '-body">';
-  r += '<div class="faq-a">' + a + '</div>';
+  r += '<div id="' + escHtml(cardId) + '-body"' + (collapsed ? ' style="display:none"' : '') + '>';
+  // No machine-made Arabic: say plainly that this answer is English-only for now.
+  if (S.lang === 'ar' && !f.a_ar && f.a) r += '<div class="kb-ar-pending" dir="rtl">النسخة العربية المعتمدة غير متوفرة بعد - الإجابة معروضة بالإنجليزية.</div>';
+  r += '<div class="faq-a"' + (S.lang === 'ar' && !f.a_ar ? ' dir="ltr"' : '') + '>' + a + '</div>';
 
   var sourceLabel = f.source || f.source_title || _sourceLabelById(f.source_id) || (isOfficial ? 'Official QMobility FAQ' : '');
   var sourceUrl = f.source_url || '';
@@ -3685,8 +3729,11 @@ function renderFaqCard(f, highlightQuery) {
 
   r += '<div class="faq-meta">';
   r += '<div class="faq-tags">';
-  if (f.cat) r += '<span class="tag">' + escHtml(f.cat) + '</span>';
-  if (f.subcat) r += '<span class="tag" style="background:var(--darb-l);color:var(--darb);">' + escHtml(f.subcat) + '</span>';
+  // Where the answer lives in the KB, instead of the raw import label
+  // ("Verified") that authority records carry in `cat`.
+  var path = kbTaxPath(f);
+  if (path) r += '<span class="tag kb-path-tag">' + escHtml(path) + '</span>';
+  if (f.subcat && path.indexOf(f.subcat) < 0) r += '<span class="tag" style="background:var(--darb-l);color:var(--darb);">' + escHtml(f.subcat) + '</span>';
   r += '</div>';
   r += '<div class="faq-actions"><button class="btn faq-copy-btn" onclick="copyAnswer(\'' + _kbJsArg(f.id) + '\')">' + t('copy') + '</button></div>';
   r += '</div>';
@@ -4286,7 +4333,7 @@ function instantSearch(){
     h += '<div class="sd-item" data-i="'+i+'" onmousedown="event.preventDefault();openFaqById(\''+f.id+'\')" onmouseenter="_ddSetActive('+i+')">';
     h += '<div class="sd-q">'+(f.icon||'💬')+' '+_hl(q, ex)+'</div>';
     if(snip) h += '<div class="sd-snip">'+_hl(snip, ex)+'</div>';
-    if(f.cat) h += '<span class="sd-cat">'+escHtml(f.cat)+'</span>';
+    h += '<span class="sd-cat">'+escHtml(kbTaxPath(f))+'</span>'+kbStatusPill(f, {hideCurrent:true});
     h += '</div>';
   });
   h += '<div class="sd-foot"><span><kbd>↑</kbd><kbd>↓</kbd> navigate &middot; <kbd>Enter</kbd> open</span><span onmousedown="event.preventDefault();doSearch()" style="cursor:pointer;color:var(--qm);font-weight:600;">See all results →</span></div>';
@@ -4334,7 +4381,8 @@ var _lastOpenedFaqId = null;
 function openFaqById(id){
   // An old link to a superseded or merged article opens its canonical replacement.
   if (window.KB_REDIRECTS && KB_REDIRECTS[id]) id = KB_REDIRECTS[id];
-  var f = FAQS.filter(function(x){return x.id===id;})[0];
+  // SMS / email template hits live in the search-only corpus, not in FAQS.
+  var f = FAQS.concat(_searchAux).filter(function(x){return x.id===id;})[0];
   if(!f) return;
   _lastOpenedFaqId = id;
   hideSearchDropdown();
@@ -4381,13 +4429,9 @@ function renderSearch(el, query) {
   ANALYTICS.trackSearch(query, {results: results.length});
   _lastSearchResults = results;
 
-  // Group by category for filter tabs
-  var byCat = {};
-  results.forEach(function(f){
-    var c = f.cat || 'Other';
-    if (!byCat[c]) byCat[c] = [];
-    byCat[c].push(f);
-  });
+  // Filter tabs by service (Mawaqif / DARB / Private / templates), not by the
+  // raw `cat` label, which is "Verified" on most authority records.
+  var byCat = _kbSearchBuckets(results);
 
   var h = '<div class="breadcrumb"><a onclick="goHome()">Home</a> / Search</div>';
   h += '<div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:8px;">';
@@ -4407,24 +4451,22 @@ function renderSearch(el, query) {
     return;
   }
 
-  // Category filter tabs
-  var cats = Object.keys(byCat);
+  // Service filter tabs
+  var cats = KB_SEARCH_BUCKETS.filter(function(k){ return byCat[k]; });
   if (cats.length > 1) {
     h += '<div class="search-tabs">';
     h += '<button class="search-tab' + (_currentSearchFilter==='all'?' active':'') + '" onclick="filterSearchResults(\'all\')">All (' + results.length + ')</button>';
     cats.forEach(function(c){
-      h += '<button class="search-tab' + (_currentSearchFilter===c?' active':'') + '" onclick="filterSearchResults(\'' + escHtml(c).replace(/'/g,"\\'") + '\')">' + escHtml(c) + ' (' + byCat[c].length + ')</button>';
+      h += '<button class="search-tab' + (_currentSearchFilter===c?' active':'') + '" onclick="filterSearchResults(\'' + c + '\')">' + escHtml(_kbSearchBucketLabel(c)) + ' (' + byCat[c].length + ')</button>';
     });
     h += '</div>';
   }
 
   var filtered = _currentSearchFilter === 'all' ? results : (byCat[_currentSearchFilter] || []);
   var showCount = Math.min(filtered.length, 20);
-  h += '<div class="kb-reading-controls"><span>Open an answer to read the full guidance</span><div class="kb-reading-actions"><button type="button" onclick="setSearchAnswersExpanded(false)">Collapse all</button><button type="button" onclick="setSearchAnswersExpanded(true)">Expand all</button></div></div>';
+  h += '<div class="kb-reading-controls"><span>Best answer first &middot; tap any other result to open it</span><div class="kb-reading-actions"><button type="button" onclick="setSearchAnswersExpanded(false)">Collapse all</button><button type="button" onclick="setSearchAnswersExpanded(true)">Expand all</button></div></div>';
   h += '<div class="faq-list" id="search-results">';
-  for (var i = 0; i < showCount; i++) {
-    h += renderFaqCard(filtered[i], query);
-  }
+  h += _kbSearchCards(filtered, query, showCount);
   h += '</div>';
 
   if (filtered.length > 20) {
@@ -4445,21 +4487,37 @@ function filterSearchResults(cat) {
   renderSearch(document.getElementById('content'), _lastSearchQuery);
 }
 
-function loadMoreSearch() {
-  var q = _lastSearchQuery.toLowerCase();
+var KB_SEARCH_BUCKETS = ['maw', 'darb', 'priv', 'tmpl'];
+function _kbSearchBuckets(results) {
   var byCat = {};
-  _lastSearchResults.forEach(function(f){
-    var c = f.cat || 'Other';
-    if (!byCat[c]) byCat[c] = [];
-    byCat[c].push(f);
+  results.forEach(function(f){
+    var c = kbSearchBucket(f);
+    (byCat[c] = byCat[c] || []).push(f);
   });
+  return byCat;
+}
+
+function _kbSearchBucketLabel(c) {
+  if (c === 'tmpl') return S.lang === 'ar' ? 'القوالب' : 'Templates';
+  return KB_SECTOR_LABEL[c][S.lang === 'ar' ? 1 : 0];
+}
+
+// The top result opens with its answer showing; the rest stay as titles so
+// the agent reads the direct answer first and scans the others.
+function _kbSearchCards(list, query, count) {
+  var h = '';
+  for (var i = 0; i < count; i++) {
+    h += renderFaqCard(list[i], query, i === 0 ? {best: true} : {collapsed: true});
+  }
+  return h;
+}
+
+function loadMoreSearch() {
+  var byCat = _kbSearchBuckets(_lastSearchResults);
   var filtered = _currentSearchFilter === 'all' ? _lastSearchResults : (byCat[_currentSearchFilter] || []);
   var el = document.getElementById('search-results');
   if (!el) return;
-  var h = '';
-  for (var i = 0; i < filtered.length; i++) {
-    h += renderFaqCard(filtered[i], _lastSearchQuery);
-  }
+  var h = _kbSearchCards(filtered, _lastSearchQuery, filtered.length);
   el.innerHTML = h;
   // Hide the load more button
   var btn = el.nextElementSibling;
@@ -4665,6 +4723,318 @@ function _fftSector(f) {
   return 'priv';
 }
 
+// ===== SHARED TAXONOMY: sector -> category -> subtype =====
+// One classifier feeds the sector accordions, Find Fast and the homepage
+// counters, so the ways of browsing can never disagree with each other.
+// Sector still comes from _fftSector, so every existing count is unchanged.
+// The raw `cat` field is not used: authority imports stamp it with a
+// generic "Verified" label that told agents nothing.
+var KB_TAXONOMY = {
+  maw: {
+    order: ['pay', 'permits', 'fines', 'towing', 'areas', 'machines', 'other'],
+    groups: {
+      pay:      {en: 'Pay for Parking',          ar: 'دفع رسوم المواقف', icon: '💳',
+                 subs: {sms: ['SMS Parking', 'الدفع عبر الرسائل'], app: ['DARB / TAMM Payment', 'الدفع عبر درب وتم'], rates: ['Parking Rates', 'تعرفة المواقف'], hours: ['Parking Hours', 'ساعات الوقوف'], plates: ['Plates: GCC, Public, Motorcycle', 'اللوحات: الخليجية والعمومية والدراجات'], cards: ['Rechargeable Cards (closed)', 'البطاقات القابلة للشحن (متوقفة)'], general: ['Paying for Parking', 'الدفع مقابل الوقوف']}},
+      permits:  {en: 'Permits',                  ar: 'التصاريح', icon: '📋',
+                 subs: {resident: ['Resident Permit', 'تصريح السكان'], commercial: ['Commercial Permit', 'التصريح التجاري'], government: ['Government Permit', 'التصريح الحكومي'], limited: ['Limited-Term Permit', 'تصريح المدة المحددة'], pod: ['People of Determination', 'أصحاب الهمم'], mscp: ['MSCP Permit', 'تصريح المواقف الطابقية'], general: ['Permits - General', 'التصاريح - عام']}},
+      fines:    {en: 'Fines & Grievances',       ar: 'المخالفات والتظلمات', icon: '⚖️',
+                 subs: {checkpay: ['Check / Pay a Fine', 'الاستعلام عن المخالفة ودفعها'], grievance: ['Grievance', 'التظلم'], outcome: ['Accepted / Rejected Grievance', 'نتيجة التظلم'], refund: ['Refund', 'الاسترداد'], court: ['Locked / Court Fines', 'المخالفات المحولة للمحكمة'], inspection: ['How Inspection Works', 'آلية التفتيش'], types: ['Fine Types & Amounts', 'أنواع المخالفات وقيمتها']}},
+      towing:   {en: 'Towing & Impound',         ar: 'السحب والحجز', icon: '🚚',
+                 subs: {status: ['Is my vehicle towed?', 'هل تم سحب مركبتي؟'], yards: ['Pounds & Hours', 'ساحات الحجز وساعات العمل'], release: ['Release Requirements', 'متطلبات الإفراج'], fees: ['Towing & Storage Fees', 'رسوم السحب والتخزين'], general: ['Towing - General', 'السحب - عام']}},
+      areas:    {en: 'Areas & Special Rules',    ar: 'المناطق والقواعد الخاصة', icon: '📍',
+                 subs: {smartpark: ['W4 On-Street SmartPark', 'المواقف الذكية W4'], mbz: ['MBZ City', 'مدينة محمد بن زايد'], musaffah: ['Musaffah', 'مصفح'], mscp: ['MSCP (Multi-Storey)', 'المواقف الطابقية'], school: ['School Zones', 'مناطق المدارس'], inspection: ['Inspection & Sector Changes', 'التفتيش وتغييرات القطاعات'], loading: ['Loading / Unloading', 'التحميل والتنزيل'], general: ['Other Areas', 'مناطق أخرى']}},
+      machines: {en: 'Machines & Service Issues', ar: 'الأجهزة ومشكلات الخدمة', icon: '🛠️',
+                 subs: {pdm: ['Payment Machines (PDM)', 'أجهزة الدفع'], blockage: ['Car Blockage', 'إغلاق المركبة'], unavailable: ['Parking Not Available', 'عدم توفر موقف'], technical: ['Technical Issues', 'مشكلات تقنية'], general: ['Service - General', 'الخدمة - عام']}},
+      other:    {en: 'General & Contact',        ar: 'عام والتواصل', icon: 'ℹ️',
+                 subs: {general: ['General Information', 'معلومات عامة']}}
+    },
+    rules: [
+      // most specific first
+      ['permits', 'mscp',      /\bmscp\b[^?]*permit|permit[^?]*\b(mscp|multi.?storey)/],
+      ['areas',   'smartpark', /\bw4\b|on-?street|smart ?park|public lot/],
+      ['areas',   'school',    /school|nukhba|\bme09\b[^?]*(drop|pick)/],
+      ['towing',  'status',    /towed|untowed|tow status|was .* towed/],
+      ['towing',  'yards',     /pound|towing yard|yards?'? (working )?hours|impound(ing)? yard/],
+      ['towing',  'release',   /release|collect (my|the) (car|vehicle)/],
+      ['towing',  'fees',      /tow(ing)? fee|storage fee|impound fee/],
+      ['towing',  'general',   /\btow|impound/],
+      ['machines','pdm',       /\bpdm\b|payment machine|parking machine|meter/],
+      ['machines','blockage',  /block(ed|age)|obstruct/],
+      ['machines','unavailable', /no available|not available|unavailable|cannot find (a )?parking|parking (is )?full/],
+      ['areas',   'mscp',      /\bmscp\b|multi.?storey|multi storey/],
+      ['areas',   'mbz',       /\bmbz\b|mohamed bin zayed|\bme\d{1,2}\b/],
+      ['areas',   'musaffah',  /mus+af+ah|industrial area/],
+      ['areas',   'loading',   /loading|unloading/],
+      ['areas',   'inspection', /inspection|resumed|enforcement|zoning|reclassif|\bw59\b|east ?48|tmp25|\be\d{1,2}-\d{2}\b|\bw\d{1,2}(-\d{2})?\b sector|sector \w?\d/],
+      ['permits', 'pod',       /determination|\bpod\b|disab|accessible/],
+      ['permits', 'resident',  /resident|residential|tawtheeq|villa|visitor|lease contract|kinship/],
+      ['permits', 'commercial', /commercial permit|trade licen|business permit|commercial parking/],
+      ['permits', 'government', /government|institution/],
+      ['permits', 'limited',   /limited.?term|limited permit/],
+      ['permits', 'general',   /permit/],
+      ['fines',   'outcome',   /rejected|accepted|grievance (result|status|outcome)/],
+      ['fines',   'refund',    /refund/],
+      ['fines',   'court',     /court|locked|old fine|fine.*transfer/],
+      ['fines',   'grievance', /grievance|appeal|object|dispute|wrong(ly)? (fine|issued)|mistake/],
+      ['fines',   'checkpay',  /(pay|check|view|see|find).{0,20}(fine|violation)|(fine|violation).{0,20}(pay|check|discount)/],
+      ['fines',   'types',     /fine|violation|penalt/],
+      ['fines',   'inspection', /smart (vehicle|inspection)|ai|cameras?|inspectors?/],
+      ['machines','technical', /technical|error|not working|system issue|app issue|login|crash/],
+      ['pay',     'cards',     /rechargeable card|parking card|cards?.*balance/],
+      ['pay',     'plates',    /plate|gcc|motorcycle|foreign|non-?uae|kuwait|saudi|oman|bahrain|qatar/],
+      ['pay',     'sms',       /\bsms\b|3009|text message/],
+      ['pay',     'app',       /\bdarb\b|\btamm\b|\bapp\b|wallet/],
+      ['pay',     'hours',     /hour|time|free (day|parking)|sunday|friday|holiday|grace|ramadan|eid/],
+      ['pay',     'rates',     /rate|tariff|fee|cost|price|\baed\b|premium|standard/],
+      ['pay',     'general',   /pay|parking/],
+      ['other',   'general',   /./]
+    ]
+  },
+  darb: {
+    order: ['reg', 'wallet', 'toll', 'exempt', 'violations', 'refunds', 'technical', 'other'],
+    groups: {
+      reg:        {en: 'Registration & Account', ar: 'التسجيل والحساب', icon: '👤',
+                   subs: {permits: ['Parking Permits in DARB', 'تصاريح المواقف في درب'], account: ['Account', 'الحساب'], vehicle: ['Vehicle Registration', 'تسجيل المركبات'], company: ['Company Accounts', 'حسابات الشركات'], darbx: ['DARB X App', 'تطبيق درب إكس'], general: ['Registration - General', 'التسجيل - عام']}},
+      wallet:     {en: 'Wallet & Recharge', ar: 'المحفظة والشحن', icon: '💰',
+                   subs: {topup: ['Top-up / Recharge', 'الشحن'], balance: ['Balance & Auto-payment', 'الرصيد والدفع التلقائي'], general: ['Wallet - General', 'المحفظة - عام']}},
+      toll:       {en: 'Toll Gates & Charges', ar: 'البوابات والرسوم', icon: '🛣️',
+                   subs: {rates: ['Rates & Peak Hours', 'الرسوم وأوقات الذروة'], gates: ['Toll Gates', 'البوابات'], general: ['Tolls - General', 'الرسوم - عام']}},
+      exempt:     {en: 'Exemptions', ar: 'الإعفاءات', icon: '🎫',
+                   subs: {types: ['Who is exempt', 'الفئات المعفاة'], apply: ['How to apply', 'طريقة التقديم'], general: ['Exemptions - General', 'الإعفاءات - عام']}},
+      violations: {en: 'Violations & Grievances', ar: 'المخالفات والتظلمات', icon: '⚖️',
+                   subs: {grievance: ['Grievance / Dispute', 'التظلم والاعتراض'], fines: ['Violations & Fines', 'المخالفات والغرامات']}},
+      refunds:    {en: 'Transactions / Refunds', ar: 'المعاملات والاسترداد', icon: '🔁',
+                   subs: {refund: ['Refunds', 'الاسترداد'], transactions: ['Transactions & Deductions', 'المعاملات والخصومات']}},
+      technical:  {en: 'Technical Issues', ar: 'مشكلات تقنية', icon: '🛠️',
+                   subs: {login: ['Login / OTP / UAE Pass', 'الدخول والتحقق'], general: ['Technical - General', 'تقني - عام']}},
+      other:      {en: 'General & Contact', ar: 'عام والتواصل', icon: 'ℹ️',
+                   subs: {general: ['General Information', 'معلومات عامة']}}
+    },
+    rules: [
+      ['exempt',     'apply',       /exempt[^?]*(apply|document|require|how)|(apply|document|require)[^?]*exempt/],
+      ['exempt',     'types',       /exempt|determination|senior|retired|low income|limited income/],
+      ['violations', 'grievance',   /grievance|appeal|object|dispute/],
+      ['violations', 'fines',       /violation|fine|penalt/],
+      ['refunds',    'refund',      /refund/],
+      ['refunds',    'transactions', /transaction|deduct|charged (twice|double)|double charge|reversal|statement/],
+      ['technical',  'login',       /login|log in|otp|password|uae ?pass|verification code/],
+      ['technical',  'general',     /technical|error|not working|crash|registration service/],
+      ['wallet',     'topup',       /top.?up|recharge|card/],
+      ['wallet',     'balance',     /balance|auto.?pay|insufficient/],
+      ['wallet',     'general',     /wallet/],
+      ['reg',        'permits',     /permit/],
+      ['reg',        'darbx',       /darb ?x/],
+      ['reg',        'company',     /company|establishment|corporate|trade licen/],
+      ['reg',        'vehicle',     /vehicle|plate|car |transfer|sold|mulkiya/],
+      ['reg',        'account',     /account|profile|email|mobile|register|registration|traffic file|close/],
+      ['toll',       'gates',       /gate|bridge/],
+      ['toll',       'rates',       /peak|rate|charge|fee|aed|ramadan|hour|cap/],
+      ['toll',       'general',     /toll/],
+      ['other',      'general',     /./]
+    ]
+  },
+  priv: {
+    order: ['adm', 'mushrif', 'etihad', 'mscp', 'freeflow', 'other'],
+    groups: {
+      adm:      {en: 'Abu Dhabi Mall', ar: 'أبوظبي مول', icon: '🛍️', subs: {general: ['Abu Dhabi Mall', 'أبوظبي مول']}},
+      mushrif:  {en: 'Mushrif Mall', ar: 'مشرف مول', icon: '🛍️',
+                 subs: {tariff: ['Tariffs & Hours', 'الرسوم والساعات'], payment: ['Payment', 'الدفع'], general: ['Mushrif Mall - General', 'مشرف مول - عام']}},
+      etihad:   {en: 'Etihad Rail', ar: 'قطارات الاتحاد', icon: '🚆',
+                 subs: {tariff: ['Tariff & Grace Period', 'التعرفة وفترة السماح'], payment: ['Payment', 'الدفع'], general: ['Etihad Rail - General', 'قطارات الاتحاد - عام']}},
+      mscp:     {en: 'MSCP', ar: 'المواقف الطابقية', icon: '🅿️', subs: {general: ['Multi-Storey Car Parks', 'المواقف الطابقية']}},
+      freeflow: {en: 'Free Flow Locations', ar: 'مواقع التدفق الحر', icon: '📷',
+                 subs: {payment: ['How payment works', 'آلية الدفع'], general: ['Free Flow - General', 'التدفق الحر - عام']}},
+      other:    {en: 'Private Parking - General', ar: 'المواقف الخاصة - عام', icon: 'ℹ️', subs: {general: ['General Information', 'معلومات عامة']}}
+    },
+    rules: [
+      ['etihad',   'tariff',  /etihad[^?]*(tariff|charge|grace|cost|rate|free|duration|overnight|night)/],
+      ['etihad',   'payment', /etihad[^?]*(pay|darb|wallet|sms|balance|rental|visitor|abroad)/],
+      ['etihad',   'general', /etihad/],
+      ['mushrif',  'tariff',  /mushrif[^?]*(tariff|fee|charge|hour|overnight|free|cap|weekend)/],
+      ['mushrif',  'payment', /mushrif[^?]*(pay|darb|qr|non.?darb)/],
+      ['mushrif',  'general', /mushrif/],
+      ['adm',      'general', /abu dhabi mall|\badm\b/],
+      ['mscp',     'general', /\bmscp\b|multi.?storey|multi storey/],
+      ['freeflow', 'payment', /free ?flow[^?]*(pay|darb|qr|website|non.?darb|register)|(pay|non.?darb)[^?]*free ?flow/],
+      ['freeflow', 'general', /free ?flow|barrier|anpr|plate recognition/],
+      ['other',    'general', /./]
+    ]
+  }
+};
+
+function kbClassify(f) {
+  var sector = _fftSector(f);
+  var tx = KB_TAXONOMY[sector];
+  // An explicit "group/sub" pin wins, for cross-cutting articles whose
+  // keywords would otherwise pull them into one narrow area.
+  if (f.taxonomy) {
+    var pin = String(f.taxonomy).split('/');
+    if (tx.groups[pin[0]]) return {sector: sector, group: pin[0], sub: pin[1] || 'general'};
+  }
+  var q = String((f.q || '') + ' ' + (f.subcat || '')).toLowerCase();
+  // The page id is a strong hint for WHICH category (faq-mushrif, faq-maw-pound)
+  // but a poor hint for the subtype, so it is only consulted once the
+  // question itself has failed to match.
+  var withPage = q + ' ' + String(f.page || '').replace(/-/g, ' ').toLowerCase();
+  var withKw = withPage + ' ' + String(f.kw || '').toLowerCase();
+  var passes = [q, withPage, withKw];
+  for (var pass = 0; pass < passes.length; pass++) {
+    var last = pass === passes.length - 1;
+    for (var i = 0; i < tx.rules.length; i++) {
+      var r = tx.rules[i];
+      if (r[0] === 'other' && !last) continue;
+      if (r[2].test(passes[pass])) return {sector: sector, group: r[0], sub: r[1]};
+    }
+  }
+  return {sector: sector, group: 'other', sub: 'general'};
+}
+
+function kbGroupLabel(sector, group) {
+  var g = KB_TAXONOMY[sector] && KB_TAXONOMY[sector].groups[group];
+  return g ? (S.lang === 'ar' ? g.ar : g.en) : group;
+}
+
+function kbSubLabel(sector, group, sub) {
+  var g = KB_TAXONOMY[sector] && KB_TAXONOMY[sector].groups[group];
+  var s = g && g.subs[sub];
+  return s ? (S.lang === 'ar' ? s[1] : s[0]) : sub;
+}
+
+// Articles bucketed as tree[sector][group][sub] = [articles], in taxonomy order.
+function kbTree(pool) {
+  var tree = {maw: {}, darb: {}, priv: {}};
+  (pool || FAQS).forEach(function (f) {
+    if (!f) return;
+    var c = kbClassify(f);
+    var g = tree[c.sector][c.group] = tree[c.sector][c.group] || {};
+    (g[c.sub] = g[c.sub] || []).push(f);
+  });
+  return tree;
+}
+
+function kbOrderedGroups(sector, tree) {
+  return KB_TAXONOMY[sector].order.filter(function (g) { return tree[sector][g]; });
+}
+
+function kbOrderedSubs(sector, group, bucket) {
+  var defined = Object.keys(KB_TAXONOMY[sector].groups[group].subs);
+  return defined.filter(function (s) { return bucket[s]; })
+    .concat(Object.keys(bucket).filter(function (s) { return defined.indexOf(s) < 0; }));
+}
+
+function kbCount(bucket) {
+  return Object.keys(bucket).reduce(function (n, s) { return n + bucket[s].length; }, 0);
+}
+
+// ===== NEW / UPDATED =====
+// NEW: first published (or taking effect) in the last 14 days, including
+// changes up to 30 days ahead. UPDATED: only records flagged as a material
+// change - so a corrected title or a moved page never shows as "updated".
+var KB_FRESH_DAYS = 14;
+function kbFreshness(f, nowMs) {
+  if (!f) return '';
+  var now = nowMs === undefined ? Date.now() : nowMs;
+  var win = KB_FRESH_DAYS * 86400000;
+  var pub = kbParseStamp(f.published_at) || kbParseStamp(f.effective_from);
+  if (pub && now - pub.ms <= win && pub.ms - now <= 30 * 86400000) return 'new';
+  var upd = kbParseStamp(f.updated_at);
+  if (f.material_change && upd && now - upd.ms <= win) return 'updated';
+  return '';
+}
+
+function kbFreshBadge(f) {
+  var k = kbFreshness(f);
+  if (!k) return '';
+  var ar = S.lang === 'ar';
+  return '<span class="kb-fresh kb-fresh-' + k + '">' +
+    (k === 'new' ? (ar ? 'جديد' : 'NEW') : (ar ? 'محدّث' : 'UPDATED')) + '</span>';
+}
+
+// ===== ARTICLE STATUS =====
+// One pill per answer so an agent can tell at a glance whether it is safe to
+// read out: UPCOMING (not in force yet), TEMPORARY (has an end date),
+// NEW / UPDATED (recent change), otherwise CURRENT.
+var KB_STATUS_LABEL = {
+  current: ['CURRENT', 'ساري'], upcoming: ['UPCOMING', 'قادم'], temporary: ['TEMPORARY', 'مؤقت'],
+  expired: ['EXPIRED', 'منتهي'], 'new': ['NEW', 'جديد'], updated: ['UPDATED', 'محدّث']
+};
+function kbArticleStatus(f, nowMs) {
+  if (!f) return {key: 'current'};
+  var now = nowMs === undefined ? Date.now() : nowMs;
+  var from = kbParseStamp(f.effective_from);
+  if (from && from.ms > now) return {key: 'upcoming', date: kbFormatStamp(f.effective_from)};
+  if (f.effective_until) {
+    return {key: kbIsExpired(f, now) ? 'expired' : 'temporary', date: kbFormatStamp(f.effective_until)};
+  }
+  if (f.temporary) return {key: 'temporary'};
+  return {key: kbFreshness(f, now) || 'current'};
+}
+
+function kbStatusPill(f, opts) {
+  var st = kbArticleStatus(f);
+  if (opts && opts.hideCurrent && st.key === 'current') return '';
+  var ar = S.lang === 'ar';
+  var when = '';
+  if (st.date) when = (st.key === 'upcoming' ? (ar ? ' · من ' : ' · from ') : (ar ? ' · حتى ' : ' · until ')) + st.date;
+  return '<span class="kb-status kb-status-' + st.key + '">' + KB_STATUS_LABEL[st.key][ar ? 1 : 0] + escHtml(when) + '</span>';
+}
+
+// "Mawaqif › Fines & Grievances › Grievance" - where the answer lives.
+var KB_SECTOR_LABEL = {maw: ['Mawaqif', 'مواقف'], darb: ['DARB', 'درب'], priv: ['Private Parking', 'المواقف الخاصة']};
+function kbTaxPath(f) {
+  if (!f) return '';
+  var ar = S.lang === 'ar';
+  if (f.page === 'sms') return ar ? 'قالب رسالة نصية' : 'SMS template';
+  if (f.page === 'email') return ar ? 'قالب بريد إلكتروني' : 'Email template';
+  var c = kbClassify(f);
+  return KB_SECTOR_LABEL[c.sector][ar ? 1 : 0] + ' › ' + kbGroupLabel(c.sector, c.group) + ' › ' + kbSubLabel(c.sector, c.group, c.sub);
+}
+
+// Search filter bucket: the three services, plus reply templates.
+function kbSearchBucket(f) {
+  if (f && (f.page === 'sms' || f.page === 'email')) return 'tmpl';
+  return kbClassify(f).sector;
+}
+
+// ===== SECTOR ACCORDION =====
+// category (collapsed) -> subtype -> the answers themselves.
+function kbSectorAccordionHtml(sector) {
+  var ar = S.lang === 'ar';
+  var tree = kbTree();
+  var groups = kbOrderedGroups(sector, tree);
+  var h = '<div class="kb-acc" data-sector="' + sector + '">';
+  groups.forEach(function (gk) {
+    var bucket = tree[sector][gk];
+    var g = KB_TAXONOMY[sector].groups[gk];
+    var total = kbCount(bucket);
+    var fresh = 0;
+    Object.keys(bucket).forEach(function (s) { bucket[s].forEach(function (f) { if (kbFreshness(f)) fresh++; }); });
+    h += '<details class="kb-acc-group" data-group="' + gk + '">';
+    h += '<summary><span class="kb-acc-ic" aria-hidden="true">' + g.icon + '</span>' +
+         '<span class="kb-acc-name">' + escHtml(ar ? g.ar : g.en) + '</span>' +
+         (fresh ? '<span class="kb-fresh kb-fresh-new">' + fresh + ' ' + (ar ? 'جديد' : 'new') + '</span>' : '') +
+         '<span class="kb-acc-ct">' + total + '</span></summary>';
+    h += '<div class="kb-acc-body">';
+    kbOrderedSubs(sector, gk, bucket).forEach(function (sk) {
+      var list = bucket[sk].slice().sort(function (a, b) {
+        var fa = kbFreshness(a) ? 0 : 1, fb = kbFreshness(b) ? 0 : 1;
+        return fa - fb || String(a.q).localeCompare(String(b.q));
+      });
+      h += '<div class="kb-acc-sub"><div class="kb-acc-subhead">' + escHtml(kbSubLabel(sector, gk, sk)) +
+           ' <span>' + list.length + '</span></div>';
+      list.forEach(function (f) {
+        var title = (ar && f.q_ar ? f.q_ar : f.q) || f.id;
+        h += '<button type="button" class="kb-acc-item" onclick="openFaqById(\'' + _kbJsArg(f.id) + '\')">' +
+             '<span>' + escHtml(title) + '</span>' + kbFreshBadge(f) + '</button>';
+      });
+      h += '</div>';
+    });
+    h += '</div></details>';
+  });
+  h += '</div>';
+  return h;
+}
+
 var _FFT_SECTORS = {
   maw:  {key: 'maw',  cls: '',       en: '🅿 Mawaqif',         ar: 'مواقف',        den: 'Public parking, permits, fines',  dar: 'المواقف العامة والتصاريح والمخالفات'},
   darb: {key: 'darb', cls: 's-darb', en: '🛣 DARB / Toll',     ar: 'درب / الرسوم',  den: 'Toll gates, wallet, exemptions',  dar: 'بوابات الرسوم والمحفظة والإعفاءات'},
@@ -4714,12 +5084,12 @@ function renderFindFast(el) {
     '</div></div></div>';
 
   h += '<div class="fft-chips"><span class="lbl0">' + (ar ? 'الأكثر استخداماً' : 'Most used') + '</span>' +
-    _fftChip('Resident Permits', ar ? 'تصاريح السكان' : 'Resident Permits') +
-    _fftChip('Parking Fines', ar ? 'مخالفات المواقف' : 'Parking Fines') +
-    _fftChip('Parking Grievance', ar ? 'التظلمات' : 'Grievances') +
-    _fftChip('Registration', ar ? 'تسجيل درب' : 'DARB Registration') +
-    _fftChip('Payments', ar ? 'المحفظة' : 'DARB Wallet') +
-    _fftChip('Car Pound', ar ? 'حجز المركبات' : 'Car Pound') +
+    _fftChip('maw/fines', ar ? 'المخالفات والتظلمات' : 'Fines & Grievances') +
+    _fftChip('maw/permits/resident', ar ? 'تصاريح السكان' : 'Resident Permit') +
+    _fftChip('maw/pay', ar ? 'دفع رسوم المواقف' : 'Pay for Parking') +
+    _fftChip('maw/towing', ar ? 'السحب والحجز' : 'Towing & Impound') +
+    _fftChip('darb/wallet', ar ? 'محفظة درب' : 'DARB Wallet') +
+    _fftChip('darb/reg', ar ? 'تسجيل درب' : 'DARB Registration') +
     '</div>';
 
   h += '<div class="fft-filter">' +
@@ -4764,13 +5134,12 @@ function _fftBind() {
 
   document.querySelectorAll('.fft-chip[data-fft-jump]').forEach(function (c) {
     c.onclick = function () {
-      var sub = c.getAttribute('data-fft-jump');
-      var hit = FAQS.filter(function (f) { return f.subcat === sub; })[0];
-      if (!hit) { showToast('No articles under ' + sub); return; }
+      // A chip is a taxonomy path: sector/category[/subtype]
+      var path = c.getAttribute('data-fft-jump').split('/');
       _FFT.q = '';
-      _FFT.sector = _fftSector(hit);
-      _FFT.cat = hit.cat;
-      _FFT.sub = sub;
+      _FFT.sector = path[0];
+      _FFT.cat = path[1] || null;
+      _FFT.sub = path[2] || null;
       var box = document.getElementById('fftFilter');
       if (box) box.value = '';
       _fftPaint();
@@ -4828,15 +5197,17 @@ function _fftPaint() {
     document.getElementById('fftL4').innerHTML = _fftEmpty(ar ? 'اختر نوعاً فرعياً' : 'Pick a subtype');
     return;
   }
+  // Categories come from the shared taxonomy, not the raw `cat` field.
   var cats = {};
   bySector[_FFT.sector].forEach(function (f) {
-    (cats[f.cat || '—'] = cats[f.cat || '—'] || []).push(f);
+    var c = kbClassify(f);
+    (cats[c.group] = cats[c.group] || []).push(f);
   });
-  var catKeys = Object.keys(cats).sort();
+  var catKeys = KB_TAXONOMY[_FFT.sector].order.filter(function (g) { return cats[g]; });
   if (_FFT.cat && catKeys.indexOf(_FFT.cat) < 0) _FFT.cat = null;
   l2.innerHTML = catKeys.length
     ? catKeys.map(function (c) {
-        return _fftTile('data-fft-cat', c, _fftCatLabel(c), cats[c].length, '',
+        return _fftTile('data-fft-cat', c, kbGroupLabel(_FFT.sector, c), cats[c].length, '',
                         _FFT.cat === c, '');
       }).join('')
     : _fftEmpty(ar ? 'لا توجد فئات' : 'No categories');
@@ -4850,12 +5221,13 @@ function _fftPaint() {
   }
   var subs = {};
   cats[_FFT.cat].forEach(function (f) {
-    (subs[f.subcat || '—'] = subs[f.subcat || '—'] || []).push(f);
+    var c = kbClassify(f);
+    (subs[c.sub] = subs[c.sub] || []).push(f);
   });
-  var subKeys = Object.keys(subs).sort();
+  var subKeys = kbOrderedSubs(_FFT.sector, _FFT.cat, subs);
   if (_FFT.sub && subKeys.indexOf(_FFT.sub) < 0) _FFT.sub = null;
   l3.innerHTML = subKeys.map(function (s) {
-    return _fftTile('data-fft-sub', s, s, subs[s].length, '', _FFT.sub === s, '');
+    return _fftTile('data-fft-sub', s, kbSubLabel(_FFT.sector, _FFT.cat, s), subs[s].length, '', _FFT.sub === s, '');
   }).join('');
 
   // L4 — the articles themselves
@@ -4897,7 +5269,7 @@ function renderSmartMap(el) {
     {icon:"&#128683;", name:"Mussafah Bridge", cat:"Toll Gate", note:"AED 4 peak hours", maps:"https://maps.app.goo.gl/w7sFG5E2XG8r5Lav7"},
     {icon:"&#128663;", name:"Al Karama Car Pound", cat:"Tow Yard", note:"24/7", maps:"https://maps.app.goo.gl/5sdreQ9627HRjrMt7"},
     {icon:"&#128663;", name:"Al Ain Car Pound", cat:"Tow Yard", note:"8AM – Midnight", maps:"https://maps.app.goo.gl/46xQZzxhsZiCZ4Ki7"},
-    {icon:"&#128663;", name:"Musaffah Car Pound", cat:"Tow Yard", note:"8AM – Midnight", maps:"https://maps.app.goo.gl/eXe2XcwAuuaU6nJC9"},
+    {icon:"&#128663;", name:"Musaffah Car Pound", cat:"Tow Yard", note:"24/7", maps:"https://maps.app.goo.gl/eXe2XcwAuuaU6nJC9"},
     {icon:"&#129695;", name:"Abu Dhabi Service Center", cat:"Q Mobility Office", note:"Call 800 3009", maps:"https://maps.app.goo.gl/jB7fhKDoBnwVArUa8"},
     {icon:"&#129695;", name:"Al Ain Service Center", cat:"Q Mobility Office", note:"Call 800 3009", maps:"https://maps.app.goo.gl/Dvt6DPEocT7ymPDW9"}
   ];
@@ -6440,7 +6812,7 @@ var FAQ_CORRECTIONS = {
       '<table><tr><th>Yard</th><th>Working hours</th><th>Days</th></tr>',
       '<tr><td><strong>Al Karama Car Pound</strong></td><td>24 hours</td><td>7 days a week</td></tr>',
       '<tr><td><strong>Al Ain Car Pound</strong></td><td>8:00 AM to 12:00 AM midnight</td><td>7 days a week</td></tr>',
-      '<tr><td><strong>Musaffah Car Pound</strong></td><td>8:00 AM to 12:00 AM midnight</td><td>7 days a week</td></tr></table>',
+      '<tr><td><strong>Musaffah Car Pound</strong></td><td>24 hours</td><td>7 days a week</td></tr></table>',
       _kbFooter()
     ].join(''),
     kw: 'towing yard working hours car pound al karama al ain musaffah 24 hours midnight'
@@ -6932,8 +7304,8 @@ var KB_OPERATIONAL_FAQS = [
   "id": "OPS-2026-0727-ETIHAD-RAIL",
   "q": "Etihad Rail MBZ Smart Park - tariff, payment and parking rules (v3)",
   "q_ar": "مواقف قطارات الاتحاد بمدينة محمد بن زايد - التعرفة والدفع والقواعد (الإصدار الثالث)",
-  "a": "<div class=\"info-box\"><strong>Etihad Rail MBZ only.</strong> This guidance follows the supplied v3 FAQ. Entry time determines the tariff for the session.</div><h4>Grace period</h4><p>Yes, the first 15 minutes upon entry are free (per parking session, this does not accumulate across multiple entries). Staying beyond 15 minutes means you agree to the applicable tariff, terms, and conditions.</p><h4>Parking charges and multi-day examples</h4><p>Standard operating hours (6:00 AM - 2:00 AM): AED 5 per hour (or part thereof) up to 3 hours; AED 15 flat for more than 3 hours up to 24 hours.</p><p>Nighttime (2:00 AM - 6:00 AM): a flat AED 20, valid for 24 hours from the time of entry, per session/day.</p><p>Multi-day parking: After the first 24 hours, a flat rate of AED 20 will be charged for each additional 24-hour period (per day or part of the day)</p><p>All charges are inclusive of VAT and apply 24 hours a day, 7 days a week, including public holidays.</p><p>Multi-day Parking:</p><table><tr><th>Duration</th><th>Charges</th></tr><tr><td>1hr</td><td>AED 5</td></tr><tr><td>2hrs</td><td>AED 10</td></tr><tr><td>3hrs</td><td>AED 15</td></tr><tr><td>4hrs</td><td>AED 15</td></tr><tr><td>24hrs</td><td>AED 15</td></tr><tr><td>25hrs</td><td>AED 35</td></tr><tr><td>47hrs</td><td>AED 35</td></tr><tr><td>49hrs</td><td>AED 55</td></tr></table><h4>Staying after 2:00 AM</h4><p>The standard (hourly) tariff applies for that session - not the night flat rate.</p><h4>DARB wallet payment</h4><p>Parking fees are auto deducted from your Darb wallet. You must ensure your Darb wallet has sufficient balance, or top it up within 24 hours of exit, to avoid fines.</p><p>You will also receive an SMS to your registered mobile number upon entering and exiting the facility, showing the applicable charge.</p><h4>Insufficient balance</h4><p>If your Darb wallet balance is insufficient, you will receive an SMS asking you to top it up within 24 hours of exiting the parking facility. Once topped up, the parking fee will be deducted automatically. Failure to top up within this period will result in fine(s).</p><h4>Rental and non-DARB vehicles</h4><p>If the rented vehicle is already registered in Darb, parking fees will be auto deducted from the associated Darb wallet. If it is not Darb-registered, it is treated as a non-Darb-registered vehicle and payment must be settled within 24 hours of exit via <a href=\"https://freeflow.qmobility.ae\" target=\"_blank\" rel=\"noopener\">freeflow.qmobility.ae</a> or by scanning the on-site QR code.</p><h4>SMS notifications</h4><p>SMS notifications are provided as a convenience service only. Vehicle owners remain responsible for ensuring that parking fees are paid within 24 hours of exiting the parking facility, even if an SMS is not received.</p><h4>Resident and other permits</h4><p>Resident and/or (any) other permits are not valid at the Etihad Rail Parking Facility. The Free Flow tariff applies regardless of any permit held.</p><h4>Designated spaces and facility use</h4><p>The facility is designated exclusively for Etihad Rail users - passengers and their companions - and for vehicles dropping off or picking up passengers at the station. Parking in spaces designated for ladies or pregnant women by anyone outside these categories is prohibited and will result in a fine and vehicle towing at the owner’s expense.</p><h4>EV charging spaces</h4><p>No. EV charging spaces are strictly reserved for vehicles undergoing active charging and must be vacated immediately once charging is complete. Unauthorized parking or leaving a vehicle in the space after charging finishes, may result in a fine and towing at the owner’s expense.</p><h4>Contact</h4><p>You can reach out to Q Mobility Contact Center: 8003009</p>",
-  "a_ar": "<div class=\"info-box\"><strong>مواقف قطارات الاتحاد بمدينة محمد بن زايد فقط.</strong> وفق الإصدار الثالث من الأسئلة الشائعة، يحدد وقت الدخول التعرفة المطبقة.</div><h4>فترة السماح</h4><p>نعم، تكون أول 15 دقيقة من وقت الدخول إلى المواقف مجانية (لكل مدة وقوف، ولا تُحتسب بشكل تراكمي عند كل دخول). وإذا تجاوزت مدة الوقوف 15 دقيقة، فإن ذلك يعني موافقتك على التعرفة والشروط والأحكام المطبقة.</p><h4>التعرفة والوقوف لأكثر من يوم</h4><p>خلال ساعات العمل الرسمية (6:00 صباحاً – 2:00 صباحاً): 5 د.إ لكل ساعة (أو جزء منها) حتى 3 ساعات، و15 د.إ. كرسوم ثابتة للوقوف لأكثر من 3 ساعات وحتى 24 ساعة.</p><p>خلال الفترة الليلية (2:00 صباحاً – 6:00 صباحاً): 20 د.إ. صالح لمدة 24 ساعة من وقت الدخول، لكل مدة وقوف.</p><p>الوقوف لأكثر من يوم: بعد أول 24 ساعة، يتم احتساب رسم ثابت قدره 20 د.إ. عن كل 24 ساعة إضافية أو جزء منها</p><p>جميع الرسوم شاملة ضريبة القيمة المضافة، وتُطبق على مدار 24 ساعة يومياً، وطوال أيام الأسبوع، بما في ذلك العطلات الرسمية.</p><p>الوقوف لأكثر من يوم</p><table><tr><th>الرسوم</th><th>المدة</th></tr><tr><td>د.إ 5</td><td>1 ساعة</td></tr><tr><td>د.إ 10</td><td>2 ساعة</td></tr><tr><td>د.إ 15</td><td>3 ساعة</td></tr><tr><td>د.إ 15</td><td>4 ساعة</td></tr><tr><td>د.إ 15</td><td>24 ساعة</td></tr><tr><td>د.إ 35</td><td>25 ساعة</td></tr><tr><td>د.إ 35</td><td>47 ساعة</td></tr><tr><td>د.إ 55</td><td>49 ساعة</td></tr></table><h4>البقاء بعد الثانية صباحاً</h4><p>تُطبق التعرفة الاعتيادية (بالساعة) على مدة الوقوف بالكامل، ولا تُطبق التعرفة الليلية الثابتة.</p><h4>الدفع ومحفظة درب</h4><p>يتمّ خصم رسوم المواقف تلقائياً من محفظتك في تطبيق &quot;درب&quot;. ويجب التأكد من توفر رصيد كافٍ في المحفظة، أو شحنها خلال 24 ساعة من وقت الخروج لتجنب المخالفات.</p><p>كما ستتلقى رسالة نصية على رقم الهاتف المحمول المسجل لديك، عند الدخول والخروج من المواقف، توضح الرسوم المستحقة.</p><p>إذا لم يكن رصيد محفظة &quot;درب&quot; كافياً، ستصلك رسالة نصية تطلب منك شحن المحفظة خلال 24 ساعة من مغادرة المواقف. وبعد شحنها، سيتم خصم رسوم المواقف تلقائياً. وفي حال عدم شحن المحفظة خلال هذه المدة، فقد تترتب عليك مخالفة أو مخالفات.</p><h4>المركبات المستأجرة وغير المسجلة</h4><p>إذا كانت السيارة المستأجرة مسجلة مسبقاً في نظام &quot;درب&quot;، فسيتم خصم رسوم المواقف تلقائياً من محفظة &quot;درب&quot; المرتبطة بها. أما إذا لم تكن مسجلة في &quot;درب&quot;، فسيتم التعامل معها كمركبة غير مسجلة، ويجب سداد الرسوم خلال 24 ساعة من وقت الخروج عبر موقع<a href=\"https://freeflow.qmobility.ae\" target=\"_blank\" rel=\"noopener\">freeflow.qmobility.ae</a>  أو من خلال مسح رمز الاستجابة السريعة الموجود في الموقع.</p><h4>الرسائل النصية والتصاريح</h4><p>تُعد الرسائل النصية خدمةً إضافية لراحلة المتعامل فقط. ويبقى مالك المركبة مسؤولاً عن التأكد من سداد رسوم المواقف خلال 24 ساعة من مغادرة المواقف، حتى في حال عدم استلام رسالة نصية.</p><p>لا تُقبل التصاريح السكنية أو أي تصاريح مواقف أخرى في مواقف قطارات الاتحاد. وتُطبق تعرفة نظام المواقف الذكية المدفوعة بغض النظر عن أي تصريح يحمله المستخدم.</p><h4>المواقف المخصصة والشحن الكهربائي</h4><p>تُخصص هذه المواقف حصرياً لمستخدمي قطارات الاتحاد، بمن فيهم الركاب ومرافقوهم، وكذلك للمركبات التي تقوم بإنزال أو اصطحاب الركاب من المحطة. ويُحظر على أي شخص من غير هذه الفئات استخدام المواقف المخصصة للسيدات أو الحوامل، ويترتب على ذلك فرض مخالفة وسحب المركبة على نفقة مالكها.</p><p>لا. تُخصص مواقف شحن المركبات الكهربائية حصرياً للمركبات التي تكون قيد الشحن الفعلي، ويجب إخلاؤها فور اكتمال عملية الشحن. وقد يؤدي الوقوف غير المصرح به أو ترك المركبة في المكان بعد انتهاء الشحن، إلى فرض مخالفة وسحب المركبة على نفقة مالكها.</p><p>يمكن التواصل مباشرة مع مركز اتصال كيو موبيليتي  8003009</p>",
+  "a": "<div class=\"info-box\"><strong>Etihad Rail MBZ only.</strong> This guidance follows the supplied v3 FAQ. Entry time determines the tariff for the session.</div><h4>Grace period</h4><p>Yes, the first 15 minutes upon entry are free (per parking session, this does not accumulate across multiple entries). Staying beyond 15 minutes means you agree to the applicable tariff, terms, and conditions.</p><h4>Parking charges and multi-day examples</h4><p>Standard operating hours (6:00 AM - 2:00 AM): AED 5 per hour (or part thereof) up to 3 hours; AED 15 flat for more than 3 hours up to 24 hours.</p><p>Nighttime (2:00 AM - 6:00 AM): a flat AED 20, valid for 24 hours from the time of entry, per session/day.</p><p>Multi-day parking: After the first 24 hours, a flat rate of AED 20 will be charged for each additional 24-hour period (per day or part of the day)</p><p>All charges are inclusive of VAT and apply 24 hours a day, 7 days a week, including public holidays.</p><p>Multi-day Parking:</p><table><tr><th>Duration</th><th>Charges</th></tr><tr><td>1hr</td><td>AED 5</td></tr><tr><td>2hrs</td><td>AED 10</td></tr><tr><td>3hrs</td><td>AED 15</td></tr><tr><td>4hrs</td><td>AED 15</td></tr><tr><td>24hrs</td><td>AED 15</td></tr><tr><td>25hrs</td><td>AED 35</td></tr><tr><td>47hrs</td><td>AED 35</td></tr><tr><td>49hrs</td><td>AED 55</td></tr></table><h4>Staying after 2:00 AM</h4><p>The standard (hourly) tariff applies for that session - not the night flat rate.</p><h4>DARB wallet payment</h4><p>Parking fees are auto deducted from your Darb wallet. You must ensure your Darb wallet has sufficient balance, or top it up within 24 hours of exit, to avoid fines.</p><p>You will receive an SMS to your registered mobile number when a parking charge applies, showing the charge (no SMS is sent on entry).</p><h4>Insufficient balance</h4><p>If your Darb wallet balance is insufficient, you will receive an SMS asking you to top it up within 24 hours of exiting the parking facility. Once topped up, the parking fee will be deducted automatically. Failure to top up within this period will result in fine(s).</p><h4>Rental and non-DARB vehicles</h4><p>If the rented vehicle is already registered in Darb, parking fees will be auto deducted from the associated Darb wallet. If it is not Darb-registered, it is treated as a non-Darb-registered vehicle and payment must be settled within 24 hours of exit via <a href=\"https://freeflow.qmobility.ae\" target=\"_blank\" rel=\"noopener\">freeflow.qmobility.ae</a> or by scanning the on-site QR code.</p><h4>SMS notifications</h4><p>SMS notifications are provided as a convenience service only. Vehicle owners remain responsible for ensuring that parking fees are paid within 24 hours of exiting the parking facility, even if an SMS is not received.</p><h4>Resident and other permits</h4><p>Resident and/or (any) other permits are not valid at the Etihad Rail Parking Facility. The Free Flow tariff applies regardless of any permit held.</p><h4>Designated spaces and facility use</h4><p>The facility is designated exclusively for Etihad Rail users - passengers and their companions - and for vehicles dropping off or picking up passengers at the station. Parking in spaces designated for ladies or pregnant women by anyone outside these categories is prohibited and will result in a fine and vehicle towing at the owner’s expense.</p><h4>EV charging spaces</h4><p>No. EV charging spaces are strictly reserved for vehicles undergoing active charging and must be vacated immediately once charging is complete. Unauthorized parking or leaving a vehicle in the space after charging finishes, may result in a fine and towing at the owner’s expense.</p><h4>Contact</h4><p>You can reach out to Q Mobility Contact Center: 8003009</p>",
+  "a_ar": "<div class=\"info-box\"><strong>مواقف قطارات الاتحاد بمدينة محمد بن زايد فقط.</strong> وفق الإصدار الثالث من الأسئلة الشائعة، يحدد وقت الدخول التعرفة المطبقة.</div><h4>فترة السماح</h4><p>نعم، تكون أول 15 دقيقة من وقت الدخول إلى المواقف مجانية (لكل مدة وقوف، ولا تُحتسب بشكل تراكمي عند كل دخول). وإذا تجاوزت مدة الوقوف 15 دقيقة، فإن ذلك يعني موافقتك على التعرفة والشروط والأحكام المطبقة.</p><h4>التعرفة والوقوف لأكثر من يوم</h4><p>خلال ساعات العمل الرسمية (6:00 صباحاً – 2:00 صباحاً): 5 د.إ لكل ساعة (أو جزء منها) حتى 3 ساعات، و15 د.إ. كرسوم ثابتة للوقوف لأكثر من 3 ساعات وحتى 24 ساعة.</p><p>خلال الفترة الليلية (2:00 صباحاً – 6:00 صباحاً): 20 د.إ. صالح لمدة 24 ساعة من وقت الدخول، لكل مدة وقوف.</p><p>الوقوف لأكثر من يوم: بعد أول 24 ساعة، يتم احتساب رسم ثابت قدره 20 د.إ. عن كل 24 ساعة إضافية أو جزء منها</p><p>جميع الرسوم شاملة ضريبة القيمة المضافة، وتُطبق على مدار 24 ساعة يومياً، وطوال أيام الأسبوع، بما في ذلك العطلات الرسمية.</p><p>الوقوف لأكثر من يوم</p><table><tr><th>الرسوم</th><th>المدة</th></tr><tr><td>د.إ 5</td><td>1 ساعة</td></tr><tr><td>د.إ 10</td><td>2 ساعة</td></tr><tr><td>د.إ 15</td><td>3 ساعة</td></tr><tr><td>د.إ 15</td><td>4 ساعة</td></tr><tr><td>د.إ 15</td><td>24 ساعة</td></tr><tr><td>د.إ 35</td><td>25 ساعة</td></tr><tr><td>د.إ 35</td><td>47 ساعة</td></tr><tr><td>د.إ 55</td><td>49 ساعة</td></tr></table><h4>البقاء بعد الثانية صباحاً</h4><p>تُطبق التعرفة الاعتيادية (بالساعة) على مدة الوقوف بالكامل، ولا تُطبق التعرفة الليلية الثابتة.</p><h4>الدفع ومحفظة درب</h4><p>يتمّ خصم رسوم المواقف تلقائياً من محفظتك في تطبيق &quot;درب&quot;. ويجب التأكد من توفر رصيد كافٍ في المحفظة، أو شحنها خلال 24 ساعة من وقت الخروج لتجنب المخالفات.</p><p>كما ستتلقى رسالة نصية على رقم الهاتف المحمول المسجل لديك توضح الرسوم المستحقة.</p><p>إذا لم يكن رصيد محفظة &quot;درب&quot; كافياً، ستصلك رسالة نصية تطلب منك شحن المحفظة خلال 24 ساعة من مغادرة المواقف. وبعد شحنها، سيتم خصم رسوم المواقف تلقائياً. وفي حال عدم شحن المحفظة خلال هذه المدة، فقد تترتب عليك مخالفة أو مخالفات.</p><h4>المركبات المستأجرة وغير المسجلة</h4><p>إذا كانت السيارة المستأجرة مسجلة مسبقاً في نظام &quot;درب&quot;، فسيتم خصم رسوم المواقف تلقائياً من محفظة &quot;درب&quot; المرتبطة بها. أما إذا لم تكن مسجلة في &quot;درب&quot;، فسيتم التعامل معها كمركبة غير مسجلة، ويجب سداد الرسوم خلال 24 ساعة من وقت الخروج عبر موقع<a href=\"https://freeflow.qmobility.ae\" target=\"_blank\" rel=\"noopener\">freeflow.qmobility.ae</a>  أو من خلال مسح رمز الاستجابة السريعة الموجود في الموقع.</p><h4>الرسائل النصية والتصاريح</h4><p>تُعد الرسائل النصية خدمةً إضافية لراحلة المتعامل فقط. ويبقى مالك المركبة مسؤولاً عن التأكد من سداد رسوم المواقف خلال 24 ساعة من مغادرة المواقف، حتى في حال عدم استلام رسالة نصية.</p><p>لا تُقبل التصاريح السكنية أو أي تصاريح مواقف أخرى في مواقف قطارات الاتحاد. وتُطبق تعرفة نظام المواقف الذكية المدفوعة بغض النظر عن أي تصريح يحمله المستخدم.</p><h4>المواقف المخصصة والشحن الكهربائي</h4><p>تُخصص هذه المواقف حصرياً لمستخدمي قطارات الاتحاد، بمن فيهم الركاب ومرافقوهم، وكذلك للمركبات التي تقوم بإنزال أو اصطحاب الركاب من المحطة. ويُحظر على أي شخص من غير هذه الفئات استخدام المواقف المخصصة للسيدات أو الحوامل، ويترتب على ذلك فرض مخالفة وسحب المركبة على نفقة مالكها.</p><p>لا. تُخصص مواقف شحن المركبات الكهربائية حصرياً للمركبات التي تكون قيد الشحن الفعلي، ويجب إخلاؤها فور اكتمال عملية الشحن. وقد يؤدي الوقوف غير المصرح به أو ترك المركبة في المكان بعد انتهاء الشحن، إلى فرض مخالفة وسحب المركبة على نفقة مالكها.</p><p>يمكن التواصل مباشرة مع مركز اتصال كيو موبيليتي  8003009</p>",
   "page": "faq-priv-etihad-rail",
   "cat": "Private Parking - Free Flow",
   "subcat": "Etihad Rail",
@@ -7369,6 +7741,10 @@ function applyAuthorityData(data) {
   Object.keys(edits).forEach(function(key){
     if (key.indexOf('article_') !== 0 || !edits[key] || edits[key]._deleted) return;
     var article = edits[key];
+    // A superseded record is kept only for the audit trail. Applying it would
+    // let the retired wording overwrite the canonical article whenever the
+    // two share a question, so it contributes nothing but its redirect.
+    if (article.status === 'superseded') return;
     var id = article.id || key.replace(/^article_/, '');
     var question = article.q || article.title || '';
     if (!question) return;
@@ -7425,6 +7801,9 @@ function applyAuthorityData(data) {
     // a question title or a page can never silently replace the answer as well.
     var fields = (article.override_fields || []).slice();
     if (article.page_locked && fields.indexOf('page') < 0) fields.push('page');
+    // Metadata that drives the NEW / UPDATED badges travels with every record.
+    if (article.material_change) target.material_change = true;
+    if (article.published_at && !target.published_at) target.published_at = article.published_at;
     fields.forEach(function(k){
       if (article[k] === undefined || article[k] === null) return;
       if (k === 'page') target.page = _authorityPage(article.page);
@@ -7471,7 +7850,8 @@ function applyAuthorityData(data) {
         effective_from:update.effective_from || '',
         effective_until:update.effective_until || '',
         verified_at:update.verified_at || '',
-        updated_at:update.updated_at || ''
+        updated_at:update.updated_at || '',
+        related:update.related || ''
       };
     });
     var incomingKeys = {};
@@ -7531,7 +7911,10 @@ function applyAuthorityData(data) {
 }
 
 async function loadAuthorityData() {
-  var response = await fetch('qmobility_kb_latest.json?v=20260922-v9', {cache:'default'});
+  // Revalidate on every load (a cheap 304 when unchanged). A pinned ?v= query
+  // only works if someone bumps it on every publish, and it was not bumped,
+  // so browsers kept serving an outdated authority file.
+  var response = await fetch('qmobility_kb_latest.json', {cache:'no-cache'});
   if (!response.ok) throw new Error('Authority JSON HTTP ' + response.status);
   var data = await response.json();
   if (!data || !data.admin_edits) throw new Error('Authority JSON is invalid');
@@ -7892,123 +8275,216 @@ function _kbPageGallery(page, title) {
 }
 
 
-// Visual dashboard renderer for the agent home screen.
-function renderDashboard(el) {
-  // Sector counts come from one shared classifier so the dashboard, the
-  // agent hero and Find Fast can never disagree, and the three numbers
-  // always add up to FAQS.length. Previously three copies of this block
-  // existed with two different rules for private parking, and MSCP was
-  // counted under both Mawaqif and Private.
-  var _sc = _kbSectorCounts();
-  var mawCount = _sc.maw, darbCount = _sc.darb, privCount = _sc.priv;
-  var totalCount = FAQS.length;
-  var syncLabel = 'Agent reference';
-  var h = '<div class="agent-shell">';
+// ===== UPDATE READ-STATE =====
+// Per agent, in this browser only - a convenience, never shared state. If
+// storage is blocked (private window) every recent update simply stays "new".
+var KB_SEEN_KEY = 'kb_seen_updates_v1';
+function kbUpdateKey(u) { return String((u && (u.id || _kbSig(u.title || ''))) || ''); }
+function kbSeenSet() {
+  try {
+    return JSON.parse(localStorage.getItem(KB_SEEN_KEY) || '[]').reduce(function (o, k) { o[k] = 1; return o; }, {});
+  } catch (e) { return {}; }
+}
+function kbMarkSeen(keys) {
+  try {
+    var s = kbSeenSet();
+    keys.forEach(function (k) { if (k) s[k] = 1; });
+    localStorage.setItem(KB_SEEN_KEY, JSON.stringify(Object.keys(s)));
+  } catch (e) {}
+  kbPaintUnread();
+}
 
-  h += '<section class="agent-hero kb-photo-hero"' + _kbPhotoStyle('hero') + '>';
-  h += '<div>';
-  h += '<div class="agent-eyebrow">YOUR DAILY KNOWLEDGE DESK</div>';
-  h += '<h1>Every answer.<br>One place.</h1>';
-  h += '<p>Find the right guidance for every conversation. Search verified answers, explore services, or pick up the latest updates.</p>';
+// Recent: not expired, and published or taking effect in the last 30 days, or upcoming.
+function kbRecentUpdates(nowMs) {
+  var now = nowMs === undefined ? Date.now() : nowMs;
+  return kbSortUpdates(LATEST_UPDATES).filter(function (u) {
+    if (kbIsExpired(u, now)) return false;
+    var p = kbParseStamp(u.effective_from) || kbParseStamp(u.published_at) || kbParseStamp(u.date);
+    return p && now - p.ms <= 30 * 86400000;
+  });
+}
+function kbUnreadUpdates() {
+  var seen = kbSeenSet();
+  return kbRecentUpdates().filter(function (u) { return !seen[kbUpdateKey(u)]; });
+}
+function kbPaintUnread() {
+  var n = kbUnreadUpdates().length;
+  var label = n ? n + (S.lang === 'ar' ? ' جديد' : ' NEW') : '';
+  ['kbUnreadTop', 'kbUnreadNav', 'kbUnreadHome'].forEach(function (id) {
+    var b = document.getElementById(id);
+    if (!b) return;
+    b.textContent = label;
+    b.hidden = !n;
+  });
+}
+
+// The first "Agent action" box of the linked article - the instruction lives
+// in one place, so an update card can never drift from the article.
+function kbAgentAction(f) {
+  var m = String((f && f.a) || '').match(/<strong>Agent action<\/strong><br>([\s\S]*?)<\/div>/);
+  return m ? stripHtml(m[1]).replace(/\s+/g, ' ').trim() : '';
+}
+
+function kbClip(s, n) { s = String(s || ''); return s.length > n ? s.slice(0, n - 1).replace(/\s+\S*$/, '') + '…' : s; }
+
+function kbOpenUpdate(key, articleId) {
+  kbMarkSeen([key]);
+  if (articleId && FAQS.some(function (x) { return x.id === articleId; })) openFaqById(articleId);
+  else go('updates', 'Latest Updates');
+}
+
+// What changed -> what the agent does -> effective date -> the article.
+function kbUpdateCardRich(u, seen) {
+  var ar = S.lang === 'ar';
+  var key = kbUpdateKey(u);
+  var art = u.related ? FAQS.find(function (x) { return x.id === u.related; }) : null;
+  var action = art ? kbAgentAction(art) : '';
+  var title = ar && u.title_ar ? u.title_ar : (u.title || '');
+  var desc = ar && u.desc_ar ? u.desc_ar : (u.desc || '');
+  var eff = kbParseStamp(u.effective_from);
+  var upcoming = eff && eff.ms > Date.now();
+  var unread = !seen[key];
+  var h = '<button type="button" class="kb-upd' + (unread ? ' unread' : '') + '" onclick="kbOpenUpdate(\'' +
+          _kbJsArg(key) + '\',\'' + _kbJsArg(u.related || '') + '\')">';
+  h += '<div class="kb-upd-top">';
+  h += '<span class="kb-fresh ' + (upcoming ? 'kb-fresh-updated' : 'kb-fresh-new') + '">' +
+       (upcoming ? (ar ? 'قادم' : 'UPCOMING') : unread ? (ar ? 'جديد' : 'NEW') : (ar ? 'مقروء' : 'READ')) + '</span>';
+  h += '<b>' + escHtml(title) + '</b>';
+  if (eff) h += '<span class="kb-upd-eff">' + (ar ? 'يسري من ' : 'Effective ') + escHtml(kbFormatStamp(u.effective_from)) + '</span>';
+  h += '</div>';
+  h += '<div class="kb-upd-row"><span>' + (ar ? 'ما الذي تغيّر' : 'What changed') + '</span>' + escHtml(kbClip(stripHtml(desc), 220)) + '</div>';
+  if (action) h += '<div class="kb-upd-row act"><span>' + (ar ? 'إجراء الموظف' : 'Agent action') + '</span>' + escHtml(kbClip(action, 200)) + '</div>';
+  if (art) h += '<div class="kb-upd-go">' + (ar ? 'فتح المقالة ←' : 'Open article →') + '</div>';
+  h += '</button>';
+  return h;
+}
+
+function kbOpenGroup(sectorPage, group) {
+  var labels = {'sector-maw': 'Mawaqif', 'sector-darb': 'DARB', 'sector-priv': 'Private Parking'};
+  go(sectorPage, labels[sectorPage]);
+  setTimeout(function () {
+    var d = document.querySelector('.kb-acc-group[data-group="' + group + '"]');
+    if (d) { d.open = true; d.scrollIntoView({block: 'start', behavior: 'smooth'}); }
+  }, 60);
+}
+
+// ===== HOMEPAGE =====
+// Search, what changed, the three services, and the most-used lanes.
+// Nothing on this screen is hard-coded content: every fact comes from the
+// authority JSON through LATEST_UPDATES and FAQS.
+function renderDashboard(el) {
+  var ar = S.lang === 'ar';
+  var sc = _kbSectorCounts();
+  var seen = kbSeenSet();
+  var recent = kbRecentUpdates();
+  var unread = recent.filter(function (u) { return !seen[kbUpdateKey(u)]; });
+  var top = unread.concat(recent.filter(function (u) { return seen[kbUpdateKey(u)]; })).slice(0, 4);
+
+  var h = '<div class="agent-shell kb-home">';
+  h += '<section class="agent-hero kb-home-hero">';
+  h += '<h1>' + (ar ? 'ما الذي يحتاجه المتعامل؟' : 'What does the customer need?') + '</h1>';
   h += '<div class="agent-search-wrap">';
   h += '<form class="agent-search-panel" onsubmit="return startHeroSearch(event)">';
-  h += '<input id="heroSearch" aria-label="Search verified answers" type="search" autocomplete="off" placeholder="Search fine, permit, DARB, SMS..." oninput="instantHeroSearch()" onfocus="instantHeroSearch()" onkeydown="heroSearchKeyNav(event)">';
-  h += '<button class="btn" type="submit">Search</button>';
+  h += '<input id="heroSearch" type="search" autocomplete="off" placeholder="' +
+       escHtml(ar ? 'ابحث: مخالفة، تصريح، رسائل، سحب، W4، محفظة…' : 'Search fines, permit, SMS, towing, W4, wallet…') +
+       '" oninput="instantHeroSearch()" onfocus="instantHeroSearch()" onkeydown="heroSearchKeyNav(event)">';
+  h += '<button class="btn" type="submit">' + (ar ? 'بحث' : 'Search') + '</button>';
   h += '</form>';
   h += '<div class="search-dropdown hero-search-dropdown" id="heroSearchDropdown"></div>';
   h += '</div>';
-  h += '<div class="agent-chip-row">';
-  ['PDM switched off','Etihad Rail MBZ','public plate SMS','resident permit','parking fine','DARB exemption'].forEach(function(q){
-    h += '<button type="button" class="agent-chip" onclick="quickFind(\'' + _kbJsArg(q) + '\')">' + escHtml(q) + '</button>';
+  h += '<div class="kb-home-meta">';
+  h += '<button type="button" class="kb-unread-pill" onclick="go(\'updates\',\'Latest Updates\')">' +
+       '<span id="kbUnreadHome" class="kb-unread-dot"' + (unread.length ? '' : ' hidden') + '>' +
+       unread.length + (ar ? ' جديد' : ' NEW') + '</span>' +
+       (ar ? 'آخر التحديثات' : 'Latest updates') + '</button>';
+  h += '<span>' + FAQS.length + ' ' + (ar ? 'مقالة' : 'answers') + ' · ' + (ar ? 'تم التحقق ' : 'verified ') +
+       escHtml(kbFormatStamp(KB_AUTHORITY_STATUS.verified_on) || '') + '</span>';
+  h += '</div>';
+  h += '</section>';
+
+  h += '<section class="kb-home-sec">';
+  h += '<div class="kb-home-head"><h2>' + (ar ? 'تحديثات مهمة' : 'Important updates') + '</h2>' +
+       '<a onclick="go(\'updates\',\'Latest Updates\')">' + (ar ? 'كل التحديثات ←' : 'All updates →') + '</a></div>';
+  h += top.length
+    ? '<div class="kb-upd-grid">' + top.map(function (u) { return kbUpdateCardRich(u, seen); }).join('') + '</div>'
+    : '<p class="kb-muted">' + (ar ? 'لا توجد تحديثات حديثة.' : 'No recent updates.') + '</p>';
+  h += '</section>';
+
+  h += '<section class="kb-home-sec">';
+  h += '<div class="kb-home-head"><h2>' + (ar ? 'الخدمات' : 'Services') + '</h2></div>';
+  h += '<div class="kb-svc-grid">';
+  [['sector-maw', '🅿️', 'MAWAQIF', ar ? 'مواقف' : 'Mawaqif', ar ? 'الدفع، التصاريح، المخالفات، السحب' : 'Payment, permits, fines, towing', sc.maw],
+   ['sector-darb', '🛣️', 'DARB', ar ? 'درب' : 'DARB', ar ? 'التسجيل، المحفظة، البوابات، الإعفاءات' : 'Registration, wallet, tolls, exemptions', sc.darb],
+   ['sector-priv', '🏢', 'PRIVATE', ar ? 'مواقف خاصة' : 'Private Parking', ar ? 'المراكز التجارية، قطارات الاتحاد، التدفق الحر' : 'Malls, Etihad Rail, Free Flow', sc.priv]
+  ].forEach(function (s) {
+    h += '<button type="button" class="kb-svc" onclick="go(\'' + s[0] + '\',\'' + s[3] + '\')">' +
+         '<span class="kb-svc-ic" aria-hidden="true">' + s[1] + '</span><b>' + escHtml(s[3]) + '</b>' +
+         '<span>' + escHtml(s[4]) + '</span><em>' + s[5] + ' ' + (ar ? 'مقالة' : 'answers') + '</em></button>';
   });
-  h += '</div>';
-  h += '</div>';
+  h += '</div></section>';
 
-  h += '<div class="agent-photo-panel">';
-  h += '<div class="agent-visual-head"><b>Knowledge at a glance</b><span class="agent-live-dot">' + syncLabel + '</span></div>';
-  h += '<div class="agent-kpis">';
-  h += '<div class="agent-kpi"><strong>' + mawCount + '</strong><span>Mawaqif answers</span></div>';
-  h += '<div class="agent-kpi"><strong>' + darbCount + '</strong><span>DARB answers</span></div>';
-  h += '<div class="agent-kpi"><strong>' + privCount + '</strong><span>Private parking</span></div>';
-  h += '<div class="agent-kpi"><strong>' + totalCount + '</strong><span>Total KB items</span></div>';
-  h += '</div>';
-  h += '<div class="kb-hero-links">';
-  h += '<button type="button" class="kb-mini-link" onclick="go(&#39;sector-maw&#39;,&#39;Mawaqif&#39;)">Mawaqif</button>';
-  h += '<button type="button" class="kb-mini-link" onclick="go(&#39;sector-darb&#39;,&#39;DARB&#39;)">DARB</button>';
-  h += '<button type="button" class="kb-mini-link" onclick="quickFind(&#39;mscp maximum stay permit&#39;)">MSCP</button>';
-  h += '<button type="button" class="kb-mini-link" onclick="quickFind(&#39;Mushrif Mall FreeFlow AI&#39;)">Mushrif</button>';
-  h += '<button type="button" class="kb-mini-link" onclick="go(&#39;whatsapp&#39;,&#39;WhatsApp Responses&#39;)">WhatsApp</button>';
-  h += '</div>';
-  h += '</div>';
-  h += '</section>';
-
-  h += '<section class="kb-visual-strip">';
-  h += _kbPhotoCard('mawaqif', 'Mawaqif', 'Street Parking Operations', 'Public parking fees, SMS, machines, permits, fines, and sector guidance.', 'pay public parking sms 3009 mawaqif machine');
-  h += _kbPhotoCard('darb', 'DARB', 'Toll & Wallet Support', 'Toll gates, exemptions, registration, recharge, and DARB X customer flows.', 'darb toll exemption wallet recharge vehicle registration');
-  h += _kbPhotoCard('mscp', 'MSCP', 'Multi-Storey Parking', 'Permit fees, hourly parking, access flow, special spots, and stay limits.', 'mscp multi storey maximum stay permit fees');
-  h += _kbPhotoCard('private', 'Free Flow', 'Mushrif Mall & Private Parking', 'FreeFlow AI launch, auto-deduction, non-DARB payment, and complaint routing.', 'Mushrif Mall FreeFlow AI paid parking');
-  h += '</section>';
-
-  h += '<section class="kb-latest-ops">';
-  // The section date is computed from the newest live update rather than
-  // hard-coded, so it can never drift from the records underneath it.
-  var _newest = kbSortUpdates(LATEST_UPDATES).filter(function(u){ return !kbIsExpired(u); })[0];
-  var _newestLabel = _newest ? kbUpdateDisplayDate(_newest) : '';
-  h += '<div class="kb-section-head"><div><h2>Latest operational updates</h2><p>The latest guidance, with sources and review dates.</p></div>' +
-       '<span class="kb-section-date">' + (_newestLabel ? 'Latest ' + escHtml(_newestLabel) : 'Reviewed 27 Jul 2026') + '</span></div>';
-  h += '<div class="kb-update-strip">';
-  h += _kbUpdateCard('OPS-2026-0727-ETIHAD-RAIL', 'etihadRail', 'Etihad Rail', 'Free-Flow Paid Parking', 'MBZ v3 tariff, 15-minute grace, v3 tariff, multi-day charges, and payment.');
-  h += _kbUpdateCard('OPS-2026-0727-MZY-MSCP2', 'madinatZayed', 'Madinat Zayed', 'MSCP2 Free Parking', 'Free-parking system active at the market parking from 27 July.');
-  h += _kbUpdateCard('OPS-2026-0722-MBZ-ME09-816', 'me09After', 'MBZ ME09', '816 New Parking Bays', 'Completed parking-infrastructure expansion and operational reference.');
-  h += _kbUpdateCard('OPS-2026-0721-NOVIOL-ZONES', 'noViolationSite', 'Operations', 'Temporary No-Violation Zones', 'Approved locations, maps, and agent handling instructions.');
-  h += '</div>';
-  h += '<div class="kb-update-links">';
-  h += '<button type="button" class="kb-update-link" onclick="openFaqById(&#39;OPS-2026-0723-DHAFRA-E12&#39;)">E12 permit cancellation</button>';
-  h += '<button type="button" class="kb-update-link" onclick="openFaqById(&#39;OPS-2026-0723-REQUEST-ASSIGN&#39;)">Immediate request assignment</button>';
-  h += '<button type="button" class="kb-update-link" onclick="openFaqById(&#39;OPS-2026-0727-COMPLAINT-VALIDATION&#39;)">Complaint validation</button>';
-  h += '<button type="button" class="kb-update-link" onclick="openFaqById(&#39;OPS-2026-0727-DARBX-TRANSITION&#39;)">DARB X transition</button>';
-  h += '<button type="button" class="kb-update-link" onclick="openFaqById(&#39;OPS-2026-0721-COURT-TOW&#39;)">Court and towing fees</button>';
-  h += '</div>';
-  // Dated update feed, newest first, with UAE timing metadata on each card.
-  h += '<div class="kb-section-head" style="margin-top:18px;"><div><h2 style="font-size:17px;">What changed recently</h2></div></div>';
-  h += kbUpdatesListHtml(LATEST_UPDATES, 5);
-  h += '</section>';
-
-  h += '<section class="agent-grid-two">';
-  h += '<div class="agent-panel"><h2>Fast Lanes</h2><div class="agent-actions">';
-  h += _kbAct('Fine / grievance', 'Appeal, pay, discount, rejected grievance, image view.', 'parking fine grievance appeal pay discount');
-  h += _kbAct('Pay parking', 'DARB, TAMM, SMS 3009, machines, renewal.', 'pay public parking sms 3009 mawaqif machine');
-  h += _kbAct('Resident permit', 'Eligibility, documents, kinship, TAMM errors.', 'resident parking permit documents eligibility kinship');
-  h += _kbAct('Toll exemption', 'PoD, senior, retired, low income, relative rules.', 'darb toll exemption people of determination senior retired low income');
-  h += _kbAct('Car pound', 'Towing yards, release documents, payment, appeals.', 'towing yard car pound release documents hours');
-  h += _kbAct('Free Flow', 'Auto deduction, wallet balance, non-DARB payment link.', 'free flow auto deduction wallet non darb payment');
-  h += _kbAct('Templates', 'SMS, email, scripts, and customer wording.', 'sms template email call script guidance');
-  h += _kbAct('DARB X', 'Complaint, vehicle registration, and card setup.', 'DARB X complaint vehicle registration card setup');
-  h += '<button type="button" class="agent-action" onclick="go(&#39;whatsapp&#39;,&#39;WhatsApp Responses&#39;)"><b>WhatsApp desk</b><span>Bilingual replies, language modes, instant copy, and KB lookup.</span></button>';
-  h += '</div></div>';
-
-  h += '<div class="agent-panel"><h2>Current Facts</h2><div class="agent-alerts">';
-  h += _kbAlert('priv', 'Etihad Rail is location-specific', 'MBZ v3: 15 minutes free; standard entry up to AED 15 for 24 hours, night entry AED 20. Each additional day or part-day: AED 20.', 'Etihad Rail MBZ v3 tariff 15 minutes AED 15 AED 20');
-  h += _kbAlert('maw', 'Madinat Zayed MSCP2', 'Free-parking system active from 27 July 2026 at 10:00 AM; access is on foot only.', 'Madinat Zayed Market MSCP2 free parking');
-  h += _kbAlert('warn', 'E12 reservation cancelled', 'Do not create a complaint or case for the cancelled Al Dhafra E12 reserved permit.', 'Al Dhafra E12 cancelled permit no complaint');
-  h += _kbAlert('maw', 'ME09 added 816 bays', 'The MBZ ME09 parking-infrastructure project is complete with 816 new bays.', 'ME09 816 new parking bays');
-  h += _kbAlert('warn', 'Court and towing are separate', 'Court settlement or time-barred fines do not cancel towing and impound fees.', 'court settlement time barred towing fees separate');
-  h += _kbAlert('darb', 'DARB X transition', 'Guide customers through Switch to the New Experience when moving to DARB X.', 'DARB X switch to new experience transition');
-  h += _kbAlert('priv', 'Mushrif gym overnight', 'Gym visitors between 2:00 AM and 6:00 AM need gym vehicle validation for three free hours.', 'Mushrif gym overnight vehicle validation three hours free');
-  h += _kbAlert('maw', 'Assign requests immediately', 'New requests must be assigned without delay and kept under the correct owner.', 'assign new request immediately correct owner');
-  h += _kbAlert('darb', 'Validate complaints first', 'Confirm complaint type, subtype, evidence, and required documents before creation.', 'complaint validation type subtype evidence documents');
-  h += '</div></div>';
-  h += '</section>';
-
-  h += '<section class="agent-panel"><h2>Source Coverage</h2><div class="agent-source-grid">';
-  h += _kbSource('PDF call-center guide', '62-page PDF text represented in search, scripts, quick facts, and support flows.', 'PDF');
-  h += _kbSource('Mawaqif regulation PDF', '35-page official reference checked for regulatory alignment.', 'REG');
-  h += _kbSource('Official FAQ workbook', 'Validated FAQ article IDs are present in the index.', 'FAQ');
-  h += _kbSource('27 July operational files', 'Etihad Rail, Madinat Zayed MSCP2, E12, ME09, complaints, DARB X, towing, and no-violation updates are included.', 'OPS');
+  h += '<section class="kb-home-sec">';
+  h += '<div class="kb-home-head"><h2>' + (ar ? 'الأكثر استخداماً' : 'Most used') + '</h2></div>';
+  h += '<div class="kb-lanes">';
+  [['sector-maw', 'fines', ar ? 'المخالفات' : 'Fines'],
+   ['sector-maw', 'permits', ar ? 'التصاريح' : 'Permits'],
+   ['sector-maw', 'pay', ar ? 'دفع الرسوم' : 'Pay Parking'],
+   ['sector-maw', 'towing', ar ? 'السحب' : 'Towing'],
+   ['sector-darb', 'wallet', ar ? 'المحفظة' : 'Wallet'],
+   ['sector-priv', 'freeflow', ar ? 'التدفق الحر' : 'Free Flow']
+  ].forEach(function (l) {
+    h += '<button type="button" class="kb-lane" onclick="kbOpenGroup(\'' + l[0] + '\',\'' + l[1] + '\')">' + escHtml(l[2]) + '</button>';
+  });
+  h += '<button type="button" class="kb-lane ghost" onclick="go(\'find-fast\',\'Find Fast\')">' + (ar ? 'البحث السريع' : 'Find Fast') + '</button>';
   h += '</div></section>';
 
   h += '</div>';
   el.innerHTML = h;
+  kbPaintUnread();
+}
+
+// ===== LATEST UPDATES PAGE =====
+function renderUpdates(el) {
+  var ar = S.lang === 'ar';
+  var now = Date.now();
+  var all = kbSortUpdates(LATEST_UPDATES);
+  var seen = kbSeenSet();
+  var day = 86400000;
+  var todayStart = kbParseStamp(new Intl.DateTimeFormat('en-CA', {timeZone: 'Asia/Dubai'}).format(new Date(now))).ms;
+  var groups = {upcoming: [], today: [], week: [], temp: [], earlier: [], expired: []};
+  all.forEach(function (u) {
+    if (kbIsExpired(u, now)) { groups.expired.push(u); return; }
+    var eff = kbParseStamp(u.effective_from) || kbParseStamp(u.published_at) || kbParseStamp(u.date);
+    var ms = eff ? eff.ms : 0;
+    if (u.effective_until || /^TEMPORARY/i.test(u.title || '')) groups.temp.push(u);
+    else if (ms > now) groups.upcoming.push(u);
+    else if (ms >= todayStart) groups.today.push(u);
+    else if (now - ms <= 7 * day) groups.week.push(u);
+    else groups.earlier.push(u);
+  });
+  groups.upcoming.reverse(); // soonest first
+
+  var h = '<div class="breadcrumb"><a onclick="goHome()">' + (ar ? 'الرئيسية' : 'Home') + '</a> / ' +
+          (ar ? 'آخر التحديثات' : 'Latest Updates') + '</div>';
+  h += '<div class="page-header"><div><h1>&#128227; ' + (ar ? 'آخر التحديثات' : 'Latest Updates') + '</h1>' +
+       '<p class="kb-muted">' + (ar ? 'جميع الأوقات بتوقيت الإمارات (GST).' : 'All times are UAE time (GST).') + '</p></div>' +
+       '<button type="button" class="btn" onclick="kbMarkSeen(kbRecentUpdates().map(kbUpdateKey));render(\'updates\')">' +
+       (ar ? 'تعليم الكل كمقروء' : 'Mark all read') + '</button></div>';
+  [['upcoming', ar ? 'قادم' : 'Upcoming'], ['today', ar ? 'اليوم' : 'Today'], ['week', ar ? 'هذا الأسبوع' : 'This week'],
+   ['temp', ar ? 'تعليمات مؤقتة' : 'Temporary instructions'], ['earlier', ar ? 'سابقاً' : 'Earlier']
+  ].forEach(function (g) {
+    if (!groups[g[0]].length) return;
+    h += '<h2 class="kb-upd-group">' + escHtml(g[1]) + ' <span>' + groups[g[0]].length + '</span></h2>';
+    h += '<div class="kb-upd-grid">' + groups[g[0]].map(function (u) { return kbUpdateCardRich(u, seen); }).join('') + '</div>';
+  });
+  if (groups.expired.length) {
+    h += '<div class="kb-expired-head">' + (ar ? 'منتهية — لم تعد تعليمات سارية' : 'Expired — no longer current instructions') +
+         ' (' + groups.expired.length + ')</div><div class="updates-list">';
+    groups.expired.forEach(function (u) { h += kbUpdateCardHtml(u, true); });
+    h += '</div>';
+  }
+  el.innerHTML = h;
+  kbPaintUnread();
 }
 
 // ===== INIT =====

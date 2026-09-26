@@ -279,9 +279,121 @@ window.kbAssertions = function (viewportName) {
     ok(!pair[1].test(corpus), 'personal or internal data leaked into the KB: ' + pair[0]);
   });
 
+  // ---------- 26 Sep 2026 staleness sweep: fixes must not regress ----------
+  var _byId = function (id) { return window.FAQS.find(function (f) { return f.id === id; }); };
+  ok(/UAE Pass/.test((_byId('FAQ-0079') || {}).a || ''), 'password-reset answer does not reflect UAE Pass sign-in');
+  ok(stripHtml((_byId('FAQ-0227') || {}).a || '').length > 100, 'Darb violations answer is empty');
+  ok(/TAMM grievance/.test((_byId('FAQ-0303') || {}).a || ''), 'smart-vehicle objection lost its TAMM grievance guidance');
+  var _all = _records.map(function (r) { return r.t; }).join(' ');
+  ok(!/custoemr\.care|\[email(?:&#160;|\s)protected\]/i.test(_all + JSON.stringify(window.FAQS)), 'misspelled or scraped placeholder email is still live');
+  ok(!/concerned department/i.test(JSON.stringify(window.FAQS.map(function (f) { return [f.q, f.a, f.q_ar, f.a_ar]; })).replace(/Never write or say[^.]*concerned department/gi, "")), 'a live article still tells customers "the concerned department"');
+  var _moto = (window.VEHICLE_TYPES || []).find(function (v) { return v.type === 'Motorcycle'; });
+  ok(_moto && /Yes/.test(_moto.sms_ok), 'vehicle-type table still says motorcycles cannot pay by SMS');
+  ok(!/Musaffah Car Pound"?, cat:"Tow Yard", note:"8AM/.test(JSON.stringify(window.MAP_POINTS || '')), 'map still shows old Musaffah pound hours');
+
+  // ---------- publish gate: structure ----------
+  // Every article lands in exactly one defined sector / category / subtype,
+  // and the sector accordion shows every article the sector count promises.
+  var _tree = kbTree();
+  var _classified = 0;
+  ['maw', 'darb', 'priv'].forEach(function (s) {
+    Object.keys(_tree[s]).forEach(function (g) {
+      ok(KB_TAXONOMY[s].groups[g], 'article classified into undefined group ' + s + '/' + g);
+      _classified += kbCount(_tree[s][g]);
+    });
+    var acc = document.createElement('div');
+    acc.innerHTML = kbSectorAccordionHtml(s);
+    var items = acc.querySelectorAll('.kb-acc-item').length;
+    var inSector = window.FAQS.filter(function (f) { return f && kbClassify(f).sector === s; }).length;
+    ok(items === inSector, s + ' accordion shows ' + items + ' of ' + inSector + ' articles');
+  });
+  ok(_classified === window.FAQS.filter(Boolean).length, 'taxonomy classified ' + _classified + ' of ' + window.FAQS.length + ' articles');
+
+  // One canonical article per question.
+  var _sigs = {};
+  window.FAQS.forEach(function (f) {
+    var s = _kbSig(f.q);
+    if (_sigs[s]) fail('two live articles ask the same question: ' + _sigs[s] + ' and ' + f.id);
+    else _sigs[s] = f.id;
+  });
+
+  // Superseded records are gone, and nothing still points at a missing article.
+  var _ids = {};
+  window.FAQS.forEach(function (f) { _ids[f.id] = 1; });
+  window.FAQS.forEach(function (f) {
+    ok(f.status !== 'superseded', 'superseded article is still live: ' + f.id);
+    (String(f.a || '') + String(f.a_ar || '')).replace(/openFaqById\(\\?['"]([^'"\\]+)/g, function (m, id) {
+      ok(_ids[id] || (window.KB_REDIRECTS && KB_REDIRECTS[id]), f.id + ' links to missing article ' + id);
+      return m;
+    });
+  });
+  window.LATEST_UPDATES.forEach(function (u) {
+    if (u.related) ok(_ids[u.related], 'update "' + (u.title || '') + '" links to missing article ' + u.related);
+  });
+
+  // No temporary instruction may outlive its end date as a live article.
+  window.FAQS.forEach(function (f) {
+    ok(kbArticleStatus(f).key !== 'expired', 'expired temporary article is still live: ' + f.id);
+  });
+
+  // Arabic fields must actually be Arabic.
+  window.FAQS.forEach(function (f) {
+    ['q_ar', 'a_ar'].forEach(function (k) {
+      if (f[k]) ok(/[\u0600-\u06FF]/.test(stripHtml(f[k])), f.id + ' has non-Arabic text in ' + k);
+    });
+  });
+  var newWithoutArabic = window.FAQS.filter(function (f) {
+    return kbFreshness(f) === 'new' && (!f.q_ar || !f.a_ar);
+  }).map(function (f) { return f.id; });
+
+  // ---------- publish gate: search and updates behaviour ----------
+  var _box = document.createElement('div');
+  // Keep the test's own search out of the search analytics.
+  var _track = ANALYTICS.trackSearch;
+  var _prevQuery = _lastSearchQuery, _prevResults = _lastSearchResults;
+  ANALYTICS.trackSearch = function () {};
+  try { renderSearch(_box, 'residential permit lease'); }
+  finally { ANALYTICS.trackSearch = _track; _lastSearchQuery = _prevQuery; _lastSearchResults = _prevResults; }
+  ok(_box.querySelectorAll('.kb-best').length === 1, 'search does not lead with one best answer');
+  var _tops = _box.querySelectorAll('.faq-card-top');
+  ok(_tops.length > 1 && _tops[0].getAttribute('aria-expanded') === 'true', 'best answer is not open');
+  ok([].slice.call(_tops, 1).every(function (t) { return t.getAttribute('aria-expanded') === 'false'; }),
+     'secondary search results are not collapsed');
+  ok(!/>\s*Verified \(\d+\)/.test(_box.innerHTML), 'search tabs still group by the raw "Verified" label');
+  ok(_box.querySelector('.kb-path-tag'), 'search results do not show where the answer lives');
+
+  // Unread counter: marking every recent update seen clears it, and the
+  // viewer's real read state is restored afterwards.
+  var _savedSeen = null;
+  try { _savedSeen = localStorage.getItem(KB_SEEN_KEY); } catch (e) {}
+  try {
+    try { localStorage.removeItem(KB_SEEN_KEY); } catch (e) {}
+    var _recent = kbRecentUpdates();
+    ok(kbUnreadUpdates().length === _recent.length, 'unread count differs from recent updates when nothing is read');
+    kbMarkSeen(_recent.map(kbUpdateKey));
+    ok(kbUnreadUpdates().length === 0, 'marking all updates read did not clear the counter');
+  } finally {
+    try {
+      if (_savedSeen === null) localStorage.removeItem(KB_SEEN_KEY);
+      else localStorage.setItem(KB_SEEN_KEY, _savedSeen);
+    } catch (e) {}
+    kbPaintUnread();
+  }
+
+  // The updates page files every update exactly once.
+  var _up = document.createElement('div');
+  renderUpdates(_up);
+  // Current updates use the new card; expired ones keep the struck-through
+  // "Expired" card so they can never read as live instructions.
+  var _upTitles = _up.querySelectorAll('.kb-upd, .update-item.update-expired').length;
+  ok(_upTitles === window.LATEST_UPDATES.length,
+     'updates page shows ' + _upTitles + ' of ' + window.LATEST_UPDATES.length + ' updates');
+
   return {
     failures: failures,
+    warnings: newWithoutArabic.length ? ['new articles without an approved Arabic version: ' + newWithoutArabic.join(', ')] : [],
     facts: {
+      newWithoutArabic: newWithoutArabic.length,
       faqCount: window.FAQS.length,
       smsCount: window.SMS_TEMPLATES.length,
       updateCount: window.LATEST_UPDATES.length,
