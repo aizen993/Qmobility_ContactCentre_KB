@@ -310,6 +310,67 @@ body[dir="rtl"] .update-item{border-left:none;border-right:3px solid var(--qm)}
 .kb-az-jump a{min-width:30px;text-align:center;padding:5px 8px;border:1px solid var(--border);border-radius:8px;background:#fff;font-weight:700;cursor:pointer;color:var(--qm)}
 .kb-az-path{color:var(--text2);font-weight:400;margin-inline-start:6px}
 @media (max-width:600px){.kb-upd-line summary{grid-template-columns:1fr auto;grid-template-areas:"d st" "t t"}.kb-upd-d{grid-area:d}.kb-upd-svc{display:none}.kb-upd-t{grid-area:t}.kb-upd-st{grid-area:st}.kb-upd-body{padding:4px 14px 14px}.kb-cgrid{grid-template-columns:1fr}.kb-chip-lbl{min-width:0;width:100%}}
+.kb-exp{display:grid;grid-template-columns:230px minmax(260px,1fr) minmax(340px,1.35fr);gap:12px;height:calc(100vh - 190px);min-height:520px}
+.kb-exp-cats,.kb-exp-mid,.kb-exp-ans{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:auto}
+.kb-exp-cats{padding:6px}
+.kb-exp-cat{display:flex;align-items:center;gap:10px;width:100%;border:0;background:none;border-radius:10px;padding:11px 12px;font:inherit;font-size:14px;color:var(--text);cursor:pointer;text-align:start}
+.kb-exp-cat:hover{background:var(--bg2)}
+.kb-exp-cat.on{background:var(--qm);color:#fff}
+.kb-exp-cat.on .kb-exp-ct{background:rgba(255,255,255,.22);color:#fff}
+.kb-exp-ic{font-size:18px;width:22px;text-align:center}
+.kb-exp-cn{flex:1;font-weight:600;line-height:1.25}
+.kb-exp-ct{font-size:12px;font-weight:800;color:var(--qm);background:var(--bg2);border-radius:999px;padding:1px 8px}
+.kb-exp-mid{display:flex;flex-direction:column}
+.kb-exp-subs{display:flex;flex-direction:column;margin:2px 0 8px 18px;border-inline-start:2px solid var(--border);padding-inline-start:6px}
+.kb-exp-sub{display:flex;justify-content:space-between;gap:8px;border:0;background:none;border-radius:8px;padding:7px 10px;font:inherit;font-size:13px;color:var(--text);cursor:pointer;text-align:start}
+.kb-exp-sub span{color:var(--text2);font-weight:700;font-size:12px}
+.kb-exp-sub:hover{background:var(--bg2)}
+.kb-exp-sub.on{background:#e8f4ef;color:var(--qm);font-weight:700}
+.kb-exp-title{padding:12px 14px 8px;font-weight:800;font-size:15px}
+.kb-exp-topics{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin}
+.kb-exp-topics .kb-exp-tab{flex:0 0 auto;white-space:nowrap}
+.kb-exp-head{padding:12px 14px;font-size:13px;color:var(--text2);border-bottom:1px solid var(--border)}
+.kb-exp-tabs{display:flex;flex-wrap:wrap;gap:6px;padding:12px 12px 8px;border-bottom:1px solid var(--border)}
+.kb-exp-topics{background:var(--bg2);padding:8px 12px}
+.kb-exp-tab{border:1px solid var(--border);background:#fff;border-radius:999px;padding:6px 11px;font:inherit;font-size:13px;color:var(--text);cursor:pointer}
+.kb-exp-tab.sm{font-size:12px;padding:4px 10px}
+.kb-exp-tab b{color:var(--text2);margin-inline-start:2px}
+.kb-exp-tab.on{background:var(--qm);border-color:var(--qm);color:#fff}
+.kb-exp-tab.on b{color:#fff}
+.kb-exp-list{overflow:auto;flex:1}
+.kb-exp-q{display:flex;flex-direction:column;align-items:flex-start;gap:4px;width:100%;border:0;border-bottom:1px solid var(--border);border-inline-start:3px solid transparent;background:none;padding:11px 14px;font:inherit;font-size:14px;line-height:1.35;color:var(--text);cursor:pointer;text-align:start}
+.kb-exp-q:hover{background:var(--bg2)}
+.kb-exp-q.on{background:#e8f4ef;border-inline-start-color:var(--qm);font-weight:600}
+.kb-exp-q small{font-size:11px;color:var(--text2)}
+.kb-exp-q .kb-status{margin:0}
+.kb-exp-ans{padding:14px}
+.kb-exp-ans .faq-card{margin:0;box-shadow:none;border-top:0;border-right:0;border-bottom:0;padding:0 0 0 14px}
+.kb-exp-path{font-size:12px;color:var(--text2);margin-bottom:8px}
+.kb-exp-empty{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--text2);text-align:center}
+.kb-exp-empty span{font-size:34px}
+.kb-exp-full{margin-top:12px;border:1px solid var(--border);background:#fff;border-radius:10px;padding:8px 14px;font:inherit;font-size:13px;color:var(--qm);cursor:pointer}
+.kb-exp-backq{display:none;margin-bottom:10px;border:1px solid var(--border);background:#fff;border-radius:999px;padding:7px 14px;font:inherit;font-weight:600;color:var(--qm);cursor:pointer}
+.kb-sec-bar{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;padding:6px 2px 12px}
+.kb-sec-bar h1{font-size:26px;margin:0}
+.kb-sec-bar span{color:var(--text2);font-size:14px}
+@media (max-width:1280px) and (min-width:761px){
+ .kb-exp{grid-template-columns:230px 1fr}
+ .kb-exp-ans{display:none}
+ .kb-exp.show-answer .kb-exp-mid{display:none}
+ .kb-exp.show-answer .kb-exp-ans{display:block}
+ .kb-exp-backq{display:inline-block}
+}
+@media (max-width:760px){
+ .kb-exp{display:block;height:auto;min-height:0}
+ .kb-exp-cats{margin-bottom:10px}
+ .kb-exp.show-answer .kb-exp-cats{display:none}
+ .kb-exp-mid{max-height:none}
+ .kb-exp-ans{display:none;margin-top:10px}
+ .kb-exp.show-answer .kb-exp-mid{display:none}
+ .kb-exp.show-answer .kb-exp-ans{display:block}
+ .kb-exp-backq{display:inline-block}
+ .kb-exp-empty{display:none}
+}
 .kb-backbar{display:inline-flex;align-items:center;gap:8px;max-width:100%;margin:0 0 12px;padding:9px 16px;border:1px solid var(--border);border-radius:999px;background:#fff;font:inherit;font-size:14px;font-weight:600;color:var(--qm);cursor:pointer;box-shadow:0 1px 3px rgba(0,0,0,.05);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .kb-backbar:hover,.kb-backbar:focus-visible{border-color:var(--qm);background:var(--bg2);outline:none}
 .kb-browse{margin:4px 0 22px}
@@ -3632,11 +3693,8 @@ function renderSector(el, sectorId) {
   var sectorTone = sectorId === 'sector-darb' ? 'darb' : sectorId === 'sector-priv' ? 'priv' : 'maw';
   var sectorFaqCount = FAQS.filter(function(f){ return f.page && topics.some(function(tc){ return tc.page === f.page; }); }).length;
   var h = '<div class="breadcrumb"><a onclick="goHome()">Home</a> / ' + (sector?sector.name_en:sectorId) + '</div>';
-  h += _kbPageHero(sectorTitle, sectorDesc, sectorAsset, sectorTone, [
-    {value: String(topics.length), label: 'Service tabs'},
-    {value: String(sectorFaqCount), label: 'Linked answers'},
-    {value: sectorId === 'sector-darb' ? '4 gates' : sectorId === 'sector-priv' ? 'FreeFlow' : 'MSCP + street', label: 'Visual scope'}
-  ]);
+  // Slim title bar: the page is a working tool, the photo header pushed the answers below the fold.
+  h += '<div class="kb-sec-bar kb-tone-' + sectorTone + '"><h1>' + escHtml(sectorTitle) + '</h1><span>' + escHtml(sectorDesc) + '</span></div>';
 
   var browseSector = sectorId === 'sector-darb' ? 'darb' : sectorId === 'sector-priv' ? 'priv' : 'maw';
   h += '<div id="kbBrowse" class="kb-browse"></div>';
@@ -5283,7 +5341,7 @@ function kbGoTopic(sec, g, sub, topic) {
   var hd = document.getElementById('heroSearchDropdown'); if (hd) hd.style.display = 'none';
   kbPushHistory();
   var st = kbBrowseState(sec);
-  st.group = g || ''; st.sub = sub || ''; st.topic = topic || ''; st.filter = '';
+  st.group = g || ''; st.sub = sub || ''; st.topic = topic || ''; st.filter = ''; st.open = '';
   var page = sec === 'darb' ? 'sector-darb' : sec === 'priv' ? 'sector-priv' : 'sector-maw';
   _kbRestoring = true;
   try { go(page, KB_SECTOR_LABEL[sec][0]); } finally { _kbRestoring = false; }
@@ -5366,15 +5424,113 @@ function kbAzPaint(keepFocus, root) {
 // kept per sector in S.kbNav so the back button returns to the same grid.
 S.kbNav = S.kbNav || {};
 function kbBrowseState(sector) { return S.kbNav[sector] = S.kbNav[sector] || {group: '', sub: '', topic: '', filter: ''}; }
-function kbViewMode() { try { return localStorage.getItem('kb_browse_view') || 'grid'; } catch (e) { return 'grid'; } }
-function kbSetView(mode, sector) { try { localStorage.setItem('kb_browse_view', mode); } catch (e) {} kbBrowseRender(sector); }
+function kbViewMode() { try { return localStorage.getItem('kb_browse_view2') || 'explorer'; } catch (e) { return 'explorer'; } }
+function kbSetView(mode, sector) { try { localStorage.setItem('kb_browse_view2', mode); } catch (e) {} kbBrowseRender(sector); }
+
+// ===== EXPLORER (one screen: categories | questions | answer) =====
+// Built like an email client: pick a category on the left, narrow it with the
+// subtype tabs, click a question and the answer opens beside the list.
+function kbExpOpen(sector, id) {
+  var st = kbBrowseState(sector);
+  st.open = id;
+  var f = FAQS.find(function (x) { return x.id === id; });
+  var pane = document.getElementById('kbExpAnswer');
+  if (!pane || !f) return;
+  pane.innerHTML = kbExpAnswerHtml(sector, f);
+  document.querySelectorAll('#kbBrowse .kb-exp-q').forEach(function (b) { b.classList.toggle('on', b.getAttribute('data-id') === id); });
+  var wrap = document.querySelector('#kbBrowse .kb-exp');
+  if (wrap) wrap.classList.add('show-answer');
+  if (window.innerWidth <= 760) pane.scrollIntoView({block: 'start'});
+  else pane.scrollTop = 0;
+}
+function kbExpCloseAnswer() {
+  var wrap = document.querySelector('#kbBrowse .kb-exp');
+  if (wrap) wrap.classList.remove('show-answer');
+}
+function kbExpAnswerHtml(sector, f) {
+  var ar = S.lang === 'ar';
+  return '<button type="button" class="kb-exp-backq" onclick="kbExpCloseAnswer()">' + (ar ? '→ الأسئلة' : '← Questions') + '</button>' +
+         '<div class="kb-exp-path">' + escHtml(kbTaxPath(f)) + '</div>' +
+         '<div class="faq-list">' + renderFaqCard(f, '') + '</div>' +
+         '<button type="button" class="kb-exp-full" onclick="kbOpenFromBrowse(\'' + sector + '\',\'' + _kbJsArg(f.id) + '\')">' + (ar ? 'فتح في صفحة كاملة' : 'Open as full page') + ' ↗</button>';
+}
+function kbExplorerHtml(sector, st, tree, hits) {
+  var ar = S.lang === 'ar', tx = KB_TAXONOMY[sector];
+  var groups = kbOrderedGroups(sector, tree);
+  if (!st.group || !tree[sector][st.group]) st.group = groups[0] || '';
+  var bucket = tree[sector][st.group] || {};
+  var subs = kbOrderedSubs(sector, st.group, bucket);
+  if (st.sub && !bucket[st.sub]) st.sub = '';
+  var go = function (g, s, t) { return "kbBrowseGo('" + sector + "','" + (g || '') + "','" + (s || '') + "','" + (t || '') + "')"; };
+
+  // Left: categories
+  var h = '<div class="kb-exp' + (st.open ? ' show-answer' : '') + '"><nav class="kb-exp-cats">';
+  groups.forEach(function (gk) {
+    var b = tree[sector][gk], g = tx.groups[gk], n = kbCount(b), fresh = 0;
+    Object.keys(b).forEach(function (s) { fresh += _kbFreshCount(b[s]); });
+    h += '<button type="button" class="kb-exp-cat' + (!hits && gk === st.group ? ' on' : '') + '" onclick="' + go(gk) + '">' +
+         '<span class="kb-exp-ic">' + g.icon + '</span><span class="kb-exp-cn">' + escHtml(ar ? g.ar : g.en) + '</span>' +
+         (fresh ? '<i class="kb-dot" title="new"></i>' : '') + '<span class="kb-exp-ct">' + n + '</span></button>';
+    if (!hits && gk === st.group) {
+      var gsubs = kbOrderedSubs(sector, gk, b);
+      if (gsubs.length > 1) {
+        h += '<div class="kb-exp-subs"><button type="button" class="kb-exp-sub' + (!st.sub ? ' on' : '') + '" onclick="' + go(gk) + '">' + (ar ? 'الكل' : 'All') + '<span>' + n + '</span></button>';
+        gsubs.forEach(function (sk) {
+          h += '<button type="button" class="kb-exp-sub' + (st.sub === sk ? ' on' : '') + '" onclick="' + go(gk, sk) + '">' + escHtml(kbSubLabel(sector, gk, sk)) + '<span>' + b[sk].length + '</span></button>';
+        });
+        h += '</div>';
+      }
+    }
+  });
+  h += '</nav><section class="kb-exp-mid">';
+
+  var list;
+  if (hits) {
+    h += '<div class="kb-exp-head">' + hits.length + ' ' + (ar ? 'نتيجة' : (hits.length === 1 ? 'match' : 'matches')) + '</div>';
+    list = hits;
+  } else {
+    // Subtype tabs (plus "All"), then topic tabs when the subtype is large.
+    var sub = st.sub || (subs.length === 1 ? subs[0] : '');
+    var gName = tx.groups[st.group] ? (ar ? tx.groups[st.group].ar : tx.groups[st.group].en) : '';
+    h += '<div class="kb-exp-title">' + escHtml(sub ? kbSubLabel(sector, st.group, sub) : gName) + '</div>';
+    list = sub ? (bucket[sub] || []) : [].concat.apply([], subs.map(function (s) { return bucket[s]; }));
+    if (sub && list.length > KB_TOPIC_SPLIT) {
+      var path = sector + '/' + st.group + '/' + sub, topics = {};
+      list.forEach(function (f) { var k = kbTopicOf(f, path); (topics[k] = topics[k] || []).push(f); });
+      var keys = Object.keys(topics).sort(function (a, b) { return a === 'other' ? 1 : b === 'other' ? -1 : topics[b].length - topics[a].length; });
+      h += '<div class="kb-exp-tabs kb-exp-topics"><button type="button" class="kb-exp-tab sm' + (!st.topic ? ' on' : '') + '" onclick="' + go(st.group, sub) + '">' + (ar ? 'كل المواضيع' : 'All topics') + '</button>';
+      keys.forEach(function (k) {
+        h += '<button type="button" class="kb-exp-tab sm' + (st.topic === k ? ' on' : '') + '" onclick="' + go(st.group, sub, k) + '">' + (KB_TOPIC_ICON[k] || '') + ' ' + escHtml(kbTopicLabel(k)) + ' <b>' + topics[k].length + '</b></button>';
+      });
+      h += '</div>';
+      if (st.topic && topics[st.topic]) list = topics[st.topic];
+    }
+  }
+  list = list.slice().sort(function (a, b) {
+    var fa = kbFreshness(a) ? 0 : 1, fb = kbFreshness(b) ? 0 : 1;
+    return fa - fb || String(a.q).localeCompare(String(b.q));
+  });
+  h += '<div class="kb-exp-list">';
+  list.forEach(function (f) {
+    h += '<button type="button" class="kb-exp-q' + (st.open === f.id ? ' on' : '') + '" data-id="' + escHtml(f.id) + '" onclick="kbExpOpen(\'' + sector + '\',\'' + _kbJsArg(f.id) + '\')">' +
+         '<span class="kb-exp-qt">' + escHtml((ar && f.q_ar ? f.q_ar : f.q) || f.id) + '</span>' +
+         (hits ? '<small>' + escHtml(kbTaxPath(f)) + '</small>' : '') + kbStatusPill(f, {hideCurrent: true}) + '</button>';
+  });
+  if (!list.length) h += '<p class="kb-browse-empty">' + (ar ? 'لا توجد أسئلة مطابقة.' : 'No questions match.') + '</p>';
+  h += '</div></section><section class="kb-exp-ans" id="kbExpAnswer">';
+  var open = st.open && FAQS.find(function (x) { return x.id === st.open; });
+  h += open ? kbExpAnswerHtml(sector, open)
+            : '<div class="kb-exp-empty"><span>👈</span><p>' + (ar ? 'اختر سؤالاً لعرض الإجابة هنا.' : 'Pick a question to see the answer here.') + '</p></div>';
+  h += '</section></div>';
+  return h;
+}
 function kbBrowseGo(sector, group, sub, topic) {
   var st = kbBrowseState(sector);
-  if (st.group !== (group || '') || st.sub !== (sub || '') || st.topic !== (topic || '')) kbPushHistory();
+  if (st.group !== (group || '') || st.sub !== (sub || '') || st.topic !== (topic || '')) { kbPushHistory(); st.open = ''; }
   st.group = group || ''; st.sub = sub || ''; st.topic = topic || '';
   kbBrowseRender(sector);
   var el = document.getElementById('kbBrowse');
-  if (el && el.getBoundingClientRect().top < 0) el.scrollIntoView({block: 'start'});
+  if (el && el.getBoundingClientRect().top < 0 && kbViewMode() !== 'explorer') el.scrollIntoView({block: 'start'});
 }
 function kbBrowseFilter(sector, value) {
   kbBrowseState(sector).filter = value;
@@ -5424,12 +5580,24 @@ function kbBrowseRender(sector, keepFocus) {
           escHtml((ar ? 'ابحث في مواضيع ' : 'Filter ') + secName + (ar ? '' : ' topics…')) + '" value="' + escHtml(st.filter) +
           '" oninput="kbBrowseFilter(\'' + sector + '\', this.value)">' +
           '<div class="kb-view-toggle" role="group" aria-label="View">' +
+          '<button type="button" class="' + (view === 'explorer' ? 'on' : '') + '" onclick="kbSetView(\'explorer\',\'' + sector + '\')">◧ ' + (ar ? 'مستكشف' : 'Explorer') + '</button>' +
           '<button type="button" class="' + (view === 'grid' ? 'on' : '') + '" onclick="kbSetView(\'grid\',\'' + sector + '\')">▦ ' + (ar ? 'شبكة' : 'Grid') + '</button>' +
           '<button type="button" class="' + (view === 'list' ? 'on' : '') + '" onclick="kbSetView(\'list\',\'' + sector + '\')">☰ ' + (ar ? 'قائمة' : 'List') + '</button></div></div>';
 
   var body = '';
   var filter = String(st.filter || '').trim().toLowerCase();
-  if (filter.length >= 2) {
+  if (view === 'explorer') {
+    var ehits = null;
+    if (filter.length >= 2) {
+      var ew = filter.split(/\s+/);
+      ehits = FAQS.filter(function (f) {
+        if (!f || kbClassify(f).sector !== sector) return false;
+        var t = (f.q + ' ' + (f.q_ar || '') + ' ' + (f.kw || '')).toLowerCase();
+        return ew.every(function (w) { return t.indexOf(w) >= 0; });
+      });
+    }
+    body += kbExplorerHtml(sector, st, tree, ehits);
+  } else if (filter.length >= 2) {
     // Filter mode: every matching question in the sector, grouped by path.
     var words = filter.split(/\s+/);
     var hits = FAQS.filter(function (f) {
